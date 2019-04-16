@@ -1,13 +1,13 @@
-package com.w8x.controller;
+package com.w8x.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ControllerApplication {
+public class WebApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(ControllerApplication.class, args);
+    SpringApplication.run(WebApplication.class, args);
   }
 
 }

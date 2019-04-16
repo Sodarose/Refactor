@@ -1,4 +1,4 @@
-package com.w8x.controller;
+package com.w8x.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ControllerApplicationTests {
+public class WebApplicationTests {
 
   @Test
   public void contextLoads() {

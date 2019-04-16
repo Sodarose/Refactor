@@ -10,9 +10,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.w8x</groupId>
-  <artifactId>controller</artifactId>
+  <artifactId>web</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>controller</name>
+  <name>web</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
@@ -50,11 +50,6 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
