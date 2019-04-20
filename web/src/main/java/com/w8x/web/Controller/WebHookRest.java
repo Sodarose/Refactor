@@ -15,7 +15,8 @@ public class WebHookRest {
     @PostMapping("/Payload")
     public String webHookSolve(){
         String payload = request.getParameter("Payload");
-
         return "{'code':'1'}";
     }
+
+
 }
