@@ -64,13 +64,7 @@ public class FormatterTest {
    * 有else 去else 抽取函数体 放入父亲
    * */
   private static void sloveHasElse(IfStatement ifs) {
-    Block block = (Block) ifs.getElseStatement();
-    Block block1 = (Block) ifs.getThenStatement();
-    AST ast = block.getAST();
-    ReturnStatement returnStatement = ast.newReturnStatement();
-    returnStatement.setExpression(null);
-    block.statements().add(returnStatement);
-    block.statements().add(block1.statements().get(0));
+    
     System.out.println(ifs.getElseStatement());
   }
 

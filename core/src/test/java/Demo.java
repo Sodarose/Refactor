@@ -264,8 +264,8 @@ public class Demo {
       methodDeclaration.parameters().add(singleVariableDeclaration);
 
       //抛出异常
-      methodDeclaration.thrownExceptions().add(ast.newSimpleName("NullPointerException"));
-      methodDeclaration.thrownExceptions().add(ast.newSimpleName("Exception"));
+      methodDeclaration.thrownExceptionTypes().add(ast.newSimpleName("NullPointerException"));
+      methodDeclaration.thrownExceptionTypes().add(ast.newSimpleName("Exception"));
 
       //创建块{}
       Block isOddBlock = ast.newBlock();
