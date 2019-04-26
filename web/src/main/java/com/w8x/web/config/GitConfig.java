@@ -15,6 +15,6 @@ public class GitConfig {
     private String workspace;
     private String commiter;
     private String mail;
-    private String ssh;
+    private String token;
     private String message;
 }

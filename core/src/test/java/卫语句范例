@@ -1,0 +1,15 @@
+public void cp() {
+    if (isWorlkDay()) {
+      if (isFlush()) {
+        System.out.println("刷卡");
+      } else {
+        System.out.println("迟到了");
+      }
+    } else {
+      if (isHome()) {
+        System.out.println("在家哦");
+      } else {
+        System.out.println("出去玩了");
+      }
+    }
+  }

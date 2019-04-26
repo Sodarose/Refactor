@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.17">
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/Main.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/api/AnalysisApi.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/I18nResources.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/Main.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/fix/FixClassTypeResolver.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/AbstractXpathRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/AbstractAliRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/AbstractPojoRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AbstractAliCommentRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AbstractMethodOrInterfaceMethodMustUseJavadocRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AvoidCommentBehindStatementRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/ClassMustHaveAuthorRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/CommentsMustBeJavadocFormatRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/EnumConstantsMustHaveCommentRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/RemoveCommentedCodeRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidCallStaticSimpleDateFormatRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidConcurrentCompetitionRandomRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidManuallyCreateThreadRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidUseTimerRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/CountDownShouldInFinallyRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadLocalShouldRemoveRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadPoolCreationRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadShouldSetNameRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/constant/UndefineMagicConstantRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/constant/UpperEllRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/AvoidReturnInFinallyRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/MethodReturnWrapperTypeRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/TransactionMustHaveRollbackRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/AvoidComplexConditionRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/AvoidNegationOperatorRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/NeedBraceRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/SwitchStatementRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/AbstractClassShouldStartWithAbstractNamingRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ArrayNamingShouldHaveBracketRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/AvoidStartWithDollarAndUnderLineNamingRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/BooleanPropertyShouldNotStartWithIsRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ClassNamingShouldBeCamelRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ConstantFieldShouldBeUpperCaseRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ExceptionClassShouldEndWithExceptionRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/LowerCamelCaseVariableNamingRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/PackageNamingRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ServiceOrDaoClassShouldEndWithImplRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/TestClassShouldEndWithTestNamingRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/EqualsAvoidNullRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoMustOverrideToStringRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoMustUsePrimitiveFieldRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoNoDefaultValueRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/StringConcatRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/WrapperTypeEqualityRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/orm/IbatisMethodQueryForListRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidApacheBeanUtilsCopyRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidMissUseOfMathRandomRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidNewDateGetTimeRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidPatternCompileInMethodRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/MethodTooLongRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/UseRightCaseForDateFormatRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ClassCastExceptionWithSubListToArrayListRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ClassCastExceptionWithToArrayRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/CollectionInitShouldAssignCapacityRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ConcurrentExceptionWithModifyOriginSubListRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/DontModifyInForeachCircleRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/UnsupportedExceptionWithModifyAsListRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/util/NodeSortUtils.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/util/NodeUtils.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/GeneratedCodeUtils.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/NumberConstants.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/PojoUtils.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/SpiLoader.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/StringAndCharConstants.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/ViolationUtils.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListConfig.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListService.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListServiceImpl.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/com/alibaba/p3c/pmd/lang/vm/rule/other/UseQuietReferenceNotationRule.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/formatter/FormatOptions.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/formatter/Formatter.java">
+</file>
+<file name="/home/kangkang/IdeaProjects/w8x/core/src/main/java/io/FileUlits.java">
+</file>
+</checkstyle>

@@ -1,48 +1,106 @@
-import java.util.ArrayList;
-
-
-
-import java.util.HashMap;
-
-
-import java.util.Map;
-
 public class TestFile {
-  private String name;
-  private String age;
-  private String sex;
-  public static void main(String rags[]){
-    for(int i=0;i<100;i++){
-      System.out.println(i);
-    }int i=100;
-    if(i==0){System.out.println("ssss");
-    }if(i==1){System.out.println("ssss");
+
+  public void cp() {
+    if (isWorlkDay()) {
+      if (isFlush()) {
+        System.out.println("刷卡");
+      } else {
+        if (isNoEach()) {
+          System.out.println("没吃早餐");
+        } else {
+          System.out.println("吃了早餐");
+        }
+      }
+    } else {
+      if (!isHome()) {
+        if (isFlush()) {
+          System.out.println("迟到了");
+          return;
+        }
+        System.out.println("刷卡");
+      }
+      System.out.println("在家哦");
+    }
+  }
 
 
-    }if(i==2){System.out.println("ssss"); }if(i==3){System.out.println("ssss"); }if(i==4){System.out.println("ssss");
+
+  public void rcp() {
+    
+  }
 
 
+  public void k() {
+    int i = 0;
+    if (i == 1) {
+      System.out.println("执行1");
+      if (i == 2) {
+        System.out.println("执行2");
+        if (i == 3) {
+          System.out.println("执行3");
+          if (i == 4) {
+            System.out.println("执行4");
+            if (i == 5) {
+              System.out.println("执行5");
+              if (i == 6) {
+                System.out.println("执行6");
+                if (i == 7) {
 
-
-
-
+                  System.out.println("执行7");
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
-  }private int pre(){ ArrayList<String> list = new ArrayList<String>();
+  }
 
+  public void recfactoring(){
+    int i=0;
+    if(i!=1){
+      return;
+    }
+    System.out.println("执行1");
+    if(i!=2){
+      return;
+    }
+    System.out.println("执行2");
+    if(i!=3){
+      return;
+    }
+    System.out.println("执行3");
+    if(i!=4){
+      return;
+    }
+    System.out.println("执行4");
+    if(i!=5){
+      return;
+    }
+    System.out.println("执行5");
+    if(i!=6){
+      return;
+    }
+    System.out.println("执行6");
+    if(i!=7){
+      return;
+    }
+    System.out.println("执行6");
+  }
 
+  private boolean isHome() {
+    return true;
+  }
 
+  private boolean isWorlkDay() {
+    return true;
+  }
 
-
-
-
-
-
-
-
-
-
-    Map<String,Object> map = new HashMap<String, Object>();
-    return 0;
+  private boolean isFlush() {
+    return true;
+  }
+  private boolean isNoEach() {
+    return false;
   }
 }
