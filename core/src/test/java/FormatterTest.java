@@ -1,77 +1,157 @@
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.JavaParserBuild;
+import com.github.javaparser.StaticJavaParser;
+import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.comments.Comment;
+import com.github.javaparser.ast.expr.Name;
+import com.github.javaparser.ast.modules.ModuleDeclaration;
+import com.github.javaparser.ast.stmt.BlockStmt;
+import com.github.javaparser.ast.stmt.DoStmt;
+import com.github.javaparser.ast.stmt.IfStmt;
+import com.github.javaparser.ast.stmt.ReturnStmt;
+import com.github.javaparser.ast.stmt.Statement;
+import com.github.javaparser.ast.stmt.SwitchStmt;
+import com.github.javaparser.ast.visitor.VoidVisitor;
+import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import io.FileUlits;
+import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.List;
-import org.eclipse.jdt.core.dom.AST;
-import org.eclipse.jdt.core.dom.ASTParser;
-import org.eclipse.jdt.core.dom.Block;
-import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.Expression;
-import org.eclipse.jdt.core.dom.IfStatement;
-import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jdt.core.dom.PrimitiveType;
-import org.eclipse.jdt.core.dom.ReturnStatement;
-import org.eclipse.jdt.core.dom.Statement;
+import java.util.Optional;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import refactor.BaseVisitor;
-import sun.security.krb5.internal.ASRep;
+import refactor.BaseVisitorByJP;
+
 
 public class FormatterTest {
 
   public static void main(String args[]) {
     String source = FileUlits.readFile("/home/kangkang/IdeaProjects/w8x/core/src"
         + "/test/java/TestFile.java");
-    ASTParser astParser = ASTParser.newParser(AST.JLS11);
-    astParser.setResolveBindings(true);
-    astParser.setSource(source.toCharArray());
-    CompilationUnit unit = (CompilationUnit) astParser.createAST(null);
-    MethodDeclaration mothod = null;
-    BaseVisitor<MethodDeclaration> visitor = new BaseVisitor<MethodDeclaration>() {
+    CompilationUnit unit = StaticJavaParser.parse(source);
+    BaseVisitorByJP<MethodDeclaration> visitorByJP = new BaseVisitorByJP<MethodDeclaration>() {
       @Override
-      public boolean visit(MethodDeclaration node) {
-        if (node.getName().getIdentifier().equals("cp")) {
-          getList().add(node);
+      public void visit(MethodDeclaration n, Object arg) {
+        if (n.getName().getIdentifier().equals("cp")) {
+          getList().add(n);
         }
-        return true;
       }
     };
-    unit.accept(visitor);
-    if (visitor.getList().size() == 0) {
+    unit.accept(visitorByJP, null);
+    MethodDeclaration method = visitorByJP.getList().get(0);
+    BaseVisitorByJP<IfStmt> visitorByJP1 = new BaseVisitorByJP<IfStmt>() {
+      @Override
+      public void visit(IfStmt n, Object arg) {
+        getList().add(n);
+        super.visit(n, null);
+      }
+    };
+    method.accept(visitorByJP1, null);
+    Iterator<IfStmt> it = visitorByJP1.getList().iterator();
+    while (it.hasNext()) {
+      sloveHasElse(it.next());
+      it.remove();
+    }
+    /*改造retrun*/
+    modifyReturn(method);
+    System.out.println(method);
+  }
+
+  private static void modifyReturn(MethodDeclaration method){
+    if(method.getType().isVoidType()){
+      Iterator<Statement> it =  method.getBody().get().getStatements().iterator();
+      ReturnStmt returnStmt = null;
+      while(it.hasNext()){
+        Statement statement = it.next();
+        if(statement.isReturnStmt()){
+          returnStmt = statement.asReturnStmt();
+          break;
+        }
+      }
+      method.getBody().get().remove(returnStmt);
       return;
     }
-    mothod = visitor.getList().get(0);
-    System.out.println();
-    BaseVisitor<IfStatement> conVisitor = new BaseVisitor<IfStatement>() {
-      @Override
-      public boolean visit(IfStatement node) {
-        getList().add(node);
-        return false;
-      }
-    };
-    mothod.accept(conVisitor);
-    Iterator<IfStatement> it = conVisitor.getList().iterator();
-    while (it.hasNext()) {
-      IfStatement ifs = it.next();
-      it.remove();
-      if (ifs.getElseStatement() != null) {
-          sloveHasElse(ifs);
-          continue;
-      }
-      sloveNotElse(ifs);
-    }
-    System.out.println("--------------------------------------------");
-    //System.out.println(mothod);
+
+  }
+
+  private static void mergeIf(MethodDeclaration method){
+
   }
   /**
    * 有else 去else 抽取函数体 放入父亲
-   * */
-  private static void sloveHasElse(IfStatement ifs) {
-    
-    System.out.println(ifs.getElseStatement());
+   */
+  private static void sloveHasElse(IfStmt ifs) {
+    //得到父亲的返回值,如果父亲没有返回在则返回空返回值
+    ReturnStmt returnStmt = getParentReturn(ifs);
+    /** 处理if语句*/
+    sloveThem(ifs, returnStmt);
+    /*删除父亲的返回语句*/
+    deleteReturnStmt(ifs, returnStmt);
+    /*处理else 语句*/
+    if (ifs.hasElseBlock()) {
+      sloveElse(ifs, returnStmt);
+    }
   }
+
+  private static ReturnStmt getParentReturn(IfStmt ifs) {
+    BlockStmt blockStmt = (BlockStmt) ifs.getParentNode().get();
+    ReturnStmt returnStmt = null;
+    Iterator<Statement> it = blockStmt.getStatements().iterator();
+    while (it.hasNext()) {
+      Statement statement = it.next();
+      if(statement.isReturnStmt()){
+        returnStmt = statement.asReturnStmt();
+        break;
+      }
+    }
+    if (returnStmt == null) {
+      returnStmt = new ReturnStmt();
+    }
+    return returnStmt;
+  }
+
+
+  private static void sloveThem(IfStmt ifs, ReturnStmt returnStmt) {
+    BlockStmt blockStmt = ifs.getThenStmt().asBlockStmt();
+    if (check(blockStmt)) {
+      blockStmt.getStatements().add(returnStmt);
+    }
+  }
+
+  private static void sloveElse(IfStmt ifs, ReturnStmt returnStmt) {
+    BlockStmt blockStmt = (BlockStmt) ifs.getElseStmt().get();
+    if (check(blockStmt)) {
+      blockStmt.getStatements().add(returnStmt);
+    }
+    BlockStmt parent = (BlockStmt) ifs.getParentNode().get();
+    parent.getStatements().addAll(blockStmt.getStatements());
+    ifs.removeElseStmt();
+  }
+
+  private static boolean check(BlockStmt blockStmt) {
+    Iterator<Statement> it = blockStmt.getStatements().iterator();
+    Boolean has = true;
+    while (it.hasNext()) {
+      if(it.next().isReturnStmt()){
+        has = false;
+        return has;
+      }
+    }
+    return has;
+  }
+
+  private static void deleteReturnStmt(IfStmt ifs, ReturnStmt returnStmt) {
+    ifs.getParentNode().get().remove(returnStmt);
+  }
+
 
   /**
    * 没有else 取反
-   * */
-  private static void sloveNotElse(IfStatement ifs) {
+   */
+  private static void sloveNotElse(IfStmt ifs) {
 
   }
+
 }

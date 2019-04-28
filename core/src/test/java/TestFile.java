@@ -1,5 +1,88 @@
 public class TestFile {
 
+
+  double getPayAmount() {
+    double result;
+    if (IsDead()) {
+      result = DeadAmount();
+    }
+    if (IsSeparated()) {
+      result = SeparatedAmount();
+    } else {
+      if (IsRetired()) {
+        result = RetiredPayAmount();
+      } else {
+        result = NormalPayAmount();
+      }
+    }
+    return result;
+  }
+
+
+  double regetPayAmount() {
+    double result;
+    if (IsDead()) {
+      result = DeadAmount();
+      return result;
+    }
+    if (IsSeparated()) {
+      result = SeparatedAmount();
+      return result;
+    }
+    if (IsRetired()) {
+      result = RetiredPayAmount();
+      return result;
+    }
+    result = NormalPayAmount();
+    return result;
+  }
+
+
+  private boolean t() {
+    if (isNoEach()) {
+      if (isHome()) {
+
+      } else {
+        return false;
+      }
+    } else {
+      if (isHome()) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    /**
+     * */
+    return true;
+  }
+
+
+  private static boolean checkQQ(String qq) {
+    int len = qq.length();
+
+    if (len >= 5 && len <= 15) {
+      if (!qq.startsWith("0")) {
+        try {
+          long num = Long.parseLong(qq);
+        } catch (NumberFormatException e) {
+          System.out.println(qq + "号含有字母");
+          return false;
+        }
+
+      } else {
+        System.out.println(qq + "号以0开头了");
+        return false;
+      }
+
+    } else {
+      System.out.println(qq + "号的长度不合法");
+      return false;
+    }
+    return true;
+  }
+
+
   public void cp() {
     if (isWorlkDay()) {
       if (isFlush()) {
@@ -32,6 +115,12 @@ public class TestFile {
     }
   }
 
+  public static void main(String args[]){
+    TestFile testFile = new TestFile();
+    testFile.cp();
+    testFile.rcp();
+  }
+
   public void rcp() {
     if (isWorlkDay()) {
       if (isFlush()) {
@@ -49,7 +138,6 @@ public class TestFile {
       System.out.println("其他原因");
       return;
     }
-
     if (isHome()) {
       System.out.println("在家");
       return;
@@ -63,7 +151,6 @@ public class TestFile {
       return;
     }
     System.out.println("等着饿死");
-    return;
   }
 
 
@@ -130,7 +217,7 @@ public class TestFile {
   }
 
   private boolean isWorlkDay() {
-    return true;
+    return false;
   }
 
   private boolean isFlush() {
@@ -150,6 +237,34 @@ public class TestFile {
   }
 
   private boolean isLate() {
+    return true;
+  }
+
+  private double NormalPayAmount() {
+    return 0;
+  }
+
+  private double RetiredPayAmount() {
+    return 0;
+  }
+
+  private boolean IsRetired() {
+    return false;
+  }
+
+  private double SeparatedAmount() {
+    return 0;
+  }
+
+  private boolean IsSeparated() {
+    return false;
+  }
+
+  private double DeadAmount() {
+    return 0;
+  }
+
+  private boolean IsDead() {
     return true;
   }
 }
