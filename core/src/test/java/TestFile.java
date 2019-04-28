@@ -8,7 +8,8 @@ public class TestFile {
     }
     if (IsSeparated()) {
       result = SeparatedAmount();
-    } else {
+    }
+    else {
       if (IsRetired()) {
         result = RetiredPayAmount();
       } else {

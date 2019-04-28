@@ -21,6 +21,7 @@ public class T1 {
       System.out.println("其他原因");
       return;
     }
+
     if (isHome()) {
       System.out.println("在家");
       return;
@@ -70,30 +71,30 @@ public class T1 {
   }
 
   private static boolean isCooking() {
-    return false;
+    return true;
   }
 
   private static boolean isNoEach() {
-    return false;
+    return true;
   }
 
   private static boolean isHome() {
-    return false;
+    return true;
   }
 
   private static boolean isDone() {
-    return false;
+    return true;
   }
 
   private static boolean isLate() {
-    return false;
+    return true;
   }
 
   private static boolean isFlush() {
-    return false;
+    return true;
   }
 
   private static boolean isWorlkDay() {
-    return false;
+    return true;
   }
 }
