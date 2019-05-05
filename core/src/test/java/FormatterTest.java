@@ -1,40 +1,25 @@
-import com.github.javaparser.JavaParser;
-import com.github.javaparser.JavaParserBuild;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.MethodDeclaration;
-import com.github.javaparser.ast.comments.Comment;
-import com.github.javaparser.ast.expr.Name;
-import com.github.javaparser.ast.modules.ModuleDeclaration;
 import com.github.javaparser.ast.stmt.BlockStmt;
-import com.github.javaparser.ast.stmt.DoStmt;
 import com.github.javaparser.ast.stmt.IfStmt;
 import com.github.javaparser.ast.stmt.ReturnStmt;
 import com.github.javaparser.ast.stmt.Statement;
-import com.github.javaparser.ast.stmt.SwitchStmt;
-import com.github.javaparser.ast.visitor.VoidVisitor;
-import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import io.FileUlits;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-import refactor.BaseVisitor;
+
 import refactor.BaseVisitorByJP;
 
 
 public class FormatterTest {
 
-  public static List<Map<Node,ReturnStmt>> deleteList = new ArrayList<>();
 
   public static void main(String args[]) {
-    String source = FileUlits.readFile("/home/kangkang/IdeaProjects/w8x/core/src"
-        + "/test/java/TestFile.java");
+    String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\TestFile.java");
     CompilationUnit unit = StaticJavaParser.parse(source);
     BaseVisitorByJP<MethodDeclaration> visitorByJP = new BaseVisitorByJP<MethodDeclaration>() {
       @Override
@@ -59,8 +44,8 @@ public class FormatterTest {
       sloveHasElse(it.next());
       it.remove();
     }
-    deleteReturnStmt(deleteRMap);
-    deleteRMap.clear();
+
+
     /*改造retrun*/
     modifyReturn(method);
     System.out.println(method);
@@ -99,6 +84,7 @@ public class FormatterTest {
       sloveElse(ifs, returnStmt);
     }
     /*删除父亲的返回语句*/
+
     collectReturnStmt(ifs,returnStmt);
   }
 
@@ -150,19 +136,11 @@ public class FormatterTest {
   }
 
   private static void collectReturnStmt(IfStmt ifs, ReturnStmt returnStmt) {
-    Map<Node,ReturnStmt> map = new HashMap<>();
-    map.put(ifs.getParentNode().get(),returnStmt);
-    deleteList.add(map);
+
   }
 
   private static void deleteReturnStmt(List<Map<Node,ReturnStmt>> deleteList){
-    Iterator<Map<Node,ReturnStmt>> it = deleteList.iterator();
-    Map<Node,ReturnStmt> map = null;
-    Node node = null;
-    ReturnStmt returnStmt = null;
-    while(it.hasNext()){
-      map = it.next();
-    }
+
   }
 
   /**

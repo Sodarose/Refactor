@@ -1,15 +1,150 @@
-public void cp() {
-    if (isWorlkDay()) {
-      if (isFlush()) {
-        System.out.println("刷卡");
-      } else {
-        System.out.println("迟到了");
-      }
-    } else {
-      if (isHome()) {
-        System.out.println("在家哦");
-      } else {
-        System.out.println("出去玩了");
-      }
+public class K{
+public Result<PageVO> queryBindRules(PageForm<PdRuleProductForm> form) {
+        LOGGER.info("产品管理 组件配置 - queryBindRules 参数:{}",JSON.toJSON(form));
+        ValidateUtils.notNull(form, HeilCode.E_400, "productId不能为空");
+        ValidateUtils.notNull(form.getForm().getProductId(),HeilCode.E_400,"productId不能为空");
+        ValidateUtils.notNull(form.getForm().getClassify(),HeilCode.E_400,"classify不能为空");
+        BuzTypeEnum buzTypeEnum = BuzTypeEnum.getByIndex(form.getForm().getClassify());
+        ValidateUtils.notNull(buzTypeEnum,HeilCode.E_400,"不支持当前业务类型");
+        //1、这里通过引入开关控制调用新重构代码
+        boolean switchEnable = configParamsFacade.getValueByParamKey("feeRuleProductLinkEnable",Boolean.class);
+        if(switchEnable){
+            QueryLinkContext context = QueryLinkContext.builder()
+                    .yanbaoRuleFacade(yanbaoRuleFacade).commonComponent(commonComponent)
+                    .pdRuleProductService(pdRuleProductService).serFinRuleFacade(serFinRuleFacade)
+                    .form(form).build();
+            QueryLinkHandlerFactory.create(buzTypeEnum).execute(context);
+            return Result.suc(PageVO.newInstance(form.getDraw(),context.getCount(),context.getVoList()));
+        }
+        // 2、下面是最原始的业务代码
+        switch (buzTypeEnum) {
+            case SER_FIN_RULE:
+                List<SerFinRule> serFinRules = pdRuleProductService.querySerFinRules(form);
+                if (CollectionsTools.isEmpty(serFinRules)) {
+                    return Result.failInEmptyRecord(null);
+                }
+                List<SerFinRuleVo> serFinRuleVos = new SerFinRuleVoConvertor().convertList(serFinRules);
+                serFinRuleFacade.formatSerFinRule(serFinRules, serFinRuleVos);
+                int serFinRulesCount = pdRuleProductService.querySerFinRulesCount(form);
+                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.SER_FIN_RULE.getIndex(),serFinRuleVos),
+                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
+                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(serFinRuleVos));
+                return Result.suc(new PageVO<>(form.getDraw(),serFinRulesCount,serFinRuleVos));
+
+            case RATE_RULE:
+                List<RateRule> rateRules = pdRuleProductService.queryRateRules(form);
+                List<RateRuleVo> rateRuleVos = new RateRuleVoConvertor().convertList(rateRules);
+
+                int count = pdRuleProductService.queryRateRulesCount(form);
+                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.RATE_RULE.getIndex(),rateRuleVos),
+                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
+                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(rateRuleVos));
+                return Result.suc(new PageVO<>(form.getDraw(),count,rateRuleVos));
+            case GPS_RULE:
+                List<GpsRule> gpsRules = pdRuleProductService.queryGpsRules(form);
+                List<GpsRuleVo> gpsRuleVos = new GpsRuleVoConvertor().convertList(gpsRules);
+                gpsRuleFacade.formatGpsRuleVo(gpsRuleVos);
+                int gpsCount = pdRuleProductService.queryGpsRulesCount(form);
+                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.GPS_RULE.getIndex(),gpsRuleVos),
+                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
+                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(gpsRuleVos));
+                return Result.suc(new PageVO<>(form.getDraw(), gpsCount, gpsRuleVos));
+            case INSURANSE_SECOND_YEAR:
+                form.getForm().setYanBaoClassify(2);
+                List<YanbaoRule> yanbaoRules = pdRuleProductService.queryYanbaoRules(form);
+                List<YanbaoRuleVo> yanbaoRuleVos = new YanbaoRuleVoConvertor().convertList(yanbaoRules);
+                int yanbaoCount = pdRuleProductService.queryYanbaoRulesCount(form);
+                yanbaoRuleFacade.formatYanbaoRules(yanbaoRules,yanbaoRuleVos);
+                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_SECOND_YEAR.getIndex(),yanbaoRuleVos),
+                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
+                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos));
+                return Result.suc(new PageVO<>(form.getDraw(), yanbaoCount, yanbaoRuleVos));
+            case INSURANSE_THIRD_YEAR:
+                form.getForm().setYanBaoClassify(3);
+                List<YanbaoRule> yanbaoRules3 = pdRuleProductService.queryYanbaoRules(form);
+                List<YanbaoRuleVo> yanbaoRuleVos3 = new YanbaoRuleVoConvertor().convertList(yanbaoRules3);
+                int yanbaoRuleCount = pdRuleProductService.queryYanbaoRulesCount(form);
+                yanbaoRuleFacade.formatYanbaoRules(yanbaoRules3, yanbaoRuleVos3);
+                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_THIRD_YEAR.getIndex(),yanbaoRuleVos3),
+                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
+                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos3));
+                return Result.suc(new PageVO<>(form.getDraw(), yanbaoRuleCount, yanbaoRuleVos3));
+            case ACCOUNT_RULE:
+                List<AccountRule> accountRules = pdRuleProductService.queryAccountRules(form);
+                List<AccountRuleVo> accountRuleVos = new AccountRuleVoConvertor().convertList(accountRules);
+                int accountCount = pdRuleProductService.queryGpsRulesCount(form);
+                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.ACCOUNT_RULE.getIndex(),accountRuleVos),
+                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
+                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(accountRuleVos));
+                return Result.suc(new PageVO<>(form.getDraw(), accountCount, accountRuleVos));
+        }
+        return Result.suc(new PageVO<>(form.getDraw(), 0, null));
     }
-  }
+
+    public Result<PageVO> queryBindRule(PageForm<PdRuleProductForm> form) {
+        LOGGER.info("产品管理 组件配置 - queryBindRules 参数:{}", JSON.toJSON(form));
+        ValidateUtils.notNull(form, HeilCode.E_400, "productId不能为空");
+        ValidateUtils.notNull(form.getForm().getProductId(), HeilCode.E_400, "productId不能为空");
+        ValidateUtils.notNull(form.getForm().getClassify(), HeilCode.E_400, "classify不能为空");
+        BuzTypeEnum buzTypeEnum = BuzTypeEnum.getByIndex(form.getForm().getClassify());
+        ValidateUtils.notNull(buzTypeEnum, HeilCode.E_400, "不支持当前业务类型");
+        // 1、这里通过引入开关控制调用新重构代码
+        boolean switchEnable = configParamsFacade.getValueByParamKey("feeRuleProductLinkEnable", Boolean.class);
+
+        if (buzTypeEnum == SER_FIN_RULE) {
+            List<SerFinRule> serFinRules = pdRuleProductService.querySerFinRules(form);
+            if (CollectionsTools.isEmpty(serFinRules)) {
+                return Result.failInEmptyRecord(null);
+            }
+            List<SerFinRuleVo> serFinRuleVos = new SerFinRuleVoConvertor().convertList(serFinRules);
+            serFinRuleFacade.formatSerFinRule(serFinRules, serFinRuleVos);
+            int serFinRulesCount = pdRuleProductService.querySerFinRulesCount(form);
+            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.SER_FIN_RULE.getIndex(), serFinRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
+            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(serFinRuleVos));
+            return Result.suc(new PageVO<>(form.getDraw(), serFinRulesCount, serFinRuleVos));
+        } else if (buzTypeEnum == RATE_RULE) {
+            List<RateRule> rateRules = pdRuleProductService.queryRateRules(form);
+            List<RateRuleVo> rateRuleVos = new RateRuleVoConvertor().convertList(rateRules);
+            int count = pdRuleProductService.queryRateRulesCount(form);
+            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.RATE_RULE.getIndex(), rateRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
+            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(rateRuleVos));
+            return Result.suc(new PageVO<>(form.getDraw(), count, rateRuleVos));
+        } else if (buzTypeEnum == GPS_RULE) {
+            List<GpsRule> gpsRules = pdRuleProductService.queryGpsRules(form);
+            List<GpsRuleVo> gpsRuleVos = new GpsRuleVoConvertor().convertList(gpsRules);
+            gpsRuleFacade.formatGpsRuleVo(gpsRuleVos);
+            int gpsCount = pdRuleProductService.queryGpsRulesCount(form);
+            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.GPS_RULE.getIndex(), gpsRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
+            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(gpsRuleVos));
+            return Result.suc(new PageVO<>(form.getDraw(), gpsCount, gpsRuleVos));
+        } else if (buzTypeEnum == INSURANSE_SECOND_YEAR) {
+            form.getForm().setYanBaoClassify(2);
+            List<YanbaoRule> yanbaoRules = pdRuleProductService.queryYanbaoRules(form);
+            List<YanbaoRuleVo> yanbaoRuleVos = new YanbaoRuleVoConvertor().convertList(yanbaoRules);
+            int yanbaoCount = pdRuleProductService.queryYanbaoRulesCount(form);
+            yanbaoRuleFacade.formatYanbaoRules(yanbaoRules, yanbaoRuleVos);
+            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_SECOND_YEAR.getIndex(), yanbaoRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
+            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos));
+            return Result.suc(new PageVO<>(form.getDraw(), yanbaoCount, yanbaoRuleVos));
+        } else if (buzTypeEnum == INSURANSE_THIRD_YEAR) {
+            form.getForm().setYanBaoClassify(3);
+            List<YanbaoRule> yanbaoRules3 = pdRuleProductService.queryYanbaoRules(form);
+            List<YanbaoRuleVo> yanbaoRuleVos3 = new YanbaoRuleVoConvertor().convertList(yanbaoRules3);
+            int yanbaoRuleCount = pdRuleProductService.queryYanbaoRulesCount(form);
+            yanbaoRuleFacade.formatYanbaoRules(yanbaoRules3, yanbaoRuleVos3);
+            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_THIRD_YEAR.getIndex(), yanbaoRuleVos3), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
+            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos3));
+            return Result.suc(new PageVO<>(form.getDraw(), yanbaoRuleCount, yanbaoRuleVos3));
+        } else if (buzTypeEnum == ACCOUNT_RULE) {
+            List<AccountRule> accountRules = pdRuleProductService.queryAccountRules(form);
+            List<AccountRuleVo> accountRuleVos = new AccountRuleVoConvertor().convertList(accountRules);
+            int accountCount = pdRuleProductService.queryGpsRulesCount(form);
+            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.ACCOUNT_RULE.getIndex(), accountRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
+            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(accountRuleVos));
+            return Result.suc(new PageVO<>(form.getDraw(), accountCount, accountRuleVos));
+        }
+        return Result.suc(new PageVO<>(form.getDraw(), 0, null));
+    }
+
+}
+

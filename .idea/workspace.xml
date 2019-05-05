@@ -2,10 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b05174d-fdec-48de-8ae2-78c692b8b11a" name="默认" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_core_3_13_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/impl/IfRefactoring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/ForTransFromWhile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/IFRe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/IFRe2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/IfRefactoring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/I18nResources.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/fix/FixClassTypeResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/AbstractXpathRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/AbstractAliRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/AbstractPojoRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AbstractAliCommentRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AbstractMethodOrInterfaceMethodMustUseJavadocRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AvoidCommentBehindStatementRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/ClassMustHaveAuthorRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/CommentsMustBeJavadocFormatRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/EnumConstantsMustHaveCommentRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/RemoveCommentedCodeRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidCallStaticSimpleDateFormatRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidConcurrentCompetitionRandomRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidManuallyCreateThreadRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidUseTimerRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/CountDownShouldInFinallyRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadLocalShouldRemoveRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadPoolCreationRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadShouldSetNameRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/constant/UndefineMagicConstantRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/constant/UpperEllRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/AvoidReturnInFinallyRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/MethodReturnWrapperTypeRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/TransactionMustHaveRollbackRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/AvoidComplexConditionRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/AvoidNegationOperatorRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/NeedBraceRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/SwitchStatementRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/AbstractClassShouldStartWithAbstractNamingRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ArrayNamingShouldHaveBracketRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/AvoidStartWithDollarAndUnderLineNamingRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/BooleanPropertyShouldNotStartWithIsRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ClassNamingShouldBeCamelRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ConstantFieldShouldBeUpperCaseRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ExceptionClassShouldEndWithExceptionRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/LowerCamelCaseVariableNamingRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/PackageNamingRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ServiceOrDaoClassShouldEndWithImplRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/TestClassShouldEndWithTestNamingRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/EqualsAvoidNullRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoMustOverrideToStringRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoMustUsePrimitiveFieldRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoNoDefaultValueRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/StringConcatRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/WrapperTypeEqualityRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/orm/IbatisMethodQueryForListRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidApacheBeanUtilsCopyRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidMissUseOfMathRandomRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidNewDateGetTimeRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidPatternCompileInMethodRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/MethodTooLongRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/UseRightCaseForDateFormatRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ClassCastExceptionWithSubListToArrayListRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ClassCastExceptionWithToArrayRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/CollectionInitShouldAssignCapacityRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ConcurrentExceptionWithModifyOriginSubListRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/DontModifyInForeachCircleRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/UnsupportedExceptionWithModifyAsListRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/util/NodeSortUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/util/NodeUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/GeneratedCodeUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/NumberConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/PojoUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/SpiLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/StringAndCharConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/ViolationUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/vm/rule/other/UseQuietReferenceNotationRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/impl/RenameRefacorImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/T1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/T1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/test/java/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/TestFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/卫语句范例" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/卫语句范例" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/web/target/" />
     <ignored path="$PROJECT_DIR$/common/target/" />
@@ -35,44 +120,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/FormatterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="163" column="22" selection-start-line="163" selection-start-column="22" selection-end-line="163" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/T1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
-              <caret line="94" column="3" selection-start-line="94" selection-start-column="3" selection-end-line="94" selection-end-column="3" />
-              <folding>
-                <element signature="e#1431#1432#0" expanded="true" />
-                <element signature="e#1452#1453#0" expanded="true" />
-                <element signature="e#1491#1492#0" expanded="true" />
-                <element signature="e#1512#1513#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,16 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/other/AvoidPatternCompileInMethodRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/other/MethodTooLongRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/other/UseRightCaseForDateFormatRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/set/ClassCastExceptionWithSubListToArrayListRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/set/ClassCastExceptionWithToArrayRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/set/CollectionInitShouldAssignCapacityRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/set/ConcurrentExceptionWithModifyOriginSubListRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/set/DontModifyInForeachCircleRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/set/UnsupportedExceptionWithModifyAsListRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/AbstractAliRule.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/AbstractPojoRule.java" />
         <option value="$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-comment.xml" />
         <option value="$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-concurrent.xml" />
@@ -145,7 +183,6 @@
         <option value="$PROJECT_DIR$/core/src/main/java/api/RefactorApi.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/io/FileUlits.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/RefacorHelper.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/卫语句范例" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitor.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/demo.java" />
@@ -153,8 +190,19 @@
         <option value="$PROJECT_DIR$/core/pom.xml" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitorByJP.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/T1.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/TestFile.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/IFRe.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/impl/IfRefactoring.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/OperatorTool.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/IFRe2.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ForTransFromWhile.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/TestFile.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/IfRefactoring.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/卫语句范例" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" />
       </list>
     </option>
   </component>
@@ -172,10 +220,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="134" />
-    <option name="y" value="135" />
-    <option name="width" value="1767" />
-    <option name="height" value="789" />
+    <option name="x" value="-81" />
+    <option name="y" value="76" />
+    <option name="width" value="1777" />
+    <option name="height" value="1004" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -184,68 +232,52 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="refactor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="w8x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,6 +289,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -288,14 +321,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FormatterTest">
-    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Demo" />
-      <module name="core" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.IFRe">
     <configuration name="FormatterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FormatterTest" />
       <module name="core" />
@@ -303,32 +329,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="T1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="T1" />
+    <configuration name="IFRe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IFRe" />
       <module name="core" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestFile" />
+    <configuration name="IFRe2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IFRe2" />
       <module name="core" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.w8x.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.w8x.web" />
-      <option name="MAIN_CLASS_NAME" value="com.w8x.web.WebApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="IFReSwitch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IFReSwitch" />
+      <module name="core" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwitchSample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SwitchSample" />
+      <module name="core" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -342,11 +366,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IFRe" />
+        <item itemvalue="Application.IFReSwitch" />
+        <item itemvalue="Application.SwitchSample" />
+        <item itemvalue="Application.IFRe2" />
         <item itemvalue="Application.FormatterTest" />
-        <item itemvalue="Application.T1" />
-        <item itemvalue="Application.TestFile" />
-        <item itemvalue="Application.Demo" />
-        <item itemvalue="JUnit.WebApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -378,6 +402,20 @@
       <workItem from="1556353152948" duration="13708000" />
       <workItem from="1556449286502" duration="4041000" />
       <workItem from="1556459274432" duration="2571000" />
+      <workItem from="1556523016487" duration="6853000" />
+      <workItem from="1556536147589" duration="71000" />
+      <workItem from="1556553495558" duration="636000" />
+      <workItem from="1556584888708" duration="20000" />
+      <workItem from="1556588108680" duration="1653000" />
+      <workItem from="1556670336405" duration="11456000" />
+      <workItem from="1556693539756" duration="10168000" />
+      <workItem from="1556761270945" duration="16622000" />
+      <workItem from="1556847939818" duration="302000" />
+      <workItem from="1556863196345" duration="1215000" />
+      <workItem from="1556869824191" duration="654000" />
+      <workItem from="1556945405242" duration="17231000" />
+      <workItem from="1556973311040" duration="1162000" />
+      <workItem from="1557021464890" duration="3387000" />
     </task>
     <servers />
   </component>
@@ -408,13 +446,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94093000" />
+    <option name="totallyTimeSpent" value="165677000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.23157895" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2027897" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.29317698" />
       <window_info id="设计器" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -425,22 +462,22 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6027701" visible="true" weight="0.29405406" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6027701" visible="true" weight="0.2280514" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26659527" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.032432433" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3972299" side_tool="true" weight="0.96756756" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.55686694" weight="0.20449679" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.44313306" side_tool="true" weight="0.20449679" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.26702702" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.26659527" />
       <window_info anchor="bottom" id="Spring" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="bottom" id="Flutter Performance" order="15" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.2498615" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24946351" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -462,125 +499,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jgit/org.eclipse.jgit/5.3.0.201903130848-r/org.eclipse.jgit-5.3.0.201903130848-r-sources.jar!/org/eclipse/jgit/transport/SshConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2540">
-          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/AutoCloseable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jgit/org.eclipse.jgit/5.3.0.201903130848-r/org.eclipse.jgit-5.3.0.201903130848-r-sources.jar!/org/eclipse/jgit/transport/Transport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="99" column="45" lean-forward="true" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jgit/org.eclipse.jgit/5.3.0.201903130848-r/org.eclipse.jgit-5.3.0.201903130848-r-sources.jar!/org/eclipse/jgit/transport/TcpTransport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jgit/org.eclipse.jgit/5.3.0.201903130848-r/org.eclipse.jgit-5.3.0.201903130848-r-sources.jar!/org/eclipse/jgit/transport/SshTransport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-dev.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/api/GithubDataGrabber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/test/java/com/w8x/web/WebApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/Koro.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/fix/FixClassTypeResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/Refacoring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Issue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/impl/RenameRefacorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/Commits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/CommitMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/api/GitHubDataByAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -642,27 +560,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/FileUlits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/卫语句范例">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/ASTVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/ASTVisitor.java" />
     <entry file="file://$PROJECT_DIR$/web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -670,27 +568,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/InfixExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/ConditionalExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/InfixExpression.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/ConditionalExpression.java" />
     <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/RefacorHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -701,86 +580,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/ASTNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2161">
-          <caret line="2283" column="13" selection-start-line="2283" selection-start-column="13" selection-end-line="2283" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/IfStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="309" column="18" selection-start-line="309" selection-start-column="18" selection-end-line="309" selection-end-column="18" />
-          <folding>
-            <element signature="e#8516#8517#0" expanded="true" />
-            <element signature="e#8556#8557#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/visitor/VoidVisitor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/comments/Comment.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/CompilationUnit.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/visitor/VoidVisitorAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="623" column="7" lean-forward="true" selection-start-line="623" selection-start-column="7" selection-end-line="623" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/stmt/Statement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1452">
-          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/Statement.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/ASTNode.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.17.0/org.eclipse.jdt.core-3.17.0-sources.jar!/org/eclipse/jdt/core/dom/IfStatement.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/visitor/VoidVisitor.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/comments/Comment.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/CompilationUnit.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/visitor/VoidVisitorAdapter.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/stmt/Statement.class" />
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitor.java" />
     <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitorByJP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -801,34 +609,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/stmt/IfStmt.class" />
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/Optional.class" />
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/FileUlits.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19976">
-          <caret line="966" selection-start-line="966" selection-end-line="966" />
+        <state relative-caret-position="209">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/stmt/IfStmt.class">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
+        <state relative-caret-position="513">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/expr/BinaryExpr.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="155" column="8" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/impl/IfRefactoring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/expr/BinaryExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/expr/UnaryExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
           <folding>
-            <element signature="e#3998#3999#0" expanded="true" />
-            <element signature="e#4049#4050#0" expanded="true" />
+            <element signature="e#4276#4277#0" expanded="true" />
+            <element signature="e#4307#4308#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="-351">
+          <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3560#3561#0" expanded="true" />
+            <element signature="e#3584#3585#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/stmt/SwitchEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+          <folding>
+            <element signature="e#3356#3357#0" expanded="true" />
+            <element signature="e#3450#3451#0" expanded="true" />
+            <element signature="e#7109#7110#0" expanded="true" />
+            <element signature="e#7136#7137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/FormatterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1730">
+          <caret line="94" column="26" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/java/T1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
+        <state relative-caret-position="515">
           <caret line="94" column="3" selection-start-line="94" selection-start-column="3" selection-end-line="94" selection-end-column="3" />
           <folding>
             <element signature="e#1431#1432#0" expanded="true" />
@@ -839,17 +730,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/Optional.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/NodeList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+        <state relative-caret-position="162">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/FormatterTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/stmt/SwitchStmt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="163" column="22" selection-start-line="163" selection-start-column="22" selection-end-line="163" selection-end-column="22" />
+        <state relative-caret-position="189">
+          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+          <folding>
+            <element signature="e#4232#4233#0" expanded="true" />
+            <element signature="e#4262#4263#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4494#4495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IfRefactoring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/卫语句范例">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="96" column="36" lean-forward="true" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/ForTransFromWhile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-comment.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/SwitchSample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-513">
+          <caret line="188" column="13" lean-forward="true" selection-start-line="188" selection-start-column="13" selection-end-line="188" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="21" column="68" lean-forward="true" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFReSwitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="80" column="27" lean-forward="true" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
