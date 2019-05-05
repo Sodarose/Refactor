@@ -2,95 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b05174d-fdec-48de-8ae2-78c692b8b11a" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_core_3_13_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/impl/IfRefactoring.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/ForTransFromWhile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/IFRe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/IFRe2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/IfRefactoring.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/JavaParser/ProjectRootT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/I18nResources.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/fix/FixClassTypeResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/AbstractXpathRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/AbstractAliRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/AbstractPojoRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AbstractAliCommentRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AbstractMethodOrInterfaceMethodMustUseJavadocRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/AvoidCommentBehindStatementRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/ClassMustHaveAuthorRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/CommentsMustBeJavadocFormatRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/EnumConstantsMustHaveCommentRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/comment/RemoveCommentedCodeRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidCallStaticSimpleDateFormatRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidConcurrentCompetitionRandomRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidManuallyCreateThreadRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/AvoidUseTimerRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/CountDownShouldInFinallyRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadLocalShouldRemoveRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadPoolCreationRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/concurrent/ThreadShouldSetNameRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/constant/UndefineMagicConstantRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/constant/UpperEllRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/AvoidReturnInFinallyRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/MethodReturnWrapperTypeRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/exception/TransactionMustHaveRollbackRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/AvoidComplexConditionRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/AvoidNegationOperatorRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/NeedBraceRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/flowcontrol/SwitchStatementRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/AbstractClassShouldStartWithAbstractNamingRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ArrayNamingShouldHaveBracketRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/AvoidStartWithDollarAndUnderLineNamingRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/BooleanPropertyShouldNotStartWithIsRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ClassNamingShouldBeCamelRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ConstantFieldShouldBeUpperCaseRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ExceptionClassShouldEndWithExceptionRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/LowerCamelCaseVariableNamingRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/PackageNamingRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/ServiceOrDaoClassShouldEndWithImplRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/naming/TestClassShouldEndWithTestNamingRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/EqualsAvoidNullRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoMustOverrideToStringRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoMustUsePrimitiveFieldRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/PojoNoDefaultValueRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/StringConcatRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/oop/WrapperTypeEqualityRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/orm/IbatisMethodQueryForListRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidApacheBeanUtilsCopyRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidMissUseOfMathRandomRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidNewDateGetTimeRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/AvoidPatternCompileInMethodRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/MethodTooLongRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/other/UseRightCaseForDateFormatRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ClassCastExceptionWithSubListToArrayListRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ClassCastExceptionWithToArrayRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/CollectionInitShouldAssignCapacityRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/ConcurrentExceptionWithModifyOriginSubListRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/DontModifyInForeachCircleRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/set/UnsupportedExceptionWithModifyAsListRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/util/NodeSortUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/rule/util/NodeUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/GeneratedCodeUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/NumberConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/PojoUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/SpiLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/StringAndCharConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/ViolationUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/java/util/namelist/NameListServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/alibaba/p3c/pmd/lang/vm/rule/other/UseQuietReferenceNotationRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/impl/RenameRefacorImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/TestFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/卫语句范例" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/卫语句范例" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/messages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/messages_en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/namelist.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-comment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-concurrent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-constant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-exception.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-flowcontrol.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-naming.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-oop.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-orm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/java/ali-set.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/rulesets/vm/ali-other.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/web/target/" />
     <ignored path="$PROJECT_DIR$/common/target/" />
@@ -120,7 +48,32 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/JavaParser/ProjectRootT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="18" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -152,8 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/lang/java/rule/AbstractPojoRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-comment.xml" />
         <option value="$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-concurrent.xml" />
         <option value="$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-constant.xml" />
         <option value="$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-exception.xml" />
@@ -203,6 +154,8 @@
         <option value="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/JavaParser/ProjectRootT.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" />
       </list>
     </option>
   </component>
@@ -220,10 +173,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-81" />
-    <option name="y" value="76" />
-    <option name="width" value="1777" />
-    <option name="height" value="1004" />
+    <option name="x" value="-41" />
+    <option name="y" value="67" />
+    <option name="width" value="1918" />
+    <option name="height" value="1078" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -271,7 +224,8 @@
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -321,14 +275,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.IFRe">
-    <configuration name="FormatterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FormatterTest" />
-      <module name="core" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.ProjectRootT">
     <configuration name="IFRe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="IFRe" />
       <module name="core" />
@@ -350,6 +297,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProjectRootT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaParser.ProjectRootT" />
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JavaParser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SwitchSample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SwitchSample" />
       <module name="core" />
@@ -366,11 +326,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProjectRootT" />
         <item itemvalue="Application.IFRe" />
         <item itemvalue="Application.IFReSwitch" />
         <item itemvalue="Application.SwitchSample" />
         <item itemvalue="Application.IFRe2" />
-        <item itemvalue="Application.FormatterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -415,7 +375,7 @@
       <workItem from="1556869824191" duration="654000" />
       <workItem from="1556945405242" duration="17231000" />
       <workItem from="1556973311040" duration="1162000" />
-      <workItem from="1557021464890" duration="3387000" />
+      <workItem from="1557021464890" duration="5941000" />
     </task>
     <servers />
   </component>
@@ -446,10 +406,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165677000" />
+    <option name="totallyTimeSpent" value="168231000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2027897" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.29317698" />
@@ -462,12 +423,12 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6027701" visible="true" weight="0.2280514" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6027701" visible="true" weight="0.40149894" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26659527" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.55686694" weight="0.20449679" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.55686694" weight="0.41648823" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.44313306" side_tool="true" weight="0.20449679" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.26659527" />
@@ -499,33 +460,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/api/GitHubDataByAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/config/GitConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/WebHookServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/WebHookService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -612,13 +546,6 @@
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.jar!/com/github/javaparser/ast/stmt/IfStmt.class" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/Optional.class" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/FileUlits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -816,6 +743,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-104">
           <caret line="80" column="27" lean-forward="true" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/utils/CollectionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/FileUlits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/JavaParser/ProjectRootT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="18" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
