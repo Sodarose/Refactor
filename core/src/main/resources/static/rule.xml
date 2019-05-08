@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rule>
+    <rule-item>
+        <rule-name>DeeplyIfStmtsRule</rule-name>
+        <description>if深层嵌套</description>
+        <className>analysis.rule.DeeplyIfStmtsRule</className>
+        <rule-status>true</rule-status>
+        <rule-message>if深层嵌套超过三层</rule-message>
+    </rule-item>
+</rule>

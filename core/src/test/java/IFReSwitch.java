@@ -4,12 +4,10 @@ import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.BinaryExpr;
 import com.github.javaparser.ast.expr.Expression;
-import com.github.javaparser.ast.expr.Name;
 import com.github.javaparser.ast.stmt.*;
 import io.FileUlits;
 import lombok.Data;
-import org.jaxen.expr.Expr;
-import refactor.BaseVisitorByJP;
+import analysis.visitor.BaseVisitor;
 
 import java.util.*;
 
@@ -17,7 +15,7 @@ public class IFReSwitch {
     public static void main(String agrs[]) {
         String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\SwitchSample.java");
         CompilationUnit unit = StaticJavaParser.parse(source);
-        BaseVisitorByJP<MethodDeclaration> visitorByJP = new BaseVisitorByJP<MethodDeclaration>() {
+        BaseVisitor<MethodDeclaration> visitorByJP = new BaseVisitor<MethodDeclaration>() {
             @Override
             public void visit(MethodDeclaration n, Object arg) {
                 if (n.getName().getIdentifier().equals("Pay")) {
@@ -27,7 +25,7 @@ public class IFReSwitch {
         };
         unit.accept(visitorByJP, null);
         MethodDeclaration method = visitorByJP.getList().get(0);
-        BaseVisitorByJP<IfStmt> ifVisitor = new BaseVisitorByJP<IfStmt>() {
+        BaseVisitor<IfStmt> ifVisitor = new BaseVisitor<IfStmt>() {
             @Override
             public void visit(IfStmt n, Object arg) {
                 getList().add(n);
@@ -108,7 +106,7 @@ public class IFReSwitch {
 
 
     private static void transformSwitch(IfStmt ifStmt) {
-        BaseVisitorByJP<IfStmt> visitor = new BaseVisitorByJP<IfStmt>(){
+        BaseVisitor<IfStmt> visitor = new BaseVisitor<IfStmt>(){
             @Override
             public void visit(IfStmt n, Object arg) {
                 getList().add(n);

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rule>
+    <rule-item>
+        <rule-name>BaseRule</rule-name>
+        <description>基本的规则</description>
+        <className>analysis.rule.AvoidDollarSignsRule</className>
+        <rule-status>true</rule-status>
+    </rule-item>
+</rule>

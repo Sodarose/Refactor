@@ -119,12 +119,6 @@ public class TestFile {
     }
   }
 
-  public static void main(String args[]){
-    TestFile testFile = new TestFile();
-    testFile.cp();
-    testFile.rcp();
-  }
-
   public void rcp() {
     if (isWorlkDay()) {
       if (isFlush()) {

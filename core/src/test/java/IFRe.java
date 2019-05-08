@@ -1,12 +1,9 @@
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
-import com.github.javaparser.ast.stmt.BlockStmt;
-import com.github.javaparser.ast.stmt.IfStmt;
-import com.github.javaparser.ast.stmt.ReturnStmt;
-import com.github.javaparser.ast.stmt.Statement;
+import com.github.javaparser.ast.stmt.*;
 import io.FileUlits;
-import refactor.BaseVisitorByJP;
+import analysis.visitor.BaseVisitor;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,7 +13,7 @@ public class IFRe {
     public static void main(String agrs[]){
         String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\TestFile.java");
         CompilationUnit unit = StaticJavaParser.parse(source);
-        BaseVisitorByJP<MethodDeclaration> visitorByJP = new BaseVisitorByJP<MethodDeclaration>() {
+        BaseVisitor<MethodDeclaration> visitorByJP = new BaseVisitor<MethodDeclaration>() {
             @Override
             public void visit(MethodDeclaration n, Object arg) {
                 if (n.getName().getIdentifier().equals("checkQQ")) {

@@ -1,21 +1,20 @@
 package model;
 
-import com.github.javaparser.Range;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
 import lombok.Data;
-import refactor.Refactor;
 
 /**
- * 坏味道模型数据
+ * 重构模型数据
  * */
 @Data
-public class Issue {
-    private String issueName;
+public class ReCorrect {
+    private String correctName;
+    private String message;
     private String description;
+    private Node correctNode;
     private Node issueNode;
-    private String className;
+    private String refactorName;
     private CompilationUnit node;
-    private String ruleName;
-    private Refactor refactor;
+    private boolean status;
 }

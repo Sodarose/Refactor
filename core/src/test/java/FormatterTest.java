@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import refactor.BaseVisitorByJP;
+import analysis.visitor.BaseVisitor;
 
 
 public class FormatterTest {
@@ -21,7 +21,7 @@ public class FormatterTest {
   public static void main(String args[]) {
     String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\TestFile.java");
     CompilationUnit unit = StaticJavaParser.parse(source);
-    BaseVisitorByJP<MethodDeclaration> visitorByJP = new BaseVisitorByJP<MethodDeclaration>() {
+    BaseVisitor<MethodDeclaration> visitorByJP = new BaseVisitor<MethodDeclaration>() {
       @Override
       public void visit(MethodDeclaration n, Object arg) {
         if (n.getName().getIdentifier().equals("getPayAmount")) {
@@ -31,7 +31,7 @@ public class FormatterTest {
     };
     unit.accept(visitorByJP, null);
     MethodDeclaration method = visitorByJP.getList().get(0);
-    BaseVisitorByJP<IfStmt> visitorByJP1 = new BaseVisitorByJP<IfStmt>() {
+    BaseVisitor<IfStmt> visitorByJP1 = new BaseVisitor<IfStmt>() {
       @Override
       public void visit(IfStmt n, Object arg) {
         getList().add(n);

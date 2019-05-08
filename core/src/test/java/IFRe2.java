@@ -2,13 +2,12 @@ import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.BinaryExpr;
-import com.github.javaparser.ast.expr.Name;
 import com.github.javaparser.ast.stmt.BlockStmt;
 import com.github.javaparser.ast.stmt.IfStmt;
 import com.github.javaparser.ast.stmt.ReturnStmt;
 import com.github.javaparser.ast.stmt.Statement;
 import io.FileUlits;
-import refactor.BaseVisitorByJP;
+import analysis.visitor.BaseVisitor;
 import refactor.ExpressionTool;
 
 import java.util.Iterator;
@@ -17,7 +16,7 @@ public class IFRe2 {
     public static void main(String args[]){
         String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\TestFile.java");
         CompilationUnit unit = StaticJavaParser.parse(source);
-        BaseVisitorByJP<MethodDeclaration> visitorByJP = new BaseVisitorByJP<MethodDeclaration>() {
+        BaseVisitor<MethodDeclaration> visitorByJP = new BaseVisitor<MethodDeclaration>() {
             @Override
             public void visit(MethodDeclaration n, Object arg) {
                 if (n.getName().getIdentifier().equals("k")) {
@@ -34,7 +33,7 @@ public class IFRe2 {
     }
 
     private static void sloveTF(BlockStmt blockStmt) {
-        BaseVisitorByJP<IfStmt> visitor = new BaseVisitorByJP<IfStmt>(){
+        BaseVisitor<IfStmt> visitor = new BaseVisitor<IfStmt>(){
             @Override
             public void visit(IfStmt n, Object arg) {
                 getList().add(n);
@@ -72,7 +71,7 @@ public class IFRe2 {
     }
 
     private static void sloveIF(BlockStmt blockStmt){
-        BaseVisitorByJP<IfStmt> visitor = new BaseVisitorByJP<IfStmt>(){
+        BaseVisitor<IfStmt> visitor = new BaseVisitor<IfStmt>(){
             @Override
             public void visit(IfStmt n, Object arg) {
                 getList().add(n);
