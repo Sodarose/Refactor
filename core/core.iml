@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="ExternalSystem" externalSystem="Maven" />
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -26,15 +26,9 @@
     <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.core.filesystem:1.7.300" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.text:3.8.100" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.core.commands:3.9.300" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jgit:org.eclipse.jgit:5.3.0.201903130848-r" level="project" />
-    <orderEntry type="library" name="Maven: com.jcraft:jsch:0.1.54" level="project" />
-    <orderEntry type="library" name="Maven: com.jcraft:jzlib:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.googlecode.javaewah:JavaEWAH:1.1.6" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.2" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcpg-jdk15on:1.60" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.60" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.60" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:unknown" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.8" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.11" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.11" level="project" />
     <orderEntry type="library" name="Maven: org.dom4j:dom4j:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.pmd:pmd-java:5.5.2" level="project" />
     <orderEntry type="library" name="Maven: jaxen:jaxen:1.1.6" level="project" />
@@ -42,8 +36,8 @@
     <orderEntry type="library" name="Maven: net.sourceforge.pmd:pmd-core:5.5.2" level="project" />
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.48" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.8.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.5" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.saxon:saxon:9.1.0.8" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.0.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: net.sourceforge.saxon:saxon:dom:9.1.0.8" level="project" />
@@ -55,6 +49,8 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.ant:ant:1.9.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.ant:ant-launcher:1.9.6" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.45" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:unknown" level="project" />
+    <orderEntry type="module" module-name="common" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:3.13.9" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.6" level="project" />
   </component>
 </module>

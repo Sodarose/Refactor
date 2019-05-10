@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rule>
+    <rule-item>
+        <rule-name>DeeplyIfStmtsRule</rule-name>
+        <description>if深层嵌套</description>
+        <className>analysis.rule.DeeplyIfStmtsRule</className>
+        <rule-status>true</rule-status>
+        <rule-message>if深层嵌套超过三层</rule-message>
+        <example>
+            if (i == 1) {
+            System.out.println("执行1");
+            if (i == 2) {
+            System.out.println("执行2");
+            if (i == 3) {
+            System.out.println("执行3");
+            if (i == 4) {
+            System.out.println("执行4");
+            if (i == 5) {
+            System.out.println("执行5");
+            if (i == 6) {
+            System.out.println("执行6");
+            if (i == 7) {
+            System.out.println("执行7");
+            }
+            }
+            }
+            }
+            }
+            }
+            }
+        </example>
+    </rule-item>
+</rule>

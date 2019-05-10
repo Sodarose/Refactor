@@ -1,5 +1,8 @@
 package com.w8x.web.api;
 
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
+import com.jcraft.jsch.Session;
 import com.w8x.web.config.GitConfig;
 import com.w8x.web.model.CommitMsg;
 import com.w8x.web.model.Commits;
@@ -13,14 +16,25 @@ import org.eclipse.jgit.api.AddCommand;
 import org.eclipse.jgit.api.CommitCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.PullResult;
+import org.eclipse.jgit.api.TransportConfigCallback;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Ref;
+import org.eclipse.jgit.transport.CredentialsProvider;
+import org.eclipse.jgit.transport.JschConfigSessionFactory;
+import org.eclipse.jgit.transport.OpenSshConfig.Host;
+import org.eclipse.jgit.transport.SshTransport;
+import org.eclipse.jgit.transport.Transport;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
+import org.eclipse.jgit.util.FS;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
+/**
+ * 通过pull来获取源代码
+ */
 @Slf4j
 @Component
 public class GithubDataGrabber {
@@ -29,6 +43,7 @@ public class GithubDataGrabber {
   GitConfig gitConfig;
 
   private static Logger LOGGER = LoggerFactory.getLogger(GithubDataGrabber.class);
+
   /**
    * 根据提交信息获取仓库信息并clone到本地
    *
@@ -38,15 +53,18 @@ public class GithubDataGrabber {
     String fullName = commitMsg.getRepository().getFull_name();
     String filePath = gitConfig.getWorkspace() + "/" + fullName;
     Git git = null;
-    LOGGER.info("开始克隆仓库 仓库地址为:"+commitMsg.getRepository().getClone_url());
+    LOGGER.info("开始克隆仓库 仓库地址为:" + commitMsg.getRepository().getClone_url());
+    CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider(
+        "jgit by fix",
+        gitConfig.getToken());
     try {
       git = Git.cloneRepository()
           .setDirectory(new File(filePath))
-          .setURI(commitMsg.getRepository().getClone_url())
+          .setURI(commitMsg.getRepository().getSsh_url())
           .setBranch(commitMsg.getRef()).call();
     } catch (GitAPIException e) {
-    LOGGER.info("克隆失败");
-    e.printStackTrace();
+      LOGGER.info("克隆失败");
+      e.printStackTrace();
     }
     if (git == null) {
       return false;
@@ -65,7 +83,7 @@ public class GithubDataGrabber {
     String fullName = commitMsg.getRepository().getFull_name();
     String filePath = gitConfig.getWorkspace() + "/" + fullName;
     Git git = null;
-    LOGGER.info("开始同步仓库 仓库地址为:"+commitMsg.getRepository().getClone_url());
+    LOGGER.info("开始同步仓库 仓库地址为:" + commitMsg.getRepository().getClone_url());
     try {
       git = Git.open(new File(filePath));
       PullResult result = git.pull()
@@ -91,19 +109,18 @@ public class GithubDataGrabber {
   }
 
   /**
-   * 切换到fix 分支并提交到仓库
-   * push到远程仓库
+   * 切换到fix 分支并提交到仓库 push到远程仓库
    */
   public Boolean gitPushRepository(CommitMsg commitMsg) {
     String fullName = commitMsg.getRepository().getFull_name();
     String filePath = gitConfig.getWorkspace() + "/" + fullName;
     Git git = null;
-    LOGGER.info("开始提交仓库 仓库地址为:"+commitMsg.getRepository().getClone_url());
+    LOGGER.info("开始提交仓库 仓库地址为:" + commitMsg.getRepository().getClone_url());
     try {
       git = Git.open(new File(filePath));
       Ref ref = git.checkout().setCreateBranch(true).setName("fix").call();
-      LOGGER.info("切换分支:"+ref.getName());
-      commitLocalRepository(git,commitMsg);
+      LOGGER.info("切换分支:" + ref.getName());
+      commitLocalRepository(git, commitMsg);
       LOGGER.info("提交代码至本地成功");
       git.push().add(ref).call();
     } catch (GitAPIException e) {
@@ -112,7 +129,7 @@ public class GithubDataGrabber {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    if(git==null){
+    if (git == null) {
       return false;
     }
     git.close();
@@ -135,35 +152,35 @@ public class GithubDataGrabber {
    * 查看仓库是否已经在本地
    */
   public boolean checkLocalRepository(String fullName) {
-    LOGGER.info("查询仓库是否存在:"+fullName);
-    try{
-      File file = new File(gitConfig.getWorkspace()+"/"+fullName);
-      if(!file.exists()){
+    LOGGER.info("查询仓库是否存在:" + fullName);
+    try {
+      File file = new File(gitConfig.getWorkspace() + "/" + fullName);
+      if (!file.exists()) {
         return false;
       }
       Git git = Git.open(file);
-      if(git==null){
-        LOGGER.info("仓库不存在:"+fullName);
+      if (git == null) {
+        LOGGER.info("仓库不存在:" + fullName);
         return false;
       }
-    }catch (IOException e){
+    } catch (IOException e) {
       e.printStackTrace();
-      LOGGER.info("查询失败:"+fullName);
+      LOGGER.info("查询失败:" + fullName);
     }
-    LOGGER.info("仓库存在:"+fullName);
+    LOGGER.info("仓库存在:" + fullName);
     return true;
   }
 
   /**
    * 提交到本地仓库
    */
-  private void commitLocalRepository (Git git, CommitMsg commitMsg) throws GitAPIException {
+  private void commitLocalRepository(Git git, CommitMsg commitMsg) throws GitAPIException {
     LOGGER.info("提交代码至本地");
     AddCommand add = git.add();
     add.addFilepattern(".").call();
     CommitCommand commit = git.commit();
-    commit.setCommitter(gitConfig.getCommiter(),gitConfig.getMail());
-    commit.setAuthor(gitConfig.getCommiter(),gitConfig.getMail());
+    commit.setCommitter(gitConfig.getCommiter(), gitConfig.getMail());
+    commit.setAuthor(gitConfig.getCommiter(), gitConfig.getMail());
     commit.setMessage(gitConfig.getMessage());
     commit.call();
   }
@@ -183,29 +200,27 @@ public class GithubDataGrabber {
       add = commits.getAdded();
       modified = commits.getModified();
       add.addAll(modified);
-      for(int i = 0;i<add.size();i++){
-        add.set(i,gitConfig.getWorkspace()+"/"+commitMsg.getRepository()
-            .getFull_name()+"/"+add.get(i));
+      for (int i = 0; i < add.size(); i++) {
+        add.set(i, gitConfig.getWorkspace() + "/" + commitMsg.getRepository()
+            .getFull_name() + "/" + add.get(i));
       }
       result.addAll(add);
     }
     Iterator<String> fileIt = result.iterator();
     LOGGER.info("过滤文件");
-    while(fileIt.hasNext()){
+    while (fileIt.hasNext()) {
       String fileName = fileIt.next();
-      if(filtter(fileName)!=1){
+      if (filtter(fileName) != 1) {
         fileIt.remove();
       }
     }
     return result;
   }
 
-  private int filtter(String fileName){
-    if(fileName.substring(fileName.lastIndexOf(".")+1).equals("java")){
+  private int filtter(String fileName) {
+    if (fileName.substring(fileName.lastIndexOf(".") + 1).equals("java")) {
       return 1;
     }
     return 0;
   }
-
-
 }

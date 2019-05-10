@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileUlits {
 
@@ -25,5 +27,19 @@ public class FileUlits {
       }catch (IOException e){
 
       }
+    }
+
+    public static List<String> readFiles(String [] filePaths){
+      List<String> sources = null;
+      try{
+          sources = new ArrayList<>();
+        for (String filePath:filePaths) {
+          String source = new String(Files.readAllBytes(Paths.get(filePath)),"UTF-8");
+          sources.add(source);
+        }
+      }catch (IOException e){
+
+      }
+      return sources;
     }
 }
