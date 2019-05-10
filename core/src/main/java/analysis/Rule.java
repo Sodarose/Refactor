@@ -2,6 +2,7 @@ package analysis;
 
 import com.github.javaparser.ast.CompilationUnit;
 import model.Issue;
+import model.IssueContext;
 
 import java.util.List;
 
@@ -12,5 +13,7 @@ public interface Rule {
     /**
      * 扫描文件接口
      * */
-    List<Issue> apply(List<CompilationUnit> units);
+    IssueContext apply(List<CompilationUnit> units);
+
+    boolean isRun();
 }

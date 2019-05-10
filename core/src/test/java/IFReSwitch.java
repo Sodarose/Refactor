@@ -7,7 +7,7 @@ import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.stmt.*;
 import io.FileUlits;
 import lombok.Data;
-import analysis.visitor.BaseVisitor;
+import JavaParser.BaseVisitor;
 
 import java.util.*;
 

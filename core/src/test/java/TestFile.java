@@ -177,7 +177,33 @@ public class TestFile {
     }
   }
 
-  public void recfactoring() {
+    public void q() {
+        int i = 0;
+        if (i == 1) {
+            System.out.println("执行1");
+            if (i == 2) {
+                System.out.println("执行2");
+                if (i == 3) {
+                    System.out.println("执行3");
+                    if (i == 4) {
+                        System.out.println("执行4");
+                        if (i == 5) {
+                            System.out.println("执行5");
+                            if (i == 6) {
+                                System.out.println("执行6");
+                                if (i == 7) {
+                                    System.out.println("执行7");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    public void recfactoring() {
     int i = 0;
     if (i != 1) {
       return;

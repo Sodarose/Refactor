@@ -3,7 +3,7 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.stmt.*;
 import io.FileUlits;
-import analysis.visitor.BaseVisitor;
+import JavaParser.BaseVisitor;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,14 +18,15 @@ public class IFRe {
             public void visit(MethodDeclaration n, Object arg) {
                 if (n.getName().getIdentifier().equals("checkQQ")) {
                     getList().add(n);
+                    System.out.println();
                 }
             }
         };
         unit.accept(visitorByJP, null);
-        MethodDeclaration method = visitorByJP.getList().get(0);
+        /*MethodDeclaration method = visitorByJP.getList().get(0);
         BlockStmt block = method.getBody().get();
         slove(block);
-        System.out.println(method);
+        System.out.println(method);*/
     }
 
     public static void slove(BlockStmt blockStmt){

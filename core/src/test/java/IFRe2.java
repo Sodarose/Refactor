@@ -7,7 +7,7 @@ import com.github.javaparser.ast.stmt.IfStmt;
 import com.github.javaparser.ast.stmt.ReturnStmt;
 import com.github.javaparser.ast.stmt.Statement;
 import io.FileUlits;
-import analysis.visitor.BaseVisitor;
+import JavaParser.BaseVisitor;
 import refactor.ExpressionTool;
 
 import java.util.Iterator;

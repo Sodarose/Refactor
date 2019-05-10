@@ -43,18 +43,21 @@ public class RuleLink {
     }
 
     private Rule createRule(Element element) {
-        AbstractRule rule = null;
+        AbstractRuleVisitor rule = null;
         String ruleName = element.elementText("rule-name");
         String description = element.elementText("description");
         String className = element.elementText("className");
         String status = element.elementText("rule-status");
         String message = element.elementText("rule-message");
+        String example = element.elementText("example");
         try {
-            rule = (AbstractRule) Class.forName(className).newInstance();
+            rule = (AbstractRuleVisitor) Class.forName(className).newInstance();
             rule.setClassName(className);
             rule.setDescription(description);
             rule.setRuleName(ruleName);
             rule.setRuleStatus(Boolean.parseBoolean(status));
+            rule.setMessage(message);
+            rule.setMessage(example);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -64,4 +67,6 @@ public class RuleLink {
         }
         return rule;
     }
+
+
 }
