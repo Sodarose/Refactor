@@ -8,26 +8,90 @@
         <rule-message>if深层嵌套超过三层</rule-message>
         <example>
             if (i == 1) {
-            System.out.println("执行1");
-            if (i == 2) {
-            System.out.println("执行2");
-            if (i == 3) {
-            System.out.println("执行3");
-            if (i == 4) {
-            System.out.println("执行4");
-            if (i == 5) {
-            System.out.println("执行5");
-            if (i == 6) {
-            System.out.println("执行6");
-            if (i == 7) {
-            System.out.println("执行7");
-            }
-            }
-            }
-            }
-            }
-            }
+                System.out.println("执行1");
+                if (i == 2) {
+                    System.out.println("执行2");
+                        if (i == 3) {
+                            System.out.println("执行3");
+                                if (i == 4) {
+                                    System.out.println("执行4");
+                                        if (i == 5) {
+                                            System.out.println("执行5");
+                                                if (i == 6) {
+                                                    System.out.println("执行6");
+                                                        if (i == 7) {
+                                                             System.out.println("执行7");
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>ShallowSwitchRule</rule-name>
+        <description>Switch转换为if</description>
+        <className>analysis.rule.ShallowSwitchRule</className>
+        <rule-status>true</rule-status>
+        <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
+        <example>
+            switch (empType)
+            {
+                case ENGINEER:
+                     return m_basicSalary;
+                case SALESMAN:
+                    return m_basicSalary + m_commission;
+                case MANAGER:
+                    return 2 * m_basicSalary;
+                default:
+                    throw new Exception("no such employee type!");
             }
         </example>
     </rule-item>
+
+    <rule-item>
+        <rule-name>VoidPoolRule</rule-name>
+        <description>空表达式for转换为while</description>
+        <className>analysis.rule.VoidPoolRule</className>
+        <rule-status>true</rule-status>
+        <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
+        <example>
+           for(;;){
+                ****
+            }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>VoidPoolRule</rule-name>
+        <description>空表达式for转换为while</description>
+        <className>analysis.rule.VoidPoolRule</className>
+        <rule-status>true</rule-status>
+        <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
+        <example>
+            for(;;){
+            ****
+            }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>WhileChangeForRule</rule-name>
+        <description>while转化为for</description>
+        <className>analysis.rule.WhileChangeForRule</className>
+        <rule-status>true</rule-status>
+        <rule-message>有些时候while转化成for能够使人更好的理解</rule-message>
+        <example>
+            int i = 0;
+            while(i &lt; 100){
+                ****
+                ****
+                i++;
+            }
+        </example>
+    </rule-item>
+
 </rule>

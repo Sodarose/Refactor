@@ -1,4 +1,4 @@
-public class TestFile {
+public class TestFileTwo {
 
     public void tcp() {
 
@@ -172,35 +172,30 @@ public class TestFile {
 
 
     public void k() {
-        int i = 0;
-        if (i != 1) {
-            return;
+        if (IsRetired()) {
+            int i = 0;
+            if (i == 1) {
+                System.out.println("执行1");
+                if (i == 2) {
+                    System.out.println("执行2");
+                    if (i == 3) {
+                        System.out.println("执行3");
+                        if (i == 4) {
+                            System.out.println("执行4");
+                            if (i == 5) {
+                                System.out.println("执行5");
+                                if (i == 6) {
+                                    System.out.println("执行6");
+                                    if (i == 7) {
+                                        System.out.println("执行7");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-        System.out.println("执行1");
-        if (i != 2) {
-            return;
-        }
-        System.out.println("执行2");
-        if (i != 3) {
-            return;
-        }
-        System.out.println("执行3");
-        if (i != 4) {
-           return;
-        }
-        System.out.println("执行4");
-        if (i != 5) {
-           return;
-        }
-        System.out.println("执行5");
-        if (i != 6) {
-           return;
-        }
-        System.out.println("执行6");
-        if (i != 7) {
-            return;
-        }
-        System.out.println("执行7");
     }
 
 

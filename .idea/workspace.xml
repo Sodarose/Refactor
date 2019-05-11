@@ -2,28 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b05174d-fdec-48de-8ae2-78c692b8b11a" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/AbstractRuleVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/BaseVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/RuleRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/RuleThreadFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/IssueContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/Writeback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_symbol_solver_core_3_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_symbol_solver_logic_3_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_symbol_solver_model_3_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_27_0_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ShallowSwitchRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ToLongSwitchStmtsRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/VoidPoolRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/WhileChangeForRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/DeeplyIfStmtsRe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/ShallowSwitchRefactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/Scanner/Qet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/TestFileTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_48.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jaxen_jaxen_1_1_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_javacc_javacc_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_pmd_pmd_core_5_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_pmd_pmd_java_5_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_pmd_pmd_test_5_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_pmd_pmd_vm_5_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_saxon_saxon_9_1_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_saxon_saxon_dom_9_1_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_testutil_1_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/AbstractRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/Rule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/visitor/BaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/JavaParser/BaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/model/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/model/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/test/java/IFRe.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFRe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/IFRe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFRe2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/Scanner/ScannerIF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/T1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/T1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/test/java/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/TestFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/rule.xml" afterDir="false" />
     </list>
@@ -57,43 +84,36 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ShallowSwitchRule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+            <state relative-caret-position="467">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/BaseVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="177" column="3" lean-forward="true" selection-start-line="177" selection-start-column="3" selection-end-line="177" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/ShallowSwitchRefactor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+            <state relative-caret-position="251">
+              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2716#2717#0" expanded="true" />
+                <element signature="e#2786#2787#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/IFReSwitch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-567">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="683">
+              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,36 +134,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Issue.java">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/SwitchSample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="162">
+              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/Rule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/AbstractRuleVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2179#2180#0" expanded="true" />
+                <element signature="e#2203#2204#0" expanded="true" />
+                <element signature="e#2355#2356#0" expanded="true" />
+                <element signature="e#2375#2376#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,6 +166,9 @@
       <find>ReturnStatement</find>
       <find>method</find>
       <find>jdt</find>
+      <find>Condition</find>
+      <find>ifstmt</find>
+      <find>ifst</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,21 +183,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/BaseVisitor.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/demo.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/Demo.java" />
-        <option value="$PROJECT_DIR$/core/pom.xml" />
-        <option value="$PROJECT_DIR$/core/src/test/java/T1.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/impl/IfRefactoring.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/OperatorTool.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/IFRe2.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/ForTransFromWhile.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/IfRefactoring.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/卫语句范例" />
-        <option value="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/JavaParser/ProjectRootT.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/ScannerIssue.java" />
@@ -212,7 +200,6 @@
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/visitor/BaseVisitor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/model/ReCorrect.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/model/Writeback.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/Scanner/DeeplyIfStmtsRule.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/Analysis.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" />
@@ -223,15 +210,30 @@
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/Rule.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/process/RuleRunnable.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/AbstractRuleVisitor.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/Issue.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/IFRe.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/BaseVisitor.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/model/Issue.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/DeeplyIfStmtsRe.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/TestFile.java" />
+        <option value="$PROJECT_DIR$/core/pom.xml" />
+        <option value="$PROJECT_DIR$/core/src/test/java/Scanner/Qet.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/TestFileTwo.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/IFRe.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/T1.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitch.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ToLongSwitchStmtsRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/VoidPoolRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/WhileChangeForRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ShallowSwitchRule.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/ShallowSwitchRefactor.java" />
       </list>
     </option>
   </component>
@@ -249,7 +251,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-129" />
+    <option name="x" value="-235" />
+    <option name="y" value="65" />
     <option name="width" value="1918" />
     <option name="height" value="1066" />
   </component>
@@ -259,8 +262,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,6 +357,16 @@
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="refactorImpl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -386,6 +397,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,7 +406,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555698610441" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../springboot-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -429,7 +442,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DeeplyIfStmtsRule">
+  <component name="RunManager" selected="Application.SwitchSample">
     <configuration name="Analysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="analysis.process.Analysis" />
       <module name="core" />
@@ -456,34 +469,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectRootT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaParser.ProjectRootT" />
+    <configuration name="IFRe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IFRe" />
       <module name="core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JavaParser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RuleLink" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="analysis.RuleLink" />
-      <module name="core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScannerIF" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Scanner.ScannerIF" />
+    <configuration name="Qet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scanner.Qet" />
       <module name="core" />
       <extension name="coverage">
         <pattern>
@@ -491,6 +485,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwitchSample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SwitchSample" />
+      <module name="core" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -504,11 +505,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DeeplyIfStmtsRule" />
+        <item itemvalue="Application.SwitchSample" />
         <item itemvalue="Application.Analysis" />
-        <item itemvalue="Application.RuleLink" />
-        <item itemvalue="Application.ScannerIF" />
-        <item itemvalue="Application.ProjectRootT" />
+        <item itemvalue="Application.IFRe" />
+        <item itemvalue="Application.Qet" />
+        <item itemvalue="Application.DeeplyIfStmtsRule" />
       </list>
     </recent_temporary>
   </component>
@@ -568,7 +569,8 @@
       <workItem from="1557290674128" duration="21858000" />
       <workItem from="1557368207381" duration="4271000" />
       <workItem from="1557380647304" duration="20926000" />
-      <workItem from="1557454811417" duration="150000" />
+      <workItem from="1557454811417" duration="10275000" />
+      <workItem from="1557553968427" duration="18360000" />
     </task>
     <servers />
   </component>
@@ -599,13 +601,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230795000" />
+    <option name="totallyTimeSpent" value="259280000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2473176" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.24034335" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.29317698" />
       <window_info id="设计器" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -616,20 +627,20 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3351178" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6027701" weight="0.34689507" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6027701" visible="true" weight="0.32119915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26659527" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32976446" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.55686694" weight="0.3019272" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.44313306" side_tool="true" weight="0.20449679" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32976446" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.26552463" />
       <window_info anchor="bottom" id="Spring" order="11" weight="0.32976446" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32976446" />
-      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Flutter Performance" order="15" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Flutter Performance" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="15" weight="0.32976446" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24946351" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -641,7 +652,7 @@
       <window_info anchor="right" id="Bean Validation" order="8" weight="0.32963988" />
       <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="right" id="Flutter Inspector" order="10" />
-      <window_info anchor="right" id="Flutter Outline" order="11" weight="0.32963988" />
+      <window_info anchor="right" id="Flutter Outline" order="11" weight="0.32939914" />
       <window_info anchor="right" id="Database" order="12" weight="0.32963988" />
     </layout>
   </component>
@@ -653,146 +664,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/NodeList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/stmt/SwitchStmt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
-          <folding>
-            <element signature="e#4232#4233#0" expanded="true" />
-            <element signature="e#4262#4263#0" expanded="true" />
-            <element signature="e#4463#4464#0" expanded="true" />
-            <element signature="e#4494#4495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/IfRefactoring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/卫语句范例">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="96" column="36" lean-forward="true" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/rulesets/java/ali-comment.xml" />
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/SwitchSample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/utils/CollectionStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/JavaParser/ProjectRootT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="18" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/visitor/VoidVisitorAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/ScannerIssue.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/Scanner.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <element signature="e#3562#3563#0" expanded="true" />
-            <element signature="e#3610#3611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/Scanner/ScannerIF.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2367">
-          <caret line="266" selection-start-line="266" selection-end-line="267" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/RuleContext.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/FileUlits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/options.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/visitor.java" />
     <entry file="file://$PROJECT_DIR$/core/src/main/java/model/BadTaste.java" />
     <entry file="file://$PROJECT_DIR$/core/src/main/java/formatter/FormatOptions.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -803,24 +674,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/AvoidDollarSignsRule.java" />
     <entry file="file://$PROJECT_DIR$/core/src/main/java/model/ReSuggest.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/CompilationUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="131" column="23" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="23" />
-          <folding>
-            <element signature="e#5088#5089#0" expanded="true" />
-            <element signature="e#5122#5123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/model/ReCorrect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -835,13 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -862,27 +708,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/Refactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/java/Scanner/DeeplyIfStmtsRule.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/IssueContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/util/concurrent/CompletionService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -891,33 +717,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFReSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/RuleRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/RuleThreadFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -940,7 +739,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
+        <state relative-caret-position="1890">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -948,30 +747,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/DeeplyIfStmtsRe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="270">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Issue.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="227">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/RuleRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/Rule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="405">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -980,47 +786,364 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/AbstractRuleVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="351">
+          <caret line="13" column="45" selection-start-line="13" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/IssueContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/Scanner/Qet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="189" column="9" lean-forward="true" selection-end-line="319" selection-end-column="1" />
+          <folding>
+            <element signature="e#6556#6557#0" expanded="true" />
+            <element signature="e#6583#6584#0" expanded="true" />
+            <element signature="e#6619#6620#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+            <element signature="e#6680#6681#0" expanded="true" />
+            <element signature="e#6707#6708#0" expanded="true" />
+            <element signature="e#6741#6742#0" expanded="true" />
+            <element signature="e#6769#6770#0" expanded="true" />
+            <element signature="e#6801#6802#0" expanded="true" />
+            <element signature="e#6828#6829#0" expanded="true" />
+            <element signature="e#6863#6864#0" expanded="true" />
+            <element signature="e#6890#6891#0" expanded="true" />
+            <element signature="e#6922#6923#0" expanded="true" />
+            <element signature="e#6949#6950#0" expanded="true" />
+            <element signature="e#6989#6990#0" expanded="true" />
+            <element signature="e#7013#7014#0" expanded="true" />
+            <element signature="e#7054#7055#0" expanded="true" />
+            <element signature="e#7078#7079#0" expanded="true" />
+            <element signature="e#7113#7114#0" expanded="true" />
+            <element signature="e#7141#7142#0" expanded="true" />
+            <element signature="e#7181#7182#0" expanded="true" />
+            <element signature="e#7205#7206#0" expanded="true" />
+            <element signature="e#7242#7243#0" expanded="true" />
+            <element signature="e#7270#7271#0" expanded="true" />
+            <element signature="e#7305#7306#0" expanded="true" />
+            <element signature="e#7329#7330#0" expanded="true" />
+            <element signature="e#7361#7362#0" expanded="true" />
+            <element signature="e#7388#7389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFileTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="173" column="21" lean-forward="true" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
+          <folding>
+            <element signature="e#6556#6557#0" expanded="true" />
+            <element signature="e#6583#6584#0" expanded="true" />
+            <element signature="e#6619#6620#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+            <element signature="e#6680#6681#0" expanded="true" />
+            <element signature="e#6707#6708#0" expanded="true" />
+            <element signature="e#6741#6742#0" expanded="true" />
+            <element signature="e#6769#6770#0" expanded="true" />
+            <element signature="e#6801#6802#0" expanded="true" />
+            <element signature="e#6828#6829#0" expanded="true" />
+            <element signature="e#6863#6864#0" expanded="true" />
+            <element signature="e#6890#6891#0" expanded="true" />
+            <element signature="e#6922#6923#0" expanded="true" />
+            <element signature="e#6949#6950#0" expanded="true" />
+            <element signature="e#6989#6990#0" expanded="true" />
+            <element signature="e#7013#7014#0" expanded="true" />
+            <element signature="e#7054#7055#0" expanded="true" />
+            <element signature="e#7078#7079#0" expanded="true" />
+            <element signature="e#7113#7114#0" expanded="true" />
+            <element signature="e#7141#7142#0" expanded="true" />
+            <element signature="e#7181#7182#0" expanded="true" />
+            <element signature="e#7205#7206#0" expanded="true" />
+            <element signature="e#7242#7243#0" expanded="true" />
+            <element signature="e#7270#7271#0" expanded="true" />
+            <element signature="e#7305#7306#0" expanded="true" />
+            <element signature="e#7329#7330#0" expanded="true" />
+            <element signature="e#7361#7362#0" expanded="true" />
+            <element signature="e#7388#7389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/visitor/Visitable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/util/Optional.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="156" column="28" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/visitor/VoidVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/stmt/IfStmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-988">
+          <caret line="46" column="11" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/CompilationUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="131" column="11" selection-start-line="131" selection-start-column="11" selection-end-line="131" selection-end-column="11" />
+          <folding>
+            <element signature="e#5088#5089#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/T1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="e#2372#2373#0" expanded="true" />
+            <element signature="e#2440#2441#0" expanded="true" />
+            <element signature="e#2506#2507#0" expanded="true" />
+            <element signature="e#2572#2573#0" expanded="true" />
+            <element signature="e#2638#2639#0" expanded="true" />
+            <element signature="e#2705#2706#0" expanded="true" />
+            <element signature="e#2775#2776#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/BaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        <state relative-caret-position="297">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.13.9/javaparser-core-3.13.9-sources.jar!/com/github/javaparser/ast/visitor/VoidVisitorAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="177" column="3" lean-forward="true" selection-start-line="177" selection-start-column="3" selection-end-line="177" selection-end-column="3" />
+        <state relative-caret-position="444">
+          <caret line="300" column="19" selection-start-line="300" selection-start-column="19" selection-end-line="300" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+        <state relative-caret-position="116">
+          <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+          <folding>
+            <element signature="e#3307#3311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="59" column="15" lean-forward="true" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Issue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/Refactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ToLongSwitchStmtsRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/VoidPoolRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#418#593#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/WhileChangeForRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ShallowSwitchRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFReSwitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/SwitchSample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding>
+            <element signature="e#2179#2180#0" expanded="true" />
+            <element signature="e#2203#2204#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
+            <element signature="e#2375#2376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/ShallowSwitchRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2716#2717#0" expanded="true" />
+            <element signature="e#2786#2787#0" expanded="true" />
           </folding>
         </state>
       </provider>

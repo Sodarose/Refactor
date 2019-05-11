@@ -21,7 +21,7 @@ public class Issue {
     private String description;
     private Node issueNode;
     private String className;
-    private CompilationUnit unitNode;
+    private Node unitNode;
     private String ruleName;
     private Refactor refactor;
 }
