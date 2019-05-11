@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b05174d-fdec-48de-8ae2-78c692b8b11a" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/FindNodeUlits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/ShallowSwitchRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/ShallowSwitchRefactor.java" afterDir="false" />
-    </list>
+    <list default="true" id="7b05174d-fdec-48de-8ae2-78c692b8b11a" name="默认" comment="" />
     <ignored path="$PROJECT_DIR$/web/target/" />
     <ignored path="$PROJECT_DIR$/common/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/core/src/test/java/FindNodeUlits.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -530,7 +526,7 @@
       <workItem from="1557368207381" duration="4271000" />
       <workItem from="1557380647304" duration="20926000" />
       <workItem from="1557454811417" duration="10275000" />
-      <workItem from="1557553968427" duration="19624000" />
+      <workItem from="1557553968427" duration="19767000" />
     </task>
     <servers />
   </component>
@@ -561,7 +557,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260544000" />
+    <option name="totallyTimeSpent" value="260687000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,10 +569,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.24034335" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.24034335" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.29317698" />
       <window_info id="设计器" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -592,7 +588,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32976446" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.55686694" visible="true" weight="0.3019272" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.55686694" visible="true" weight="0.3019272" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.44313306" side_tool="true" weight="0.20449679" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32976446" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.26552463" />
@@ -1109,7 +1105,7 @@
     <entry file="file://$PROJECT_DIR$/core/src/test/java/FindNodeUlits.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
