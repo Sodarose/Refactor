@@ -12,6 +12,7 @@ public abstract class AbstractRuleVisitor  implements Rule{
     private String message;
     private String example;
     private IssueContext context = new IssueContext();
+    private String solutionClassName;
 
     @Override
     public boolean isRun() {

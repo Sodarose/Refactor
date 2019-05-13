@@ -5,40 +5,30 @@ public class TestFile {
     }
 
     double getPayAmount() {
-        double result;
+        int i = 0;
+        double result = 0;
         if (IsDead()) {
             result = DeadAmount();
-
-        }
-        if (IsSeparated()) {
-            result = SeparatedAmount();
-        } else {
-            if (IsRetired()) {
-                result = RetiredPayAmount();
-                int i = 0;
-                if (i == 1) {
-                    System.out.println("执行1");
-                    if (i == 2) {
-                        System.out.println("执行2");
-                        if (i == 3) {
-                            System.out.println("执行3");
-                            if (i == 4) {
-                                System.out.println("执行4");
-                                if (i == 5) {
-                                    System.out.println("执行5");
-                                    if (i == 6) {
-                                        System.out.println("执行6");
-                                        if (i == 7) {
-                                            System.out.println("执行7");
-                                        }
+            if (IsSeparated()) {
+                result = SeparatedAmount();
+                if (i==1) {
+                    result = SeparatedAmount();
+                    if (i==2) {
+                        result = SeparatedAmount();
+                        if (i==13) {
+                            result = SeparatedAmount();
+                            if (i==15) {
+                                result = SeparatedAmount();
+                                if (i==19) {
+                                    result = SeparatedAmount();
+                                    if (i==100) {
+                                        result = SeparatedAmount();
                                     }
                                 }
                             }
                         }
                     }
                 }
-            } else {
-                result = NormalPayAmount();
             }
         }
         return result;
@@ -66,10 +56,10 @@ public class TestFile {
 
     private boolean t() {
         if (isNoEach()) {
-            if (isHome()) {
-
-            } else {
+            if (!isHome()) {
                 return false;
+            } else {
+                System.out.println("ssdasdsa");
             }
         } else {
             if (isHome()) {

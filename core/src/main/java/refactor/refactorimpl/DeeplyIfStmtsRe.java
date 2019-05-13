@@ -1,6 +1,5 @@
-package refactor.refactorImpl;
+package refactor.refactorimpl;
 
-import com.github.javaparser.ast.stmt.IfStmt;
 import model.Issue;
 import model.ReCorrect;
 import refactor.AbstractRefactor;

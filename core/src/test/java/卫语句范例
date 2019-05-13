@@ -146,5 +146,99 @@ public Result<PageVO> queryBindRules(PageForm<PdRuleProductForm> form) {
         return Result.suc(new PageVO<>(form.getDraw(), 0, null));
     }
 
+
+/**
+     * 转换函数
+    * */
+    private void transFrom(SwitchStmt switchStmt) {
+        IfStmt ifStmt = buildStmt(switchStmt.getSelector(), switchStmt.getEntries());
+        try {
+            BlockStmt blockStmt = (BlockStmt) switchStmt.getParentNode().get();
+            int index = blockStmt.getStatements().indexOf(switchStmt);
+            blockStmt.getStatements().add(index, ifStmt);
+            blockStmt.remove(switchStmt);
+            System.out.println(switchStmt);
+            System.out.println(ifStmt);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 得到转换后的列表
+     */
+    private IfStmt buildStmt(Expression selector, List<SwitchEntry> switchEntries) {
+        IfStmt p = null, q = null;
+        boolean head = true;
+        for (SwitchEntry switchEntry : switchEntries) {
+
+            //生成表达式
+            Expression condition = buildCondition(selector, switchEntry);
+
+            //根据表达式生成分支语句
+            Statement statement = buildIfStmt(condition, switchEntry);
+
+            //拼接分支语句
+            if (statement.isIfStmt()) {
+                if (head) {
+                    p = statement.asIfStmt();
+                    q = p;
+                    continue;
+                }
+                p.setElseStmt(statement.asIfStmt());
+                p = statement.asIfStmt();
+            }
+
+            //判断是否是default
+            if (statement.isBlockStmt()) {
+                p.setElseStmt(statement.asBlockStmt());
+            }
+        }
+        return q;
+    }
+
+    /**
+     * 处理列表
+     */
+    private List<Statement> sloveStateList(Map<SwitchEntry, Statement> map) {
+        List<Statement> statements = new ArrayList<>();
+        return statements;
+    }
+
+    /**
+     * 生成表达式
+     */
+    private Expression buildCondition(Expression select, SwitchEntry switchEntry) {
+        BinaryExpr condition = new BinaryExpr();
+        condition.setOperator(BinaryExpr.Operator.EQUALS);
+        condition.setLeft(select);
+        if(switchEntry.getLabels()==null||switchEntry.getLabels().size()==0){
+            return null;
+        }
+        condition.setRight(switchEntry.getLabels().get(0));
+        return condition;
+    }
+
+
+    /**
+     * @param condition   if条件
+     * @param switchEntry case 分支
+     */
+    private Statement buildIfStmt(Expression condition, SwitchEntry switchEntry) {
+        BlockStmt blockStmt = new BlockStmt();
+        if(switchEntry.getStatements().size()==1&&switchEntry.getStatements().get(0).isBlockStmt()){
+            blockStmt = switchEntry.getStatements().get(0).asBlockStmt();
+        }
+        else{
+            blockStmt.getStatements().addAll(switchEntry.getStatements());
+        }
+        if (condition==null) {
+            return blockStmt;
+        }
+        IfStmt ifStmt = new IfStmt();
+        ifStmt.setCondition(condition);
+        ifStmt.setThenStmt(blockStmt);
+        return ifStmt;
+    }
 }
 

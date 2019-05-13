@@ -1,4 +1,6 @@
+@SuppressWarnings("ALL")
 public class ForWhileSampe {
+    @SuppressWarnings("ForLoopReplaceableByWhile")
     public void cp() {
         int i = 100;
         for (; ; ) {
@@ -12,8 +14,20 @@ public class ForWhileSampe {
                 break;
             }
         }
-        T:
-        for (; ; ) {
+
+        for (; i < 100; ) {
+            System.out.println("sdasdasd");
+            System.out.println("sdasdasd");
+            System.out.println("sdasdasd");
+            System.out.println("sdasdasd");
+            System.out.println("sdasdasd");
+            System.out.println("sdasdasd");
+            if (i == 100) {
+                break;
+            }
+        }
+
+        T:for (; ; ) {
             System.out.println("sdasdasd");
             System.out.println("sdasdasd");
             for (; ; ) {
@@ -58,7 +72,7 @@ public class ForWhileSampe {
         }
 
         //第三种类型
-        while (i<1000&&j<1000) {
+        while (i < 1000 && j < 1000) {
             i++;
             j++;
         }

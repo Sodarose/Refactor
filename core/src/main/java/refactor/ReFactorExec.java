@@ -10,24 +10,18 @@ import model.IssueContext;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 重构执行类
+ * @author kangkang
+ * */
 public class ReFactorExec {
-    BaseVisitor<ClassOrInterfaceDeclaration> visitor = new BaseVisitor<ClassOrInterfaceDeclaration>(){
-        @Override
-        public void visit(ClassOrInterfaceDeclaration n, Object arg) {
-            System.out.println(n.getName());
-        }
-    };
     public void factor(IssueContext context){
-        System.out.println(context.getIssues().size());
         runFactor(context);
     }
+    /**
+     * 通过反射生成重构实例进行重构
+     * */
     private void runFactor(IssueContext context){
        Iterator<Issue> it = context.getIssues().iterator();
-        while(it.hasNext()){
-            Issue issue = it.next();
-            CompilationUnit unit = (CompilationUnit)issue.getUnitNode();
-            issue.getUnitNode().accept(visitor,null);
-        }
-
     }
 }

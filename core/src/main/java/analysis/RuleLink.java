@@ -50,6 +50,7 @@ public class RuleLink {
         String status = element.elementText("rule-status");
         String message = element.elementText("rule-message");
         String example = element.elementText("example");
+        String solutionClassName = element.elementText("solutionClassName");
         try {
             rule = (AbstractRuleVisitor) Class.forName(className).newInstance();
             rule.setClassName(className);
@@ -58,6 +59,7 @@ public class RuleLink {
             rule.setRuleStatus(Boolean.parseBoolean(status));
             rule.setMessage(message);
             rule.setMessage(example);
+            rule.setSolutionClassName(solutionClassName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
