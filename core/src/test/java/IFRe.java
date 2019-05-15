@@ -18,15 +18,14 @@ public class IFRe {
             public void visit(MethodDeclaration n, Object arg) {
                 if (n.getName().getIdentifier().equals("checkQQ")) {
                     getList().add(n);
-                    System.out.println();
                 }
             }
         };
         unit.accept(visitorByJP, null);
-        /*MethodDeclaration method = visitorByJP.getList().get(0);
+       MethodDeclaration method = visitorByJP.getList().get(0);
         BlockStmt block = method.getBody().get();
         slove(block);
-        System.out.println(method);*/
+        System.out.println(method);
     }
 
     public static void slove(BlockStmt blockStmt){
@@ -53,6 +52,7 @@ public class IFRe {
             ifItem = itIf.next();
             sloveIFThen(ifItem,returnStmt);
             if(ifItem.hasElseBranch()){
+
                sloveElseThen(ifItem,returnStmt);
                BlockStmt blockStmt1 = ifItem.getElseStmt().get().asBlockStmt();
                slove(blockStmt1);

@@ -1,34 +1,44 @@
-public class TestFile {
+public class TestFileTwo {
 
     public void tcp() {
 
     }
 
     double getPayAmount() {
-        int i = 0;
-        double result = 0;
+        double result;
         if (IsDead()) {
             result = DeadAmount();
-            if (IsSeparated()) {
-                result = SeparatedAmount();
-                if (i==1) {
-                    result = SeparatedAmount();
-                    if (i==2) {
-                        result = SeparatedAmount();
-                        if (i==13) {
-                            result = SeparatedAmount();
-                            if (i==15) {
-                                result = SeparatedAmount();
-                                if (i==19) {
-                                    result = SeparatedAmount();
-                                    if (i==100) {
-                                        result = SeparatedAmount();
+
+        }
+        if (IsSeparated()) {
+            result = SeparatedAmount();
+        } else {
+            if (IsRetired()) {
+                result = RetiredPayAmount();
+                int i = 0;
+                if (i == 1) {
+                    System.out.println("执行1");
+                    if (i == 2) {
+                        System.out.println("执行2");
+                        if (i == 3) {
+                            System.out.println("执行3");
+                            if (i == 4) {
+                                System.out.println("执行4");
+                                if (i == 5) {
+                                    System.out.println("执行5");
+                                    if (i == 6) {
+                                        System.out.println("执行6");
+                                        if (i == 7) {
+                                            System.out.println("执行7");
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+            } else {
+                result = NormalPayAmount();
             }
         }
         return result;
@@ -56,10 +66,10 @@ public class TestFile {
 
     private boolean t() {
         if (isNoEach()) {
-            if (!isHome()) {
-                return false;
+            if (isHome()) {
+
             } else {
-                System.out.println("ssdasdsa");
+                return false;
             }
         } else {
             if (isHome()) {
@@ -162,35 +172,30 @@ public class TestFile {
 
 
     public void k() {
-        int i = 0;
-        if (i != 1) {
-            return;
+        if (IsRetired()) {
+            int i = 0;
+            if (i == 1) {
+                System.out.println("执行1");
+                if (i == 2) {
+                    System.out.println("执行2");
+                    if (i == 3) {
+                        System.out.println("执行3");
+                        if (i == 4) {
+                            System.out.println("执行4");
+                            if (i == 5) {
+                                System.out.println("执行5");
+                                if (i == 6) {
+                                    System.out.println("执行6");
+                                    if (i == 7) {
+                                        System.out.println("执行7");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-        System.out.println("执行1");
-        if (i != 2) {
-            return;
-        }
-        System.out.println("执行2");
-        if (i != 3) {
-            return;
-        }
-        System.out.println("执行3");
-        if (i != 4) {
-           return;
-        }
-        System.out.println("执行4");
-        if (i != 5) {
-           return;
-        }
-        System.out.println("执行5");
-        if (i != 6) {
-           return;
-        }
-        System.out.println("执行6");
-        if (i != 7) {
-            return;
-        }
-        System.out.println("执行7");
     }
 
 

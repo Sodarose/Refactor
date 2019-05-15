@@ -5,6 +5,8 @@ import analysis.RuleLink;
 import com.github.javaparser.ast.CompilationUnit;
 import io.ParserProject;
 import model.IssueContext;
+import refactor.ReFactorExec;
+import refactor.Refactor;
 
 import java.util.Iterator;
 import java.util.List;
@@ -63,7 +65,10 @@ public class Analysis  {
     }
 
     public static void main(String []args){
-
+        Analysis analysis = new Analysis();
+        analysis.analysis("D:\\gitProject\\W8X");
+        ReFactorExec factorExec = new ReFactorExec();
+        factorExec.factor(analysis.results());
     }
 
 }
