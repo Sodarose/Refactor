@@ -43,19 +43,14 @@
       <version>1.0-SNAPSHOT</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.github.javaparser/javaparser-core -->
-    <dependency>
-      <groupId>com.github.javaparser</groupId>
-      <artifactId>javaparser-core</artifactId>
-      <version>3.13.9</version>
-    </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.github.javaparser/javaparser-symbol-solver-core -->
     <dependency>
       <groupId>com.github.javaparser</groupId>
       <artifactId>javaparser-symbol-solver-core</artifactId>
-      <version>3.14.0</version>
+      <version>3.14.1</version>
     </dependency>
+
 
 
   </dependencies>

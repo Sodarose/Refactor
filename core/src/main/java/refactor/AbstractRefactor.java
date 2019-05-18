@@ -2,10 +2,10 @@ package refactor;
 
 import lombok.Data;
 
+/**
+ * @author kangkang
+ * */
 @Data
 public abstract class AbstractRefactor implements Refactor{
-    private String refactorName;
-    private String message;
-    private String description;
-    private String example;
+
 }

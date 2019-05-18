@@ -1,196 +1,93 @@
-public class K{
-public Result<PageVO> queryBindRules(PageForm<PdRuleProductForm> form) {
-        LOGGER.info("产品管理 组件配置 - queryBindRules 参数:{}",JSON.toJSON(form));
-        ValidateUtils.notNull(form, HeilCode.E_400, "productId不能为空");
-        ValidateUtils.notNull(form.getForm().getProductId(),HeilCode.E_400,"productId不能为空");
-        ValidateUtils.notNull(form.getForm().getClassify(),HeilCode.E_400,"classify不能为空");
-        BuzTypeEnum buzTypeEnum = BuzTypeEnum.getByIndex(form.getForm().getClassify());
-        ValidateUtils.notNull(buzTypeEnum,HeilCode.E_400,"不支持当前业务类型");
-        //1、这里通过引入开关控制调用新重构代码
-        boolean switchEnable = configParamsFacade.getValueByParamKey("feeRuleProductLinkEnable",Boolean.class);
-        if(switchEnable){
-            QueryLinkContext context = QueryLinkContext.builder()
-                    .yanbaoRuleFacade(yanbaoRuleFacade).commonComponent(commonComponent)
-                    .pdRuleProductService(pdRuleProductService).serFinRuleFacade(serFinRuleFacade)
-                    .form(form).build();
-            QueryLinkHandlerFactory.create(buzTypeEnum).execute(context);
-            return Result.suc(PageVO.newInstance(form.getDraw(),context.getCount(),context.getVoList()));
-        }
-        // 2、下面是最原始的业务代码
-        switch (buzTypeEnum) {
-            case SER_FIN_RULE:
-                List<SerFinRule> serFinRules = pdRuleProductService.querySerFinRules(form);
-                if (CollectionsTools.isEmpty(serFinRules)) {
-                    return Result.failInEmptyRecord(null);
-                }
-                List<SerFinRuleVo> serFinRuleVos = new SerFinRuleVoConvertor().convertList(serFinRules);
-                serFinRuleFacade.formatSerFinRule(serFinRules, serFinRuleVos);
-                int serFinRulesCount = pdRuleProductService.querySerFinRulesCount(form);
-                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.SER_FIN_RULE.getIndex(),serFinRuleVos),
-                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
-                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(serFinRuleVos));
-                return Result.suc(new PageVO<>(form.getDraw(),serFinRulesCount,serFinRuleVos));
+private boolean isEnum = false;
+    private boolean isString = false;
+    private boolean isOrder = false;
+    String enumName;
+    private CompilationUnit unit;
 
-            case RATE_RULE:
-                List<RateRule> rateRules = pdRuleProductService.queryRateRules(form);
-                List<RateRuleVo> rateRuleVos = new RateRuleVoConvertor().convertList(rateRules);
-
-                int count = pdRuleProductService.queryRateRulesCount(form);
-                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.RATE_RULE.getIndex(),rateRuleVos),
-                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
-                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(rateRuleVos));
-                return Result.suc(new PageVO<>(form.getDraw(),count,rateRuleVos));
-            case GPS_RULE:
-                List<GpsRule> gpsRules = pdRuleProductService.queryGpsRules(form);
-                List<GpsRuleVo> gpsRuleVos = new GpsRuleVoConvertor().convertList(gpsRules);
-                gpsRuleFacade.formatGpsRuleVo(gpsRuleVos);
-                int gpsCount = pdRuleProductService.queryGpsRulesCount(form);
-                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.GPS_RULE.getIndex(),gpsRuleVos),
-                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
-                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(gpsRuleVos));
-                return Result.suc(new PageVO<>(form.getDraw(), gpsCount, gpsRuleVos));
-            case INSURANSE_SECOND_YEAR:
-                form.getForm().setYanBaoClassify(2);
-                List<YanbaoRule> yanbaoRules = pdRuleProductService.queryYanbaoRules(form);
-                List<YanbaoRuleVo> yanbaoRuleVos = new YanbaoRuleVoConvertor().convertList(yanbaoRules);
-                int yanbaoCount = pdRuleProductService.queryYanbaoRulesCount(form);
-                yanbaoRuleFacade.formatYanbaoRules(yanbaoRules,yanbaoRuleVos);
-                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_SECOND_YEAR.getIndex(),yanbaoRuleVos),
-                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
-                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos));
-                return Result.suc(new PageVO<>(form.getDraw(), yanbaoCount, yanbaoRuleVos));
-            case INSURANSE_THIRD_YEAR:
-                form.getForm().setYanBaoClassify(3);
-                List<YanbaoRule> yanbaoRules3 = pdRuleProductService.queryYanbaoRules(form);
-                List<YanbaoRuleVo> yanbaoRuleVos3 = new YanbaoRuleVoConvertor().convertList(yanbaoRules3);
-                int yanbaoRuleCount = pdRuleProductService.queryYanbaoRulesCount(form);
-                yanbaoRuleFacade.formatYanbaoRules(yanbaoRules3, yanbaoRuleVos3);
-                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_THIRD_YEAR.getIndex(),yanbaoRuleVos3),
-                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
-                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos3));
-                return Result.suc(new PageVO<>(form.getDraw(), yanbaoRuleCount, yanbaoRuleVos3));
-            case ACCOUNT_RULE:
-                List<AccountRule> accountRules = pdRuleProductService.queryAccountRules(form);
-                List<AccountRuleVo> accountRuleVos = new AccountRuleVoConvertor().convertList(accountRules);
-                int accountCount = pdRuleProductService.queryGpsRulesCount(form);
-                commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.ACCOUNT_RULE.getIndex(),accountRuleVos),
-                        rule -> Integer.valueOf(rule.getRuleSeq()),(rule, tags) -> rule.setTags(tags));
-                LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(accountRuleVos));
-                return Result.suc(new PageVO<>(form.getDraw(), accountCount, accountRuleVos));
-        }
-        return Result.suc(new PageVO<>(form.getDraw(), 0, null));
-    }
-
-    public Result<PageVO> queryBindRule(PageForm<PdRuleProductForm> form) {
-        LOGGER.info("产品管理 组件配置 - queryBindRules 参数:{}", JSON.toJSON(form));
-        ValidateUtils.notNull(form, HeilCode.E_400, "productId不能为空");
-        ValidateUtils.notNull(form.getForm().getProductId(), HeilCode.E_400, "productId不能为空");
-        ValidateUtils.notNull(form.getForm().getClassify(), HeilCode.E_400, "classify不能为空");
-        BuzTypeEnum buzTypeEnum = BuzTypeEnum.getByIndex(form.getForm().getClassify());
-        ValidateUtils.notNull(buzTypeEnum, HeilCode.E_400, "不支持当前业务类型");
-        // 1、这里通过引入开关控制调用新重构代码
-        boolean switchEnable = configParamsFacade.getValueByParamKey("feeRuleProductLinkEnable", Boolean.class);
-
-        if (buzTypeEnum == SER_FIN_RULE) {
-            List<SerFinRule> serFinRules = pdRuleProductService.querySerFinRules(form);
-            if (CollectionsTools.isEmpty(serFinRules)) {
-                return Result.failInEmptyRecord(null);
-            }
-            List<SerFinRuleVo> serFinRuleVos = new SerFinRuleVoConvertor().convertList(serFinRules);
-            serFinRuleFacade.formatSerFinRule(serFinRules, serFinRuleVos);
-            int serFinRulesCount = pdRuleProductService.querySerFinRulesCount(form);
-            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.SER_FIN_RULE.getIndex(), serFinRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
-            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(serFinRuleVos));
-            return Result.suc(new PageVO<>(form.getDraw(), serFinRulesCount, serFinRuleVos));
-        } else if (buzTypeEnum == RATE_RULE) {
-            List<RateRule> rateRules = pdRuleProductService.queryRateRules(form);
-            List<RateRuleVo> rateRuleVos = new RateRuleVoConvertor().convertList(rateRules);
-            int count = pdRuleProductService.queryRateRulesCount(form);
-            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.RATE_RULE.getIndex(), rateRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
-            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(rateRuleVos));
-            return Result.suc(new PageVO<>(form.getDraw(), count, rateRuleVos));
-        } else if (buzTypeEnum == GPS_RULE) {
-            List<GpsRule> gpsRules = pdRuleProductService.queryGpsRules(form);
-            List<GpsRuleVo> gpsRuleVos = new GpsRuleVoConvertor().convertList(gpsRules);
-            gpsRuleFacade.formatGpsRuleVo(gpsRuleVos);
-            int gpsCount = pdRuleProductService.queryGpsRulesCount(form);
-            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.GPS_RULE.getIndex(), gpsRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
-            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(gpsRuleVos));
-            return Result.suc(new PageVO<>(form.getDraw(), gpsCount, gpsRuleVos));
-        } else if (buzTypeEnum == INSURANSE_SECOND_YEAR) {
-            form.getForm().setYanBaoClassify(2);
-            List<YanbaoRule> yanbaoRules = pdRuleProductService.queryYanbaoRules(form);
-            List<YanbaoRuleVo> yanbaoRuleVos = new YanbaoRuleVoConvertor().convertList(yanbaoRules);
-            int yanbaoCount = pdRuleProductService.queryYanbaoRulesCount(form);
-            yanbaoRuleFacade.formatYanbaoRules(yanbaoRules, yanbaoRuleVos);
-            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_SECOND_YEAR.getIndex(), yanbaoRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
-            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos));
-            return Result.suc(new PageVO<>(form.getDraw(), yanbaoCount, yanbaoRuleVos));
-        } else if (buzTypeEnum == INSURANSE_THIRD_YEAR) {
-            form.getForm().setYanBaoClassify(3);
-            List<YanbaoRule> yanbaoRules3 = pdRuleProductService.queryYanbaoRules(form);
-            List<YanbaoRuleVo> yanbaoRuleVos3 = new YanbaoRuleVoConvertor().convertList(yanbaoRules3);
-            int yanbaoRuleCount = pdRuleProductService.queryYanbaoRulesCount(form);
-            yanbaoRuleFacade.formatYanbaoRules(yanbaoRules3, yanbaoRuleVos3);
-            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.INSURANSE_THIRD_YEAR.getIndex(), yanbaoRuleVos3), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
-            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(yanbaoRuleVos3));
-            return Result.suc(new PageVO<>(form.getDraw(), yanbaoRuleCount, yanbaoRuleVos3));
-        } else if (buzTypeEnum == ACCOUNT_RULE) {
-            List<AccountRule> accountRules = pdRuleProductService.queryAccountRules(form);
-            List<AccountRuleVo> accountRuleVos = new AccountRuleVoConvertor().convertList(accountRules);
-            int accountCount = pdRuleProductService.queryGpsRulesCount(form);
-            commonComponent.bindTags(TwoTuple.newInstance(BuzTypeEnum.ACCOUNT_RULE.getIndex(), accountRuleVos), rule -> Integer.valueOf(rule.getRuleSeq()), (rule, tags) -> rule.setTags(tags));
-            LOGGER.info("规则关联产品-queryBindRules-业务类型:{},结果:{}", buzTypeEnum.getName(), JSON.toJSON(accountRuleVos));
-            return Result.suc(new PageVO<>(form.getDraw(), accountCount, accountRuleVos));
-        }
-        return Result.suc(new PageVO<>(form.getDraw(), 0, null));
-    }
-
-
-/**
-     * 转换函数
-    * */
-    private void transFrom(SwitchStmt switchStmt) {
-        IfStmt ifStmt = buildStmt(switchStmt.getSelector(), switchStmt.getEntries());
-        try {
-            BlockStmt blockStmt = (BlockStmt) switchStmt.getParentNode().get();
-            int index = blockStmt.getStatements().indexOf(switchStmt);
-            blockStmt.getStatements().add(index, ifStmt);
-            blockStmt.remove(switchStmt);
-            System.out.println(switchStmt);
-            System.out.println(ifStmt);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public ReCorrect refactor(Issue issue) {
+        SwitchStmt switchStmt = (SwitchStmt) issue.getIssueNode();
+        unit = (CompilationUnit) issue.getUnitNode();
+        transFrom(switchStmt);
+        return null;
     }
 
     /**
-     * 得到转换后的列表
+     * 转换函数
      */
-    private IfStmt buildStmt(Expression selector, List<SwitchEntry> switchEntries) {
+    private void transFrom(SwitchStmt switchStmt) {
+        Node node = switchStmt.getParentNode().get();
+        Expression selector = switchStmt.getSelector();
+        Statement statement = buildStmt(selector, switchStmt.getEntries());
+        //这个地方有可能出错
+        BlockStmt blockStmt = (BlockStmt) switchStmt.getParentNode().get();
+        int index = blockStmt.getStatements().indexOf(switchStmt);
+        if (statement.isBlockStmt()) {
+            blockStmt.getStatements().addAll(index, statement.asBlockStmt().getStatements());
+        } else {
+            blockStmt.getStatements().add(index, statement.asIfStmt());
+        }
+        blockStmt.remove(switchStmt);
+    }
+
+
+    /**
+     * 组合分支语句
+     */
+    private Statement buildStmt(Expression selector, List<SwitchEntry> switchEntries) {
+
         IfStmt p = null, q = null;
         boolean head = true;
-        for (SwitchEntry switchEntry : switchEntries) {
+        //针对空body的swuich分支
+        BinaryExpr expr = null;
+        for (int i = 0; i < switchEntries.size(); i++) {
+            Statement statement = createIfStmt(selector, switchEntries, i);
+            if (statement == null) {
+                continue;
+            }
 
-            //生成表达式
-            Expression condition = buildCondition(selector, switchEntry);
-
-            //根据表达式生成分支语句
-            Statement statement = buildIfStmt(condition, switchEntry);
-
-            //拼接分支语句
+            //
             if (statement.isIfStmt()) {
-                if (head) {
-                    p = statement.asIfStmt();
-                    q = p;
+                IfStmt ifStmt = statement.asIfStmt();
+                //如果返回的if语句是空if语句 保留它的condition
+                if (!ifStmt.getThenStmt().isBlockStmt()) {
+                    //第一次
+                    if (expr == null) {
+                        expr = new BinaryExpr();
+                        expr.setLeft(ifStmt.getCondition());
+                        continue;
+                    }
+                    BinaryExpr temp = new BinaryExpr();
+                    temp.setLeft(expr.getLeft());
+                    temp.setRight(ifStmt.getCondition());
+                    temp.setOperator(BinaryExpr.Operator.OR);
+                    expr.setLeft(temp);
                     continue;
                 }
-                p.setElseStmt(statement.asIfStmt());
+
+                //如果不为0则将表达式以或的条件放入
+                if (expr != null) {
+                    expr.setRight(ifStmt.getCondition());
+                    expr.setOperator(BinaryExpr.Operator.OR);
+                    ifStmt.setCondition(expr);
+                    expr = null;
+                }
+
+                //头结点
+                if (head) {
+                    p = ifStmt;
+                    q = p;
+                    head = false;
+                    continue;
+                }
+                p.setElseStmt(ifStmt);
                 p = statement.asIfStmt();
             }
 
-            //判断是否是default
             if (statement.isBlockStmt()) {
+                if (head) {
+                    return statement.asBlockStmt();
+                }
                 p.setElseStmt(statement.asBlockStmt());
             }
         }
@@ -198,47 +95,139 @@ public Result<PageVO> queryBindRules(PageForm<PdRuleProductForm> form) {
     }
 
     /**
-     * 处理列表
+     * 根据case生成分支语句
      */
-    private List<Statement> sloveStateList(Map<SwitchEntry, Statement> map) {
-        List<Statement> statements = new ArrayList<>();
-        return statements;
-    }
+    private Statement createIfStmt(Expression selector, List<SwitchEntry> switchEntrys, int index) {
 
-    /**
-     * 生成表达式
-     */
-    private Expression buildCondition(Expression select, SwitchEntry switchEntry) {
-        BinaryExpr condition = new BinaryExpr();
-        condition.setOperator(BinaryExpr.Operator.EQUALS);
-        condition.setLeft(select);
-        if(switchEntry.getLabels()==null||switchEntry.getLabels().size()==0){
-            return null;
-        }
-        condition.setRight(switchEntry.getLabels().get(0));
-        return condition;
-    }
-
-
-    /**
-     * @param condition   if条件
-     * @param switchEntry case 分支
-     */
-    private Statement buildIfStmt(Expression condition, SwitchEntry switchEntry) {
         BlockStmt blockStmt = new BlockStmt();
-        if(switchEntry.getStatements().size()==1&&switchEntry.getStatements().get(0).isBlockStmt()){
+        SwitchEntry switchEntry = switchEntrys.get(index);
+        Expression condition = buildCondition(selector, switchEntry);
+        // 添加自己的statmes
+        if (switchEntry.getStatements().size() == 1 && switchEntry.getStatements().get(0).isBlockStmt()) {
             blockStmt = switchEntry.getStatements().get(0).asBlockStmt();
-        }
-        else{
+        } else {
             blockStmt.getStatements().addAll(switchEntry.getStatements());
         }
-        if (condition==null) {
+
+        //如果是个空分支则直接返回空if语句
+        if (blockStmt.getStatements().size() == 0) {
+            IfStmt ifStmt = new IfStmt();
+            ifStmt.setCondition(condition);
+            return ifStmt;
+        }
+
+        // 从当前位置向下搜索,如果遇到没有break或者return 将他们的statme提取到当前分支
+        for (int i = index; i < switchEntrys.size() - 1; i++) {
+            if (ishasBreakOrReturn(switchEntrys.get(i))) {
+                break;
+            }
+            blockStmt.getStatements().addAll(switchEntrys.get(i + 1).getStatements());
+        }
+
+        // 清除当前分支blockstate中的break
+        cleanBreakStmt(blockStmt);
+
+        //如果为default分支 则直接返回分支
+        if (condition == null) {
             return blockStmt;
         }
+        //如果不是default 返回if
         IfStmt ifStmt = new IfStmt();
         ifStmt.setCondition(condition);
         ifStmt.setThenStmt(blockStmt);
         return ifStmt;
     }
-}
 
+    /**
+     * 生成表达式
+     * condition =>
+     */
+    private Expression buildCondition(Expression select, SwitchEntry switchEntry) {
+        //判断是否为一个default 如果是就返回空
+        if (switchEntry.getLabels() == null || switchEntry.getLabels().size() == 0) {
+            return null;
+        }
+        Expression cases = switchEntry.getLabels().get(0);
+        //字符串
+        if (isString) {
+            FieldAccessExpr fieldAccessExpr = new FieldAccessExpr();
+            fieldAccessExpr.setName("equals(\"" + cases.asStringLiteralExpr().asString() + "\")");
+            fieldAccessExpr.setScope(select);
+            return fieldAccessExpr;
+        }
+
+        //枚举变量
+        if (isEnum) {
+
+        }
+
+        BinaryExpr condition = new BinaryExpr();
+        condition.setOperator(BinaryExpr.Operator.EQUALS);
+        condition.setLeft(select);
+        condition.setRight(switchEntry.getLabels().get(0));
+        return condition;
+    }
+
+    /**
+     * 检查select的类型 select 可以为 name 可以为 函数  或者
+     */
+    private void checkType(SwitchStmt switchStmt) {
+        Expression selector = switchStmt.getSelector();
+        if (selector.isStringLiteralExpr()) {
+            isString = true;
+            return;
+        }
+        ResolvedType s = ParserProject.getJavaParserFacade().getType(selector);
+        //搜索根据类限定名称搜索
+        SymbolReference v = ParserProject.getCombinedTypeSolver().tryToSolveType(s.describe());
+        if (v.getCorrespondingDeclaration().isType()) {
+            if (v.getCorrespondingDeclaration().asType().isEnum()) {
+                isEnum = true;
+                enumName = v.getCorrespondingDeclaration().asType().getClassName();
+                return;
+            }
+            if (v.getCorrespondingDeclaration().asType().getClassName().equals("String")) {
+                isString = true;
+                return;
+            }
+        }
+        return;
+    }
+
+    /**
+     * 去除分支中的break
+     */
+    public void cleanBreakStmt(BlockStmt blockStmt) {
+        ArrayList<BreakStmt> breakStmts = new ArrayList<>();
+        for (Statement stmt : blockStmt.getStatements()) {
+            if (stmt.isBreakStmt()) {
+                breakStmts.add(stmt.asBreakStmt());
+            }
+        }
+        blockStmt.getStatements().removeAll(breakStmts);
+    }
+
+    /**
+     * 判断这个case是否有break return 和 throw
+     */
+    private boolean ishasBreakOrReturn(SwitchEntry switchEntry) {
+        final List<Statement> statements;
+        if (switchEntry.getStatements().size() == 1 && switchEntry.getStatements().get(0).isBlockStmt()) {
+            statements = switchEntry.getStatements().get(0).asBlockStmt().getStatements();
+        } else {
+            statements = switchEntry.getStatements();
+        }
+        if (statements.size() == 0) {
+            return false;
+        }
+        if (statements.get(statements.size() - 1).isBreakStmt()) {
+            return true;
+        }
+        if (statements.get(statements.size() - 1).isReturnStmt()) {
+            return true;
+        }
+        if (statements.get(statements.size() - 1).isThrowStmt()) {
+            return true;
+        }
+        return false;
+    }

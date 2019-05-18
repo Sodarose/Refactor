@@ -4,7 +4,7 @@
         <rule-name>DeeplyIfStmtsRule</rule-name>
         <description>if深层嵌套</description>
         <className>analysis.rule.DeeplyIfStmtsRule</className>
-        <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRe</solutionClassName>
+        <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRefactor</solutionClassName>
         <rule-status>false</rule-status>
         <rule-message>if深层嵌套超过三层</rule-message>
         <example>
@@ -37,7 +37,7 @@
         <description>Switch转换为if</description>
         <className>analysis.rule.ShallowSwitchRule</className>
         <solutionClassName>refactor.refactorimpl.ShallowSwitchRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
         <example>
             switch (empType)
@@ -81,6 +81,31 @@
                 ****
                 ****
                 i++;
+            }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>IFTransformSwitchRule</rule-name>
+        <description>if转换成switch</description>
+        <className>analysis.rule.IFTransformSwitchRule</className>
+        <solutionClassName>refactor.refactorimpl.IfTransformSwitchRefactor</solutionClassName>
+        <rule-status>true</rule-status>
+        <rule-message>if转换成switch性能更高哦</rule-message>
+        <example>
+            if(x == q){
+            xxxx
+            }else if(x==p){
+            xxxx
+            }else if(x==t){
+            xxxx
+            }else if(x==c){
+            xxxx
+            }else if(x==z){
+            xxxx
+            }else if(x==n){
+            xxxx
+            }else{
             }
         </example>
     </rule-item>

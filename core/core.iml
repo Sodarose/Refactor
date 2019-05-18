@@ -32,11 +32,11 @@
     <orderEntry type="library" name="Maven: org.dom4j:dom4j:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.45" level="project" />
     <orderEntry type="module" module-name="common" />
-    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:3.13.9" level="project" />
-    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-symbol-solver-core:3.14.0" level="project" />
-    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-symbol-solver-logic:3.14.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-symbol-solver-core:3.14.1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-symbol-solver-logic:3.14.1" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.24.0-GA" level="project" />
-    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-symbol-solver-model:3.14.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-symbol-solver-model:3.14.1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:3.14.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:27.0-jre" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:failureaccess:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />

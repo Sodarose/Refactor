@@ -4,16 +4,17 @@ import analysis.Rule;
 import analysis.RuleLink;
 import com.github.javaparser.ast.CompilationUnit;
 import io.ParserProject;
+import model.Issue;
 import model.IssueContext;
 import refactor.ReFactorExec;
-import refactor.Refactor;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.*;
 
 /**
- *
+ * 扫描入口
+ * @author kangkang
  * */
 public class Analysis  {
 
@@ -21,6 +22,7 @@ public class Analysis  {
     private CompletionService<IssueContext> completionService;
     private final int MAX_THREAD = 10;
     private int taskNum = 0;
+    private List<CompilationUnit> units;
 
     public Analysis(){
         service = Executors.newFixedThreadPool(MAX_THREAD,new RuleThreadFactory());
@@ -28,7 +30,7 @@ public class Analysis  {
     }
 
     public void analysis(String project){
-        List<CompilationUnit> units = ParserProject.parserProject(project);
+        units = ParserProject.parserProject(project);
         List<Rule> rules = RuleLink.newInstance().readRuleLinkByXML();
         runAnalysis(units,rules);
     }
@@ -67,8 +69,10 @@ public class Analysis  {
     public static void main(String []args){
         Analysis analysis = new Analysis();
         analysis.analysis("D:\\gitProject\\W8X");
-        ReFactorExec factorExec = new ReFactorExec();
-        factorExec.factor(analysis.results());
+        List<Issue> list = analysis.collectResult().getIssues();
+        for(Issue issue:list){
+            System.out.println(issue.getIssueNode());
+        }
     }
 
 }
