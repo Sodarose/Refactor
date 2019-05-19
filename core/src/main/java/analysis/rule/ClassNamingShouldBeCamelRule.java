@@ -14,28 +14,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
-    private final List<String> classNameList=new ArrayList<>();
     private final List<String> issueNameList=new ArrayList<>();
-    private String PublicName=null;
     private final BaseVisitor<ClassOrInterfaceDeclaration> visitor=new BaseVisitor<ClassOrInterfaceDeclaration>(){
         @Override
         public void visit(ClassOrInterfaceDeclaration n, Object arg) {
-            if(n.isPublic()){
-                PublicName=n.getNameAsString();
-            }
-                   classNameList.add(n.getNameAsString());
+                getList().add(n);
         }
     };
 
-    public List<String> checkClassName() throws IOException {
-        for(String name:classNameList){
+    public void checkClassName() throws IOException {
+        List<ClassOrInterfaceDeclaration> classList=visitor.getList();
+        for(ClassOrInterfaceDeclaration classOrInterfaceDeclaration:classList){
+            String name=classOrInterfaceDeclaration.getNameAsString();
             List<String> nameList=SplitName.split(name);
             boolean nameFlag=check(nameList);
             if(!nameFlag){
-                issueNameList.add(name);
+                Issue issue=new Issue();
+                issue.setIssueNode(classOrInterfaceDeclaration);
+                issue.setUnitNode(classOrInterfaceDeclaration.findRootNode());
+                getContext().getIssues().add(issue);
             }
         }
-        return null;
     }
     public boolean check(List<String> nameList){
         for(String name:nameList){
@@ -50,19 +49,13 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
     public IssueContext apply(List<CompilationUnit> units)  {
         for(CompilationUnit unit:units){
             unit.accept(visitor,null);
-            try {
-                checkClassName();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            for(String name:issueNameList){
-                Issue issue=new Issue();
-                issue.setClassName(name);
-                issue.setFileName(PublicName);
-                getContext().getIssues().add(issue);
-            }
         }
-        return null;
+        try {
+            checkClassName();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return getContext();
     }
     public static void main(String[] args){
             String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");

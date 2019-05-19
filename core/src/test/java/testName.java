@@ -1,10 +1,10 @@
 public class testName {
-        public void changekey(){
+        public void changekey(int datatext){
                 int namerecord=1;
         }
 }
 class ChangeKey{
-        public void testname(){
+        public void testname(int keychange){
                 int nametext=2;
         }
         }
