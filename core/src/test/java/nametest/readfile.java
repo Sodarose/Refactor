@@ -20,7 +20,6 @@ public class readfile {
             while ((str = br.readLine()) != null) {
                 sb.append(str + "\r\n");
 
-                System.out.println(str);
             }
 
             br.close();

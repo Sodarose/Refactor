@@ -19,6 +19,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class Issue {
     private String issueName;
+    private String fileName;
     private String description;
     private Node issueNode;
     private String className;

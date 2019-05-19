@@ -1,4 +1,4 @@
-package nametest;
+package ulits;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class splitName {
+public class SplitName {
 
         public static List<String> split(String name) throws IOException {
             String copyname=name.toLowerCase();
@@ -50,6 +50,7 @@ public class splitName {
             return sortMap;
         }
 }
+
 class MapKeyComparator implements Comparator<Integer>{
 
     @Override
