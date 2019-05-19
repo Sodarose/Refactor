@@ -4,7 +4,7 @@ import model.Issue;
 import model.ReCorrect;
 import refactor.AbstractRefactor;
 
-public class DeeplyIfStmtsRe extends AbstractRefactor {
+public class DeeplyIfStmtsRefactor extends AbstractRefactor {
     @Override
     public ReCorrect refactor(Issue issue) {
 

@@ -11,7 +11,7 @@
         <module name="web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="common" target="1.8" />
       <module name="core" target="1.8" />
       <module name="w8x" target="1.8" />

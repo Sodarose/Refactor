@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import refactor.Refactor;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 坏味道模型数据
@@ -23,5 +24,6 @@ public class Issue {
     private String className;
     private Node unitNode;
     private String ruleName;
-    private Refactor refactor;
-}
+    private String refactorName;
+    private Map<String,Object> data;
+ }

@@ -29,6 +29,8 @@ public class VoidPoolRefactor extends AbstractRefactor {
      * */
     private void tranFromWhile(ForStmt forStmt) {
         final Statement stmt = forStmt.getBody();
+
+        //构建body
         BlockStmt blockStmt;
         if (stmt.isBlockStmt()) {
             blockStmt = stmt.asBlockStmt();
@@ -36,6 +38,8 @@ public class VoidPoolRefactor extends AbstractRefactor {
             blockStmt = new BlockStmt();
             blockStmt.getStatements().add(stmt);
         }
+
+        //构建表达式
         Expression condition;
         if (forStmt.getCompare().isPresent()) {
             condition = forStmt.getCompare().get();
@@ -45,6 +49,10 @@ public class VoidPoolRefactor extends AbstractRefactor {
             condition = temp;
 
         }
+
+        
+
+
         WhileStmt whileStmt = new WhileStmt();
         whileStmt.setCondition(condition);
         whileStmt.setBody(blockStmt);

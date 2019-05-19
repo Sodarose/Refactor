@@ -36,10 +36,16 @@ public class ShallowSwitchRule extends AbstractRuleVisitor {
         return getContext();
     }
 
+    /**
+     * 收集switch
+     * */
     private void collectSwitchStmt(CompilationUnit unit) {
         unit.accept(switchStmtVisitor,null);
     }
 
+    /**
+     * 检查
+     * */
     private void check() {
         List<SwitchStmt> switchStmts = switchStmtVisitor.getList();
         for(SwitchStmt switchStmt : switchStmts){
@@ -52,8 +58,8 @@ public class ShallowSwitchRule extends AbstractRuleVisitor {
             Issue issue = new Issue();
             issue.setUnitNode(switchStmt.findRootNode());
             issue.setIssueNode(switchStmt);
+            issue.setRefactorName(getSolutionClassName());
             getContext().getIssues().add(issue);
-            issue.setRefactor(new ShallowSwitchRefactor());
         }
     }
 

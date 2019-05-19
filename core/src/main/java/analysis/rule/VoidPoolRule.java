@@ -51,6 +51,7 @@ public class VoidPoolRule extends AbstractRuleVisitor {
             Issue issue = new Issue();
             issue.setUnitNode(forStmt.findRootNode());
             issue.setIssueNode(forStmt);
+            issue.setRefactorName(getSolutionClassName());
             getContext().getIssues().add(issue);
         }
     }
