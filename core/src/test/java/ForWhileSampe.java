@@ -14,6 +14,9 @@ public class ForWhileSampe {
              if (i == 100) {
                  break;
              }
+             i++;
+             i++;
+             i++;
          }
 
          for (; i < 100; ) {
@@ -44,6 +47,10 @@ public class ForWhileSampe {
              }
 
          }
+         double l = 0.0;
+         while (l<100.0){
+             l++;
+         }
      }
 
      //如果一个方法内对这个变量进行了多次循环 则不做重构
@@ -52,38 +59,36 @@ public class ForWhileSampe {
          //第一种类型
          System.out.println("sdasdasd");
          System.out.println("sdasdasd");
-         int i = 0;
+         int i = 0,q=0;
+         int a = 0;
+         a = 100;
+         a++;
          System.out.println("sdasdasd");
          System.out.println("sdasdasd");
-         while (i < 100) {
+         while (i<a&&q<1000) {
              System.out.println("sdasdasd");
              System.out.println("sdasdasd");
-             i++;
              System.out.println("sdasdasd");
              System.out.println("sdasdasd");
+             i+=2;
          }
          System.out.println("sdasdasd");
          System.out.println("sdasdasd");
 
-         //第二种类型
-         int j = 0;
-         while (j < 1000) {
-             j++;
-             i++;
-         }
-
-         //第三种类型
-         while (i < 1000 && j < 1000) {
-             i++;
-             j++;
-         }
      }
     public void t() {
+
         int i = 0;
-        while (i < 100) {
+        T:while (i < 100) {
             System.out.println("sadasd");
             i++;
             System.out.println("sdasds");
+        }
+        int k = 0,j=0;
+        T:while (j<k) {
+
+            j++;
+            k++;
         }
     }
 }

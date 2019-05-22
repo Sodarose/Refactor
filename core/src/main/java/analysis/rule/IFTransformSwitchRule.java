@@ -1,158 +1,201 @@
 package analysis.rule;
 
 import analysis.AbstractRuleVisitor;
+import com.github.javaparser.Range;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.NodeList;
+import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.BinaryExpr;
 import com.github.javaparser.ast.expr.Expression;
+import com.github.javaparser.ast.stmt.BlockStmt;
 import com.github.javaparser.ast.stmt.IfStmt;
+import com.github.javaparser.ast.stmt.Statement;
+import com.github.javaparser.ast.stmt.SwitchEntry;
+import com.github.javaparser.utils.ProjectRoot;
 import io.FileUlits;
+import io.ParserProject;
 import model.Issue;
 import model.IssueContext;
-import ulits.FindNodeUlits;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import ulits.AnalysisUlits;
 
-import java.io.File;
 import java.util.*;
 
 /**
  * if转换为transform
+ *
+ * @author kangkang
  */
 public class IFTransformSwitchRule extends AbstractRuleVisitor {
-    private final int min = 3;
-    private Expression selector;
+    private final int min = 2;
 
     @Override
     public IssueContext apply(List<CompilationUnit> units) {
         for (CompilationUnit unit : units) {
-            mayTransformWhile(unit);
+            collectIssue(unit);
         }
         return getContext();
     }
 
-    private void mayTransformWhile(CompilationUnit unit) {
-        List<IfStmt> ifStmts = FindNodeUlits.findIfStmtByName(unit, null, false);
+    /**
+     * 收集问题代码
+     */
+    private void collectIssue(CompilationUnit unit) {
+        List<IfStmt> ifStmts = unit.findAll(IfStmt.class);
+        Map<Range, IfStmt> map = new HashMap<>();
         for (IfStmt ifStmt : ifStmts) {
-            if (!isTransformWhile(ifStmt)) {
+            IfStmt i = getParent(ifStmt);
+            if (!i.getRange().isPresent()) {
                 continue;
             }
-            Issue issue = new Issue();
-            issue.setIssueNode(ifStmt);
-            issue.setUnitNode(ifStmt.findRootNode());
-            issue.setRefactorName(getSolutionClassName());
-            //避免重复工作 所以在这里放入一些必要的数据
-            if (selector != null) {
-                Map<String, Object> map = new HashMap<>(2);
-                map.put("selector", selector);
-                issue.setData(map);
-                selector = null;
+            map.put(i.getRange().get(), i);
+        }
+        for (Map.Entry<Range, IfStmt> entry : map.entrySet()) {
+            Map<String, Object> data = needRefactor(entry.getValue());
+            if (data == null || data.size() == 0) {
+                continue;
             }
-            getContext().getIssues().add(issue);
+            getContext().getIssues().add(createIssue(entry.getValue(), data));
         }
     }
 
-    private boolean isTransformWhile(IfStmt ifStmt) {
-        int i = 1;
-        List<Expression> conditions = new ArrayList<>();
-        IfStmt temp = ifStmt;
-        conditions.add(ifStmt.getCondition());
-        while (temp.hasElseBranch()) {
-            if (!temp.getElseStmt().isPresent()) {
-                break;
-            }
-            if (!temp.getElseStmt().get().isIfStmt()) {
-                break;
-            }
-            temp = temp.getElseStmt().get().asIfStmt();
-            conditions.add(temp.getCondition());
-            i++;
+    /**
+     * 判断释放需要重构s
+     */
+    private Map<String, Object> needRefactor(IfStmt ifStmt) {
+        int deep = checkDeepAndCondition(ifStmt);
+        if (deep <= min) {
+            return null;
         }
-        //小于min不需要转换
-        if (i <= min) {
-            return false;
+        List<Expression> conditions = getAllConditions(ifStmt);
+        if (conditions == null || conditions.size() == 0) {
+            return null;
         }
-        if (!isConformRule(conditions, i)) {
-            return false;
+        List<Expression> tags = getAllExpr(conditions);
+        if (tags == null || tags.size() == 0) {
+            return null;
         }
-        System.out.println(ifStmt);
-        return true;
+        Expression selector = getSelector(tags, conditions.size());
+        Map<String, Object> map = new HashMap<>(2);
+        map.put("selector", selector);
+        return map;
     }
 
-    private boolean isConformRule(List<Expression> conditions, int i) {
 
-        Map<Expression, Integer> map = new LinkedHashMap<>();
-        //选出selector 和 cases 如果case重复则不能重构 同时 如果表达式不是 == 和 equals()则不能重构
-
-        for (Expression expr : conditions) {
-            //如果不是 xx.equals(xx) 或者 xx == xx类型 返回false
-            if (expr.isFieldAccessExpr()) {
-                String fullName = expr.asFieldAccessExpr().getName().getIdentifier();
-                String eq = fullName.substring(0, fullName.indexOf("("));
-                if (!eq.equals("equals")) {
-                    return false;
-                }
-                Expression left = expr.asFieldAccessExpr().getScope();
-                eq = fullName.substring(fullName.lastIndexOf("(") + 1, fullName.lastIndexOf(")"));
-                Expression right = StaticJavaParser.parseExpression(eq);
-                if (map.containsKey(left)) {
-                    map.put(left, map.get(left) + 1);
-                } else {
-                    map.put(left, 1);
-                }
-                if (map.containsKey(right)) {
-                    map.put(right, map.get(right) + 1);
-                } else {
-                    map.put(right, 1);
-                }
-            }
-
-            if (!expr.isBinaryExpr()) {
-                return false;
-            }
-
-            if (expr.isBinaryExpr()) {
-                if (!expr.asBinaryExpr().getOperator().equals(BinaryExpr.Operator.EQUALS)) {
-                    return false;
-                }
-                if (map.containsKey(expr.asBinaryExpr().getLeft())) {
-                    map.put(expr.asBinaryExpr().getLeft(), map.get(expr.asBinaryExpr().getLeft()) + 1);
-                } else {
-                    map.put(expr.asBinaryExpr().getLeft(), 1);
-                }
-                if (map.containsKey(expr.asBinaryExpr().getRight())) {
-                    map.put(expr.asBinaryExpr().getRight(), map.get(expr.asBinaryExpr().getRight()) + 1);
-                } else {
-                    map.put(expr.asBinaryExpr().getRight(), 1);
-                }
+    /**
+     * 从tag选出selector 并且判断是否有重复的标签
+     */
+    private Expression getSelector(List<Expression> tags, int i) {
+        Map<Expression, Integer> map = new HashMap<>(tags.size());
+        for (Expression tag : tags) {
+            if (map.containsKey(tag)) {
+                map.put(tag, map.get(tag) + 1);
+            } else {
+                map.put(tag, 1);
             }
         }
-
-        Map.Entry<Expression, Integer> m = null;
+        Expression selector = null;
         for (Map.Entry<Expression, Integer> entry : map.entrySet()) {
+            //selector 个数一定等于表达式个数
             if (entry.getValue() == i) {
-                m = entry;
-                map.remove(entry.getKey());
-                break;
+                selector = entry.getKey();
             }
         }
-
-        if (m == null) {
-            return false;
-        }
+        map.remove(selector);
         for (Map.Entry<Expression, Integer> entry : map.entrySet()) {
             if (entry.getValue() != 1) {
-                return false;
+                return null;
+            }
+            if (!entry.getKey().isLiteralExpr() && !entry.getKey().isNameExpr() && !entry.getKey().isFieldAccessExpr()) {
+                return null;
             }
         }
-        selector = m.getKey();
-        return true;
+        return selector;
+    }
+
+    /**
+     * 拆分表达式得到所有tag选项 tag选项只能为NameExpr 或者是基本类型 例如; int string 等等
+     */
+    private List<Expression> getAllExpr(List<Expression> conditions) {
+        List<Expression> exprs = new ArrayList<>();
+        for (Expression expr : conditions) {
+            AnalysisUlits.analysisExpr(expr, exprs);
+        }
+        return exprs;
+    }
+
+    /**
+     * 得到所有条件
+     */
+    private List<Expression> getAllConditions(Statement stmt) {
+        List<Expression> conditions = new ArrayList<>();
+        while (stmt.isIfStmt()) {
+            IfStmt ifStmt = stmt.asIfStmt();
+            Expression condition = ifStmt.getCondition();
+            AnalysisUlits.analysisCondition(condition,conditions);
+            if (!ifStmt.hasElseBranch()) {
+                break;
+            }
+            stmt = ifStmt.getElseStmt().get();
+        }
+        if(conditions.contains(null)){
+            return null;
+        }
+        return conditions;
+    }
+
+    /**
+     * 判断深度是否符合转换规则
+     */
+    private int checkDeepAndCondition(Statement stmt) {
+        int i = 0;
+        while (stmt.isIfStmt()) {
+            IfStmt ifStmt = stmt.asIfStmt();
+            if (!ifStmt.getElseStmt().isPresent()) {
+                break;
+            }
+            i++;
+            if (!ifStmt.hasElseBranch()) {
+                break;
+            }
+            stmt = ifStmt.getElseStmt().get();
+        }
+        return i;
+    }
+
+    /**
+     * 生成issue
+     */
+    private Issue createIssue(IfStmt ifStmt, Map<String, Object> data) {
+        Issue issue = new Issue();
+        issue.setRefactorName(getSolutionClassName());
+        issue.setIssueNode(ifStmt);
+        issue.setData(data);
+        issue.setUnitNode(ifStmt.findRootNode());
+        return issue;
+    }
+
+    /**
+     * 递归方式找到头if节点
+     */
+    private IfStmt getParent(IfStmt ifStmt) {
+        if (!ifStmt.getParentNode().isPresent()) {
+            return ifStmt;
+        } else if (ifStmt.getParentNode().get().getClass().getName().equals("com.github.javaparser.ast.stmt.IfStmt")) {
+            return getParent((IfStmt) ifStmt.getParentNode().get());
+        } else {
+            return ifStmt;
+        }
     }
 
     public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\SwitchSample.java");
+        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\IfSample.java");
         CompilationUnit unit = StaticJavaParser.parse(source);
-        List<IfStmt> ifStmts = unit.findAll(IfStmt.class);
-        for (IfStmt ifStmt : ifStmts) {
-
-        }
+        IFTransformSwitchRule ifTransformSwitchRule = new IFTransformSwitchRule();
+        List<CompilationUnit> units = new ArrayList<>();
+        units.add(unit);
+        ifTransformSwitchRule.apply(units);
     }
+
 }

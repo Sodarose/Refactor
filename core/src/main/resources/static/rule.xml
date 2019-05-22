@@ -37,7 +37,7 @@
         <description>Switch转换为if</description>
         <className>analysis.rule.ShallowSwitchRule</className>
         <solutionClassName>refactor.refactorimpl.ShallowSwitchRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
         <example>
             switch (empType)
@@ -59,7 +59,7 @@
         <description>空表达式for转换为while</description>
         <className>analysis.rule.VoidPoolRule</className>
         <solutionClassName>refactor.refactorimpl.VoidPoolRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
         <example>
            for(;;){
@@ -68,12 +68,13 @@
         </example>
     </rule-item>
 
+
     <rule-item>
         <rule-name>WhileChangeForRule</rule-name>
         <description>while转化为for</description>
         <className>analysis.rule.WhileChangeForRule</className>
         <solutionClassName>refactor.refactorimpl.WhileChangeRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>有些时候while转化成for能够使人更好的理解</rule-message>
         <example>
             int i = 0;
@@ -84,6 +85,7 @@
             }
         </example>
     </rule-item>
+
 
     <rule-item>
         <rule-name>IFTransformSwitchRule</rule-name>

@@ -1,16 +1,9 @@
 package refactor.refactorimpl;
 
-import com.github.javaparser.StaticJavaParser;
-import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
-import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.*;
-import com.github.javaparser.resolution.declarations.ResolvedDeclaration;
-import com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration;
-import com.github.javaparser.resolution.types.ResolvedReferenceType;
 import com.github.javaparser.resolution.types.ResolvedType;
-import com.github.javaparser.symbolsolver.javaparser.Navigator;
 import com.github.javaparser.symbolsolver.model.resolution.SymbolReference;
 import io.ParserProject;
 import model.Issue;
@@ -28,12 +21,12 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
     private boolean isEnum = false;
     private boolean isString = false;
     String enumName;
-    private CompilationUnit unit;
+    private Node node = null;
 
     @Override
     public ReCorrect refactor(Issue issue) {
         SwitchStmt switchStmt = (SwitchStmt) issue.getIssueNode();
-        unit = (CompilationUnit) issue.getUnitNode();
+        checkType(switchStmt);
         transFrom(switchStmt);
         return null;
     }
@@ -42,7 +35,8 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
      * 转换函数
      */
     private void transFrom(SwitchStmt switchStmt) {
-        Node node = switchStmt.getParentNode().get();
+        checkType(switchStmt);
+        node = switchStmt.findRootNode();
         Expression selector = switchStmt.getSelector();
         Statement statement = buildStmt(selector, switchStmt.getEntries());
         //这个地方有可能出错
@@ -54,6 +48,7 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             blockStmt.getStatements().add(index, statement.asIfStmt());
         }
         blockStmt.remove(switchStmt);
+        System.out.println(this.getClass().getName());
     }
 
 
@@ -61,7 +56,6 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
      * 组合分支语句
      */
     private Statement buildStmt(Expression selector, List<SwitchEntry> switchEntries) {
-
         IfStmt p = null, q = null;
         boolean head = true;
         //针对空body的swuich分支
@@ -117,6 +111,10 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
                 p.setElseStmt(statement.asBlockStmt());
             }
         }
+
+        //记得删掉
+
+        clean();
         return q;
     }
 
@@ -184,13 +182,30 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
 
         //枚举变量
         if (isEnum) {
+            String labName = cases.toString();
+            Expression left = select;
+            Expression right = null;
+            if (labName.indexOf(enumName) > 0) {
+                right = cases;
+            } else {
+                FieldAccessExpr fieldAccessExpr = new FieldAccessExpr();
+                fieldAccessExpr.setScope(new NameExpr(enumName));
+                fieldAccessExpr.setName(labName);
+                right = fieldAccessExpr;
+            }
+            BinaryExpr condition = new BinaryExpr();
+            condition.setOperator(BinaryExpr.Operator.EQUALS);
+            condition.setLeft(left);
+            condition.setRight(right);
 
+            return condition;
         }
 
         BinaryExpr condition = new BinaryExpr();
         condition.setOperator(BinaryExpr.Operator.EQUALS);
         condition.setLeft(select);
         condition.setRight(switchEntry.getLabels().get(0));
+
         return condition;
     }
 
@@ -257,15 +272,7 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             return true;
         }
 
-        /**
-         * 针对 if(){
-         *     return xx;
-         * }else if{
-         *     return xx;
-         * }else{
-         *     return xx;
-         * }
-         * */
+        //返回语句在if之中
         if (statements.get(statements.size() - 1).isIfStmt()) {
             IfStmt ifStmt = statements.get(statements.size() - 1).asIfStmt();
             if (!ifStmt.hasElseBranch()) {
@@ -274,18 +281,40 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             if (!ifStmt.getElseStmt().isPresent()) {
                 return false;
             }
-            boolean isReturn = false;
-            while (ifStmt.hasElseBranch()) {
-                if(!ifStmt.getElseStmt().isPresent()){
-                    return false;
-                }
-                if(ifStmt.getElseStmt().get().isIfStmt()){
-
-                }
-
-            }
+            return ishasReturn(ifStmt);
         }
         return false;
+    }
+
+    /**
+     * 针对 if(){
+     * return xx;
+     * }else if{
+     * return xx;
+     * }else{
+     * return xx;
+     * }
+     */
+    private boolean ishasReturn(IfStmt ifStmt) {
+        while (ifStmt.hasElseBranch()) {
+            if (ifStmt.getThenStmt().findAll(ReturnStmt.class).size() == 0) {
+                return false;
+            }
+            if (ifStmt.getElseStmt().get().isIfStmt()) {
+                ifStmt = ifStmt.getElseStmt().get().asIfStmt();
+            } else {
+                if (ifStmt.getElseStmt().get().findAll(ReturnStmt.class).size() == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void clean() {
+        isString = false;
+        isEnum = false;
+        enumName = "";
     }
 
     /**
@@ -295,21 +324,11 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
         List<SwitchStmt> switchStmts = io.FindNodeUlits.getSwitch("D:\\gitProject\\W8X\\core\\src\\test\\java\\SwitchSample.java");
         ShallowSwitchRefactor shallowSwitchRefactor = new ShallowSwitchRefactor();
         ParserProject.parserProject("D:\\gitProject\\W8X");
-        ResolvedDeclaration resolvedDeclaration = null;
-        Statement s =  StaticJavaParser.parseStatement("if(1==100){\n" +
-                "                    return;\n" +
-                "                }else if(2==100){\n" +
-                "                    return;\n" +
-                "                }else{\n" +
-                "                    return;\n" +
-                "                }");
-        Iterator<SwitchStmt> it  = switchStmts.iterator();
-        while (it.hasNext()){
+        Iterator<SwitchStmt> it = switchStmts.iterator();
+        while (it.hasNext()) {
             SwitchStmt switchStmt = it.next();
-           Iterator<SwitchEntry> switchs =  switchStmt.getEntries().iterator();
-
+            shallowSwitchRefactor.transFrom(switchStmt);
         }
-
     }
 }
 

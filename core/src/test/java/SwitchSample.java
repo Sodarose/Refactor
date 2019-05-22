@@ -112,6 +112,16 @@ public class SwitchSample {
 
     public void qs() {
         EmployeeType type = EmployeeType.ENGINEER;
+        if (sbc() == EmployeeType.ENGINEER) {
+        } else if (sbc() == EmployeeType.MANAGER) {
+        } else if (sbc() == EmployeeType.SALESMAN) {
+        } else {
+            return;
+        }
+        return;
+    }
+    public void qsS() {
+        EmployeeType type = EmployeeType.ENGINEER;
         switch (sbc()) {
             case ENGINEER:
                 break;
@@ -146,9 +156,10 @@ public class SwitchSample {
                     return;
                 }else if(2==100){
                     return;
-                }else{
+                }else if (3==0){
                     return;
                 }
+                System.out.println("sss");
             default:
                 System.out.println("sss");
                 break;
