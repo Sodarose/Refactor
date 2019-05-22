@@ -42,6 +42,7 @@ public class ParserProject {
             throw new RuntimeException("读取项目失败");
         }
         TypeSolver reflectionTypeSolver = new ReflectionTypeSolver();
+
         combinedTypeSolver.add(reflectionTypeSolver);
         List<CompilationUnit> units = new ArrayList<>();
         try {
