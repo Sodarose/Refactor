@@ -1,34 +1,33 @@
 package refactor.refactorimpl;
 
-import analysis.rule.LowerCamelCaseVariableNaming;
+import analysis.rule.ClassVariNamingRule;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.ast.expr.VariableDeclarationExpr;
+import com.github.javaparser.ast.body.FieldDeclaration;
 import io.FileUlits;
 import model.Issue;
 import model.ReCorrect;
 import refactor.AbstractRefactor;
 import ulits.SplitName;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VariableNameRefactor extends AbstractRefactor {
+public class ClassVariNameRefactor  extends AbstractRefactor {
     @Override
     public ReCorrect refactor(Issue issue) {
-        VariableDeclarationExpr variableDeclarationExpr=(VariableDeclarationExpr) issue.getIssueNode();
+        FieldDeclaration fieldDeclaration=(FieldDeclaration)issue.getIssueNode();
         try {
-            variableNameRefactor(variableDeclarationExpr);
+            variableNameRefactor(fieldDeclaration);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(variableDeclarationExpr.getVariable(0).getNameAsString());
+        System.out.println(fieldDeclaration.getVariable(0).getNameAsString());
         return null;
     }
-    public void variableNameRefactor(VariableDeclarationExpr variableDeclarationExpr) throws IOException {
+    public void variableNameRefactor(FieldDeclaration fieldDeclaration) throws IOException {
         String name="";
-        List<String> nameList = SplitName.split(variableDeclarationExpr.getVariable(0).getNameAsString());
+        List<String> nameList = SplitName.split(fieldDeclaration.getVariable(0).getNameAsString());
         for(String data:nameList){
             if(name.equals("")){
                 name=name+data;
@@ -37,7 +36,7 @@ public class VariableNameRefactor extends AbstractRefactor {
             data=data.substring(0,1).toUpperCase()+data.substring(1);
             name=name+data;
         }
-        variableDeclarationExpr.getVariable(0).setName(name);
+        fieldDeclaration.getVariable(0).setName(name);
     }
     public static void main(String[] args){
         String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
@@ -45,12 +44,12 @@ public class VariableNameRefactor extends AbstractRefactor {
         CompilationUnit unit= StaticJavaParser.parse(source);
         List<CompilationUnit> list=new ArrayList<>();
         list.add(unit);
-        VariableNameRefactor variableNameRefactor=new VariableNameRefactor();
-        LowerCamelCaseVariableNaming lowerCamelCaseVariableNaming=new LowerCamelCaseVariableNaming();
-        lowerCamelCaseVariableNaming.apply(list);
-        issueList=lowerCamelCaseVariableNaming.getContext().getIssues();
+        ClassVariNameRefactor classVariNameRefactor=new ClassVariNameRefactor();
+        ClassVariNamingRule classVariNamingRule=new ClassVariNamingRule();
+        classVariNamingRule.apply(list);
+        issueList=classVariNamingRule.getContext().getIssues();
         for(Issue issue:issueList){
-            variableNameRefactor.refactor(issue);
+            classVariNameRefactor.refactor(issue);
         }
     }
 }

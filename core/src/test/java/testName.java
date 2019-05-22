@@ -1,6 +1,8 @@
 public class testName {
+        private static final String PATTERn="";
+        public  String username;
         public void changekey(int datatext){
-                int namerecord=1;
+                final int namerecord=1;
         }
 }
 class ChangeKey{

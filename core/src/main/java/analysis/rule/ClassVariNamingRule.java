@@ -4,7 +4,7 @@ import analysis.AbstractRuleVisitor;
 import analysis.BaseVisitor;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.ast.expr.VariableDeclarationExpr;
+import com.github.javaparser.ast.body.FieldDeclaration;
 import io.FileUlits;
 import model.Issue;
 import model.IssueContext;
@@ -14,40 +14,38 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
-    private BaseVisitor<VariableDeclarationExpr> visitor=new BaseVisitor<VariableDeclarationExpr>(){
+public class ClassVariNamingRule extends AbstractRuleVisitor {
+    private BaseVisitor<FieldDeclaration> visitor=new BaseVisitor<FieldDeclaration>(){
         @Override
-        public void visit(VariableDeclarationExpr n, Object arg) {
-            if(!n.isFinal()){
+        public void visit(FieldDeclaration n, Object arg) {
+            if(!(n.isStatic()||n.isFinal())){
                 getList().add(n);
-                System.out.println(n.getVariable(0).getNameAsString());
             }
-           super.visit(n,arg);
+            super.visit(n, arg);
         }
     };
     @Override
     public IssueContext apply(List<CompilationUnit> units) {
-       for (CompilationUnit unit:units){
-           unit.accept(visitor,null);
-       }
-       try {
-           checkVariableName();
-       }catch (IOException e){
-           e.printStackTrace();
-       }
-
+        for (CompilationUnit unit : units) {
+            unit.accept(visitor, null);
+        }
+        try {
+            checkVariableName();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return getContext();
     }
     public void checkVariableName() throws IOException {
-        List<VariableDeclarationExpr> variableList=visitor.getList();
-        for(VariableDeclarationExpr variableDeclarationExpr:variableList){
-            String name=variableDeclarationExpr.getVariable(0).getNameAsString();
+        List<FieldDeclaration> fieldDeclarationList=visitor.getList();
+        for (FieldDeclaration fieldDeclaration:fieldDeclarationList){
+            String name=fieldDeclaration.getVariable(0).getNameAsString();
             List<String> nameList= SplitName.split(name);
             boolean nameFlag=check(nameList);
             if(!nameFlag){
                 Issue issue=new Issue();
-                issue.setIssueNode(variableDeclarationExpr);
-                issue.setUnitNode(variableDeclarationExpr.findRootNode());
+                issue.setIssueNode(fieldDeclaration);
+                issue.setUnitNode(fieldDeclaration.findRootNode());
                 getContext().getIssues().add(issue);
             }
         }
@@ -71,8 +69,8 @@ public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
         CompilationUnit unit= StaticJavaParser.parse(source);
         List<CompilationUnit> list=new ArrayList<>();
         list.add(unit);
-        LowerCamelCaseVariableNaming lowerCamelCaseVariableNaming=new LowerCamelCaseVariableNaming();
-        lowerCamelCaseVariableNaming.apply(list);
-
+       ClassVariNamingRule classVariNamingRule=new ClassVariNamingRule();
+        classVariNamingRule.apply(list);
+        System.out.println(classVariNamingRule.getContext().getIssues());
     }
 }
