@@ -23,7 +23,7 @@ public class ParameterNameRefactor extends AbstractRefactor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(parameter.getNameAsString());
+
         return null;
     }
     public void parameterNameRefactor(Parameter parameter) throws IOException {

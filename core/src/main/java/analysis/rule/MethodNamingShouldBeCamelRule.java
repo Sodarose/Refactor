@@ -39,12 +39,15 @@ public class MethodNamingShouldBeCamelRule extends AbstractRuleVisitor {
         for (MethodDeclaration methodDeclaration : methodList) {
             String name = methodDeclaration.getNameAsString();
             List<String> nameList = SplitName.split(name);
-            boolean nameFlag = check(nameList);
-            if (!nameFlag) {
-                Issue issue = new Issue();
-                issue.setUnitNode(methodDeclaration.findRootNode());
-                issue.setIssueNode(methodDeclaration);
-                getContext().getIssues().add(issue);
+            if(nameList!=null) {
+                boolean nameFlag = check(nameList);
+                if (!nameFlag) {
+                    Issue issue = new Issue();
+                    issue.setUnitNode(methodDeclaration.findRootNode());
+                    issue.setIssueNode(methodDeclaration);
+                    issue.setRefactorName(getSolutionClassName());
+                    getContext().getIssues().add(issue);
+                }
             }
         }
     }

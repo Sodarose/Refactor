@@ -23,7 +23,7 @@ public class VariableNameRefactor extends AbstractRefactor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(variableDeclarationExpr.getVariable(0).getNameAsString());
+
         return null;
     }
     public void variableNameRefactor(VariableDeclarationExpr variableDeclarationExpr) throws IOException {

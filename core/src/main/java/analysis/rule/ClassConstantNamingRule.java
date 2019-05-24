@@ -30,6 +30,7 @@ public class ClassConstantNamingRule extends AbstractRuleVisitor {
                 Issue issue=new Issue();
                 issue.setIssueNode(fieldDeclaration);
                 issue.setUnitNode(fieldDeclaration);
+                issue.setRefactorName(getSolutionClassName());
                 getContext().getIssues().add(issue);
             }
         }

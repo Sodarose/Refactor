@@ -15,7 +15,7 @@ public class Main {
         //分析
         System.out.println("开始扫描");
         Analysis analysis = new Analysis();
-        analysis.analysis("D:\\gitProject\\W8X\\core");
+        analysis.analysis("E:\\w8x-dev");
         System.out.println("扫描结束");
         System.out.println("开始重构");
         //重构

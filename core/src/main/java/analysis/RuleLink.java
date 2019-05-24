@@ -13,7 +13,7 @@ import java.util.List;
  * 读取xml中的信息 然后根据反射生成对象 生成规则链
  */
 public class RuleLink {
-    private static final String RULE_XML_PATH = "D:\\gitProject\\W8X\\core\\src\\main\\resources\\static\\rule.xml";
+    private static final String RULE_XML_PATH = "E:\\w8x-dev\\core\\src\\main\\resources\\static\\rule.xml";
 
     private static RuleLink ruleLink = null;
 

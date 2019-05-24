@@ -19,7 +19,6 @@ public class ContantNameRefactor extends AbstractRefactor {
     public ReCorrect refactor(Issue issue) {
         FieldDeclaration fieldDeclaration=(FieldDeclaration) issue.getIssueNode();
         constantNameRefactor(fieldDeclaration);
-        System.out.println(fieldDeclaration.getVariable(0).getNameAsString());
         return null;
     }
     public void constantNameRefactor(FieldDeclaration fieldDeclaration){
