@@ -24,26 +24,29 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
 
     public void checkClassName() throws IOException {
         List<ClassOrInterfaceDeclaration> classList=visitor.getList();
-        for(ClassOrInterfaceDeclaration classOrInterfaceDeclaration:classList){
-            String name=classOrInterfaceDeclaration.getNameAsString();
-            List<String> nameList=SplitName.split(name);
-            boolean nameFlag=check(nameList);
-            if(!nameFlag){
-                Issue issue=new Issue();
-                issue.setIssueNode(classOrInterfaceDeclaration);
-                issue.setUnitNode(classOrInterfaceDeclaration.findRootNode());
-                getContext().getIssues().add(issue);
+        for(ClassOrInterfaceDeclaration classOrInterfaceDeclaration:classList) {
+            String name = classOrInterfaceDeclaration.getNameAsString();
+            List<String> nameList = SplitName.split(name);
+            if (nameList!=null) {
+                boolean nameFlag = check(nameList);
+                if (!nameFlag) {
+                    Issue issue = new Issue();
+                    issue.setIssueNode(classOrInterfaceDeclaration);
+                    issue.setUnitNode(classOrInterfaceDeclaration.findRootNode());
+                    issue.setRefactorName(getSolutionClassName());
+                    getContext().getIssues().add(issue);
+                }
             }
         }
     }
     public boolean check(List<String> nameList){
-        for(String name:nameList){
-            char temp=name.charAt(0);
-            if(temp >= 97 && temp <=122){
-                return false;
+            for (String name : nameList) {
+                char temp = name.charAt(0);
+                if (temp >= 97 && temp <= 122) {
+                    return false;
+                }
             }
-        }
-        return true;
+            return true;
     }
     @Override
     public IssueContext apply(List<CompilationUnit> units)  {

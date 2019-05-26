@@ -3,7 +3,7 @@ package ulits;
 * 命名匹配
 * */
 public class SundayUtil {
-    private   int MAXSIZE = 256;
+    private   int MAXSIZE = 1024;
     private   int moveLength[]=null;
     public static void main(String[] agrs){
         SundayUtil sundayUtil=new SundayUtil();

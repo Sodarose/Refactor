@@ -40,6 +40,7 @@ public class PackageNamingRule extends AbstractRuleVisitor {
                 Issue issue=new Issue();
                 issue.setIssueNode(packageDeclaration);
                 issue.setUnitNode(packageDeclaration.findRootNode());
+                issue.setRefactorName(getSolutionClassName());
                 getContext().getIssues().add(issue);
             }
         }

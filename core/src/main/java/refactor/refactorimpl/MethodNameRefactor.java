@@ -23,7 +23,7 @@ public class MethodNameRefactor extends AbstractRefactor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(methodDeclaration.getNameAsString());
+
         return null;
     }
     public void methodNameRefactor(MethodDeclaration methodDeclaration) throws IOException {

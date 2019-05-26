@@ -41,12 +41,15 @@ public class ClassVariNamingRule extends AbstractRuleVisitor {
         for (FieldDeclaration fieldDeclaration:fieldDeclarationList){
             String name=fieldDeclaration.getVariable(0).getNameAsString();
             List<String> nameList= SplitName.split(name);
-            boolean nameFlag=check(nameList);
-            if(!nameFlag){
-                Issue issue=new Issue();
-                issue.setIssueNode(fieldDeclaration);
-                issue.setUnitNode(fieldDeclaration.findRootNode());
-                getContext().getIssues().add(issue);
+            if (nameList!=null) {
+                boolean nameFlag = check(nameList);
+                if (!nameFlag) {
+                    Issue issue = new Issue();
+                    issue.setIssueNode(fieldDeclaration);
+                    issue.setUnitNode(fieldDeclaration.findRootNode());
+                    issue.setRefactorName(getSolutionClassName());
+                    getContext().getIssues().add(issue);
+                }
             }
         }
     }

@@ -5,29 +5,40 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public class SplitName {
 
         public static List<String> split(String name) throws IOException {
             String copyname=name.toLowerCase();
+            String flagName="";
             List<String> dataList=new ArrayList<String>();
             dataList=readData();
-            Map<Integer,String> nameMap=new TreeMap<Integer, String>();
+            Map<Integer,String> nameMap= new ConcurrentHashMap<Integer,String>();
             List<String> nameList=new ArrayList<String>();
             for(String data:dataList){
-                if(data.trim().length()<copyname.trim().length()) {
-                   SundayUtil sundayUtil=new SundayUtil();
-                   int pos=sundayUtil.sunday(copyname.trim(),data.trim());
+                if(data.trim().length()<=copyname.trim().length()) {
+                   BoyerMoore boyerMoore=new BoyerMoore();
+                   int pos=boyerMoore.match(copyname.trim(),data.trim());
                     if (pos != -1) {
                         nameMap.put(pos,name.substring(pos,pos+data.length()));
                     }
                 }
             }
             nameMap=sortMapByKey(nameMap);
-            for(Integer key:nameMap.keySet()){
-                nameList.add(nameMap.get(key));
+            if(nameMap!=null) {
+                for (Integer key : nameMap.keySet()) {
+                    nameList.add(nameMap.get(key));
+                }
+                for (String content : nameList) {
+                    flagName = flagName + content;
+                }
+                if (flagName.equals(copyname)) {
+                    return nameList;
+                }
             }
-            return nameList;
+            return null;
         }
         public static List<String> readData() throws FileNotFoundException, IOException {
             List<String> nameList=new ArrayList<String>();
@@ -45,9 +56,10 @@ public class SplitName {
             if(map == null || map.isEmpty()){
                 return null;
             }
-            Map<Integer,String> sortMap=new TreeMap<Integer, String>(new MapKeyComparator());
+            Map<Integer,String> sortMap=new TreeMap<>(new MapKeyComparator());
             sortMap.putAll(map);
-            return sortMap;
+            Map<Integer,String> resultMap=new ConcurrentHashMap<Integer, String>(sortMap);
+            return resultMap;
         }
 }
 

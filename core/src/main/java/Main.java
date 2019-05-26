@@ -42,7 +42,12 @@ public class Main {
     public static void main(String[] args) {
         //分析
         System.out.println("开始扫描");
+<<<<<<< HEAD
         analysis("D:\\gitProject\\W8X");
+=======
+        Analysis analysis = new Analysis();
+        analysis.analysis("E:\\w8x-dev");
+>>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
         System.out.println("扫描结束");
         //重构
     }

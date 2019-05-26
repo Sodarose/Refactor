@@ -22,7 +22,6 @@ public class ClassNameRefactor extends AbstractRefactor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(classOrInterfaceDeclaration);
         return null;
     }
     private void classNameRefactor(ClassOrInterfaceDeclaration classOrInterfaceDeclaration) throws IOException {

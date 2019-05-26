@@ -20,7 +20,7 @@ public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
         public void visit(VariableDeclarationExpr n, Object arg) {
             if(!n.isFinal()){
                 getList().add(n);
-                System.out.println(n.getVariable(0).getNameAsString());
+
             }
            super.visit(n,arg);
         }
@@ -43,12 +43,15 @@ public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
         for(VariableDeclarationExpr variableDeclarationExpr:variableList){
             String name=variableDeclarationExpr.getVariable(0).getNameAsString();
             List<String> nameList= SplitName.split(name);
-            boolean nameFlag=check(nameList);
-            if(!nameFlag){
-                Issue issue=new Issue();
-                issue.setIssueNode(variableDeclarationExpr);
-                issue.setUnitNode(variableDeclarationExpr.findRootNode());
-                getContext().getIssues().add(issue);
+            if(nameList!=null) {
+                boolean nameFlag = check(nameList);
+                if (!nameFlag) {
+                    Issue issue = new Issue();
+                    issue.setIssueNode(variableDeclarationExpr);
+                    issue.setUnitNode(variableDeclarationExpr.findRootNode());
+                    issue.setRefactorName(getSolutionClassName());
+                    getContext().getIssues().add(issue);
+                }
             }
         }
     }
