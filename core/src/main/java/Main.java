@@ -1,26 +1,49 @@
 import analysis.process.Analysis;
-import com.github.javaparser.ast.Node;
-import lombok.extern.log4j.Log4j2;
+
+import com.github.javaparser.ast.CompilationUnit;
+import model.Issue;
+import model.IssueContext;
+import org.checkerframework.checker.units.qual.A;
 import refactor.ReFactorExec;
 
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  */
-@Log4j2
 public class Main {
+    private static IssueContext issueContext;
+    private static Map<Object, List<Issue>> map = new HashMap<>();
+
+    public static void analysis(String path) {
+        Analysis analysis = new Analysis();
+        analysis.analysis(path);
+        issueContext = analysis.results();
+        for (Issue issue : issueContext.getIssues()) {
+            if (map.containsKey(issue.getUnitNode())) {
+                map.get(issue.getUnitNode()).add(issue);
+            } else {
+                List<Issue> issues = new ArrayList<>();
+                issues.add(issue);
+                map.put(issue.getUnitNode(), issues);
+            }
+        }
+    }
+
+    public static void refactor() {
+        ReFactorExec reFactorExec = new ReFactorExec();
+        reFactorExec.factor(issueContext);
+    }
+
+
     public static void main(String[] args) {
         //分析
         System.out.println("开始扫描");
-        Analysis analysis = new Analysis();
-        analysis.analysis("D:\\gitProject\\W8X\\core");
+        analysis("D:\\gitProject\\W8X");
         System.out.println("扫描结束");
-        System.out.println("开始重构");
         //重构
-        ReFactorExec reFactorExec = new ReFactorExec();
-        reFactorExec.factor(analysis.results());
-        System.out.println("重构结束");
     }
 }

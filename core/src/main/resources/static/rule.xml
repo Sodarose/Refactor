@@ -5,7 +5,7 @@
         <description>if深层嵌套</description>
         <className>analysis.rule.DeeplyIfStmtsRule</className>
         <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>if深层嵌套超过三层</rule-message>
         <example>
             if (i == 1) {

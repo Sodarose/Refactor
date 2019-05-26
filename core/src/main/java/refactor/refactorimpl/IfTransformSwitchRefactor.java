@@ -54,7 +54,7 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
         }
         switchStmt.setEntries(switchEntries);
         ifStmt.getParentNode().get().replace(ifStmt, switchStmt);
-        System.out.println(switchStmt);
+        //System.out.println(switchStmt);
     }
 
     /**
@@ -197,6 +197,7 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
             return;
         }
         ResolvedType s = ParserProject.getJavaParserFacade().getType(selector);
+        System.out.println(s.describe());
         //搜索根据类限定名称搜索
         SymbolReference v = ParserProject.getCombinedTypeSolver().tryToSolveType(s.describe());
         if (!v.isSolved()) {

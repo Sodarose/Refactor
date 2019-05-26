@@ -43,7 +43,7 @@ public class IFTransformSwitchRule extends AbstractRuleVisitor {
      */
     private void collectIssue(CompilationUnit unit) {
         List<IfStmt> ifStmts = unit.findAll(IfStmt.class);
-        Map<Range, IfStmt> map = new HashMap<>();
+        Map<Range, IfStmt> map = new HashMap<>(1);
         for (IfStmt ifStmt : ifStmts) {
             IfStmt i = getParent(ifStmt);
             if (!i.getRange().isPresent()) {

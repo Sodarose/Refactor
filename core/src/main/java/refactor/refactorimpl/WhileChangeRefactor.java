@@ -25,11 +25,9 @@ import java.util.Map;
 /**
  * @author kangkang
  */
-@Log4j2
 public class WhileChangeRefactor implements Refactor {
     @Override
     public ReCorrect refactor(Issue issue) {
-        log.info("开始重构"+issue.getRefactorName());
         Map<String, Object> data = issue.getData();
         WhileStmt whileStmt = (WhileStmt) issue.getIssueNode();
         transFromsFor(whileStmt, data);

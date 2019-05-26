@@ -2,6 +2,8 @@ package ulits;
 
 import com.github.javaparser.ast.expr.BinaryExpr;
 import com.github.javaparser.ast.expr.Expression;
+import com.github.javaparser.ast.stmt.IfStmt;
+import com.github.javaparser.ast.stmt.Statement;
 
 import java.util.List;
 
@@ -50,4 +52,36 @@ public class AnalysisUlits {
             return;
         }
     }
+    /**
+     * 探测嵌套深度
+     */
+    public static int getDeep(Statement root) {
+        IfStmt it = getIfStmt(root);
+        if (it == null) {
+            return 0;
+        } else {
+            int left = getDeep(it.getThenStmt());
+            int right = 0;
+            if (it.hasElseBranch()) {
+                right = getDeep(it.getElseStmt().get());
+            }
+            return 1 + Math.max(left, right);
+        }
+    }
+    private static IfStmt getIfStmt(Statement stmt) {
+        if (stmt.isIfStmt()) {
+            return stmt.asIfStmt();
+        }
+        if (stmt.isBlockStmt()) {
+            for (Statement statement : stmt.asBlockStmt().getStatements()) {
+                if (statement.isIfStmt()) {
+                    return statement.asIfStmt();
+                }
+            }
+            return null;
+        } else {
+            return null;
+        }
+    }
 }
+

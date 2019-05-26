@@ -1,7 +1,6 @@
 public class TestFileTwo {
-
+    public TestFile testFile;
     public void tcp() {
-
     }
 
     double getPayAmount() {

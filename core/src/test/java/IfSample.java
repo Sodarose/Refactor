@@ -1,3 +1,5 @@
+import com.github.javaparser.symbolsolver.JavaSymbolSolver;
+
 public class IfSample {
     public void t() {
         int i = 0;
@@ -200,6 +202,8 @@ public class IfSample {
     public boolean c(){
         return false;
     }
+    public static void main(String []args){
 
+    }
 }
 

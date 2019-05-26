@@ -1,4 +1,7 @@
+import java.awt.*;
+
 public class TestFile {
+    public TextArea TestA;
 
     public void tcp() {
 
@@ -11,17 +14,17 @@ public class TestFile {
             result = DeadAmount();
             if (IsSeparated()) {
                 result = SeparatedAmount();
-                if (i==1) {
+                if (i == 1) {
                     result = SeparatedAmount();
-                    if (i==2) {
+                    if (i == 2) {
                         result = SeparatedAmount();
-                        if (i==13) {
+                        if (i == 13) {
                             result = SeparatedAmount();
-                            if (i==15) {
+                            if (i == 15) {
                                 result = SeparatedAmount();
-                                if (i==19) {
+                                if (i == 19) {
                                     result = SeparatedAmount();
-                                    if (i==100) {
+                                    if (i == 100) {
                                         result = SeparatedAmount();
                                     }
                                 }
@@ -36,21 +39,38 @@ public class TestFile {
 
 
     double regetPayAmount() {
+        int i = 0;
         double result;
         if (IsDead()) {
             result = DeadAmount();
+            if (!IsSeparated()) {
+                if (IsRetired()) {
+                    result = RetiredPayAmount();
+                } else {
+                    result = NormalPayAmount();
+                }
+                if (i == 0) {
+                    System.out.println("撒大声地");
+                }
+                return result;
+            }
+            result = SeparatedAmount();
+            if (i == 0) {
+                System.out.println("撒大声地");
+            }
             return result;
         }
         if (IsSeparated()) {
             result = SeparatedAmount();
-            return result;
+        } else {
+            if (IsRetired()) {
+                result = RetiredPayAmount();
+            } else {
+                result = NormalPayAmount();
+            }
         }
-        if (IsRetired()) {
-            result = RetiredPayAmount();
-            return result;
-        }
-        result = NormalPayAmount();
         return result;
+
     }
 
 
@@ -176,15 +196,15 @@ public class TestFile {
         }
         System.out.println("执行3");
         if (i != 4) {
-           return;
+            return;
         }
         System.out.println("执行4");
         if (i != 5) {
-           return;
+            return;
         }
         System.out.println("执行5");
         if (i != 6) {
-           return;
+            return;
         }
         System.out.println("执行6");
         if (i != 7) {
