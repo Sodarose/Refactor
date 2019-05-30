@@ -25,10 +25,9 @@ import java.util.List;
 public class VoidPoolRefactor extends AbstractRefactor {
 
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         ForStmt forStmt = (ForStmt) issue.getIssueNode();
         tranFromWhile(forStmt);
-        return null;
     }
 
     /**

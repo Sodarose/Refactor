@@ -4,18 +4,16 @@ import analysis.rule.IFTransformSwitchRule;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.NodeList;
-import com.github.javaparser.ast.expr.BinaryExpr;
 import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.expr.NameExpr;
 import com.github.javaparser.ast.stmt.*;
 import com.github.javaparser.resolution.types.ResolvedType;
 import com.github.javaparser.symbolsolver.model.resolution.SymbolReference;
-import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 import io.FileUlits;
 import io.ParserProject;
 import model.Issue;
 import model.ReCorrect;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import model.Store;
 import refactor.AbstractRefactor;
 import ulits.AnalysisUlits;
 
@@ -36,11 +34,11 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
     private boolean isOther;
 
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         IfStmt ifStmt = (IfStmt) issue.getIssueNode();
         Map<String, Object> data = issue.getData();
         transFromSwitch(ifStmt, data);
-        return null;
+        return;
     }
 
     private void transFromSwitch(IfStmt ifStmt, Map<String, Object> data) {
@@ -196,10 +194,10 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
             isString = true;
             return;
         }
-        ResolvedType s = ParserProject.getJavaParserFacade().getType(selector);
+        ResolvedType s = Store.javaParserFacade.getType(selector);
         System.out.println(s.describe());
         //搜索根据类限定名称搜索
-        SymbolReference v = ParserProject.getCombinedTypeSolver().tryToSolveType(s.describe());
+        SymbolReference v = Store.combinedTypeSolver.tryToSolveType(s.describe());
         if (!v.isSolved()) {
             isOther = true;
             return;

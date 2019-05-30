@@ -20,24 +20,25 @@ import java.util.Map;
 
 /**
  *
- * */
+ *
+ * @author Administrator*/
 public class DeeplyIfStmtsRefactor extends AbstractRefactor {
     private String interrupt;
-
-
     private List<IfStmt> ifStmts = new ArrayList<>();
     private Node parent;
+    private boolean frist = true;
 
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         IfStmt ifStmt = (IfStmt) issue.getIssueNode();
         Map<String, Object> data = issue.getData();
         interrupt = (String) data.get("Interrupt");
         if (!checkReturn(ifStmt)) {
-            return null;
+            return ;
         }
         int i = 0;
         transformIfStmt(ifStmt);
+        frist = false;
         for (IfStmt stmt : ifStmts) {
             if (AnalysisUlits.getDeep(stmt) > 2) {
                 transformIfStmt(stmt);
@@ -52,8 +53,7 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
         if ("continue".equals(interrupt)) {
             cleanContinue(parent);
         }
-        System.out.println(ifStmt.getParentNode().get().getParentNode().get());
-        return null;
+        //System.out.println(ifStmt.getParentNode().get().getParentNode().get());
     }
 
     /**
@@ -112,7 +112,9 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
      */
     private void transformIfStmt(Statement stmt) {
         if (stmt.isIfStmt()) {
-            ifStmts.add(stmt.asIfStmt());
+            if(frist){
+                ifStmts.add(stmt.asIfStmt());
+            }
             BlockStmt parent = (BlockStmt) stmt.getParentNode().get();
             if (checkIFChange(parent, stmt) > 2) {
                 return;

@@ -189,13 +189,4 @@ public class IFTransformSwitchRule extends AbstractRuleVisitor {
         }
     }
 
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\IfSample.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        IFTransformSwitchRule ifTransformSwitchRule = new IFTransformSwitchRule();
-        List<CompilationUnit> units = new ArrayList<>();
-        units.add(unit);
-        ifTransformSwitchRule.apply(units);
-    }
-
 }

@@ -16,15 +16,13 @@ import java.util.List;
 
 public class VariableNameRefactor extends AbstractRefactor {
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         VariableDeclarationExpr variableDeclarationExpr=(VariableDeclarationExpr) issue.getIssueNode();
         try {
             variableNameRefactor(variableDeclarationExpr);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return null;
     }
     public void variableNameRefactor(VariableDeclarationExpr variableDeclarationExpr) throws IOException {
         String name="";

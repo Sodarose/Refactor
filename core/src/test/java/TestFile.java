@@ -26,6 +26,7 @@ public class TestFile {
                                     result = SeparatedAmount();
                                     if (i == 100) {
                                         result = SeparatedAmount();
+
                                     }
                                 }
                             }

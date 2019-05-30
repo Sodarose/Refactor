@@ -1,11 +1,8 @@
 package io;
 
-import com.alibaba.fastjson.JSON;
 import com.github.javaparser.ParseResult;
+import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.ast.PackageDeclaration;
-import com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration;
-import com.github.javaparser.symbolsolver.javaparser.Navigator;
 import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
 import com.github.javaparser.symbolsolver.model.resolution.TypeSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver;
@@ -13,156 +10,87 @@ import com.github.javaparser.symbolsolver.resolution.typesolvers.JavaParserTypeS
 import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeSolver;
 import com.github.javaparser.utils.CollectionStrategy;
 import com.github.javaparser.utils.ParserCollectionStrategy;
-import com.github.javaparser.utils.ProjectRoot;
 import com.github.javaparser.utils.SourceRoot;
-import model.NodeTree;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-import sun.security.krb5.internal.PAData;
+import model.JavaModelVo;
+import model.Store;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
-
-import static java.nio.file.FileVisitResult.CONTINUE;
-import static java.nio.file.FileVisitResult.SKIP_SUBTREE;
+import java.util.stream.Collectors;
 
 /**
- * read all java file by one project
+ * 项目扫描具体执行类
+ *
+ * @author Administrator
  */
-
 public class ParserProject {
-
-    private static List<CompilationUnit> javaFiles;
-    private static ProjectRoot projectRoot;
-    private static JavaParserFacade javaParserFacade;
-    private static CombinedTypeSolver combinedTypeSolver = new CombinedTypeSolver();
-    private static Map<String,CompilationUnit> unitMaps = new HashMap<>();
 
     public static List<CompilationUnit> parserProject(String path) {
         loadProject(path);
-        if (projectRoot == null) {
+        if (Store.projectRoot == null) {
             throw new RuntimeException("读取项目失败");
         }
-        if (projectRoot.getSourceRoots() == null || projectRoot.getSourceRoots().size() == 0) {
-            throw new RuntimeException("读取项目失败");
-        }
-        TypeSolver reflectionTypeSolver = new ReflectionTypeSolver();
+        if (Store.projectRoot.getSourceRoots() == null || Store.projectRoot.getSourceRoots().size() == 0) {
 
-        combinedTypeSolver.add(reflectionTypeSolver);
+            throw new RuntimeException("读取项目失败");
+        }
+
+        TypeSolver reflectionTypeSolver = new ReflectionTypeSolver();
+        //初始化解析器
+        Store.combinedTypeSolver = new CombinedTypeSolver();
+        Store.combinedTypeSolver.add(reflectionTypeSolver);
+        Store.javaParserFacade = JavaParserFacade.get(Store.combinedTypeSolver);
         List<CompilationUnit> units = new ArrayList<>();
+        Map<String, JavaModelVo> unitMap = new HashMap<>(100);
         try {
-            List<SourceRoot> sourceRoots = projectRoot.getSourceRoots();
+            List<SourceRoot> sourceRoots = Store.projectRoot.getSourceRoots();
             Iterator<SourceRoot> itRoots = sourceRoots.iterator();
             while (itRoots.hasNext()) {
                 SourceRoot sourceRoot = itRoots.next();
-                combinedTypeSolver.add(new JavaParserTypeSolver(sourceRoot.getRoot()));
-                List<ParseResult<CompilationUnit>> parseResults = sourceRoot.tryToParse();
-                Iterator<ParseResult<CompilationUnit>> it = parseResults.iterator();
-                while (it.hasNext()) {
-                    ParseResult<CompilationUnit> parseResult = it.next();
-                    if (!parseResult.getResult().isPresent()) {
-                        continue;
+                Store.combinedTypeSolver.add(new JavaParserTypeSolver(sourceRoot.getRoot()));
+                Files.walkFileTree(sourceRoot.getRoot(),new SimpleFileVisitor<Path>(){
+                    @Override
+                    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                        if(!attrs.isDirectory() && file.toString().endsWith(".java")){
+                            CompilationUnit unit = StaticJavaParser.parse(file);
+                            JavaModelVo javaModelVo = new JavaModelVo();
+                            javaModelVo.setUnit(unit);
+                            String realPath = file.toFile().getPath();
+                            sourceRoot.add(unit);
+                            unitMap.put(realPath,javaModelVo);
+                            units.add(unit);
+                        }
+                        return super.visitFile(file, attrs);
                     }
-                    units.add(parseResult.getResult().get());
-                    it.remove();
-                }
+                });
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        javaFiles = units;
+        //建立索引表
+        Store.unitMaps = unitMap;
         return units;
     }
 
-    public static List<CompilationUnit> getJavaFiles() {
-        return javaFiles;
-    }
-
+    /**
+     * 读取项目
+     */
     private static void loadProject(String path) {
         CollectionStrategy collectionStrategy = new ParserCollectionStrategy();
-        projectRoot = collectionStrategy.collect(Paths.get(path));
-    }
-
-    public static JavaParserFacade getJavaParserFacade() {
-        javaParserFacade = JavaParserFacade.get(combinedTypeSolver);
-        return javaParserFacade;
-    }
-
-    public static CombinedTypeSolver getCombinedTypeSolver() {
-        return combinedTypeSolver;
+        //获得项目
+        Store.projectRoot = collectionStrategy.collect(Paths.get(path));
     }
 
     public static void saveAll() {
-        for (SourceRoot sourceRoot : projectRoot.getSourceRoots()) {
+        for (SourceRoot sourceRoot : Store.projectRoot.getSourceRoots()) {
             sourceRoot.saveAll();
         }
     }
 
-    public static NodeTree getNodeTree(){
-        parserProject("D:\\gitProject\\W8X");
-        projectRoot.getSourceRoots();
-        String rootName = projectRoot.getRoot().toFile().getName();
-        NodeTree root = new NodeTree();
-        root.setFileName(rootName);
-        for(SourceRoot sourceRoot:projectRoot.getSourceRoots()){
-            NodeTree sourceTree = new NodeTree();
-            String path = sourceRoot.getRoot().toFile().getPath();
-            Map<PackageDeclaration,List<NodeTree>> map = new HashMap<>(1);
-            if(path.contains(rootName)){
-                path = path.substring(path.indexOf(rootName)+rootName.length()+1);
-            }
-            sourceTree.setFileName(path);
-            root.getFiles().add(sourceTree);
-            for(CompilationUnit unit:sourceRoot.getCompilationUnits()){
-                PackageDeclaration packageNmae =null;
-                if(unit.getPackageDeclaration().isPresent()){
-                    packageNmae = unit.getPackageDeclaration().get();
-                }
-                NodeTree node = new NodeTree();
-                node.setFileName(unit.getPrimaryTypeName().get());
-                if(map.containsKey(packageNmae)){
-                    map.get(packageNmae).add(node);
-                }else{
-                    List<NodeTree> list = new ArrayList<>();
-                    list.add(node);
-                    map.put(packageNmae,list);
-                }
-            }
-            for(Map.Entry<PackageDeclaration,List<NodeTree>> entry:map.entrySet()){
-                if(entry.getKey()==null){
-                    sourceTree.getFiles().addAll(entry.getValue());
-                    continue;
-                }
-                NodeTree t = new NodeTree();
-                t.setFileName(entry.getKey().toString());
-                t.getFiles().addAll(entry.getValue());
-                sourceTree.getFiles().add(t);
-            }
-
-        }
-        System.out.println(JSON.toJSONString(root));
-        return null;
-    }
-
-    private static String getPath(Path rootPath, Path sourceRoot) {
-        List<String> names = new ArrayList();
-        while(sourceRoot.getParent()!=rootPath){
-            names.add(sourceRoot.toFile().getName());
-            sourceRoot = sourceRoot.getParent();
-        }
-        Collections.reverse(names);
-        StringBuffer name = new StringBuffer();
-        for(String n:names){
-            name.append(n);
-        }
-        return name.toString();
-    }
-
-    public static void main(String args[]) throws IOException{
-        getNodeTree();
-    }
 
 
 }

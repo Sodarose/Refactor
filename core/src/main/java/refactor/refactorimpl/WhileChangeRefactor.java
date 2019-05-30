@@ -27,11 +27,10 @@ import java.util.Map;
  */
 public class WhileChangeRefactor implements Refactor {
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         Map<String, Object> data = issue.getData();
         WhileStmt whileStmt = (WhileStmt) issue.getIssueNode();
         transFromsFor(whileStmt, data);
-        return null;
     }
 
     private void transFromsFor(WhileStmt whileStmt, Map<String, Object> data) {

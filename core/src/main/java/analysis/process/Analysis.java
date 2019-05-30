@@ -16,10 +16,10 @@ import java.util.concurrent.*;
  * 扫描入口
  * @author kangkang
  * */
-public class Analysis  {
 
+public class Analysis  {
     private  ExecutorService service;
-    private CompletionService<IssueContext> completionService;
+    private  CompletionService<IssueContext> completionService;
     private final int MAX_THREAD = 10;
     private int taskNum = 0;
     private List<CompilationUnit> units;
@@ -65,14 +65,13 @@ public class Analysis  {
         }
         return context;
     }
-
+    
     public static void main(String []args){
         Analysis analysis = new Analysis();
         analysis.analysis("D:\\gitProject\\W8X");
         List<Issue> list = analysis.collectResult().getIssues();
-        for(Issue issue:list){
-            System.out.println(issue.getIssueNode());
-        }
+        System.out.println(list.size());
+
     }
 
 }

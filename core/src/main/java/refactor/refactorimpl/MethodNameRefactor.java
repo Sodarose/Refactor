@@ -16,15 +16,13 @@ import java.util.List;
 
 public class MethodNameRefactor extends AbstractRefactor {
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         MethodDeclaration methodDeclaration=(MethodDeclaration) issue.getIssueNode();
         try {
             methodNameRefactor(methodDeclaration);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return null;
     }
     public void methodNameRefactor(MethodDeclaration methodDeclaration) throws IOException {
         String name="";

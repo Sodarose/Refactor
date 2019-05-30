@@ -1,9 +1,7 @@
 import analysis.process.Analysis;
 
 import com.github.javaparser.ast.CompilationUnit;
-import model.Issue;
-import model.IssueContext;
-import org.checkerframework.checker.units.qual.A;
+import model.*;
 import refactor.ReFactorExec;
 
 import java.util.ArrayList;
@@ -33,22 +31,19 @@ public class Main {
         }
     }
 
-    public static void refactor() {
-        ReFactorExec reFactorExec = new ReFactorExec();
-        reFactorExec.factor(issueContext);
-    }
+
 
 
     public static void main(String[] args) {
-        //分析
-        System.out.println("开始扫描");
-<<<<<<< HEAD
-        analysis("D:\\gitProject\\W8X");
-=======
+        /**
+         * 分析代码
+         * */
         Analysis analysis = new Analysis();
-        analysis.analysis("E:\\w8x-dev");
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-        System.out.println("扫描结束");
-        //重构
+        analysis.analysis("D:\\gitProject\\W8X");
+        //得到issueContext
+        Store.issueContext = analysis.results();
+        /**
+         * 重构代码
+         * */
     }
 }

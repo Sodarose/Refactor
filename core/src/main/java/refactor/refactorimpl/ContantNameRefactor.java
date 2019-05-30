@@ -16,10 +16,9 @@ import java.util.List;
 public class ContantNameRefactor extends AbstractRefactor {
 
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         FieldDeclaration fieldDeclaration=(FieldDeclaration) issue.getIssueNode();
         constantNameRefactor(fieldDeclaration);
-        return null;
     }
     public void constantNameRefactor(FieldDeclaration fieldDeclaration){
         String constantName=fieldDeclaration.getVariable(0).getNameAsString();

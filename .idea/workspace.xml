@@ -1,119 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/core/src/main/java/ulits/FindNodeUlits.java" line="57" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3166388c-2324-4ed6-8856-2e7b925e3223" name="Default Changelist" comment="名字检查和重构都已经做完了">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_58.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/NodeTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/Sample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/Tcps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/tcp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Controller/WebRedux.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/awesomeStyle/awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/awesomeStyle/awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/awesomeStyle/fa.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/awesomeStyle/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/metroStyle/img/line_conn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/metroStyle/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/metroStyle/img/metro.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/metroStyle/img/metro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/metroStyle/metroStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/1_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/1_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/diy/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/line_conn.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/zTreeStandard.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/img/zTreeStandard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/zTreeStyle/zTreeStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery-1.4.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.core.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.excheck.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.excheck.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.exedit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.exedit.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.exhide.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.exhide.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_jul_2_11_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j_impl_2_11_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_log4j2_2_1_5_RELEASE.xml" beforeDir="false" />
+    <list default="true" id="acf294b9-6c92-47d6-b098-0f3c9df5ce2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/JavaModelVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/RefactCoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/RefactCoreServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/PageRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/Code.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/CodeShown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/IssueShow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/images/warn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/highlight.pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/layui/me.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/a11y-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/a11y-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/agate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/an-old-hope.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/androidstudio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/arduino-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/arta.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/ascetic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-cave-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-cave-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-dune-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-dune-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-estuary-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-estuary-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-forest-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-forest-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-heath-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-heath-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-lakeside-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-lakeside-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-plateau-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-plateau-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-savanna-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-savanna-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-seaside-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-seaside-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-sulphurpool-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atelier-sulphurpool-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atom-one-dark-reasonable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atom-one-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/atom-one-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/brown-paper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/brown-papersq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/codepen-embed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/color-brewer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/darcula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/darkula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/docco.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/dracula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/far.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/github-gist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/github.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/gml.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/googlecode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/grayscale.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/gruvbox-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/gruvbox-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/hopscotch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/hybrid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/idea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/ir-black.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/isbl-editor-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/isbl-editor-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/kimbie.dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/kimbie.light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/lightfair.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/magula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/mono-blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/monokai-sublime.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/monokai.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/nord.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/obsidian.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/ocean.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/paraiso-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/paraiso-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/pojoaque.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/pojoaque.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/purebasic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/qtcreator_dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/qtcreator_light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/railscasts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/rainbow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/routeros.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/school-book.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/school-book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/shades-of-purple.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/solarized-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/solarized-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/sunburst.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/tomorrow-night-blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/tomorrow-night-bright.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/tomorrow-night-eighties.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/tomorrow-night.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/tomorrow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/vs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/vs2015.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/xcode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/xt256.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/styles/zenburn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/nofollow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/scanner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/side.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/AnalysisUlits.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/AnalysisUlits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/IFRe.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFRe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/IfSample.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IfSample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/TestFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/TestFileTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/TestFileTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/rule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/w8x.iml" beforeDir="false" afterPath="$PROJECT_DIR$/w8x.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/temp/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/temp/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/temp/scroll.html" beforeDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ulits/BoyerMoore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/nametest/BM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/nametest/SundayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassVariNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassVariNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/LowerCamelCaseVariableNaming.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/LowerCamelCaseVariableNaming.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/MethodNamingShouldBeCamelRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/MethodNamingShouldBeCamelRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/PackageNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/PackageNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ParameterNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ParameterNamingRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/formatter/FormatOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/formatter/FormatOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/formatter/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/formatter/Formatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/model/NodeTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/Refactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/Refactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariNameRefactor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ShallowSwitchRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ShallowSwitchRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariableNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariableNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/SundayUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/SundayUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/rule.xml" afterDir="false" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VoidPoolRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VoidPoolRefactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/Tcps.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/Tcps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/TestFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/sonar/checkstyle-result.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/sonar/checkstyle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/test-classes/META-INF/core.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Controller/WebHookRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/WebHookRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Controller/WebRedux.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/WebRedux.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/WebHookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/WebHookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/WebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/WebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/test/java/com/w8x/web/WebApplicationTests.java" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/core/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/common/target/" />
+    <ignored path="$PROJECT_DIR$/core/target/" />
     <ignored path="$PROJECT_DIR$/web/target/" />
+    <ignored path="$PROJECT_DIR$/common/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -121,167 +288,32 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/WebRedux.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
-=======
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+            <state relative-caret-position="756">
+              <caret line="35" column="51" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="51" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#586#602#0" expanded="true" />
-                <element signature="e#2418#2435#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/Tcps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-=======
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-221">
-              <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-              <folding>
-                <element signature="e#1525#1526#0" expanded="true" />
-                <element signature="e#1556#1557#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
+                <element signature="e#1079#1080#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="198" column="52" lean-forward="true" selection-start-line="198" selection-start-column="52" selection-end-line="198" selection-end-column="52" />
-=======
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/TreeMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="145" column="7" lean-forward="true" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
-              <folding>
-                <element signature="e#6596#6597#0" expanded="true" />
-                <element signature="e#6640#6641#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Issue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-=======
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/tcp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-=======
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/MethodNamingShouldBeCamelRule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.14.1/javaparser-core-3.14.1-sources.jar!/com/github/javaparser/ast/CompilationUnit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2673">
-              <caret line="170" column="38" selection-start-line="170" selection-start-column="20" selection-end-line="170" selection-end-column="38" />
-              <folding>
-                <element signature="e#6647#6648#0" expanded="true" />
-                <element signature="e#6709#6710#0" expanded="true" />
-              </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/PackageNamingRule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="793">
-              <caret line="55" column="5" selection-start-line="47" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.14.1/javaparser-core-3.14.1-sources.jar!/com/github/javaparser/utils/SourceRoot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4401">
-              <caret line="190" column="73" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="73" />
-              <folding>
-                <element signature="e#22389#22390#0" expanded="true" />
-                <element signature="e#22425#22426#0" expanded="true" />
-              </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassVariNamingRule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/Main.java">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/side.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-=======
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/LowerCamelCaseVariableNaming.java">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+            <state relative-caret-position="1674">
+              <caret line="75" column="66" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -290,22 +322,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/model/TreeNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-=======
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java">
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/project.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+            <state relative-caret-position="155">
+              <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1010#1011#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/nofollow.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="47" column="18" selection-start-line="46" selection-start-column="7" selection-end-line="48" selection-end-column="11" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/zTree-zTree_v3-master/zTree_v3/demo/cn/core/click.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="49" column="59" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/zTree-zTree_v3-master/zTree_v3/demo/cn/core/custom_iconSkin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="23" column="59" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -315,48 +383,31 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
+        <option value="Singleton" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>type</find>
-      <find>De</find>
-      <find>File</find>
-      <find>Field</find>
-      <find>field</find>
-      <find>ifS</find>
-      <find>CaseUtil</find>
-      <find>expressionText</find>
-      <find>getCaseValueText</find>
-      <find>getParentNodeForChildren</find>
-      <find>findSimpleNameByName</find>
-      <find>check</find>
-      <find>checkt</find>
-      <find>Sys</find>
-      <find>eq</find>
-      <find>empType = EnumT.EmployeeType.ENGINEER</find>
-      <find>chec</find>
-      <find>sbc</find>
-<<<<<<< HEAD
-      <find>Syst</find>
-      <find>checkReturn</find>
-      <find>Systen</find>
-      <find>continue</find>
-      <find>cache</find>
-      <find>getcache</find>
-      <find>.java</find>
-      <find>sub</find>
-      <find>Parser</find>
-      <find>Project</find>
-      <find>System</find>
       <find>Pro</find>
-=======
-      <find>pay</find>
-      <find>currentHa</find>
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+      <find>Syste</find>
+      <find>issue</find>
+      <find>isssue</find>
+      <find>Syst</find>
+      <find>javaParserFacade</find>
+      <find>jq</find>
+      <find>type.indexOf('application/json') !== -1</find>
+      <find>Sys</find>
+      <find>System</find>
+      <find>margin</find>
+      <find>layui-body</find>
+      <find>try</find>
+      <find>walkFileTree</find>
+      <find>unitMaps</find>
+      <find>layui-side</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -365,123 +416,78 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/core/src/test/java/FindNodeUlits.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/ShallowSwitchRefactor.java" />
-=======
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorImpl/VoidPoolRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/io/FindNodeUlits.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/AbstractRuleVisitor.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/ForWhileSampe.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/casc.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VoidPoolRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/EnumT.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/PPX.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/FindNodeUlits.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/VoidPoolRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/WhileChangeForRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ShallowSwitchRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IFTransformSwitchRefactor.java" />
-<<<<<<< HEAD
-=======
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-        <option value="$PROJECT_DIR$/core/pom.xml" />
-        <option value="$PROJECT_DIR$/core/src/test/java/JavaParserTypeSolverT.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/Issue.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/IssueContext.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ResolvedReferenceTypeDeclarationParserProject.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/Scanner/EnumT.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/卫语句范例" />
-        <option value="$PROJECT_DIR$/core/src/test/java/SwitchSample.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ShallowSwitchRefactor.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/core/src/test/java/TestFileTwo.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/TestFile.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/IFRe.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/AnalysisUlits.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/Sample.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Controller/WebRedux.java" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/FileTree.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" />
-        <option value="$PROJECT_DIR$/core/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/io/T.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/NodeTree.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/tcp.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/Tcps.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="20" />
-    <option name="width" value="1918" />
-    <option name="height" value="1091" />
-=======
-        <option value="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/PackageNamingRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariableNameRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/nametest/BoyerMoore.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/nametest/SundayTest.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/SundayUtil.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/nametest/BmTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/nametest/BM.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/BoyerMoore.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ParameterNamingRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/LowerCamelCaseVariableNaming.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassVariNamingRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/MethodNamingShouldBeCamelRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VoidPoolRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/model/Code.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ShallowSwitchRefactor.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/PageRoute.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/Frist.html" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/WebHookRest.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/js/me.js" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/WebApplication.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/model/JavaModel.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/topbar.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/allclasses-frame.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/overview-frame.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/frist.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/overview-summary.html" />
         <option value="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/CodeShown.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/formatter/Formatter.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/formatter/FormatOptions.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/IssueShow.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/WebRedux.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/RefactCoreService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/nofollow.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/layui/me.js" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/RefactCoreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/IFRe2.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/model/JavaModelVo.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/Tcps.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/layui/css/layui.css" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/header.html" />
+        <option value="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/Scanner.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/scanner.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/project.htnl.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/project.htnl" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/side.html" />
+        <option value="$PROJECT_DIR$/core/src/main/java/model/TreeNode.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/model/Store.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/project.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1080" />
-    <option name="height" value="1040" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+    <option name="x" value="611" />
+    <option name="y" value="140" />
+    <option name="width" value="960" />
+    <option name="height" value="1019" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
-=======
-      <pane id="PackagesPane" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
               <item name="W8X" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W8X" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
@@ -535,11 +541,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formatter" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="w8x-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -558,90 +564,115 @@
             <path>
               <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
               <item name="W8X" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
               <item name="W8X" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="refactor" type="462c0819:PsiDirectoryNode" />
-              <item name="refactorimpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-<<<<<<< HEAD
-              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W8X" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="w8x-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ulits" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="w8x-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="w8x-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="w8x-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="JavaParser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="w8x-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="w8x-dev" type="462c0819:PsiDirectoryNode" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="nametest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
               <item name="W8X" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Scanner" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W8X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W8X" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-<<<<<<< HEAD
       <pane id="PackagesPane" />
-=======
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -649,29 +680,24 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558498393371" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/main/resources/templates" />
-=======
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558655753555" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/main/resources/static/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\gitProject\W8X\web\src\main\resources\templates" />
+      <recent name="D:\gitProject\W8X\web\src\main\resources\static\images" />
+      <recent name="D:\gitProject\W8X\web\src\main\resources\static\js" />
+      <recent name="D:\gitProject\W8X\web\src\main\resources\static\css" />
+      <recent name="D:\gitProject\W8X\web\src\main\resources\static\layui\css" />
       <recent name="D:\gitProject\W8X\web\src\main\resources\static" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="refactor.refactorimpl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -686,23 +712,39 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Application.Tcps">
-    <configuration name="IfTransformSwitchRefactor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="refactor.refactorimpl.IfTransformSwitchRefactor" />
+  <component name="RunManager" selected="Spring Boot.WebApplication">
+    <configuration name="Analysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="analysis.process.Analysis" />
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="analysis.process.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnalysisApi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="api.AnalysisApi" />
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeeplyIfStmtsRefactor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="refactor.refactorimpl.DeeplyIfStmtsRefactor" />
       <module name="core" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="refactor.refactorimpl.*" />
-=======
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="BM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="nametest.BM" />
-      <module name="core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nametest.*" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -710,17 +752,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-=======
-    <configuration name="ClassConstantNamingRule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="analysis.rule.ClassConstantNamingRule" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+    <configuration name="ShallowSwitchRefactor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="refactor.refactorimpl.ShallowSwitchRefactor" />
       <module name="core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="analysis.rule.*" />
+          <option name="PATTERN" value="refactor.refactorimpl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -728,54 +765,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassNamingShouldBeCamelRule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="analysis.rule.ClassNamingShouldBeCamelRule" />
-      <module name="core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="analysis.rule.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="All in web" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="web" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="Tcps" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Tcps" />
-      <module name="core" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WhileChangeRefactor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="refactor.refactorimpl.WhileChangeRefactor" />
-=======
-    <configuration name="ClassVariNamingRule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="analysis.rule.ClassVariNamingRule" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-      <module name="core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="analysis.rule.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-<<<<<<< HEAD
-=======
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="core" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
     <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.w8x.web.WebApplication" />
@@ -785,19 +782,11 @@
     </configuration>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
-        <item itemvalue="Application.Tcps" />
-        <item itemvalue="Application.IfTransformSwitchRefactor" />
-        <item itemvalue="Application.ParserProject" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.WhileChangeRefactor" />
-=======
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ClassVariNamingRule" />
-        <item itemvalue="Application.ClassConstantNamingRule" />
-        <item itemvalue="Application.ClassNamingShouldBeCamelRule" />
-        <item itemvalue="Application.BM" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+        <item itemvalue="Application.AnalysisApi" />
+        <item itemvalue="JUnit.All in web" />
+        <item itemvalue="Application.ShallowSwitchRefactor" />
+        <item itemvalue="Application.DeeplyIfStmtsRefactor" />
+        <item itemvalue="Application.Analysis" />
       </list>
     </recent_temporary>
   </component>
@@ -806,39 +795,30 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3166388c-2324-4ed6-8856-2e7b925e3223" name="Default Changelist" comment="" />
-      <created>1557644000444</created>
+      <changelist id="acf294b9-6c92-47d6-b098-0f3c9df5ce2a" name="Default Changelist" comment="" />
+      <created>1558917282137</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1557644000444</updated>
-      <workItem from="1557644028827" duration="21071000" />
-      <workItem from="1557707791798" duration="5560000" />
-      <workItem from="1557730056004" duration="15273000" />
-      <workItem from="1557811836523" duration="16565000" />
-      <workItem from="1557887420356" duration="25895000" />
-      <workItem from="1557971211994" duration="10060000" />
-      <workItem from="1558007241643" duration="3947000" />
-      <workItem from="1558059136485" duration="16191000" />
-      <workItem from="1558140362931" duration="3793000" />
-      <workItem from="1558164985941" duration="16097000" />
-      <workItem from="1558229707444" duration="4978000" />
-      <workItem from="1558593835454" duration="20348000" />
-      <workItem from="1558663636871" duration="23887000" />
-      <workItem from="1558767758898" duration="21678000" />
-      <workItem from="1558836335952" duration="3945000" />
+      <updated>1558917282137</updated>
+      <workItem from="1558917329950" duration="3312000" />
+      <workItem from="1558920708824" duration="1928000" />
+      <workItem from="1558924498317" duration="20613000" />
+      <workItem from="1558955161937" duration="5513000" />
+      <workItem from="1558961686396" duration="477000" />
+      <workItem from="1558973449101" duration="398000" />
+      <workItem from="1559003037250" duration="303000" />
+      <workItem from="1559007076361" duration="21075000" />
+      <workItem from="1559039464946" duration="21834000" />
+      <workItem from="1559090441040" duration="4890000" />
+      <workItem from="1559098679305" duration="1961000" />
+      <workItem from="1559114871524" duration="6751000" />
+      <workItem from="1559126442197" duration="18690000" />
+      <workItem from="1559178169342" duration="652000" />
     </task>
-    <task id="LOCAL-00001" summary="名字检查和重构都已经做完了">
-      <created>1558547074771</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1558547074771</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215246000" />
+    <option name="totallyTimeSpent" value="125296000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -850,50 +830,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30364805" />
-=======
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22654584" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info id="设计器" order="8" />
+      <window_info id="Structure" order="0" sideWeight="0.6873662" side_tool="true" weight="0.21888413" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="设计器" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.31263384" visible="true" weight="0.19527897" />
       <window_info anchor="bottom" id="Message" order="0" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.31798714" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32976446" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7719957" visible="true" weight="0.42398286" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993576" />
-=======
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" weight="0.34019503" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946353" weight="0.32976446" />
+      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946353" weight="0.32976446" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.5912017" weight="0.32976446" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005365" side_tool="true" weight="0.32976446" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.22800429" side_tool="true" weight="0.2751606" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Flutter Performance" order="14" side_tool="true" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32976446" />
-=======
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32936078" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.4967811" weight="0.32976446" />
+      <window_info anchor="bottom" id="Problems" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -909,30 +874,32 @@
       <window_info anchor="right" id="调色板" order="12" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26502147" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="Structure" order="0" sideWeight="0.6873662" side_tool="true" weight="0.21888413" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="设计器" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.31263384" visible="true" weight="0.2972103" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.32976446" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32976446" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7719957" visible="true" weight="0.3169165" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32976446" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946353" weight="0.32976446" />
+      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946353" weight="0.32976446" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.5912017" weight="0.32976446" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005365" side_tool="true" weight="0.32976446" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.22800429" side_tool="true" weight="0.2751606" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Flutter Performance" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32976446" />
+      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.4967811" weight="0.32976446" />
+      <window_info anchor="bottom" id="Problems" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -945,790 +912,371 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
+      <window_info anchor="right" id="调色板" order="12" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="名字检查和重构都已经做完了" />
-    <option name="LAST_COMMIT_MESSAGE" value="名字检查和重构都已经做完了" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/topbar.html" />
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/overview-frame.html" />
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/allclasses-frame.html" />
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/frist.html" />
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/overview-summary.html" />
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/CodeShown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2521">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+        <state relative-caret-position="270">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/PageRoute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        <state relative-caret-position="135">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/model/IssueShow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/formatter/FormatOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="324">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/formatter/Formatter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+        <state relative-caret-position="513">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/testName.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/WebHookServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="1809">
+          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/data.txt">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/styles/vs.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/js/highlight.pack.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/WebApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        <state relative-caret-position="297">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#481#735#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/js/jquery-3.3.1.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/layui/me.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="189" column="5" lean-forward="true" selection-start-line="189" selection-start-column="5" selection-end-line="189" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="918">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/IfSample.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/RefactCoreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="270">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFileTwo.java">
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/FormatterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state relative-caret-position="81">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="25" />
-          <folding>
-            <element signature="e#6858#6859#0" expanded="true" />
-            <element signature="e#6922#6923#0" expanded="true" />
-            <element signature="e#6982#6983#0" expanded="true" />
-            <element signature="e#7044#7045#0" expanded="true" />
-            <element signature="e#7103#7104#0" expanded="true" />
-            <element signature="e#7165#7166#0" expanded="true" />
-            <element signature="e#7224#7225#0" expanded="true" />
-            <element signature="e#7288#7289#0" expanded="true" />
-            <element signature="e#7353#7354#0" expanded="true" />
-            <element signature="e#7416#7417#0" expanded="true" />
-            <element signature="e#7480#7481#0" expanded="true" />
-            <element signature="e#7545#7546#0" expanded="true" />
-            <element signature="e#7604#7605#0" expanded="true" />
-            <element signature="e#7663#7664#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="351">
+          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        <state relative-caret-position="-2013">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-symbol-solver-core/3.14.1/javaparser-symbol-solver-core-3.14.1-sources.jar!/com/github/javaparser/symbolsolver/javaparsermodel/JavaParserFacade.java">
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="70" column="16" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="135">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
           <folding>
-            <element signature="e#2974#2975#0" expanded="true" />
-            <element signature="e#3006#3007#0" expanded="true" />
+            <element signature="e#2821#3017#0" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/SwitchSample.java">
+    <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/nio/file/Files.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="144" column="16" lean-forward="true" selection-start-line="144" selection-start-column="16" selection-end-line="150" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3435#3436#0" expanded="true" />
-            <element signature="e#3494#3495#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="486">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/卫语句范例">
+    <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/nio/file/FileVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="232" column="5" selection-start-line="232" selection-start-column="5" selection-end-line="232" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/options.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariNameRefactor.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="106" selection-start-line="15" selection-start-column="106" selection-end-line="15" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/testName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFileTwo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/TestFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1890">
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="200" column="64" lean-forward="true" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="747" selection-start-line="747" selection-end-line="747" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/concurrent/Executors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13950">
-          <caret line="510" selection-start-line="510" selection-end-line="510" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23640">
-          <caret line="1148" selection-start-line="1148" selection-end-line="1148" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-          <folding>
-            <element signature="e#0#31269#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3514#3515#0" expanded="true" />
-            <element signature="e#3549#3550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-symbol-solver-core/3.14.1/javaparser-symbol-solver-core-3.14.1-sources.jar!/com/github/javaparser/symbolsolver/resolution/SymbolSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="91" column="59" lean-forward="true" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/Sample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-          <folding>
-            <element signature="e#3835#3836#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
-            <element signature="e#3900#3901#0" expanded="true" />
-            <element signature="e#3924#3925#0" expanded="true" />
-            <element signature="e#3959#3960#0" expanded="true" />
-            <element signature="e#3987#3988#0" expanded="true" />
-            <element signature="e#4027#4028#0" expanded="true" />
-            <element signature="e#4051#4052#0" expanded="true" />
-            <element signature="e#4088#4089#0" expanded="true" />
-            <element signature="e#4116#4117#0" expanded="true" />
-            <element signature="e#4151#4152#0" expanded="true" />
-            <element signature="e#4175#4176#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-            <element signature="e#4235#4236#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1539">
-          <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/AnalysisUlits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="129" column="28" selection-start-line="129" selection-start-column="28" selection-end-line="129" selection-end-column="28" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/DeeplyIfStmtsRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/push.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-891" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/temp/footer.html" />
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/temp/header.html" />
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/temp/scroll.html" />
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/js/jquery-1.4.4.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state relative-caret-position="202">
+          <caret line="97" column="28" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/nio/file/Path.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="726" column="19" selection-start-line="726" selection-start-column="19" selection-end-line="726" selection-end-column="19" />
+        <state relative-caret-position="202">
+          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Controller/WebRedux.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.14.1/javaparser-core-3.14.1-sources.jar!/com/github/javaparser/JavaParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Controller/WebHookRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/WebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/IFNode.java" />
-    <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/nio/file/Files.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="2738" column="23" selection-start-line="2738" selection-start-column="23" selection-end-line="2738" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/jdk/java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64/src.zip!/java/nio/file/FileVisitResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/Rule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/io/T.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.14.1/javaparser-core-3.14.1-sources.jar!/com/github/javaparser/ast/CompilationUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2673">
-          <caret line="170" column="38" selection-start-line="170" selection-start-column="20" selection-end-line="170" selection-end-column="38" />
-          <folding>
-            <element signature="e#6647#6648#0" expanded="true" />
-            <element signature="e#6709#6710#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.14.1/javaparser-core-3.14.1-sources.jar!/com/github/javaparser/utils/SourceRoot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4401">
-          <caret line="190" column="73" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="73" />
-          <folding>
-            <element signature="e#22389#22390#0" expanded="true" />
-            <element signature="e#22425#22426#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="151">
+          <caret line="136" column="77" lean-forward="true" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="39" />
-          <folding>
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/NodeTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariableNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ShallowSwitchRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="311" column="5" lean-forward="true" selection-start-line="311" selection-start-column="5" selection-end-line="311" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/Rule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest/BoyerMoore.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest/SundayUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest/SundayTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="16" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/Scanner/EnumT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest/BM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/SundayUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/FindNodeUlits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/AnalysisUlits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/RuleRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="266" column="13" selection-start-line="266" selection-start-column="13" selection-end-line="266" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/BoyerMoore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="74" column="27" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/AbstractMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/TreeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="145" column="7" lean-forward="true" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-          <folding>
-            <element signature="e#6596#6597#0" expanded="true" />
-            <element signature="e#6640#6641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/tcp.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/JavaModelVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/Tcps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Issue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
-=======
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/concurrent/FutureTask.java">
+        <state relative-caret-position="444">
+          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2211#3035#0" expanded="true" />
+            <element signature="e#3034#3035#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/layui/css/layui.mobile.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/layui/css/layui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/scanner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/js/jquery.ztree.all.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/zTree-zTree_v3-master/zTree_v3/demo/cn/core/standardData.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/RefactCoreServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ParameterNamingRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/LowerCamelCaseVariableNaming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#586#602#0" expanded="true" />
-            <element signature="e#2418#2435#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.14.1/javaparser-core-3.14.1-sources.jar!/com/github/javaparser/ast/type/PrimitiveType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/IfTransformSwitchRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="198" column="52" lean-forward="true" selection-start-line="198" selection-start-column="52" selection-end-line="198" selection-end-column="52" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/PackageNamingRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
-          <caret line="55" column="5" selection-start-line="47" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/MethodNamingShouldBeCamelRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassVariNamingRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/Tcps.java">
+    <entry file="file://$USER_HOME$/Desktop/zTree-zTree_v3-master/zTree_v3/demo/cn/core/simpleData.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-=======
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Store.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
->>>>>>> 5e58a87b19021c5cfa3deb11a1ab00c316d3dee2
+        <state relative-caret-position="216">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/warn.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/zTree-zTree_v3-master/zTree_v3/demo/cn/core/custom_icon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar!/org/thymeleaf/standard/expression/StandardExpressionParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/WebRedux.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="51" />
+          <folding>
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1079#1080#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/side.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="75" column="66" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/zTree-zTree_v3-master/zTree_v3/demo/cn/core/custom_iconSkin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="59" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/zTree-zTree_v3-master/zTree_v3/demo/cn/core/click.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="49" column="59" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/nofollow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="47" column="18" selection-start-line="46" selection-start-column="7" selection-end-line="48" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1750,7 +1298,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>Spring (web)|Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1785,7 +1333,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>common</last-edited>
+          <last-edited>w8x</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

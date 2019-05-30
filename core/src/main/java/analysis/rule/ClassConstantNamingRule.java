@@ -30,7 +30,7 @@ public class ClassConstantNamingRule extends AbstractRuleVisitor {
             if(!(constantName.equals(constantName.toUpperCase()))){
                 Issue issue=new Issue();
                 issue.setIssueNode(fieldDeclaration);
-                issue.setUnitNode(fieldDeclaration);
+                issue.setUnitNode(fieldDeclaration.findRootNode());
                 issue.setRefactorName(getSolutionClassName());
                 getContext().getIssues().add(issue);
             }

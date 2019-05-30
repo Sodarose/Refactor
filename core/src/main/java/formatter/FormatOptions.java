@@ -12,6 +12,15 @@ import org.eclipse.jdt.core.formatter.DefaultCodeFormatterConstants;
 
 public class FormatOptions {
 
+  private static Map<String,Object> options;
+  private static final String defaultOptions = "D:\\gitProject\\W8X\\core\\src\\main\\resources\\static\\options.xml";
+  public static Map<String,Object> getOptions(){
+    if(options==null){
+      options = options("D:\\gitProject\\W8X\\core\\src\\main\\resources\\static\\options.xml");
+    }
+    return options;
+  }
+
   public static Map<String,Object> options(String filePath){
     Map<String,Object> options = new HashMap<String, Object>();
     try{

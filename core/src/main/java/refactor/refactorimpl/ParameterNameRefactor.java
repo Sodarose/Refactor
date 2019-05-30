@@ -16,15 +16,13 @@ import java.util.List;
 
 public class ParameterNameRefactor extends AbstractRefactor {
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         Parameter parameter=(Parameter) issue.getIssueNode();
         try {
             parameterNameRefactor(parameter);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return null;
     }
     public void parameterNameRefactor(Parameter parameter) throws IOException {
         String name="";

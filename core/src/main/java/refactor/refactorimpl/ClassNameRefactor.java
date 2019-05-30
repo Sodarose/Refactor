@@ -15,14 +15,13 @@ import java.util.List;
 
 public class ClassNameRefactor extends AbstractRefactor {
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         ClassOrInterfaceDeclaration classOrInterfaceDeclaration=(ClassOrInterfaceDeclaration) issue.getIssueNode();
         try {
             classNameRefactor(classOrInterfaceDeclaration);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
     }
     private void classNameRefactor(ClassOrInterfaceDeclaration classOrInterfaceDeclaration) throws IOException {
         String name="";

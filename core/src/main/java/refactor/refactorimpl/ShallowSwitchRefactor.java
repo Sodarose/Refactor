@@ -8,6 +8,7 @@ import com.github.javaparser.symbolsolver.model.resolution.SymbolReference;
 import io.ParserProject;
 import model.Issue;
 import model.ReCorrect;
+import model.Store;
 import refactor.AbstractRefactor;
 
 import java.util.*;
@@ -24,11 +25,10 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
     private Node node = null;
 
     @Override
-    public ReCorrect refactor(Issue issue) {
+    public void refactor(Issue issue) {
         SwitchStmt switchStmt = (SwitchStmt) issue.getIssueNode();
         checkType(switchStmt);
         transFrom(switchStmt);
-        return null;
     }
 
     /**
@@ -48,7 +48,6 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             blockStmt.getStatements().add(index, statement.asIfStmt());
         }
         blockStmt.remove(switchStmt);
-        System.out.println(this.getClass().getName());
     }
 
 
@@ -218,9 +217,10 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             isString = true;
             return;
         }
-        ResolvedType s = ParserProject.getJavaParserFacade().getType(selector);
+        //System.out.println(Store.javaParserFacade);
+        ResolvedType s = Store.javaParserFacade.getType(selector);
         //搜索根据类限定名称搜索
-        SymbolReference v = ParserProject.getCombinedTypeSolver().tryToSolveType(s.describe());
+        SymbolReference v = Store.combinedTypeSolver.tryToSolveType(s.describe());
         if (v.getCorrespondingDeclaration().isType()) {
             if (v.getCorrespondingDeclaration().asType().isEnum()) {
                 isEnum = true;
