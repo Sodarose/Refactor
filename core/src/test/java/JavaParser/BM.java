@@ -1,4 +1,4 @@
-package nametest;
+package JavaParser;
 
 
 import java.util.Random;
