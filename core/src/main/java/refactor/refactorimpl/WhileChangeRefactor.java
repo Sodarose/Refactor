@@ -13,9 +13,7 @@ import com.github.javaparser.ast.stmt.ForStmt;
 import com.github.javaparser.ast.stmt.Statement;
 import com.github.javaparser.ast.stmt.WhileStmt;
 import io.FileUlits;
-import lombok.extern.log4j.Log4j2;
 import model.Issue;
-import model.ReCorrect;
 import refactor.Refactor;
 
 import java.util.ArrayList;
@@ -55,7 +53,6 @@ public class WhileChangeRefactor implements Refactor {
             return;
         }
         whileStmt.getParentNode().get().replace(whileStmt, forStmt);
-        System.out.println(this.getClass().getName());
     }
 
     private boolean clean(Node parent, List<VariableDeclarator> inits, List<Expression> updates, Statement body) {
@@ -90,20 +87,6 @@ public class WhileChangeRefactor implements Refactor {
         NodeList<Expression> expressions = new NodeList<>();
         expressions.addAll(updates);
         return expressions;
-    }
-
-
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\ForWhileSampe.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        List<CompilationUnit> list = new ArrayList<>();
-        list.add(unit);
-        WhileChangeForRule whileChangeForRule = new WhileChangeForRule();
-        whileChangeForRule.apply(list);
-        WhileChangeRefactor whileChangeRefactor = new WhileChangeRefactor();
-        for (Issue issue : whileChangeForRule.getContext().getIssues()) {
-            whileChangeRefactor.refactor(issue);
-        }
     }
 
 }

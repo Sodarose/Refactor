@@ -14,6 +14,7 @@ import io.ParserProject;
 import jdk.nashorn.internal.ir.IfNode;
 import model.Issue;
 import model.IssueContext;
+import model.JavaModel;
 import refactor.refactorimpl.IfTransformSwitchRefactor;
 import ulits.AnalysisUlits;
 
@@ -28,6 +29,7 @@ import java.util.stream.Collectors;
  */
 public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
 
+    private JavaModel javaModel;
     /**
      * 测定深度
      */
@@ -35,9 +37,10 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
 
 
     @Override
-    public IssueContext apply(List<CompilationUnit> units) {
-        for (CompilationUnit unit : units) {
-            collectIssue(unit);
+    public IssueContext apply(List<JavaModel> javaModels) {
+        for (JavaModel javaModel : javaModels) {
+            this.javaModel = javaModel;
+            collectIssue(javaModel.getUnit());
         }
         return getContext();
     }
@@ -70,12 +73,12 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
         while (is.hasNext()) {
             IfStmt ifStmt = is.next();
             Issue issue = new Issue();
-            issue.setUnitNode(ifStmt.findRootNode());
+            issue.setJavaModel(javaModel);
             issue.setIssueNode(ifStmt);
             issue.setRefactorName(getSolutionClassName());
             Map<String, Object> data = new HashMap<>(1);
             String returnTyle = getType(ifStmt);
-            if(returnTyle==null){
+            if (returnTyle == null) {
                 return;
             }
             data.put("Interrupt", returnTyle);
@@ -98,7 +101,7 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
                     return "object";
                 }
             }
-            if(node.getClass().getName().equals("com.github.javaparser.ast.stmt.ForStmt")||node.getClass().getName().equals("com.github.javaparser.ast.stmt.WhileStmt")){
+            if (node.getClass().getName().equals("com.github.javaparser.ast.stmt.ForStmt") || node.getClass().getName().equals("com.github.javaparser.ast.stmt.WhileStmt")) {
                 return "continue";
             }
         }
@@ -133,8 +136,6 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
     }
 
 
-
-
     /**
      * 探测广度
      */
@@ -152,17 +153,6 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
             i++;
         }
         return i;
-    }
-
-
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\Sample.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        ParserProject.parserProject("D:\\gitProject\\W8X");
-        DeeplyIfStmtsRule deeplyIfStmtsRule = new DeeplyIfStmtsRule();
-        List<CompilationUnit> units = new ArrayList<>();
-        units.add(unit);
-        deeplyIfStmtsRule.apply(units);
     }
 
 }

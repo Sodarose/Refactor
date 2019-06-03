@@ -6,7 +6,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.Parameter;
 import io.FileUlits;
 import model.Issue;
-import model.ReCorrect;
 import refactor.AbstractRefactor;
 import ulits.SplitName;
 
@@ -27,6 +26,9 @@ public class ParameterNameRefactor extends AbstractRefactor {
     public void parameterNameRefactor(Parameter parameter) throws IOException {
         String name="";
         List<String> nameList= SplitName.split(parameter.getNameAsString());
+        if(nameList==null){
+            return;
+        }
         for(String data:nameList){
             if(name.equals("")){
                 name=name+data;
@@ -38,18 +40,5 @@ public class ParameterNameRefactor extends AbstractRefactor {
         }
         parameter.setName(name);
     }
-    public static void main(String[] args){
-        String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
-        List<Issue> issueList=new ArrayList<>();
-        CompilationUnit unit= StaticJavaParser.parse(source);
-        List<CompilationUnit> list=new ArrayList<>();
-        list.add(unit);
-        ParameterNameRefactor parameterNameRefactor=new ParameterNameRefactor();
-        ParameterNamingRule parameterNamingRule=new ParameterNamingRule();
-        parameterNamingRule.apply(list);
-        issueList=parameterNamingRule.getContext().getIssues();
-        for(Issue issue:issueList){
-            parameterNameRefactor.refactor(issue);
-        }
-    }
+
 }

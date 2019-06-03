@@ -10,6 +10,7 @@ import com.github.javaparser.ast.stmt.IfStmt;
 import io.FileUlits;
 import model.Issue;
 import model.IssueContext;
+import model.JavaModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +33,12 @@ import java.util.List;
  * @author kangkang
  * */
 public class VoidPoolRule extends AbstractRuleVisitor {
-
+    private JavaModel javaModel;
     @Override
-    public IssueContext apply(List<CompilationUnit> units) {
-        for (CompilationUnit unit : units) {
-            collectFor(unit);
+    public IssueContext apply(List<JavaModel> javaModels) {
+        for (JavaModel javaModel : javaModels) {
+            this.javaModel = javaModel;
+            collectFor(javaModel.getUnit());
         }
         return getContext();
     }
@@ -55,9 +57,11 @@ public class VoidPoolRule extends AbstractRuleVisitor {
                 return;
             }
             Issue issue = new Issue();
-            issue.setUnitNode(forStmt.findRootNode());
+            issue.setJavaModel(javaModel);
             issue.setIssueNode(forStmt);
             issue.setRefactorName(getSolutionClassName());
+            issue.setDescription(getDescription());
+            issue.setRuleName(getRuleName());
             getContext().getIssues().add(issue);
         }
     }

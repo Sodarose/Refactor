@@ -4,7 +4,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.expr.SimpleName;
 import io.FileUlits;
-import ulits.FindNodeUlits;
 
 import java.util.List;
 
@@ -184,26 +183,7 @@ public class SwitchSample {
         throw new Exception("no such employee type!");
     }
 
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\SwitchSample.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        List<SimpleName> list = FindNodeUlits.findSimpleNameByName(unit, "empType", true);
-        for (SimpleName variableDeclarationExpr : list) {
-            if (variableDeclarationExpr.getParentNode().isPresent()) {
-                String fullName = variableDeclarationExpr.getParentNode().get().getClass().getName();
-                String name = fullName.substring(fullName.lastIndexOf(".") + 1);
-                if (name.equals("Parameter")) {
-                    Parameter parameter = (Parameter) variableDeclarationExpr.getParentNode().get();
-                    String typeName = parameter.getType().asClassOrInterfaceType().asString();
-                    System.out.println(parameter.getType().asClassOrInterfaceType().isUnknownType());
-                    List<SimpleName> lit = FindNodeUlits.findSimpleNameByName(unit, typeName, true);
-                    for (SimpleName field : lit) {
-                        System.out.println(field.getParentNode().get().getClass().getName());
-                    }
-                }
-            }
-        }
-    }
+
 
 
 }

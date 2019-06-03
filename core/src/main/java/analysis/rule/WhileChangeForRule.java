@@ -13,6 +13,7 @@ import io.FileUlits;
 import javassist.expr.Expr;
 import model.Issue;
 import model.IssueContext;
+import model.JavaModel;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -29,11 +30,12 @@ import java.util.stream.Collectors;
  */
 public class WhileChangeForRule extends AbstractRuleVisitor {
     private final String labeledStmt = "LabeledStmt";
-
+    private JavaModel javaModel;
     @Override
-    public IssueContext apply(List<CompilationUnit> units) {
-        for (CompilationUnit unit : units) {
-            checkWhile(unit);
+    public IssueContext apply(List<JavaModel> javaModels) {
+        for (JavaModel javaModel : javaModels) {
+            this.javaModel = javaModel;
+            checkWhile(javaModel.getUnit());
         }
         return getContext();
     }
@@ -93,9 +95,11 @@ public class WhileChangeForRule extends AbstractRuleVisitor {
             data.put("updates", updates);
             Issue issue = new Issue();
             issue.setData(data);
-            issue.setUnitNode(stmt.findRootNode());
+            issue.setJavaModel(javaModel);
             issue.setIssueNode(stmt);
             issue.setRefactorName(getSolutionClassName());
+            issue.setDescription(getDescription());
+            issue.setRuleName(getRuleName());
             getContext().getIssues().add(issue);
         }
     }

@@ -12,7 +12,6 @@ import com.github.javaparser.symbolsolver.model.resolution.SymbolReference;
 import io.FileUlits;
 import io.ParserProject;
 import model.Issue;
-import model.ReCorrect;
 import model.Store;
 import refactor.AbstractRefactor;
 import ulits.AnalysisUlits;
@@ -38,7 +37,6 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
         IfStmt ifStmt = (IfStmt) issue.getIssueNode();
         Map<String, Object> data = issue.getData();
         transFromSwitch(ifStmt, data);
-        return;
     }
 
     private void transFromSwitch(IfStmt ifStmt, Map<String, Object> data) {
@@ -51,8 +49,11 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
             return;
         }
         switchStmt.setEntries(switchEntries);
+        if(!ifStmt.getParentNode().isPresent()){
+            return;
+        }
         ifStmt.getParentNode().get().replace(ifStmt, switchStmt);
-        //System.out.println(switchStmt);
+        //System.out.println("AABBA"+switchStmt);
     }
 
     /**
@@ -195,7 +196,6 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
             return;
         }
         ResolvedType s = Store.javaParserFacade.getType(selector);
-        System.out.println(s.describe());
         //搜索根据类限定名称搜索
         SymbolReference v = Store.combinedTypeSolver.tryToSolveType(s.describe());
         if (!v.isSolved()) {
@@ -218,17 +218,5 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
     }
 
 
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\IfSample.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        ParserProject.parserProject("D:\\gitProject\\W8X");
-        IFTransformSwitchRule ifTransformSwitchRule = new IFTransformSwitchRule();
-        List<CompilationUnit> units = new ArrayList<>();
-        units.add(unit);
-        ifTransformSwitchRule.apply(units);
-        for (Issue issue : ifTransformSwitchRule.getContext().getIssues()) {
-            IfTransformSwitchRefactor ifTransformSwitchRefactor = new IfTransformSwitchRefactor();
-            ifTransformSwitchRefactor.refactor(issue);
-        }
-    }
+
 }

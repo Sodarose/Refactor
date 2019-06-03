@@ -7,7 +7,6 @@ import com.github.javaparser.resolution.types.ResolvedType;
 import com.github.javaparser.symbolsolver.model.resolution.SymbolReference;
 import io.ParserProject;
 import model.Issue;
-import model.ReCorrect;
 import model.Store;
 import refactor.AbstractRefactor;
 
@@ -64,7 +63,7 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             if (statement == null) {
                 continue;
             }
-
+            
             //
             if (statement.isIfStmt()) {
                 IfStmt ifStmt = statement.asIfStmt();
@@ -321,14 +320,7 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
      * 测试
      */
     public static void main(String[] args) {
-        List<SwitchStmt> switchStmts = io.FindNodeUlits.getSwitch("D:\\gitProject\\W8X\\core\\src\\test\\java\\SwitchSample.java");
-        ShallowSwitchRefactor shallowSwitchRefactor = new ShallowSwitchRefactor();
-        ParserProject.parserProject("D:\\gitProject\\W8X");
-        Iterator<SwitchStmt> it = switchStmts.iterator();
-        while (it.hasNext()) {
-            SwitchStmt switchStmt = it.next();
-            shallowSwitchRefactor.transFrom(switchStmt);
-        }
+
     }
 }
 

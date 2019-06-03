@@ -8,12 +8,14 @@ import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import io.FileUlits;
 import model.Issue;
 import model.IssueContext;
+import model.JavaModel;
 import ulits.SplitName;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
+    private JavaModel javaModel;
     private final List<String> issueNameList=new ArrayList<>();
     private final BaseVisitor<ClassOrInterfaceDeclaration> visitor=new BaseVisitor<ClassOrInterfaceDeclaration>(){
         @Override
@@ -32,8 +34,10 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
                 if (!nameFlag) {
                     Issue issue = new Issue();
                     issue.setIssueNode(classOrInterfaceDeclaration);
-                    issue.setUnitNode(classOrInterfaceDeclaration.findRootNode());
+                    issue.setJavaModel(javaModel);
                     issue.setRefactorName(getSolutionClassName());
+                    issue.setDescription(getDescription());
+                    issue.setRuleName(getRuleName());
                     getContext().getIssues().add(issue);
                 }
             }
@@ -49,9 +53,10 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
             return true;
     }
     @Override
-    public IssueContext apply(List<CompilationUnit> units)  {
-        for(CompilationUnit unit:units){
-            unit.accept(visitor,null);
+    public IssueContext apply(List<JavaModel> javaModels)  {
+        for (JavaModel javaModel:javaModels){
+            this.javaModel = javaModel;
+            javaModel.getUnit().accept(visitor,null);
         }
         try {
             checkClassName();
@@ -60,13 +65,5 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
         }
         return getContext();
     }
-    public static void main(String[] args){
-            String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
-            CompilationUnit unit= StaticJavaParser.parse(source);
-            List<CompilationUnit> list=new ArrayList<>();
-            list.add(unit);
-            ClassNamingShouldBeCamelRule classNamingShouldBeCamelRule=new ClassNamingShouldBeCamelRule();
-            classNamingShouldBeCamelRule.apply(list);
-            System.out.println(classNamingShouldBeCamelRule.getContext().getIssues().toString());
-    }
+
 }

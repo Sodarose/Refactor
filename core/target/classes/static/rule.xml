@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <rule>
+
+    <rule-item>
+        <rule-name>UnusedImportsRefactor</rule-name>
+        <description>清除未使用的导入</description>
+        <className>analysis.rule.UnusedImportsRule</className>
+        <solutionClassName>refactor.refactorimpl.UnusedImportsRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>该导入未被使用 需要清除</rule-message>
+        <rule-level>1</rule-level>
+        <example>
+            import com.github.javaparser.ast.ImportDeclaration;
+            import model.Issue;
+            import refactor.AbstractRefactor;
+
+            class xx{
+                /*
+                * not use that imports
+                */
+            }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>CodeStyleRule</rule-name>
+        <description>大括号与if, else, for, do, while语句一起使用，即使只有一条语句(或是空)，也应该把大括号写上</description>
+        <className>analysis.rule.CodeStyleRule</className>
+        <solutionClassName>refactor.refactorimpl.CodeStyleRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>必须用大括号包裹 即使只有一条语句或空</rule-message>
+        <rule-level>0</rule-level>
+        <example>
+            do:
+                xxx
+            while(condition);
+
+            if(condtion)
+                xxx
+            else
+                xxx
+
+            while(condition)
+                xxxx
+
+            for(init;condition;update)
+                xxxx
+        </example>
+    </rule-item>
+
     <rule-item>
         <rule-name>DeeplyIfStmtsRule</rule-name>
         <description>if深层嵌套</description>
@@ -7,6 +55,7 @@
         <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>if深层嵌套超过三层</rule-message>
+        <rule-level>10</rule-level>
         <example>
             if (i == 1) {
                 System.out.println("执行1");
@@ -39,6 +88,7 @@
         <solutionClassName>refactor.refactorimpl.ShallowSwitchRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
+        <rule-level>9</rule-level>
         <example>
             switch (empType)
             {
@@ -61,6 +111,7 @@
         <solutionClassName>refactor.refactorimpl.VoidPoolRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
+        <rule-level>8</rule-level>
         <example>
            for(;;){
                 ****
@@ -76,6 +127,7 @@
         <solutionClassName>refactor.refactorimpl.WhileChangeRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>有些时候while转化成for能够使人更好的理解</rule-message>
+        <rule-level>8</rule-level>
         <example>
             int i = 0;
             while(i &lt; 100){
@@ -94,6 +146,7 @@
         <solutionClassName>refactor.refactorimpl.IfTransformSwitchRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>if转换成switch性能更高哦</rule-message>
+        <rule-level>8</rule-level>
         <example>
             if(x == q){
             xxxx
@@ -118,6 +171,7 @@
         <solutionClassName>refactor.refactorimpl.ClassNameRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>类名应遵从驼峰形式</rule-message>
+        <rule-level>2</rule-level>
         <example>
             public class TextName
         </example>
@@ -129,6 +183,7 @@
         <solutionClassName>refactor.refactorimpl.ClassVariNameRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>成员变量名应遵从小驼峰形式</rule-message>
+        <rule-level>2</rule-level>
         <example>
             public class TextName{
                 public string textName
@@ -142,6 +197,7 @@
         <solutionClassName>refactor.refactorimpl.ContantNameRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>常量命名应该全部大写</rule-message>
+        <rule-level>2</rule-level>
         <example>
             public class TextName
             {
@@ -156,6 +212,7 @@
         <solutionClassName>refactor.refactorimpl.VariableNameRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>方法内变量应符合小驼峰形式</rule-message>
+        <rule-level>2</rule-level>
         <example>
             public class TextName
             {
@@ -172,6 +229,7 @@
         <solutionClassName>refactor.refactorimpl.MethodNameRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>方法命名应该全部大写</rule-message>
+        <rule-level>2</rule-level>
         <example>
             public class TextName
             {
@@ -187,6 +245,7 @@
         <solutionClassName>refactor.refactorimpl.PackageNameRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>包命名应该全部小写</rule-message>
+        <rule-level>2</rule-level>
         <example>
             package com.github.javaparser;
             public class TextName
@@ -202,6 +261,7 @@
         <solutionClassName>refactor.refactorimpl.ParameterNameRefactor</solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>方法的参数命名应符合小驼峰形式</rule-message>
+        <rule-level>2</rule-level>
         <example>
             public class TextName
             {

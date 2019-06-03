@@ -6,7 +6,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import io.FileUlits;
 import model.Issue;
-import model.ReCorrect;
 import refactor.AbstractRefactor;
 import ulits.SplitName;
 
@@ -27,6 +26,9 @@ public class VariableNameRefactor extends AbstractRefactor {
     public void variableNameRefactor(VariableDeclarationExpr variableDeclarationExpr) throws IOException {
         String name="";
         List<String> nameList = SplitName.split(variableDeclarationExpr.getVariable(0).getNameAsString());
+        if(nameList==null){
+            return;
+        }
         for(String data:nameList){
             if(name.equals("")){
                 name=name+data;
@@ -36,19 +38,5 @@ public class VariableNameRefactor extends AbstractRefactor {
             name=name+data;
         }
         variableDeclarationExpr.getVariable(0).setName(name);
-    }
-    public static void main(String[] args){
-        String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
-        List<Issue> issueList=new ArrayList<>();
-        CompilationUnit unit= StaticJavaParser.parse(source);
-        List<CompilationUnit> list=new ArrayList<>();
-        list.add(unit);
-        VariableNameRefactor variableNameRefactor=new VariableNameRefactor();
-        LowerCamelCaseVariableNaming lowerCamelCaseVariableNaming=new LowerCamelCaseVariableNaming();
-        lowerCamelCaseVariableNaming.apply(list);
-        issueList=lowerCamelCaseVariableNaming.getContext().getIssues();
-        for(Issue issue:issueList){
-            variableNameRefactor.refactor(issue);
-        }
     }
 }

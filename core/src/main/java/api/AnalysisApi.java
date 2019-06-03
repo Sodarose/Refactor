@@ -2,18 +2,12 @@ package api;
 
 import analysis.process.Analysis;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.annotation.JSONField;
-import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.ProjectRoot;
 import com.github.javaparser.utils.SourceRoot;
 import model.*;
-import refactor.ReFactorExec;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class AnalysisApi {
 
@@ -36,45 +30,34 @@ public class AnalysisApi {
         }
         Analysis analysis = new Analysis();
         analysis.analysis(path);
-        //得到issueContext
-        Store.issueContext = analysis.results();
         //数据处理
         organizeData();
         Store.run = true;
-        return Store.unitMaps != null;
+        return Store.javaModelMap != null;
+    }
+
+    /**
+     * 重新扫描
+     * */
+    public boolean analysisagin(){
+        return analysis(Store.path);
     }
 
     /**
      * 数据处理
      */
     private void organizeData() {
-        /**
-         * 整理数据
-         * */
-        //合并unit和issue
-        Map<String, JavaModelVo> unitMaps = Store.unitMaps;
-        for (Issue issue : Store.issueContext.getIssues()) {
-            for(JavaModelVo javaModelVo : unitMaps.values()){
-                if(javaModelVo.getUnit().equals(issue.getUnitNode())){
-                    if(javaModelVo.getIssues()==null){
-                        javaModelVo.setIssues(new ArrayList<>());
-                    }
-                    javaModelVo.getIssues().add(issue);
-                }
-            }
-        }
-
         //得到文件树 //这个功能可以和parser操作合并
         TreeNode root = new TreeNode();
         ProjectRoot projectRoot = Store.projectRoot;
         root.setFile(false);
-        String rootNmae = projectRoot.getRoot().toFile().getName();
-        root.setFileName(rootNmae);
+        String rootName = projectRoot.getRoot().toFile().getName();
+        root.setFileName(rootName);
         root.setRealPath(projectRoot.getRoot().toFile().getPath());
         root.setChildren(new ArrayList<>());
         for(SourceRoot sourceRoot:projectRoot.getSourceRoots()){
             String path = sourceRoot.getRoot().toFile().getPath();
-            String name =  path.substring(path.indexOf(rootNmae)+rootNmae.length()+1);
+            String name =  path.substring(path.indexOf(rootName)+rootName.length()+1);
             TreeNode sourceTree = new TreeNode();
             root.getChildren().add(sourceTree);
             sourceTree.setRealPath(path);
@@ -93,8 +76,8 @@ public class AnalysisApi {
             fileNode.setRealPath(file.getPath());
             fileNode.setFileName(file.getName());
             fileNode.setFile(true);
-            JavaModelVo javaModelVo = Store.unitMaps.get(file.getPath());
-            if(javaModelVo!=null&&javaModelVo.getIssues()!=null&&javaModelVo.getIssues().size()!=0){
+            JavaModel javaModel = Store.javaModelMap.get(file.getPath());
+            if(javaModel !=null&& javaModel.getIssues()!=null&& javaModel.getIssues().size()!=0){
                 fileNode.setHasIssue(true);
             }
             treeNode.getChildren().add(fileNode);
@@ -113,23 +96,12 @@ public class AnalysisApi {
         }
     }
 
-    public void refactorAll() {
-        ReFactorExec reFactorExec = ReFactorExec.getInstance();
-        reFactorExec.factorAll();
-    }
-
-    public void refactorOne(String javaName) {
-        ReFactorExec reFactorExec = ReFactorExec.getInstance();
-        reFactorExec.factorOne(javaName);
-    }
-
     public String getJavaFileTree() {
         return JSON.toJSONString(Store.rootNode);
     }
 
-    public JavaModelVo getJavaModelVo(String filePath) {
-        System.out.println("asdasds"+Store.unitMaps.get(filePath));
-        return Store.unitMaps.get(filePath);
+    public JavaModel getJavaModelVo(String filePath) {
+        return Store.javaModelMap.get(filePath);
     }
 
 

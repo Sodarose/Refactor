@@ -1,6 +1,5 @@
 package io;
 
-import com.github.javaparser.ParseResult;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
@@ -11,10 +10,9 @@ import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeS
 import com.github.javaparser.utils.CollectionStrategy;
 import com.github.javaparser.utils.ParserCollectionStrategy;
 import com.github.javaparser.utils.SourceRoot;
-import model.JavaModelVo;
+import model.JavaModel;
 import model.Store;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -28,7 +26,10 @@ import java.util.stream.Collectors;
  */
 public class ParserProject {
 
-    public static List<CompilationUnit> parserProject(String path) {
+    /**
+     * 生成整个项目的javaModel
+     * */
+    public static List<JavaModel> parserProject(String path) {
         loadProject(path);
         if (Store.projectRoot == null) {
             throw new RuntimeException("读取项目失败");
@@ -43,8 +44,9 @@ public class ParserProject {
         Store.combinedTypeSolver = new CombinedTypeSolver();
         Store.combinedTypeSolver.add(reflectionTypeSolver);
         Store.javaParserFacade = JavaParserFacade.get(Store.combinedTypeSolver);
+        //这个只是方便遍历
         List<CompilationUnit> units = new ArrayList<>();
-        Map<String, JavaModelVo> unitMap = new HashMap<>(100);
+        Map<String, JavaModel> javaModelMap = new HashMap<>(100);
         try {
             List<SourceRoot> sourceRoots = Store.projectRoot.getSourceRoots();
             Iterator<SourceRoot> itRoots = sourceRoots.iterator();
@@ -56,11 +58,11 @@ public class ParserProject {
                     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
                         if(!attrs.isDirectory() && file.toString().endsWith(".java")){
                             CompilationUnit unit = StaticJavaParser.parse(file);
-                            JavaModelVo javaModelVo = new JavaModelVo();
-                            javaModelVo.setUnit(unit);
+                            JavaModel javaModel = new JavaModel();
+                            javaModel.setUnit(unit);
                             String realPath = file.toFile().getPath();
                             sourceRoot.add(unit);
-                            unitMap.put(realPath,javaModelVo);
+                            javaModelMap.put(realPath, javaModel);
                             units.add(unit);
                         }
                         return super.visitFile(file, attrs);
@@ -72,8 +74,9 @@ public class ParserProject {
             e.printStackTrace();
         }
         //建立索引表
-        Store.unitMaps = unitMap;
-        return units;
+        Store.javaModelMap = javaModelMap;
+        Store.path = path;
+        return javaModelMap.values().stream().collect(Collectors.toList());
     }
 
     /**

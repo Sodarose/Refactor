@@ -8,6 +8,7 @@ import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import io.FileUlits;
 import model.Issue;
 import model.IssueContext;
+import model.JavaModel;
 import ulits.SplitName;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
+    private JavaModel javaModel;
     private BaseVisitor<VariableDeclarationExpr> visitor=new BaseVisitor<VariableDeclarationExpr>(){
         @Override
         public void visit(VariableDeclarationExpr n, Object arg) {
@@ -26,9 +28,10 @@ public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
         }
     };
     @Override
-    public IssueContext apply(List<CompilationUnit> units) {
-       for (CompilationUnit unit:units){
-           unit.accept(visitor,null);
+    public IssueContext apply(List<JavaModel> javaModels) {
+       for (JavaModel javaModel:javaModels){
+           this.javaModel = javaModel;
+           javaModel.getUnit().accept(visitor,null);
        }
        try {
            checkVariableName();
@@ -48,8 +51,10 @@ public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
                 if (!nameFlag) {
                     Issue issue = new Issue();
                     issue.setIssueNode(variableDeclarationExpr);
-                    issue.setUnitNode(variableDeclarationExpr.findRootNode());
+                    issue.setJavaModel(javaModel);
                     issue.setRefactorName(getSolutionClassName());
+                    issue.setDescription(getDescription());
+                    issue.setRuleName(getRuleName());
                     getContext().getIssues().add(issue);
                 }
             }
@@ -68,14 +73,5 @@ public class LowerCamelCaseVariableNaming  extends AbstractRuleVisitor {
             }
         }
         return true;
-    }
-    public static void main(String[] args){
-        String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
-        CompilationUnit unit= StaticJavaParser.parse(source);
-        List<CompilationUnit> list=new ArrayList<>();
-        list.add(unit);
-        LowerCamelCaseVariableNaming lowerCamelCaseVariableNaming=new LowerCamelCaseVariableNaming();
-        lowerCamelCaseVariableNaming.apply(list);
-
     }
 }

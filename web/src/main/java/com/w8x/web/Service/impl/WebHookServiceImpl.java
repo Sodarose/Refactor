@@ -40,7 +40,6 @@ public class WebHookServiceImpl implements WebHookService {
             git.gitCloneRepository(commitMsg);
         }
         List<String> javaFiles = git.collectJavaFile(commitMsg);
-        System.out.println(javaFiles.toString());
         return 0;
     }
 

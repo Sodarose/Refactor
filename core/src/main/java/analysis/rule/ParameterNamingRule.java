@@ -8,6 +8,7 @@ import com.github.javaparser.ast.body.Parameter;
 import io.FileUlits;
 import model.Issue;
 import model.IssueContext;
+import model.JavaModel;
 import ulits.SplitName;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterNamingRule extends AbstractRuleVisitor {
+    private JavaModel javaModel;
     private BaseVisitor<Parameter> visitor=new BaseVisitor<Parameter>(){
         @Override
         public void visit(Parameter n, Object arg) {
@@ -23,9 +25,9 @@ public class ParameterNamingRule extends AbstractRuleVisitor {
         }
     };
     @Override
-    public IssueContext apply(List<CompilationUnit> units) {
-        for(CompilationUnit unit:units){
-            unit.accept(visitor,null);
+    public IssueContext apply(List<JavaModel> javaModels) {
+        for(JavaModel javaModel:javaModels){
+            javaModel.getUnit().accept(visitor,null);
         }
         try {
             checkParameterName();
@@ -44,8 +46,10 @@ public class ParameterNamingRule extends AbstractRuleVisitor {
                 if (!nameFlag) {
                     Issue issue = new Issue();
                     issue.setIssueNode(parameter);
-                    issue.setUnitNode(parameter.findRootNode());
+                    issue.setJavaModel(javaModel);
                     issue.setRefactorName(getSolutionClassName());
+                    issue.setDescription(getDescription());
+                    issue.setRuleName(getRuleName());
                     getContext().getIssues().add(issue);
                 }
             }
@@ -64,14 +68,5 @@ public class ParameterNamingRule extends AbstractRuleVisitor {
             }
         }
         return true;
-    }
-    public static void main(String[] args){
-        String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
-        CompilationUnit unit= StaticJavaParser.parse(source);
-        List<CompilationUnit> list=new ArrayList<>();
-        list.add(unit);
-        ParameterNamingRule parameterNamingRule=new ParameterNamingRule();
-        parameterNamingRule.apply(list);
-        System.out.println(parameterNamingRule.getContext().getIssues());
     }
 }

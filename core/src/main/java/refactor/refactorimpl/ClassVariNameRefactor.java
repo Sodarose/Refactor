@@ -6,7 +6,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import io.FileUlits;
 import model.Issue;
-import model.ReCorrect;
 import refactor.AbstractRefactor;
 import ulits.SplitName;
 import java.io.IOException;
@@ -17,6 +16,7 @@ public class ClassVariNameRefactor  extends AbstractRefactor {
     @Override
     public void refactor(Issue issue) {
         FieldDeclaration fieldDeclaration=(FieldDeclaration)issue.getIssueNode();
+        System.out.println(fieldDeclaration);
         try {
             variableNameRefactor(fieldDeclaration);
         } catch (IOException e) {
@@ -26,6 +26,9 @@ public class ClassVariNameRefactor  extends AbstractRefactor {
     public void variableNameRefactor(FieldDeclaration fieldDeclaration) throws IOException {
         String name="";
         List<String> nameList = SplitName.split(fieldDeclaration.getVariable(0).getNameAsString());
+        if(nameList==null){
+            return;
+        }
         for(String data:nameList){
             if(name.equals("")){
                 name=name+data;
@@ -36,18 +39,5 @@ public class ClassVariNameRefactor  extends AbstractRefactor {
         }
         fieldDeclaration.getVariable(0).setName(name);
     }
-    public static void main(String[] args){
-        String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
-        List<Issue> issueList=new ArrayList<>();
-        CompilationUnit unit= StaticJavaParser.parse(source);
-        List<CompilationUnit> list=new ArrayList<>();
-        list.add(unit);
-        ClassVariNameRefactor classVariNameRefactor=new ClassVariNameRefactor();
-        ClassVariNamingRule classVariNamingRule=new ClassVariNamingRule();
-        classVariNamingRule.apply(list);
-        issueList=classVariNamingRule.getContext().getIssues();
-        for(Issue issue:issueList){
-            classVariNameRefactor.refactor(issue);
-        }
-    }
+
 }

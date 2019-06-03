@@ -17,6 +17,7 @@ import io.FileUlits;
 import io.ParserProject;
 import model.Issue;
 import model.IssueContext;
+import model.JavaModel;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import ulits.AnalysisUlits;
 
@@ -28,13 +29,16 @@ import java.util.*;
  * @author kangkang
  */
 public class IFTransformSwitchRule extends AbstractRuleVisitor {
-    private final int min = 2;
+    private final int min = 3;
+    private JavaModel javaModel;
 
     @Override
-    public IssueContext apply(List<CompilationUnit> units) {
-        for (CompilationUnit unit : units) {
-            collectIssue(unit);
+    public IssueContext apply(List<JavaModel> javaModels) {
+        for (JavaModel javaModel : javaModels) {
+            this.javaModel = javaModel;
+            collectIssue(javaModel.getUnit());
         }
+        System.out.println(getContext().getIssues().size());
         return getContext();
     }
 
@@ -172,7 +176,9 @@ public class IFTransformSwitchRule extends AbstractRuleVisitor {
         issue.setRefactorName(getSolutionClassName());
         issue.setIssueNode(ifStmt);
         issue.setData(data);
-        issue.setUnitNode(ifStmt.findRootNode());
+        issue.setJavaModel(this.javaModel);
+        issue.setDescription(getDescription());
+        issue.setRuleName(getRuleName());
         return issue;
     }
 

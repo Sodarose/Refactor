@@ -13,18 +13,16 @@ import java.util.Map;
 
 /**
  * 坏味道模型数据
- * */
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Issue {
-    private String issueName;
-    private String fileName;
     private String description;
     private Node issueNode;
     private String className;
-    private Node unitNode;
+    private JavaModel javaModel;
     private String ruleName;
     private String refactorName;
-    private Map<String,Object> data;
- }
+    private Map<String, Object> data;
+}

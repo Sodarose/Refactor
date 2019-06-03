@@ -9,7 +9,6 @@ import com.github.javaparser.ast.stmt.*;
 import io.FileUlits;
 import io.ParserProject;
 import model.Issue;
-import model.ReCorrect;
 import refactor.AbstractRefactor;
 import refactor.ExpressionTool;
 import ulits.AnalysisUlits;
@@ -237,23 +236,7 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
     }
 
 
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\Sample.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        List<MethodCallExpr> list = unit.findAll(MethodCallExpr.class);
-        for (MethodCallExpr callExpr : list) {
-            //System.out.println(callExpr);
-        }
-        ParserProject.parserProject("D:\\gitProject\\W8X");
-        DeeplyIfStmtsRule deeplyIfStmtsRule = new DeeplyIfStmtsRule();
-        List<CompilationUnit> units = new ArrayList<>();
-        units.add(unit);
-        deeplyIfStmtsRule.apply(units);
-        for (Issue issue : deeplyIfStmtsRule.getContext().getIssues()) {
-            DeeplyIfStmtsRefactor deeplyIfStmtsRefactor = new DeeplyIfStmtsRefactor();
-            deeplyIfStmtsRefactor.refactor(issue);
-        }
-    }
+
 
 
 }

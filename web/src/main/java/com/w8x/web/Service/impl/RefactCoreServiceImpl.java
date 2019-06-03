@@ -1,18 +1,16 @@
 package com.w8x.web.Service.impl;
 
 import api.AnalysisApi;
-import com.alibaba.fastjson.JSON;
-import com.github.javaparser.utils.ProjectRoot;
 import com.w8x.web.Service.RefactCoreService;
 import com.w8x.web.model.Code;
 import com.w8x.web.model.CodeShown;
 import com.w8x.web.model.IssueShow;
+import com.w8x.web.model.Overview;
 import formatter.FormatOptions;
 import formatter.Formatter;
-import io.ParserProject;
 import model.Issue;
-import model.JavaModelVo;
-import model.TreeNode;
+import model.JavaModel;
+import model.Store;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -45,14 +43,16 @@ public class RefactCoreServiceImpl implements RefactCoreService {
 
     @Override
     public CodeShown getJavaFileDetail(String filePath) {
-        JavaModelVo vo = analysisApi.getJavaModelVo(filePath);
+        JavaModel vo = analysisApi.getJavaModelVo(filePath);
         if(vo==null){
             return null;
         }
         CodeShown codeShown = new CodeShown();
         codeShown.setOriginalCode(formatter.format(vo.getUnit().toString(), FormatOptions.getOptions()));
-        if(vo.getRefactUnit()!=null){
-            codeShown.setRefactCode(formatter.format(vo.getRefactUnit().toString(), FormatOptions.getOptions()));
+        //判断是否重构了
+        if(vo.getCopyUnit()!=null){
+            codeShown.setRefactCode(formatter.format(vo.getUnit().toString(), FormatOptions.getOptions()));
+            codeShown.setOriginalCode(formatter.format(vo.getCopyUnit().toString(), FormatOptions.getOptions()));
         }
         if(vo.getIssues()!=null&&vo.getIssues().size()!=0){
             List<IssueShow> issueShows =new ArrayList<>();
@@ -61,11 +61,46 @@ public class RefactCoreServiceImpl implements RefactCoreService {
                 issueShow.setBeginLine(issue.getIssueNode().getRange().get().begin.line);
                 issueShow.setEndLine(issue.getIssueNode().getRange().get().end.line);
                 issueShow.setIssueMessage(issue.getDescription());
-                issueShow.setIssueName(issue.getIssueName());
+                issueShow.setRuleName(issue.getRuleName());
             }
             codeShown.setIssueShows(issueShows);
         }
         return codeShown;
     }
+
+    @Override
+    public Code<Overview> getOverview() {
+        Overview overview = new Overview();
+        if(!Store.run){
+            return Code.createCode(404,null,"获取信息失败");
+        }
+        overview.setProjectName(Store.projectRoot.getRoot().toFile().getName());
+        overview.setIssueCount(Store.issueContext.getIssues().size());
+        overview.setJavaCount(Store.javaModelMap.size());
+        overview.setRule(Store.rules.size());
+        overview.setRealPath(Store.projectRoot.getRoot().toFile().getPath());
+        int badCount = 0;
+        badCount = (int) Store.javaModelMap.values().stream().filter(javaModelVo ->
+                javaModelVo.getIssues()!=null&&javaModelVo.getIssues().size()!=0).count();
+        overview.setBadFileCount(badCount);
+        return Code.createCode(200,overview,"获取信息成功");
+    }
+
+    @Override
+    public Code<String> refactorAll() {
+        if(!Store.run){
+            return Code.createCode(404,null,"操作失败");
+        }
+        return Code.createCode(200,null,"操作成功");
+    }
+
+    @Override
+    public Code<String> analysisAgin() {
+        if(analysisApi.analysisagin()){
+            return Code.createCode(200,null,"扫描成功");
+        }
+        return Code.createCode(404,null,"扫描失败");
+    }
+
 
 }

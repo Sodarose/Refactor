@@ -42,6 +42,7 @@
     </div>
 </div>
 <script src="../src/layui.js" th:src="@{/layui/layui.js}"></script>
+<script src="../src/layui.js" th:src="@{/js/me.js}"></script>
 <script>
     $(document).ready(function () {
         layui.use('layer', function () { //独立版的layer无需执行这一句
@@ -51,29 +52,7 @@
 
     function sendRequest() {
         let path = $("#filePath").val()
-        $.ajax({
-            url: '/core/analysis',
-            type: 'post',
-            async: false,
-            data: {'fileName': path},
-            dataType: 'json',
-            beforeSend: function () {
-                layer.msg('扫描中', {
-                    icon: 16
-                    ,shade: 0.01
-                });
-            },
-            success: function (res) {
-                if(res.code===200){
-                    layer.msg('扫描成功 即将跳转', {icon: 1});
-                    window.setTimeout(function(){location.href='/route/index.html'},5000);
-                }else{
-                    layer.msg('扫描失败', {icon: 5});
-                }
-            }, error: function (e) {
-
-            }
-        })
+        scanner(path);
     }
 </script>
 </body>

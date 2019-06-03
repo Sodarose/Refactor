@@ -3,6 +3,7 @@ package com.w8x.web.controller;
 import com.w8x.web.Service.RefactCoreService;
 import com.w8x.web.model.Code;
 import com.w8x.web.model.CodeShown;
+import com.w8x.web.model.Overview;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -37,33 +38,19 @@ public class WebRedux {
         return refactCoreService.getJavaFileDetail(filePath);
     }
 
+    @GetMapping("/overview")
+    @ResponseBody
+    public Code<Overview> getOverview(){
+        return refactCoreService.getOverview();
+    }
+
     @GetMapping("/refactorAll")
-    @ResponseBody
-    public Code refactorAll(){
-        return Code.createCode(200,null,"success");
+    @ResponseBody Code<String> refactorAll(){
+        return refactCoreService.refactorAll();
     }
 
-    @PostMapping("/refactorOne")
-    @ResponseBody
-    public Code refactorOne(String filePath){
-        return Code.createCode(200,null,"success");
-    }
-
-    @GetMapping("/undoAll")
-    @ResponseBody
-    public Code undoAll(){
-        return Code.createCode(200,null,"success");
-    }
-
-    @PostMapping("/undoOne")
-    @ResponseBody
-    public Code undoOne(String filaName){
-        return Code.createCode(200,null,"success");
-    }
-
-    @GetMapping("/saveCodeAll")
-    @ResponseBody
-    public Code saveCodeAll(){
-        return Code.createCode(200,null,"success");
+    @GetMapping("/analysisagin")
+    @ResponseBody Code<String> analysisAgin(){
+        return refactCoreService.analysisAgin();
     }
 }

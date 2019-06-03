@@ -9,7 +9,6 @@ import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.stmt.*;
 import io.FileUlits;
 import model.Issue;
-import model.ReCorrect;
 import refactor.AbstractRefactor;
 
 import java.util.ArrayList;
@@ -27,6 +26,8 @@ public class VoidPoolRefactor extends AbstractRefactor {
     @Override
     public void refactor(Issue issue) {
         ForStmt forStmt = (ForStmt) issue.getIssueNode();
+        System.out.println("xxxx"+forStmt);
+        System.out.println(forStmt);
         tranFromWhile(forStmt);
     }
 
@@ -61,19 +62,6 @@ public class VoidPoolRefactor extends AbstractRefactor {
         whileStmt.setBody(blockStmt);
         Node parent = forStmt.getParentNode().get();
         parent.replace(whileStmt,forStmt);
-        System.out.println(this.getClass().getName());
     }
 
-    public static void main(String args[]){
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\ForWhileSampe.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        List<CompilationUnit> list = new ArrayList<>();
-        list.add(unit);
-        VoidPoolRule voidPoolRule = new VoidPoolRule();
-        voidPoolRule.apply(list);
-        VoidPoolRefactor voidPoolRefactor = new VoidPoolRefactor();
-        for(Issue issue:voidPoolRule.getContext().getIssues()){
-            voidPoolRefactor.refactor(issue);
-        }
-    }
 }

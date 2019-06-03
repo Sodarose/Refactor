@@ -6,7 +6,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import io.FileUlits;
 import model.Issue;
-import model.ReCorrect;
 import refactor.AbstractRefactor;
 import ulits.SplitName;
 
@@ -27,6 +26,9 @@ public class MethodNameRefactor extends AbstractRefactor {
     public void methodNameRefactor(MethodDeclaration methodDeclaration) throws IOException {
         String name="";
         List<String> nameList= SplitName.split(methodDeclaration.getNameAsString());
+        if(nameList==null){
+            return;
+        }
         for(String data:nameList){
             if(name.equals("")){
                 name=name+data;
@@ -38,18 +40,5 @@ public class MethodNameRefactor extends AbstractRefactor {
         }
         methodDeclaration.setName(name);
     }
-    public static void main(String[] args){
-        String source= FileUlits.readFile("E:\\w8x-dev\\core\\src\\test\\java\\testName.java");
-        List<Issue> issueList=new ArrayList<>();
-        CompilationUnit unit= StaticJavaParser.parse(source);
-        List<CompilationUnit> list=new ArrayList<>();
-        list.add(unit);
-        MethodNameRefactor methodNameRefactor=new MethodNameRefactor();
-        MethodNamingShouldBeCamelRule methodNamingShouldBeCamelRule=new MethodNamingShouldBeCamelRule();
-        methodNamingShouldBeCamelRule.apply(list);
-        issueList=methodNamingShouldBeCamelRule.getContext().getIssues();
-        for(Issue issue:issueList){
-            methodNameRefactor.refactor(issue);
-        }
-    }
+
 }

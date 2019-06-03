@@ -1,11 +1,13 @@
 package analysis;
 
+import model.Store;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -31,18 +33,27 @@ public class RuleLink {
             Document document = reader.read(RULE_XML_PATH);
             Element root = document.getRootElement();
             Iterator<Element> it = root.elementIterator();
+            Store.rules = new ArrayList<>();
             while (it.hasNext()) {
-                Rule rule = createRule(it.next());
+                AbstractRuleVisitor rule = createRule(it.next());
+                Store.rules.add(rule);
                 it.remove();
-                rules.add(rule);
             }
+            Store.rules.sort(new Comparator<AbstractRuleVisitor>() {
+                @Override
+                public int compare(AbstractRuleVisitor o1, AbstractRuleVisitor o2) {
+                    return o1.getLevel()-o2.getLevel();
+                }
+            });
+            rules.addAll(Store.rules);
         } catch (DocumentException e) {
             e.printStackTrace();
         }
+
         return rules;
     }
 
-    private Rule createRule(Element element) {
+    private AbstractRuleVisitor createRule(Element element) {
         AbstractRuleVisitor rule = null;
         String ruleName = element.elementText("rule-name");
         String description = element.elementText("description");
@@ -51,6 +62,7 @@ public class RuleLink {
         String message = element.elementText("rule-message");
         String example = element.elementText("example");
         String solutionClassName = element.elementText("solutionClassName");
+        int level = Integer.parseInt(element.elementText("rule-level"));
         try {
             rule = (AbstractRuleVisitor) Class.forName(className).newInstance();
             rule.setClassName(className);
@@ -60,6 +72,7 @@ public class RuleLink {
             rule.setMessage(message);
             rule.setMessage(example);
             rule.setSolutionClassName(solutionClassName);
+            rule.setLevel(level);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
