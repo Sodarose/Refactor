@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
-    private JavaModel javaModel;
     private final List<String> issueNameList=new ArrayList<>();
     private final BaseVisitor<ClassOrInterfaceDeclaration> visitor=new BaseVisitor<ClassOrInterfaceDeclaration>(){
         @Override
@@ -24,17 +23,19 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
         }
     };
 
-    public void checkClassName() throws IOException {
+    public void checkClassName(JavaModel javaModel) throws IOException {
         List<ClassOrInterfaceDeclaration> classList=visitor.getList();
         for(ClassOrInterfaceDeclaration classOrInterfaceDeclaration:classList) {
             String name = classOrInterfaceDeclaration.getNameAsString();
             List<String> nameList = SplitName.split(name);
-            if (nameList!=null) {
+            if (!(nameList.isEmpty())) {
                 boolean nameFlag = check(nameList);
                 if (!nameFlag) {
+                    System.out.println(name);
                     Issue issue = new Issue();
                     issue.setIssueNode(classOrInterfaceDeclaration);
                     issue.setJavaModel(javaModel);
+                    System.out.println(javaModel.getReadPath());
                     issue.setRefactorName(getSolutionClassName());
                     issue.setDescription(getDescription());
                     issue.setRuleName(getRuleName());
@@ -55,14 +56,16 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
     @Override
     public IssueContext apply(List<JavaModel> javaModels)  {
         for (JavaModel javaModel:javaModels){
-            this.javaModel = javaModel;
             javaModel.getUnit().accept(visitor,null);
         }
-        try {
-            checkClassName();
-        } catch (IOException e) {
-            e.printStackTrace();
+        for (JavaModel javaModel:javaModels){
+            try {
+                checkClassName(javaModel);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
         return getContext();
     }
 

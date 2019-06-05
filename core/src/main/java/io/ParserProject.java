@@ -45,7 +45,7 @@ public class ParserProject {
         Store.combinedTypeSolver.add(reflectionTypeSolver);
         Store.javaParserFacade = JavaParserFacade.get(Store.combinedTypeSolver);
         //这个只是方便遍历
-        List<CompilationUnit> units = new ArrayList<>();
+        List<CompilationUnit> javaFiles = new ArrayList<>();
         Map<String, JavaModel> javaModelMap = new HashMap<>(100);
         try {
             List<SourceRoot> sourceRoots = Store.projectRoot.getSourceRoots();
@@ -62,8 +62,9 @@ public class ParserProject {
                             javaModel.setUnit(unit);
                             String realPath = file.toFile().getPath();
                             sourceRoot.add(unit);
+                            javaModel.setReadPath(realPath);
                             javaModelMap.put(realPath, javaModel);
-                            units.add(unit);
+                            javaFiles.add(unit);
                         }
                         return super.visitFile(file, attrs);
                     }
@@ -76,6 +77,7 @@ public class ParserProject {
         //建立索引表
         Store.javaModelMap = javaModelMap;
         Store.path = path;
+        Store.javaFiles = javaFiles;
         return javaModelMap.values().stream().collect(Collectors.toList());
     }
 

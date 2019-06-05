@@ -7,6 +7,7 @@ import com.github.javaparser.ast.body.MethodDeclaration;
 import io.FileUlits;
 import model.Issue;
 import refactor.AbstractRefactor;
+import ulits.MethodReferUtil;
 import ulits.SplitName;
 
 import java.io.IOException;
@@ -24,21 +25,23 @@ public class MethodNameRefactor extends AbstractRefactor {
         }
     }
     public void methodNameRefactor(MethodDeclaration methodDeclaration) throws IOException {
-        String name="";
+        String oldName=methodDeclaration.getNameAsString();
+        String newName="";
         List<String> nameList= SplitName.split(methodDeclaration.getNameAsString());
         if(nameList==null){
             return;
         }
         for(String data:nameList){
-            if(name.equals("")){
-                name=name+data;
+            if(newName.equals("")){
+                newName=newName+data;
                 continue;
             }
             data=data.substring(0,1).toUpperCase()+data.substring(1);
-            name=name+data;
+            newName=newName+data;
 
         }
-        methodDeclaration.setName(name);
+        methodDeclaration.setName(newName);
+        MethodReferUtil.referUtil(oldName,newName);
     }
 
 }

@@ -45,7 +45,7 @@ public class ReFactorExec {
 
                 Refactor refactor = (Refactor) Class.forName(issue.getRefactorName()).newInstance();
                 JavaModel javaModel = issue.getJavaModel();
-                //System.out.println(issue.getRuleName());
+
                if (javaModel == null) {
                    System.out.println("空");
                     continue;

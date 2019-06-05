@@ -38,7 +38,7 @@ public class SplitName {
                     return nameList;
                 }
             }
-            return null;
+            return nameList;
         }
         public static List<String> readData() throws FileNotFoundException, IOException {
             List<String> nameList=new ArrayList<String>();

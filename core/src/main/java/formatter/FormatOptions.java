@@ -13,10 +13,10 @@ import org.eclipse.jdt.core.formatter.DefaultCodeFormatterConstants;
 public class FormatOptions {
 
   private static Map<String,Object> options;
-  private static final String defaultOptions = "D:\\gitProject\\W8X\\core\\src\\main\\resources\\static\\options.xml";
+  private static final String defaultOptions = "E:\\w8x-dev\\core\\src\\main\\resources\\static\\options.xml";
   public static Map<String,Object> getOptions(){
     if(options==null){
-      options = options("D:\\gitProject\\W8X\\core\\src\\main\\resources\\static\\options.xml");
+      options = options("E:\\w8x-dev\\core\\src\\main\\resources\\static\\options.xml");
     }
     return options;
   }

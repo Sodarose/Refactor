@@ -15,4 +15,5 @@ public class JavaModel {
     private CompilationUnit copyUnit;
     private boolean hasIssue;
     List<Issue> issues;
+
 }

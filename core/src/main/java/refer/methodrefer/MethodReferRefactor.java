@@ -10,13 +10,15 @@ import java.util.List;
 public class MethodReferRefactor {
     public static void nameReferRefactor(String oldMethodName,String newMethodName){
         List<CompilationUnit> units= Store.javaFiles;
-        for (CompilationUnit unit:units){
-            List<MethodCallExpr> methodCallExprList =  unit.findAll(MethodCallExpr.class);
-            for (MethodCallExpr methodCallExpr:methodCallExprList){
-           if(methodCallExpr.getNameAsString().equals(oldMethodName)){
+        for (CompilationUnit unit:units) {
+            List<MethodCallExpr> methodCallExprList = unit.findAll(MethodCallExpr.class);
+            if (!(methodCallExprList.isEmpty())) {
+                for (MethodCallExpr methodCallExpr : methodCallExprList) {
+                    if (methodCallExpr.getNameAsString().equals(oldMethodName)) {
                         methodCallExpr.setName(newMethodName);
                     }
                 }
             }
+        }
     }
 }

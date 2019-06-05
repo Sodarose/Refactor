@@ -8,6 +8,7 @@ import io.FileUlits;
 import model.Issue;
 import refactor.AbstractRefactor;
 import ulits.SplitName;
+import ulits.VariableReferUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,21 +25,23 @@ public class ParameterNameRefactor extends AbstractRefactor {
         }
     }
     public void parameterNameRefactor(Parameter parameter) throws IOException {
-        String name="";
+        String oldName=parameter.getNameAsString();
+        String newName="";
         List<String> nameList= SplitName.split(parameter.getNameAsString());
         if(nameList==null){
             return;
         }
         for(String data:nameList){
-            if(name.equals("")){
-                name=name+data;
+            if(newName.equals("")){
+                newName=newName+data;
                 continue;
             }
             data=data.substring(0,1).toUpperCase()+data.substring(1);
-            name=name+data;
+            newName=newName+data;
 
         }
-        parameter.setName(name);
+        parameter.setName(newName);
+        VariableReferUtil.VariNameUtil(oldName,newName);
     }
 
 }

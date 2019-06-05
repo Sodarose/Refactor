@@ -1,5 +1,6 @@
 package analysis.process;
 
+import analysis.AbstractRuleVisitor;
 import analysis.Rule;
 import analysis.RuleLink;
 import com.github.javaparser.ast.CompilationUnit;
@@ -21,15 +22,17 @@ public class Analysis {
     private void runAnalysis(List<JavaModel> javaModels, List<Rule> rules) {
         ReFactorExec reFactorExec = ReFactorExec.getInstance();
         for (Rule rule : rules) {
-            IssueContext issueContext = rule.apply(javaModels);
-            reFactorExec.runFactor(issueContext.getIssues());
-            if (Store.issueContext == null) {
-                Store.issueContext = new IssueContext();
+            AbstractRuleVisitor ruleVisitor = (AbstractRuleVisitor) rule;
+            if (ruleVisitor.isRuleStatus()) {
+                IssueContext issueContext = rule.apply(javaModels);
+                reFactorExec.runFactor(issueContext.getIssues());
+                if (Store.issueContext == null) {
+                    Store.issueContext = new IssueContext();
+                    Store.issueContext.getIssues().addAll(issueContext.getIssues());
+                    continue;
+                }
                 Store.issueContext.getIssues().addAll(issueContext.getIssues());
-                continue;
             }
-            Store.issueContext.getIssues().addAll(issueContext.getIssues());
         }
     }
-
 }

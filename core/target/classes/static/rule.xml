@@ -53,7 +53,7 @@
         <description>if深层嵌套</description>
         <className>analysis.rule.DeeplyIfStmtsRule</className>
         <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>if深层嵌套超过三层</rule-message>
         <rule-level>10</rule-level>
         <example>
@@ -86,7 +86,7 @@
         <description>Switch转换为if</description>
         <className>analysis.rule.ShallowSwitchRule</className>
         <solutionClassName>refactor.refactorimpl.ShallowSwitchRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
         <rule-level>9</rule-level>
         <example>
@@ -109,7 +109,7 @@
         <description>空表达式for转换为while</description>
         <className>analysis.rule.VoidPoolRule</className>
         <solutionClassName>refactor.refactorimpl.VoidPoolRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
         <rule-level>8</rule-level>
         <example>
@@ -125,7 +125,7 @@
         <description>while转化为for</description>
         <className>analysis.rule.WhileChangeForRule</className>
         <solutionClassName>refactor.refactorimpl.WhileChangeRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>有些时候while转化成for能够使人更好的理解</rule-message>
         <rule-level>8</rule-level>
         <example>
@@ -144,7 +144,7 @@
         <description>if转换成switch</description>
         <className>analysis.rule.IFTransformSwitchRule</className>
         <solutionClassName>refactor.refactorimpl.IfTransformSwitchRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>if转换成switch性能更高哦</rule-message>
         <rule-level>8</rule-level>
         <example>
@@ -181,7 +181,7 @@
         <description>成员变量名字应遵从小驼峰模式</description>
         <className>analysis.rule.ClassVariNamingRule</className>
         <solutionClassName>refactor.refactorimpl.ClassVariNameRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>成员变量名应遵从小驼峰形式</rule-message>
         <rule-level>2</rule-level>
         <example>
@@ -195,7 +195,7 @@
         <description>常量命名应该全部大写</description>
         <className>analysis.rule.ClassConstantNamingRule</className>
         <solutionClassName>refactor.refactorimpl.ContantNameRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>常量命名应该全部大写</rule-message>
         <rule-level>2</rule-level>
         <example>
@@ -210,7 +210,7 @@
         <description>方法内变量名应符合小驼峰形式</description>
         <className>analysis.rule.LowerCamelCaseVariableNaming</className>
         <solutionClassName>refactor.refactorimpl.VariableNameRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>方法内变量应符合小驼峰形式</rule-message>
         <rule-level>2</rule-level>
         <example>
@@ -227,7 +227,7 @@
         <description>方法名应符合小驼峰形式</description>
         <className>analysis.rule.MethodNamingShouldBeCamelRule</className>
         <solutionClassName>refactor.refactorimpl.MethodNameRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>方法命名应该全部大写</rule-message>
         <rule-level>2</rule-level>
         <example>
@@ -243,7 +243,7 @@
         <description>包命名应该全部小写</description>
         <className>analysis.rule.PackageNamingRule</className>
         <solutionClassName>refactor.refactorimpl.PackageNameRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>包命名应该全部小写</rule-message>
         <rule-level>2</rule-level>
         <example>
@@ -259,7 +259,7 @@
         <description>方法的参数命名应符合小驼峰形式</description>
         <className>analysis.rule.ParameterNamingRule</className>
         <solutionClassName>refactor.refactorimpl.ParameterNameRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>方法的参数命名应符合小驼峰形式</rule-message>
         <rule-level>2</rule-level>
         <example>

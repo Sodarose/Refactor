@@ -1,12 +1,12 @@
 package model;
 
+import analysis.AbstractRuleVisitor;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver;
 import com.github.javaparser.utils.ProjectRoot;
 import lombok.Data;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +30,11 @@ public class Store {
     //整个项目的问题代码片段
     public static IssueContext issueContext;
     //索引列表
-    public static Map<String, JavaModelVo> unitMaps ;
+    public static Map<String, JavaModel> javaModelMap ;
 
     public static List<CompilationUnit> javaFiles;
+
+    public static List<AbstractRuleVisitor> rules;
+
+
 }

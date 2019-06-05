@@ -14,11 +14,13 @@ public class FieldNameReferRefactor {
     //FieldAccessExpr
     public static void FieldAccessExprRefactor(String oldVariName,String newVariName){
         List<CompilationUnit> units=Store.javaFiles;
-        for(CompilationUnit unit:units){
-            List<FieldAccessExpr> fieldAccessExprs=unit.findAll(FieldAccessExpr.class);
-            for(FieldAccessExpr fieldAccessExpr:fieldAccessExprs){
-                if(fieldAccessExpr.getName().equals(oldVariName)){
-                    fieldAccessExpr.setName(newVariName);
+        for(CompilationUnit unit:units) {
+            List<FieldAccessExpr> fieldAccessExprs = unit.findAll(FieldAccessExpr.class);
+            if (!(fieldAccessExprs.isEmpty())) {
+                for (FieldAccessExpr fieldAccessExpr : fieldAccessExprs) {
+                    if (fieldAccessExpr.getName().equals(oldVariName)) {
+                        fieldAccessExpr.setName(newVariName);
+                    }
                 }
             }
         }
@@ -28,9 +30,11 @@ public class FieldNameReferRefactor {
         List<CompilationUnit> units= Store.javaFiles;
         for(CompilationUnit unit:units){
             List<NameExpr> nameExprs=unit.findAll(NameExpr.class);
-            for(NameExpr nameExpr:nameExprs){
-                if(nameExpr.getName().equals(oldVariName)){
-                    nameExpr.setName(newVariName);
+            if(!(nameExprs.isEmpty())) {
+                for (NameExpr nameExpr : nameExprs) {
+                    if (nameExpr.getName().equals(oldVariName)) {
+                        nameExpr.setName(newVariName);
+                    }
                 }
             }
         }
