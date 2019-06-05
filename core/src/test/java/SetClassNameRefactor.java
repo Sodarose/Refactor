@@ -36,10 +36,8 @@ public class SetClassNameRefactor {
                         type2.setName("classVariRefactor");
                         objectCreationExpr.setTypeArguments(type2);
                         objectCreationExpr.removeTypeArguments();
-                        System.out.println(objectCreationExpr);
                         node.setInitializer(objectCreationExpr);
                         node.setType(type);
-                        System.out.println(var);
                     }
                     ClassOrInterfaceType type = (ClassOrInterfaceType) node.getType();
                     if (type.getName().toString().equals("ClassVariRefactor")) {

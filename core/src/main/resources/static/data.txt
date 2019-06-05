@@ -732,7 +732,6 @@ initially
 reformat
 inside
 integrate
-controlled
 period
 huge
 determined
@@ -1411,7 +1410,6 @@ father
 reinstate
 tutorial
 nicety
-roll
 exponent
 exponential
 prefer

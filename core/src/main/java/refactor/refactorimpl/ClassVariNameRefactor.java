@@ -18,7 +18,6 @@ public class ClassVariNameRefactor  extends AbstractRefactor {
     @Override
     public void refactor(Issue issue) {
         FieldDeclaration fieldDeclaration=(FieldDeclaration)issue.getIssueNode();
-        System.out.println(fieldDeclaration);
         try {
             variableNameRefactor(fieldDeclaration);
         } catch (IOException e) {

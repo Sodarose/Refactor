@@ -38,7 +38,7 @@ public class IFTransformSwitchRule extends AbstractRuleVisitor {
             this.javaModel = javaModel;
             collectIssue(javaModel.getUnit());
         }
-        System.out.println(getContext().getIssues().size());
+        //System.out.println(getContext().getIssues().size());
         return getContext();
     }
 

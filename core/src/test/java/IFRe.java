@@ -26,7 +26,7 @@ public class IFRe {
        MethodDeclaration method = visitorByJP.getList().get(0);
        BlockStmt block = method.getBody().get();
        slove(block);
-       System.out.println(block);
+       //System.out.println(block);
     }
 
     public static void slove(BlockStmt blockStmt){

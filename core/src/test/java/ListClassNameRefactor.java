@@ -24,7 +24,6 @@ public class ListClassNameRefactor {
                 for(VariableDeclarator node:var.getVariables()) {
                     String name = node.getType().getClass().getName();
                     if(name.equals("com.github.javaparser.ast.type.ClassOrInterfaceType")) {
-                        System.out.println(node.getType());
                        String className=node.getType().toString();
                         BoyerMoore boyerMoore=new BoyerMoore();
                         int pos=boyerMoore.match(className,"List<ClassVariRefactor>");
@@ -49,7 +48,7 @@ public class ListClassNameRefactor {
                                 }
                             }
                             node.setType(type);
-                            System.out.println(var);
+
                         }
                     }
                 }

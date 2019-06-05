@@ -1,54 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acf294b9-6c92-47d6-b098-0f3c9df5ce2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameImportRefer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/refer/variablerefer/VariNameReferRefactor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ulits/ClassReferUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ulits/MethodReferUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ulits/PackageReferUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ulits/VariableReferUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/Stringtest.java" afterDir="false" />
+    <list default="true" id="acf294b9-6c92-47d6-b098-0f3c9df5ce2a" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/formatter/FormatOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/formatter/FormatOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/model/JavaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/model/JavaModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/model/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariableNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariableNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ClassExtendsReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ClassExtendsReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ClassImportReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ClassImportReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/FieldNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/FieldNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ImportDeclarationUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/InterfaceImplementRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/InterfaceImplementRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ListFieldNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ListFieldNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ListVariNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ListVariNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/MapFieldNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/MapFieldNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/MapVariNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/MapVariNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ParameterReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ParameterReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/SetFieldNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/SetFieldNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/SetVariNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/SetVariNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/VariNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/VariNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/methodrefer/MethodReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/methodrefer/MethodReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/variablerefer/FieldNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/variablerefer/FieldNameReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/ClassExtendsRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/ClassExtendsRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/test/java/ClassImportRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/ClassImportRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/rule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/IFRe.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFRe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/ListClassNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/ListClassNameRefactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/SetClassNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/SetClassNameRefactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/static/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application-dev.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/core/target/" />
@@ -66,81 +36,56 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="510">
+                    <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="52" column="15" lean-forward="true" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
+            <state relative-caret-position="501">
+              <caret line="52" column="63" lean-forward="true" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/data.txt">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="1444" column="10" lean-forward="true" selection-start-line="1444" selection-start-column="10" selection-end-line="1444" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/refer/classrefer/ClassExtendsReferRefactor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-              <folding>
-                <element signature="e#538#792#0" expanded="true" />
-                <element signature="e#791#792#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/RefactCoreServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="e#1020#1021#0" expanded="true" />
-                <element signature="e#1072#1073#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="439">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+            <state relative-caret-position="210">
+              <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,13 +121,18 @@
       <find>layui-side</find>
       <find>getJavaFileTree</find>
       <find>System</find>
-      <find>System.out.print</find>
-      <find>contr</find>
       <find>user</find>
       <find>config</find>
       <find>login</find>
       <find>vice</find>
       <find>cate</find>
+      <find>System.out.pr</find>
+      <find>System.out.prSSSSSSSSSSSSSDDDDDSSSSS</find>
+      <find>System.out.print</find>
+      <find>in</find>
+      <find>articl</find>
+      <find>contr</find>
+      <find>Roll</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,19 +141,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/side.html" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/TreeNode.java" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/templates/pages/project.html" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/Store.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/model/Issue.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameReferRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/MethodReferUtil.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/Stringtest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/ClassImportRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameImportRefer.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ulits/PackageReferUtil.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/MethodNameRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" />
@@ -233,22 +173,32 @@
         <option value="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/model/JavaModel.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ulits/ClassReferUtil.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/RefactCoreServiceImpl.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/io/ParserProject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ClassImportRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ListClassNameRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/SetClassNameRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ClassExtendsRefactor.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/Demo.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/IFRe.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/application-dev.properties" />
         <option value="$PROJECT_DIR$/core/src/main/resources/static/data.txt" />
         <option value="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="386" />
-    <option name="y" value="177" />
-    <option name="width" value="1334" />
+    <option name="x" value="185" />
+    <option name="y" value="163" />
+    <option name="width" value="894" />
     <option name="height" value="716" />
   </component>
   <component name="ProjectView">
@@ -257,6 +207,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -472,12 +424,19 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="w8x-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="w8x-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectFilesPane">
         <option name="show-excluded-files" value="true" />
         <option name="show-only-loaded-files" value="false" />
@@ -493,8 +452,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559707131534" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/JavaEETest-master/MyBlog" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559724225343" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/MyBlog" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -502,7 +461,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -622,6 +581,14 @@
       <workItem from="1559126442197" duration="18690000" />
       <workItem from="1559178169342" duration="652000" />
     </task>
+    <task id="LOCAL-00001" summary="Default Changelist">
+      <created>1559717223365</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559717223366</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -637,7 +604,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="185" y="163" width="894" height="716" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.6873662" side_tool="true" weight="0.21888413" />
@@ -648,16 +615,16 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="设计器" order="7" />
-      <window_info content_ui="combo" id="Project" order="8" sideWeight="0.31263384" visible="true" weight="0.22814499" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.31263384" visible="true" weight="0.2410072" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32976446" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7719957" weight="0.25460455" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7719957" visible="true" weight="0.05488851" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946353" weight="0.32894737" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946353" weight="0.32976446" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.5912017" weight="0.31459332" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.5912017" weight="0.19826652" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.22800429" side_tool="true" weight="0.2751606" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
@@ -669,6 +636,7 @@
       <window_info anchor="bottom" id="SBT Console" order="17" weight="0.32894737" />
       <window_info anchor="bottom" id="Pants Console" order="18" weight="0.32894737" />
       <window_info anchor="bottom" id="SBT Execute" order="19" side_tool="true" />
+      <window_info anchor="bottom" id="GraphQL" order="20" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -729,116 +697,11 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Default Changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refer/classrefer/InterfaceImplementRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1894#1895#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ParameterNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/UnusedImportsRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/WhileChangeRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/VariableNameRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ShallowSwitchRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refer/classrefer/ClassImportReferRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refer/classrefer/FieldNameReferRefactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/AbstractSparkLayer.java" />
-    <entry file="file://$USER_HOME$/Desktop/TopicProducerImpl.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/PackageReferUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/MethodReferUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/WebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/WebHookRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/controller/PageRoute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/scanner.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -891,13 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
           <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="118" column="18" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -984,20 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1012,33 +854,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="1444" column="10" lean-forward="true" selection-start-line="1444" selection-start-column="10" selection-end-line="1444" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/refer/classrefer/ClassExtendsReferRefactor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
+        <state relative-caret-position="690">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1048,7 +866,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/io/ParserProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
+        <state relative-caret-position="1410">
           <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1056,17 +874,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="52" column="15" lean-forward="true" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
+        <state relative-caret-position="810">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/Service/impl/RefactCoreServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="300">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#1020#1021#0" expanded="true" />
             <element signature="e#1072#1073#0" expanded="true" />
@@ -1074,21 +892,176 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="268">
+          <caret line="42" column="46" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/AbstractRuleVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/ReFactorExec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="60" column="41" lean-forward="true" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/ClassImportRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/ListClassNameRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="25" column="92" selection-start-line="25" selection-start-column="92" selection-end-line="25" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/SetClassNameRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/ClassExtendsRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassVariNameRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/CodeStyleRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ContantNameRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/w8x/web/WebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#538#792#0" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5040">
+          <caret line="168" column="39" selection-start-line="168" selection-start-column="39" selection-end-line="168" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9510">
+          <caret line="342" column="6" selection-start-line="342" selection-start-column="6" selection-end-line="342" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/IFTransformSwitchRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+        <state relative-caret-position="1410">
+          <caret line="59" column="58" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="1407" column="7" lean-forward="true" selection-start-line="1407" selection-start-column="7" selection-end-line="1407" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/ClassNameRefactor.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/IFRe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/ClassNameRefactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="52" column="63" lean-forward="true" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
