@@ -16,33 +16,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassVariNamingRule extends AbstractRuleVisitor {
-    private JavaModel javaModel;
-    private BaseVisitor<FieldDeclaration> visitor = new BaseVisitor<FieldDeclaration>() {
-        @Override
-        public void visit(FieldDeclaration n, Object arg) {
-            if (!(n.isStatic() || n.isFinal())) {
-                getList().add(n);
-            }
-            super.visit(n, arg);
-        }
-    };
-
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel : javaModels) {
-            this.javaModel = javaModel;
-            javaModel.getUnit().accept(visitor, null);
+            try {
+                checkVariableName(javaModel);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
         }
-        try {
-            checkVariableName();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         return getContext();
     }
 
-    public void checkVariableName() throws IOException {
-        List<FieldDeclaration> fieldDeclarationList = visitor.getList();
+    public void checkVariableName(JavaModel javaModel) throws IOException {
+        List<FieldDeclaration> fieldDeclarationList = javaModel.getUnit().findAll(FieldDeclaration.class);
         for (FieldDeclaration fieldDeclaration : fieldDeclarationList) {
             String name = fieldDeclaration.getVariable(0).getNameAsString();
             List<String> nameList = SplitName.split(name);

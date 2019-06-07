@@ -57,7 +57,6 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
             }
         }
 
-        System.out.println(getContext().getIssues().size());
         return getContext();
     }
 

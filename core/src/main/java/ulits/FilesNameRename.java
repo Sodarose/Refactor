@@ -16,7 +16,6 @@ public class FilesNameRename {
         File newFile=new File(parentPath+"\\"+newFileName+".java");
         file.renameTo(newFile);
         Map<String,JavaModel> modelMap=Store.javaModelMap;
-        JavaModel javaModel1=modelMap.get(parentPath+"\\"+oldFileName+".java");
        javaModel.setReadPath(parentPath+"\\"+newFileName+".java");
        String newPath=parentPath+"\\"+newFileName+".java";
        modelMap.remove(parentPath+"\\"+oldFileName+".java");

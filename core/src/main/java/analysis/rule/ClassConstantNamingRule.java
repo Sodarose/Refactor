@@ -14,19 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassConstantNamingRule extends AbstractRuleVisitor {
-    private JavaModel javaModel;
-    private BaseVisitor<FieldDeclaration> visitor=new BaseVisitor<FieldDeclaration>(){
-        @Override
-        public void visit(FieldDeclaration n, Object arg) {
-            if(n.isStatic()||n.isFinal()){
-                getList().add(n);
-            }
-            super.visit(n, arg);
-        }
-    };
 
-    public void checkConstantName(){
-        List<FieldDeclaration> fieldDeclarationList=visitor.getList();
+    public void checkConstantName(JavaModel javaModel){
+        List<FieldDeclaration> fieldDeclarationList=javaModel.getUnit().findAll(FieldDeclaration.class);
         for (FieldDeclaration fieldDeclaration:fieldDeclarationList){
             String constantName=fieldDeclaration.getVariable(0).getNameAsString();
             if(!(constantName.equals(constantName.toUpperCase()))){
@@ -43,10 +33,8 @@ public class ClassConstantNamingRule extends AbstractRuleVisitor {
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel:javaModels){
-            this.javaModel = javaModel;
-            javaModel.getUnit().accept(visitor,null);
+            checkConstantName(javaModel);
         }
-        checkConstantName();
         return getContext();
     }
     public static void main(String[] args) {
