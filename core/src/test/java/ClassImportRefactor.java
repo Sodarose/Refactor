@@ -21,8 +21,6 @@ public class ClassImportRefactor {
                    String className=importDeclaration.getNameAsString().substring(index+1);
                    if(className.equals(oldClassName)) {
                        importDeclaration.setName(importDeclaration.getNameAsString().substring(0,index+1) + newClassName);
-                       //System.out.println(unit);
-                       System.out.println(importDeclaration);
                    }
             }
         }

@@ -16,28 +16,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterNamingRule extends AbstractRuleVisitor {
-    private JavaModel javaModel;
-    private BaseVisitor<Parameter> visitor=new BaseVisitor<Parameter>(){
-        @Override
-        public void visit(Parameter n, Object arg) {
-            getList().add(n);
-            super.visit(n, arg);
-        }
-    };
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for(JavaModel javaModel:javaModels){
-            javaModel.getUnit().accept(visitor,null);
-        }
-        try {
-            checkParameterName();
-        } catch (IOException e) {
-            e.printStackTrace();
+            try {
+                checkParameterName(javaModel);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return getContext();
     }
-    public void checkParameterName() throws IOException {
-        List<Parameter> parameterList=visitor.getList();
+    public void checkParameterName(JavaModel javaModel) throws IOException {
+        List<Parameter> parameterList=javaModel.getUnit().findAll(Parameter.class);
         for(Parameter parameter:parameterList){
             String name=parameter.getNameAsString();
             List<String> nameList= SplitName.split(name);

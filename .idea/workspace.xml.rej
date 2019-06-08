@@ -1,0 +1,46 @@
+diff a/.idea/workspace.xml b/.idea/workspace.xml	(rejected hunks)
+@@ -2,27 +2,30 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="7b05174d-fdec-48de-8ae2-78c692b8b11a" name="默认" comment="">
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/AbstractRule.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/Analysis.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/Rule.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/visitor/BaseVisitor.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/ReCorrect.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/ExpressionTool.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/Refactor.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/core/src/test/java/Scanner/ScannerIF.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/AbstractRuleVisitor.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/BaseVisitor.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/RuleRunnable.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/RuleThreadFactory.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/IssueContext.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/core/src/main/java/model/Writeback.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/core/src/main/java/refactor/AbstractRefactor.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/AbstractRule.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/process/Analysis.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/Rule.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/RuleLink.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/DeeplyIfStmtsRule.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/visitor/BaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/JavaParser/BaseVisitor.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/java/api/AnalysisApi.java" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/core/src/main/java/model/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/model/Issue.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/FormatterTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/core/src/test/java/IFRe.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFRe.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/core/src/test/java/IFRe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFRe2.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/IFReSwitch.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/src/test/java/Scanner/ScannerIF.java" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/core/src/test/java/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/TestFile.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/core/target/classes/META-INF/core.kotlin_module" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/core/target/test-classes/META-INF/core.kotlin_module" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/target/classes/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/rule.xml" afterDir="false" />
+     </list>
+     <ignored path="$PROJECT_DIR$/web/target/" />
+     <ignored path="$PROJECT_DIR$/common/target/" />

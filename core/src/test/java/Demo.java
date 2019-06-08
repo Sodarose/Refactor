@@ -340,7 +340,7 @@ public class Demo {
       programClass.bodyDeclarations().add(methodDeclaration);
     }
 
-    System.out.println(compilationUnit.toString());
+    //System.out.println(compilationUnit.toString());
 
   }
 }

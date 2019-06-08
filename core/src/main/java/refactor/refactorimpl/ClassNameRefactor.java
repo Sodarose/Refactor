@@ -44,16 +44,14 @@ public class ClassNameRefactor extends AbstractRefactor {
 
             newName = newName + data;
         }
+            classOrInterfaceDeclaration.setName(newName);
+            ClassReferUtil.referUtil(oldName, newName);
         JavaModel javaModel = issue.getJavaModel();
         Optional<String> primaryTypeName = javaModel.getUnit().getPrimaryTypeName();
         if (primaryTypeName.isPresent() && primaryTypeName != null) {
-            //System.out.println(javaModel.getReadPath());
-           /* if (primaryTypeName.get().equals(oldName)) {
+            if (primaryTypeName.get().equals(oldName)) {
                 FilesNameRename.nameRename(issue, oldName, newName);
-            }*/
+            }
         }
-            classOrInterfaceDeclaration.setName(newName);
-            ClassReferUtil.referUtil(oldName, newName);
-
     }
 }

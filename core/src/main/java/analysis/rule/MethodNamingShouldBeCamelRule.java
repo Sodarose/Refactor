@@ -16,37 +16,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MethodNamingShouldBeCamelRule extends AbstractRuleVisitor {
-    private JavaModel javaModel;
-    private BaseVisitor<MethodDeclaration> visitor = new BaseVisitor<MethodDeclaration>() {
-        @Override
-        public void visit(MethodDeclaration n, Object arg) {
-            getList().add(n);
-            super.visit(n, arg);
-        }
-    };
-
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel : javaModels) {
-            this.javaModel = javaModel;
-            javaModel.getUnit().accept(visitor, null);
-        }
-        try {
-            checkMethodName();
-        } catch (IOException e) {
-            e.printStackTrace();
+            try {
+                checkMethodName(javaModel);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return getContext();
     }
 
-    public void checkMethodName() throws IOException {
-        List<MethodDeclaration> methodList = visitor.getList();
+    public void checkMethodName(JavaModel javaModel) throws IOException {
+        List<MethodDeclaration> methodList = javaModel.getUnit().findAll(MethodDeclaration.class);
         for (MethodDeclaration methodDeclaration : methodList) {
             String name = methodDeclaration.getNameAsString();
             List<String> nameList = SplitName.split(name);
             if (nameList != null) {
                 boolean nameFlag = check(nameList);
                 if (!nameFlag) {
+                    System.out.println(name);
                     Issue issue = new Issue();
                     issue.setJavaModel(javaModel);
                     issue.setIssueNode(methodDeclaration);

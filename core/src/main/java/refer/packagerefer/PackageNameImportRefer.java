@@ -2,12 +2,13 @@ package refer.packagerefer;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;
+import model.Issue;
 import model.Store;
 
 import java.util.List;
 
 public class PackageNameImportRefer {
-    public static void importNameRefer(String oldPackageName,String newPackageName){
+    public static void importNameRefer(Issue issue,String oldPackageName, String newPackageName){
         List<CompilationUnit> units= Store.javaFiles;
         for (CompilationUnit unit:units) {
             List<ImportDeclaration> importDeclarations=unit.getImports();

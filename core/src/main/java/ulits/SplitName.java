@@ -22,7 +22,9 @@ public class SplitName {
                    BoyerMoore boyerMoore=new BoyerMoore();
                    int pos=boyerMoore.match(copyname.trim(),data.trim());
                     if (pos != -1) {
-                        nameMap.put(pos,name.substring(pos,pos+data.length()));
+                        nameMap.put(pos,copyname.substring(pos,pos+data.length()));
+                        copyname=copyname.replaceAll(copyname.substring(pos,pos+data.length())," ");
+                        System.out.println(copyname);
                     }
                 }
             }

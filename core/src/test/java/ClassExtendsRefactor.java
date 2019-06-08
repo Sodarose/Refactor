@@ -32,8 +32,7 @@ public class ClassExtendsRefactor {
                                 if (classOrInterfaceType.getNameAsString().equals(className)) {
                                     classOrInterfaceType.setName("classVariRefactor");
                                     classOrInterfaceDeclaration.setExtendedType(0, classOrInterfaceType);
-                                    System.out.println(unit);
-                                }
+                            }
                             }
                         }
                     }

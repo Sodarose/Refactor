@@ -24,7 +24,6 @@ public class ParameterReferRefactor {
                         if (type.getNameAsString().equals(oldClassName)) {
                             type.setName(newClassName);
                             parameter.setType(type);
-                            System.out.println(unit);
                         }
                     }
                 }

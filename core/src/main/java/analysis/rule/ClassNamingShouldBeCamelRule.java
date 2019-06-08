@@ -16,22 +16,16 @@ import java.util.List;
 
 public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
     private final List<String> issueNameList=new ArrayList<>();
-    private final BaseVisitor<ClassOrInterfaceDeclaration> visitor=new BaseVisitor<ClassOrInterfaceDeclaration>(){
-        @Override
-        public void visit(ClassOrInterfaceDeclaration n, Object arg) {
-                getList().add(n);
-        }
-    };
+
 
     public void checkClassName(JavaModel javaModel) throws IOException {
-        List<ClassOrInterfaceDeclaration> classList=visitor.getList();
+        List<ClassOrInterfaceDeclaration> classList=javaModel.getUnit().findAll(ClassOrInterfaceDeclaration.class);
         for(ClassOrInterfaceDeclaration classOrInterfaceDeclaration:classList) {
             String name = classOrInterfaceDeclaration.getNameAsString();
             List<String> nameList = SplitName.split(name);
             if (!(nameList.isEmpty())) {
                 boolean nameFlag = check(nameList);
                 if (!nameFlag) {
-                    System.out.println(name);
                     Issue issue = new Issue();
                     issue.setIssueNode(classOrInterfaceDeclaration);
                     issue.setJavaModel(javaModel);
@@ -55,9 +49,6 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
     }
     @Override
     public IssueContext apply(List<JavaModel> javaModels)  {
-        for (JavaModel javaModel:javaModels){
-            javaModel.getUnit().accept(visitor,null);
-        }
         for (JavaModel javaModel:javaModels){
             try {
                 checkClassName(javaModel);

@@ -43,7 +43,7 @@ public class ExpressionTool {
             expr = reverseExpression(expression.asMethodCallExpr());
         }
         if (expression.isUnaryExpr()) {
-            System.out.println(expression.asUnaryExpr().getOperator());
+            //System.out.println(expression.asUnaryExpr().getOperator());
             expr = reverseExpression(expression.asUnaryExpr());
         }
         if (expression.isFieldAccessExpr()) {
