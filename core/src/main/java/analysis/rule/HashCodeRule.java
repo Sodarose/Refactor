@@ -7,6 +7,7 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.comments.BlockComment;
 import com.github.javaparser.ast.type.PrimitiveType;
 import com.github.javaparser.symbolsolver.javaparser.Navigator;
 import io.FileUlits;
@@ -18,6 +19,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class HashCodeRule extends AbstractRuleVisitor {
+    final  String HASHCODE_WARN = "该类重写了hashCode函数 但是没有重写equals函数";
+    final  String EQUALS_WARN = "该类重写了equals函数 但是没有重写hashCode函数";
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel : javaModels) {
@@ -49,12 +52,6 @@ public class HashCodeRule extends AbstractRuleVisitor {
                 return true;
             }).findFirst();
 
-            //如果不存在hashcode
-            if (!hashCodeMethod.isPresent()) {
-
-                continue;
-            }
-
             //得到equals
             Optional<MethodDeclaration> hashEqualsMethod = methodDeclarations.stream().filter(methodDeclaration -> {
                 String method = methodDeclaration.getName().getIdentifier();
@@ -70,11 +67,24 @@ public class HashCodeRule extends AbstractRuleVisitor {
                 return true;
             }).findFirst();
 
-            //如果存在equals
-            if (hashEqualsMethod.isPresent()) {
+            if(hashCodeMethod.isPresent()&&hashEqualsMethod.isPresent()){
                 continue;
             }
-            getContext().getIssues().add(createIssue(javaModel, hashCodeMethod.get()));
+
+            if(hashCodeMethod.isPresent()&&!hashEqualsMethod.isPresent()){
+                BlockComment blockComment = new BlockComment();
+                blockComment.setContent(HASHCODE_WARN);
+                hashCodeMethod.get().setComment(blockComment);
+                getContext().getIssues().add(createIssue(javaModel, hashCodeMethod.get()));
+            }
+
+            if(!hashCodeMethod.isPresent()&&hashEqualsMethod.isPresent()){
+                BlockComment blockComment = new BlockComment();
+                blockComment.setContent(EQUALS_WARN);
+                hashCodeMethod.get().setComment(blockComment);
+                getContext().getIssues().add(createIssue(javaModel, hashCodeMethod.get()));
+            }
+
         }
     }
 
@@ -88,6 +98,4 @@ public class HashCodeRule extends AbstractRuleVisitor {
         issue.setRefactorName(getSolutionClassName());
         return issue;
     }
-
-
 }

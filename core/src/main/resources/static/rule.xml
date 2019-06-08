@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <rule>
-
-    <rule-item>
-        <rule-name>ForEachRule</rule-name>
-        <description>不要在 foreach 循环里进行元素的 remove/add 操作。</description>
-        <className>analysis.rule.ForEachRule</className>
-        <solutionClassName></solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>不要在 foreach 循环里进行元素的 remove/add 操作。remove 元素请使用 Iterator</rule-message>
-        <rule-level>5</rule-level>
-        <example>
-            for (String item : list) {
-            if ("1".equals(item)) {
-            list.remove(item);
-            }
-            }
-        </example>
-    </rule-item>
-
-    <rule-item>
-        <rule-name>HashCodeRefactor</rule-name>
-        <description>只要重写 equals，就必须重写 hashCode。</description>
-        <className>analysis.rule.HashCodeRule</className>
-        <solutionClassName>refactor.refactorimpl.VariableDeclarationRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>字符串比较应该使用equals</rule-message>
-        <rule-level>5</rule-level>
-        <example>
-
-        </example>
-    </rule-item>
-
-    <rule-item>
-        <rule-name>StringComparisonRule</rule-name>
-        <description>字符串比较改用equals</description>
-        <className>analysis.rule.StringComparisonRule</className>
-        <solutionClassName></solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>字符串比较应该使用equals</rule-message>
-        <rule-level>0</rule-level>
-        <example>
-            xxx == "String";
-            xxx.equals("String");
-
-            转换为
-            "String".equals(xxx);
-        </example>
-    </rule-item>
+    <!-- 需求一 -->
 
     <rule-item>
         <rule-name>OverwriteMethodRule</rule-name>
@@ -58,32 +12,32 @@
         <rule-level>1</rule-level>
         <example>
             public interface T {
-                void test(int i);
+            void test(int i);
             }
 
             public class TTest implements T {
 
-                public void test(int i) {
+            public void test(int i) {
 
-                }
+            }
 
-                 class Q implements T {
-                    public void test(int i) {
+            class Q implements T {
+            public void test(int i) {
 
-                    }
-                }
+            }
+            }
             }
 
             class P implements T {
-                public void test(int i) {
+            public void test(int i) {
 
-                 }
+            }
             }
 
             class X extends P {
-                public void test(int i) {
-                    super.test(i);
-                }
+            public void test(int i) {
+            super.test(i);
+            }
             }
 
         </example>
@@ -118,9 +72,9 @@
             import refactor.AbstractRefactor;
 
             class xx{
-                /*
-                * not use that imports
-                */
+            /*
+            * not use that imports
+            */
             }
         </example>
     </rule-item>
@@ -135,22 +89,144 @@
         <rule-level>1</rule-level>
         <example>
             do:
-                xxx
+            xxx
             while(condition);
 
             if(condtion)
-                xxx
+            xxx
             else
-                xxx
+            xxx
 
             while(condition)
-                xxxx
+            xxxx
 
             for(init;condition;update)
-                xxxx
+            xxxx
         </example>
     </rule-item>
 
+    <!--  需求二  -->
+    <rule-item>
+        <rule-name>ClassNamingShouldBeCamelRule</rule-name>
+        <description>类名使用UpperCamelCase风格，必须遵从驼峰形式，</description>
+        <className>analysis.rule.ClassNamingShouldBeCamelRule</className>
+        <solutionClassName>refactor.refactorimpl.ClassNameRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>类名应遵从驼峰形式</rule-message>
+        <rule-level>2</rule-level>
+        <example>
+            public class TextName
+        </example>
+    </rule-item>
+
+
+    <rule-item>
+        <rule-name>ClassVariNamingRule</rule-name>
+        <description>成员变量名字应遵从小驼峰模式</description>
+        <className>analysis.rule.ClassVariNamingRule</className>
+        <solutionClassName>refactor.refactorimpl.ClassVariNameRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>成员变量名应遵从小驼峰形式</rule-message>
+        <rule-level>2</rule-level>
+        <example>
+            public class TextName{
+            public string textName
+            }
+        </example>
+    </rule-item>
+
+
+    <rule-item>
+        <rule-name>ClassConstantNamingRule</rule-name>
+        <description>常量命名应该全部大写</description>
+        <className>analysis.rule.ClassConstantNamingRule</className>
+        <solutionClassName>refactor.refactorimpl.ContantNameRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>常量命名应该全部大写</rule-message>
+        <rule-level>2</rule-level>
+        <example>
+            public class TextName
+            {
+            public static final PATTERN="";
+            }
+        </example>
+    </rule-item>
+
+
+    <rule-item>
+        <rule-name>LowerCamelCaseVariableNaming</rule-name>
+        <description>方法内变量名应符合小驼峰形式</description>
+        <className>analysis.rule.LowerCamelCaseVariableNaming</className>
+        <solutionClassName>refactor.refactorimpl.VariableNameRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>方法内变量应符合小驼峰形式</rule-message>
+        <rule-level>2</rule-level>
+        <example>
+            public class TextName
+            {
+            public void check(){
+            String changeKey="";
+            }
+            }
+        </example>
+    </rule-item>
+
+
+    <rule-item>
+        <rule-name>MethodNamingShouldBeCamelRule</rule-name>
+        <description>方法名应符合小驼峰形式</description>
+        <className>analysis.rule.MethodNamingShouldBeCamelRule</className>
+        <solutionClassName>refactor.refactorimpl.MethodNameRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>方法命名应该全部大写</rule-message>
+        <rule-level>2</rule-level>
+        <example>
+            public class TextName
+            {
+            public void checkName(){
+            }
+            }
+        </example>
+    </rule-item>
+
+
+    <rule-item>
+        <rule-name>PackageNamingRule</rule-name>
+        <description>包命名应该全部小写</description>
+        <className>analysis.rule.PackageNamingRule</className>
+        <solutionClassName>refactor.refactorimpl.PackageNameRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>包命名应该全部小写</rule-message>
+        <rule-level>2</rule-level>
+        <example>
+            package com.github.javaparser;
+            public class TextName
+            {
+
+            }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>ParameterNamingRule</rule-name>
+        <description>方法的参数命名应符合小驼峰形式</description>
+        <className>analysis.rule.ParameterNamingRule</className>
+        <solutionClassName>refactor.refactorimpl.ParameterNameRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>方法的参数命名应符合小驼峰形式</rule-message>
+        <rule-level>2</rule-level>
+        <example>
+            public class TextName
+            {
+            public void checkName(String className)
+            {
+
+            }
+            }
+        </example>
+    </rule-item>
+
+    <!-- 需求三 -->
     <rule-item>
         <rule-name>DeeplyIfStmtsRule</rule-name>
         <description>if深层嵌套</description>
@@ -161,26 +237,26 @@
         <rule-level>10</rule-level>
         <example>
             if (i == 1) {
-                System.out.println("执行1");
-                if (i == 2) {
-                    System.out.println("执行2");
-                        if (i == 3) {
-                            System.out.println("执行3");
-                                if (i == 4) {
-                                    System.out.println("执行4");
-                                        if (i == 5) {
-                                            System.out.println("执行5");
-                                                if (i == 6) {
-                                                    System.out.println("执行6");
-                                                        if (i == 7) {
-                                                             System.out.println("执行7");
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+            System.out.println("执行1");
+            if (i == 2) {
+            System.out.println("执行2");
+            if (i == 3) {
+            System.out.println("执行3");
+            if (i == 4) {
+            System.out.println("执行4");
+            if (i == 5) {
+            System.out.println("执行5");
+            if (i == 6) {
+            System.out.println("执行6");
+            if (i == 7) {
+            System.out.println("执行7");
+            }
+            }
+            }
+            }
+            }
+            }
+            }
         </example>
     </rule-item>
 
@@ -195,14 +271,14 @@
         <example>
             switch (empType)
             {
-                case ENGINEER:
-                     return m_basicSalary;
-                case SALESMAN:
-                    return m_basicSalary + m_commission;
-                case MANAGER:
-                    return 2 * m_basicSalary;
-                default:
-                    throw new Exception("no such employee type!");
+            case ENGINEER:
+            return m_basicSalary;
+            case SALESMAN:
+            return m_basicSalary + m_commission;
+            case MANAGER:
+            return 2 * m_basicSalary;
+            default:
+            throw new Exception("no such employee type!");
             }
         </example>
     </rule-item>
@@ -216,8 +292,8 @@
         <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
         <rule-level>8</rule-level>
         <example>
-           for(;;){
-                ****
+            for(;;){
+            ****
             }
         </example>
     </rule-item>
@@ -234,9 +310,9 @@
         <example>
             int i = 0;
             while(i &lt; 100){
-                ****
-                ****
-                i++;
+            ****
+            ****
+            i++;
             }
         </example>
     </rule-item>
@@ -267,112 +343,52 @@
             }
         </example>
     </rule-item>
-    <rule-item>
-        <rule-name>ClassNamingShouldBeCamelRule</rule-name>
-        <description>类名使用UpperCamelCase风格，必须遵从驼峰形式，</description>
-        <className>analysis.rule.ClassNamingShouldBeCamelRule</className>
-        <solutionClassName>refactor.refactorimpl.ClassNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>类名应遵从驼峰形式</rule-message>
-        <rule-level>2</rule-level>
-        <example>
-            public class TextName
-        </example>
-    </rule-item>
-    <rule-item>
-        <rule-name>ClassVariNamingRule</rule-name>
-        <description>成员变量名字应遵从小驼峰模式</description>
-        <className>analysis.rule.ClassVariNamingRule</className>
-        <solutionClassName>refactor.refactorimpl.ClassVariNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>成员变量名应遵从小驼峰形式</rule-message>
-        <rule-level>2</rule-level>
-        <example>
-            public class TextName{
-                public string textName
-            }
-        </example>
-    </rule-item>
-    <rule-item>
-        <rule-name>ClassConstantNamingRule</rule-name>
-        <description>常量命名应该全部大写</description>
-        <className>analysis.rule.ClassConstantNamingRule</className>
-        <solutionClassName>refactor.refactorimpl.ContantNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>常量命名应该全部大写</rule-message>
-        <rule-level>2</rule-level>
-        <example>
-            public class TextName
-            {
-            public static final PATTERN="";
-            }
-        </example>
-    </rule-item>
-    <rule-item>
-        <rule-name>LowerCamelCaseVariableNaming</rule-name>
-        <description>方法内变量名应符合小驼峰形式</description>
-        <className>analysis.rule.LowerCamelCaseVariableNaming</className>
-        <solutionClassName>refactor.refactorimpl.VariableNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>方法内变量应符合小驼峰形式</rule-message>
-        <rule-level>2</rule-level>
-        <example>
-            public class TextName
-            {
-                public void check(){
-                    String changeKey="";
-            }
-            }
-        </example>
-    </rule-item>
-    <rule-item>
-        <rule-name>MethodNamingShouldBeCamelRule</rule-name>
-        <description>方法名应符合小驼峰形式</description>
-        <className>analysis.rule.MethodNamingShouldBeCamelRule</className>
-        <solutionClassName>refactor.refactorimpl.MethodNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>方法命名应该全部大写</rule-message>
-        <rule-level>2</rule-level>
-        <example>
-            public class TextName
-            {
-                public void checkName(){
-            }
-            }
-        </example>
-    </rule-item>
-    <rule-item>
-        <rule-name>PackageNamingRule</rule-name>
-        <description>包命名应该全部小写</description>
-        <className>analysis.rule.PackageNamingRule</className>
-        <solutionClassName>refactor.refactorimpl.PackageNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>包命名应该全部小写</rule-message>
-        <rule-level>2</rule-level>
-        <example>
-            package com.github.javaparser;
-            public class TextName
-            {
 
+    <!--需求四-->
+    <rule-item>
+        <rule-name>ForEachRule</rule-name>
+        <description>不要在 foreach 循环里进行元素的 remove/add 操作。</description>
+        <className>analysis.rule.ForEachRule</className>
+        <solutionClassName></solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>不要在 foreach 循环里进行元素的 remove/add 操作。remove 元素请使用 Iterator</rule-message>
+        <rule-level>5</rule-level>
+        <example>
+            for (String item : list) {
+            if ("1".equals(item)) {
+            list.remove(item);
+            }
             }
         </example>
     </rule-item>
-    <rule-item>
-        <rule-name>ParameterNamingRule</rule-name>
-        <description>方法的参数命名应符合小驼峰形式</description>
-        <className>analysis.rule.ParameterNamingRule</className>
-        <solutionClassName>refactor.refactorimpl.ParameterNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>方法的参数命名应符合小驼峰形式</rule-message>
-        <rule-level>2</rule-level>
-        <example>
-            public class TextName
-            {
-                public void checkName(String className)
-                {
 
-                }
-            }
+    <rule-item>
+        <rule-name>HashCodeRefactor</rule-name>
+        <description>只要重写 equals，就必须重写 hashCode。</description>
+        <className>analysis.rule.HashCodeRule</className>
+        <solutionClassName></solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>字符串比较应该使用equals</rule-message>
+        <rule-level>5</rule-level>
+        <example>
+
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>StringComparisonRule</rule-name>
+        <description>字符串比较改用equals</description>
+        <className>analysis.rule.StringComparisonRule</className>
+        <solutionClassName></solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>字符串比较应该使用equals</rule-message>
+        <rule-level>0</rule-level>
+        <example>
+            xxx == "String";
+            xxx.equals("String");
+
+            转换为
+            "String".equals(xxx);
         </example>
     </rule-item>
 </rule>
