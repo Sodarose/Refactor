@@ -1,13 +1,13 @@
 package refactor.refactorimpl;
 
-import analysis.rule.DeeplyIfStmtsRule;
-import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
-import com.github.javaparser.ast.expr.MethodCallExpr;
+import com.github.javaparser.ast.NodeList;
+import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.expr.AssignExpr;
+import com.github.javaparser.ast.expr.Expression;
+import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.stmt.*;
-import io.FileUlits;
-import io.ParserProject;
 import model.Issue;
 import refactor.AbstractRefactor;
 import refactor.ExpressionTool;
@@ -17,15 +17,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
 /**
- *
- *
- * @author Administrator*/
+ * @author Administrator
+ */
 public class DeeplyIfStmtsRefactor extends AbstractRefactor {
     private String interrupt;
     private List<IfStmt> ifStmts = new ArrayList<>();
     private Node parent;
-    private boolean frist = true;
+    private boolean first = true;
+
 
     @Override
     public void refactor(Issue issue) {
@@ -33,11 +34,11 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
         Map<String, Object> data = issue.getData();
         interrupt = (String) data.get("Interrupt");
         if (!checkReturn(ifStmt)) {
-            return ;
+            return;
         }
         int i = 0;
         transformIfStmt(ifStmt);
-        frist = false;
+        first = false;
         for (IfStmt stmt : ifStmts) {
             if (AnalysisUlits.getDeep(stmt) > 2) {
                 transformIfStmt(stmt);
@@ -52,6 +53,7 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
         if ("continue".equals(interrupt)) {
             cleanContinue(parent);
         }
+        SimplerReturn(issue);
         //System.out.println(ifStmt.getParentNode().get().getParentNode().get());
     }
 
@@ -107,11 +109,11 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
 
 
     /**
-     *
+     * 转换方法
      */
     private void transformIfStmt(Statement stmt) {
         if (stmt.isIfStmt()) {
-            if(frist){
+            if (first) {
                 ifStmts.add(stmt.asIfStmt());
             }
             BlockStmt parent = (BlockStmt) stmt.getParentNode().get();
@@ -138,8 +140,11 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
         }
     }
 
+    /**
+     * 处理含有else的if语句
+     */
     private void solveHasElseIfStmt(BlockStmt parent, IfStmt ifStmt) {
-        List<Statement> leftoverStmt = getLeftoverStmt(parent, ifStmt);
+        NodeList<Statement> leftoverStmt = getLeftoverStmt(parent, ifStmt);
         BlockStmt thenStmt;
         BlockStmt elseStmt;
         if (ifStmt.getThenStmt().isBlockStmt()) {
@@ -158,15 +163,24 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
         }
         if (!isHasReturn(thenStmt)) {
             ifStmt.getThenStmt().asBlockStmt().getStatements().addAll(leftoverStmt);
+            for (Statement stmt : leftoverStmt) {
+                stmt.setParentNode(thenStmt);
+            }
         }
         if (!isHasReturn(elseStmt)) {
             ifStmt.getElseStmt().get().asBlockStmt().getStatements().addAll(leftoverStmt);
+            for (Statement stmt : leftoverStmt) {
+                stmt.setParentNode(thenStmt);
+            }
         }
         cleanElse(parent, ifStmt, leftoverStmt);
         transformIfStmt(elseStmt);
         transformIfStmt(thenStmt);
     }
 
+    /**
+     * 处理不含else的if语句
+     */
     private void solveNoElseIfStmt(BlockStmt parent, IfStmt ifStmt) {
         List<Statement> leftoverStmt = getLeftoverStmt(parent, ifStmt);
         BlockStmt thenStmt;
@@ -191,7 +205,7 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
 
 
     /**
-     *
+     * 清理else
      */
     private void cleanElse(BlockStmt parent, IfStmt ifStmt, List<Statement> leftoverStmt) {
         parent.getStatements().removeAll(leftoverStmt);
@@ -202,10 +216,12 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
     /**
      * 得到ifstmt后面的所有语句
      */
-    private List<Statement> getLeftoverStmt(BlockStmt blockStmt, Statement stmt) {
+    private NodeList<Statement> getLeftoverStmt(BlockStmt blockStmt, Statement stmt) {
         int index = blockStmt.getStatements().indexOf(stmt);
-        List<Statement> leftoverStmt = new ArrayList<>();
-        leftoverStmt.addAll(blockStmt.getStatements().subList(index + 1, blockStmt.getStatements().size()));
+        NodeList<Statement> leftoverStmt = new NodeList<>();
+        for (Statement statement : blockStmt.getStatements().subList(index + 1, blockStmt.getStatements().size())) {
+            leftoverStmt.add(statement.clone());
+        }
         return leftoverStmt;
     }
 
@@ -236,7 +252,61 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
     }
 
 
+    /**
+     * 简化 卫语句的 return
+     */
+    private void SimplerReturn(Issue issue) {
+        CompilationUnit unit = issue.getJavaModel().getUnit();
+        List<IfStmt> ifStmts = unit.findAll(IfStmt.class);
+        for (IfStmt ifStmt : ifStmts) {
+            if (ifStmt.hasElseBranch()) {
+                continue;
+            }
+            if (!ifStmt.getThenStmt().isBlockStmt()) {
+                continue;
+            }
+            BlockStmt blockStmt = ifStmt.getThenStmt().asBlockStmt();
+            runSimple(blockStmt.getStatements(),ifStmt);
+        }
 
+        List<MethodDeclaration> methods = unit.findAll(MethodDeclaration.class);
+        for (MethodDeclaration method : methods) {
+            if (method.getType().isVoidType()) {
+                continue;
+            }
+            if (!method.getBody().isPresent()) {
+                continue;
+            }
+            BlockStmt blockStmt = method.getBody().get();
+            runSimple(blockStmt.getStatements(),method);
+        }
+    }
 
+    private void runSimple(List<Statement> stmts,Node node){
+        if (stmts.size() < 2) {
+            return;
+        }
+        Statement rStmt = stmts.get(stmts.size() - 1);
+        Statement aStmt = stmts.get(stmts.size() - 2);
+        if (!rStmt.isReturnStmt()) {
+            return;
+        }
+        if (!rStmt.asReturnStmt().getExpression().isPresent()) {
+            return;
+        }
+        ReturnStmt returnStmt = rStmt.asReturnStmt();
+        if (!aStmt.isExpressionStmt() || !aStmt.asExpressionStmt().getExpression().isAssignExpr()) {
+            return;
+        }
+        AssignExpr assignExpr = aStmt.asExpressionStmt().getExpression().asAssignExpr();
+        if (!assignExpr.getTarget().equals(returnStmt.getExpression().get())) {
+            return;
+        }
+        ReturnStmt rt = new ReturnStmt();
+        rt.setExpression(assignExpr.getValue());
+        stmts.remove(stmts.size()-2);
+        stmts.remove(stmts.size()-1);
+        stmts.add(rt);
+    }
 
 }

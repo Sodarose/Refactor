@@ -78,6 +78,7 @@ public class AnalysisApi {
             fileNode.setFile(true);
             JavaModel javaModel = Store.javaModelMap.get(file.getPath());
             if(javaModel !=null&& javaModel.getIssues()!=null&& javaModel.getIssues().size()!=0){
+                System.out.println(javaModel.getReadPath());
                 fileNode.setHasIssue(true);
             }
             treeNode.getChildren().add(fileNode);

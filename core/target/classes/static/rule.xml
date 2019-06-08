@@ -2,6 +2,109 @@
 <rule>
 
     <rule-item>
+        <rule-name>ForEachRule</rule-name>
+        <description>不要在 foreach 循环里进行元素的 remove/add 操作。</description>
+        <className>analysis.rule.ForEachRule</className>
+        <solutionClassName></solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>不要在 foreach 循环里进行元素的 remove/add 操作。remove 元素请使用 Iterator</rule-message>
+        <rule-level>5</rule-level>
+        <example>
+            for (String item : list) {
+            if ("1".equals(item)) {
+            list.remove(item);
+            }
+            }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>HashCodeRefactor</rule-name>
+        <description>只要重写 equals，就必须重写 hashCode。</description>
+        <className>analysis.rule.HashCodeRule</className>
+        <solutionClassName>refactor.refactorimpl.VariableDeclarationRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>字符串比较应该使用equals</rule-message>
+        <rule-level>5</rule-level>
+        <example>
+
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>StringComparisonRule</rule-name>
+        <description>字符串比较改用equals</description>
+        <className>analysis.rule.StringComparisonRule</className>
+        <solutionClassName></solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>字符串比较应该使用equals</rule-message>
+        <rule-level>0</rule-level>
+        <example>
+            xxx == "String";
+            xxx.equals("String");
+
+            转换为
+            "String".equals(xxx);
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>OverwriteMethodRule</rule-name>
+        <description>对于覆写的方法必须加@Override注释</description>
+        <className>analysis.rule.VariableDeclarationSpecification</className>
+        <solutionClassName>refactor.refactorimpl.OverwriteMethodRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>对于覆写的方法必须加@Override注释</rule-message>
+        <rule-level>1</rule-level>
+        <example>
+            public interface T {
+                void test(int i);
+            }
+
+            public class TTest implements T {
+
+                public void test(int i) {
+
+                }
+
+                 class Q implements T {
+                    public void test(int i) {
+
+                    }
+                }
+            }
+
+            class P implements T {
+                public void test(int i) {
+
+                 }
+            }
+
+            class X extends P {
+                public void test(int i) {
+                    super.test(i);
+                }
+            }
+
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>VariableDeclarationSpecification</rule-name>
+        <description>对于部分变量声明或赋值执行更正</description>
+        <className>analysis.rule.VariableDeclarationSpecification</className>
+        <solutionClassName>refactor.refactorimpl.VariableDeclarationRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>${target} 应该这样写${refactor}</rule-message>
+        <rule-level>0</rule-level>
+        <example>
+            示例1:
+            Long l = 2l; => Long l = 2L;
+            String args[]; => String[] args;
+        </example>
+    </rule-item>
+
+    <rule-item>
         <rule-name>UnusedImportsRefactor</rule-name>
         <description>清除未使用的导入</description>
         <className>analysis.rule.UnusedImportsRule</className>
@@ -29,7 +132,7 @@
         <solutionClassName>refactor.refactorimpl.CodeStyleRefactor</solutionClassName>
         <rule-status>false</rule-status>
         <rule-message>必须用大括号包裹 即使只有一条语句或空</rule-message>
-        <rule-level>0</rule-level>
+        <rule-level>1</rule-level>
         <example>
             do:
                 xxx
@@ -169,7 +272,7 @@
         <description>类名使用UpperCamelCase风格，必须遵从驼峰形式，</description>
         <className>analysis.rule.ClassNamingShouldBeCamelRule</className>
         <solutionClassName>refactor.refactorimpl.ClassNameRefactor</solutionClassName>
-        <rule-status>true</rule-status>
+        <rule-status>false</rule-status>
         <rule-message>类名应遵从驼峰形式</rule-message>
         <rule-level>2</rule-level>
         <example>

@@ -167,8 +167,10 @@
                 if (res.refactCode != null) {
                     $("#oldCode").addClass("layui-col-md6");
                     $("#oldCode").removeClass("layui-col-md10");
-                    $("#newCode").css("display", "block")
-                    $("#refactorcode").html(res.refactCode)
+                    $("#newCode").css("display", "block");
+                    $("#refactorcode").html(res.refactCode);
+                }else{
+                    $("#newCode").css("display", "none");
                 }
             }, error: function (res) {
 

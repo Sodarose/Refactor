@@ -13,12 +13,14 @@ import refactor.AbstractRefactor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
  * for(;;)=>while(true)
  * and
  * for(;expr;)=>while(expr)
+ *
  * @author kangkang
  */
 public class VoidPoolRefactor extends AbstractRefactor {
@@ -26,14 +28,12 @@ public class VoidPoolRefactor extends AbstractRefactor {
     @Override
     public void refactor(Issue issue) {
         ForStmt forStmt = (ForStmt) issue.getIssueNode();
-        System.out.println("xxxx"+forStmt);
-        System.out.println(forStmt);
         tranFromWhile(forStmt);
     }
 
     /**
      * 转换方法
-     * */
+     */
     private void tranFromWhile(ForStmt forStmt) {
         final Statement stmt = forStmt.getBody();
 
@@ -56,12 +56,30 @@ public class VoidPoolRefactor extends AbstractRefactor {
             condition = temp;
 
         }
-
+        List<Expression> initializations = forStmt.getInitialization();
+        List<ExpressionStmt> inits = initializations.stream().map(expression -> {
+                    ExpressionStmt initStmt = new ExpressionStmt();
+                    initStmt.setExpression(expression);
+                    return initStmt;
+                }
+        ).collect(Collectors.toList());
+        List<Expression> updates = forStmt.getUpdate();
+        List<ExpressionStmt> updateStmts = updates.stream().map(expression -> {
+            ExpressionStmt initStmt = new ExpressionStmt();
+            initStmt.setExpression(expression);
+            return initStmt;
+        }).collect(Collectors.toList());
         WhileStmt whileStmt = new WhileStmt();
         whileStmt.setCondition(condition);
         whileStmt.setBody(blockStmt);
-        Node parent = forStmt.getParentNode().get();
-        parent.replace(whileStmt,forStmt);
+        blockStmt.getStatements().addAll(updateStmts);
+        BlockStmt parent = (BlockStmt) forStmt.getParentNode().get();
+        int index = parent.getStatements().indexOf(forStmt);
+        System.out.println(whileStmt);
+        //parent.replace(whileStmt,forStmt);
+        parent.getStatements().addAll(index, inits);
+        System.out.println(parent.getStatements().replace(forStmt, whileStmt));
+
     }
 
 }

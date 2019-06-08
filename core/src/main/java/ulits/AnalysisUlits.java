@@ -8,6 +8,9 @@ import com.github.javaparser.ast.stmt.Statement;
 import java.util.List;
 
 public class AnalysisUlits {
+    /**
+     * 递归拆解表达式
+     * */
     public static void analysisExpr(Expression condition, List<Expression> exprs) {
         if (condition.isBinaryExpr()) {
             analysisExpr(condition.asBinaryExpr().getLeft(), exprs);

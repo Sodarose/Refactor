@@ -18,43 +18,50 @@ import java.util.List;
 /**
  * 空条件for循环
  * for(;;){
- *
+ * <p>
  * }
  * for(;xx;){
- *
+ * <p>
  * }
  * trandform
  * while(xx){
- *
+ * <p>
  * }
  * while(true){
- *
+ * <p>
  * }
+ *
  * @author kangkang
- * */
+ */
 public class VoidPoolRule extends AbstractRuleVisitor {
-    private JavaModel javaModel;
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel : javaModels) {
-            this.javaModel = javaModel;
-            collectFor(javaModel.getUnit());
+            collectFor(javaModel);
         }
         return getContext();
     }
 
-    private void collectFor(CompilationUnit unit) {
-        List<ForStmt> forStmts = unit.findAll(ForStmt.class);
-        check(forStmts);
+    private void collectFor(JavaModel javaModel) {
+        List<ForStmt> forStmts = javaModel.getUnit().findAll(ForStmt.class);
+        check(forStmts, javaModel);
     }
 
-    private void check(List<ForStmt> forStmts) {
-        for(ForStmt forStmt : forStmts){
-            if(forStmt.getInitialization().size()!=0){
-                continue;
+    /**
+     * 检测
+     */
+    private void check(List<ForStmt> forStmts, JavaModel javaModel) {
+        int initialization = 0;
+        int update = 0;
+        int compare = 0;
+        for (ForStmt forStmt : forStmts) {
+            initialization = forStmt.getInitialization().size();
+            update = forStmt.getUpdate().size();
+            if (forStmt.getCompare().isPresent()) {
+                compare = 1;
             }
-            if(forStmt.getUpdate().size()!=0){
-                return;
+            if (initialization > 0 && update > 0 && compare > 0) {
+                continue;
             }
             Issue issue = new Issue();
             issue.setJavaModel(javaModel);
@@ -66,7 +73,7 @@ public class VoidPoolRule extends AbstractRuleVisitor {
         }
     }
 
-    public static void main(String []args){
+    public static void main(String[] args) {
 
     }
 }

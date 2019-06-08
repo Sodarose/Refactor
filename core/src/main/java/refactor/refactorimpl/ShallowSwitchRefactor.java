@@ -20,6 +20,7 @@ import java.util.*;
 public class ShallowSwitchRefactor extends AbstractRefactor {
     private boolean isEnum = false;
     private boolean isString = false;
+    private boolean isOrder = false;
     String enumName;
     private Node node = null;
 
@@ -63,7 +64,7 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             if (statement == null) {
                 continue;
             }
-            
+
             //
             if (statement.isIfStmt()) {
                 IfStmt ifStmt = statement.asIfStmt();
@@ -195,7 +196,6 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             condition.setOperator(BinaryExpr.Operator.EQUALS);
             condition.setLeft(left);
             condition.setRight(right);
-
             return condition;
         }
 
@@ -203,7 +203,6 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
         condition.setOperator(BinaryExpr.Operator.EQUALS);
         condition.setLeft(select);
         condition.setRight(switchEntry.getLabels().get(0));
-
         return condition;
     }
 
@@ -220,6 +219,10 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
         ResolvedType s = Store.javaParserFacade.getType(selector);
         //搜索根据类限定名称搜索
         SymbolReference v = Store.combinedTypeSolver.tryToSolveType(s.describe());
+        if (!v.isSolved()) {
+            isOrder = true;
+            return;
+        }
         if (v.getCorrespondingDeclaration().isType()) {
             if (v.getCorrespondingDeclaration().asType().isEnum()) {
                 isEnum = true;
@@ -231,7 +234,6 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
                 return;
             }
         }
-        return;
     }
 
     /**

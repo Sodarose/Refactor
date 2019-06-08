@@ -15,46 +15,22 @@ import java.util.List;
  * 浅的Switch
  */
 public class ShallowSwitchRule extends AbstractRuleVisitor {
-    private JavaModel javaModel;
-    private final int MAX_DEEP = 3;
-
-    /**
-     * 收集switch
-     */
-    private final BaseVisitor<SwitchStmt> switchStmtVisitor = new BaseVisitor<SwitchStmt>() {
-        @Override
-        public void visit(SwitchStmt n, Object arg) {
-            getList().add(n);
-            super.visit(n, arg);
-        }
-    };
+    private final int MAX_DEEP = 4;
 
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel : javaModels) {
-            this.javaModel = javaModel;
-            collectSwitchStmt(javaModel.getUnit());
+            checkSwitch(javaModel);
         }
-        check();
         return getContext();
     }
 
     /**
-     * 收集switch
+     * 检查 检查case的层次
      */
-    private void collectSwitchStmt(CompilationUnit unit) {
-        unit.accept(switchStmtVisitor, null);
-    }
-
-    /**
-     * 检查
-     */
-    private void check() {
-        List<SwitchStmt> switchStmts = switchStmtVisitor.getList();
+    private void checkSwitch(JavaModel javaModel) {
+        List<SwitchStmt> switchStmts = javaModel.getUnit().findAll(SwitchStmt.class);
         for (SwitchStmt switchStmt : switchStmts) {
-            /*if(!hasBreakOrReturn(switchStmt)){
-                continue;
-            }*/
             if (switchStmt.getEntries().size() > MAX_DEEP) {
                 continue;
             }

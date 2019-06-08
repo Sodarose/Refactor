@@ -4,6 +4,7 @@ import lombok.Data;
 import model.Issue;
 import model.JavaModel;
 import model.Store;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.*;
 
@@ -39,33 +40,38 @@ public class ReFactorExec {
      */
     public void runFactor(List<Issue> issues) {
         Iterator<Issue> it = issues.iterator();
-        try {
-            while (it.hasNext()) {
-                Issue issue = it.next();
-
-                Refactor refactor = (Refactor) Class.forName(issue.getRefactorName()).newInstance();
+        while (it.hasNext()) {
+            Issue issue = it.next();
+            try {
                 JavaModel javaModel = issue.getJavaModel();
 
-               if (javaModel == null) {
-                   System.out.println("空");
+                if (javaModel == null) {
                     continue;
                 }
-                if (javaModel.getCopyUnit() == null) {
-                    javaModel.setCopyUnit(javaModel.getUnit().clone());
-                }
+                //判断issues是否初始化
                 if (javaModel.getIssues() == null) {
                     javaModel.setIssues(new ArrayList<>());
                 }
-                javaModel.getIssues().addAll(issues);
+
+
+                javaModel.getIssues().add(issue);
                 javaModel.setHasIssue(true);
+
+                if (issue.getRefactorName().equals("") || issue.getRefactorName() == null) {
+                    continue;
+                }
+                Refactor refactor = (Refactor) Class.forName(issue.getRefactorName()).newInstance();
+                if (javaModel.getCopyUnit() == null) {
+                    javaModel.setCopyUnit(javaModel.getUnit().clone());
+                }
                 refactor.refactor(issue);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
         }
     }
 
