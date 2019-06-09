@@ -29,7 +29,6 @@ public class ClassNamingShouldBeCamelRule extends AbstractRuleVisitor {
                     Issue issue = new Issue();
                     issue.setIssueNode(classOrInterfaceDeclaration);
                     issue.setJavaModel(javaModel);
-                    System.out.println(javaModel.getReadPath());
                     issue.setRefactorName(getSolutionClassName());
                     issue.setDescription(getDescription());
                     issue.setRuleName(getRuleName());

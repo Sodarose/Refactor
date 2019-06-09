@@ -36,7 +36,6 @@ public class MethodNamingShouldBeCamelRule extends AbstractRuleVisitor {
             if (nameList != null) {
                 boolean nameFlag = check(nameList);
                 if (!nameFlag) {
-                    System.out.println(name);
                     Issue issue = new Issue();
                     issue.setJavaModel(javaModel);
                     issue.setIssueNode(methodDeclaration);

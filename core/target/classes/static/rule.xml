@@ -272,7 +272,7 @@
         <description>类名使用UpperCamelCase风格，必须遵从驼峰形式，</description>
         <className>analysis.rule.ClassNamingShouldBeCamelRule</className>
         <solutionClassName>refactor.refactorimpl.ClassNameRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>类名应遵从驼峰形式</rule-message>
         <rule-level>2</rule-level>
         <example>

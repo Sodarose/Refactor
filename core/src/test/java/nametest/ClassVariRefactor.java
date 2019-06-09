@@ -1,8 +1,11 @@
 package nametest;
 
 public class ClassVariRefactor {
-    public String kk;
-    public int li(){
-        return 1;
+    public static void nametest(){
+
     }
+    public void namecount(){
+
+    }
+
 }

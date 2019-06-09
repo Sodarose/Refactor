@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acf294b9-6c92-47d6-b098-0f3c9df5ce2a" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/dataSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassConstantNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassNamingShouldBeCamelRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassVariNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ClassVariNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/LowerCamelCaseVariableNaming.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/LowerCamelCaseVariableNaming.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/MethodNamingShouldBeCamelRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/MethodNamingShouldBeCamelRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/PackageNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/PackageNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ParameterNamingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/analysis/rule/ParameterNamingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refactor/refactorimpl/PackageNameRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ParameterReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ParameterReferRefactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameImportRefer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameImportRefer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameReferRefactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameReferRefactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/MethodReferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/MethodReferUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/PackageReferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/PackageReferUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/static/rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/static/rule.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/core/target/" />
@@ -44,85 +28,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4920">
-              <caret line="164" column="18" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
+            <state relative-caret-position="7350">
+              <caret line="245" column="25" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/BoyerMoore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-930">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest/splitName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/data.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="1454" column="2" selection-start-line="1454" selection-start-column="2" selection-end-line="1454" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/dataSort.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/String.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70290">
-              <caret line="2420" column="20" selection-start-line="2420" selection-start-column="20" selection-end-line="2420" selection-end-column="20" />
-              <folding>
-                <element signature="e#94598#94599#0" expanded="true" />
-                <element signature="e#94636#94637#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/ClassReferUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+            <state relative-caret-position="374">
+              <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/options.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -222,19 +148,19 @@
         <option value="$PROJECT_DIR$/core/src/main/java/refer/packagerefer/PackageNameReferRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/refer/classrefer/ParameterReferRefactor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ulits/PackageReferUtil.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" />
         <option value="$PROJECT_DIR$/core/src/test/java/dataSort.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java" />
         <option value="$PROJECT_DIR$/core/src/main/resources/static/data.txt" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/static/rule.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="347" />
-    <option name="y" value="52" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1334" />
-    <option name="height" value="864" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -242,12 +168,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectFilesPane">
         <option name="show-excluded-files" value="true" />
         <option name="show-only-loaded-files" value="false" />
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,7 +273,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559879839701" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559891172347" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/MyBlog" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -493,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559724242979</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Default Changelist">
+      <created>1559879874146</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559879874146</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -509,7 +442,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="347" y="52" width="1334" height="864" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.6873662" side_tool="true" weight="0.21888413" />
       <window_info id="Designer" order="1" />
@@ -519,16 +453,16 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="设计器" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.31263384" visible="true" weight="0.26138148" />
+      <window_info content_ui="combo" id="Project" order="8" sideWeight="0.31263384" visible="true" weight="0.18176973" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7719957" visible="true" weight="0.46648428" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7719957" visible="true" weight="0.28060672" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946353" weight="0.32894737" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946353" weight="0.32976446" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.5912017" weight="0.1513158" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.5912017" weight="0.19699043" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.22800429" side_tool="true" weight="0.2751606" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
@@ -606,13 +540,6 @@
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/model/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/analysis/Rule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -874,16 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/PackageReferUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -915,26 +832,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/BoyerMoore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4920">
-          <caret line="164" column="18" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
+        <state relative-caret-position="60">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest/splitName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43620">
+          <caret line="1454" column="2" selection-start-line="1454" selection-start-column="2" selection-end-line="1454" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/java/dataSort.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70290">
-          <caret line="2420" column="20" selection-start-line="2420" selection-start-column="20" selection-end-line="2420" selection-end-column="20" />
-          <folding>
-            <element signature="e#94598#94599#0" expanded="true" />
-            <element signature="e#94636#94637#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/ClassReferUtil.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -943,41 +863,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        <state relative-caret-position="243">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="2420" column="20" selection-start-line="2420" selection-start-column="20" selection-end-line="2420" selection-end-column="20" />
+          <folding>
+            <element signature="e#94598#94599#0" expanded="true" />
+            <element signature="e#94636#94637#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/FilesNameRename.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/nametest/splitName.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/rule.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        <state relative-caret-position="7350">
+          <caret line="245" column="25" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="1454" column="2" selection-start-line="1454" selection-start-column="2" selection-end-line="1454" selection-end-column="2" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/static/options.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/DirNameRename.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-930">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ulits/SplitName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

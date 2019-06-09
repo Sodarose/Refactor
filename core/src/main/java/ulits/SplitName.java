@@ -15,16 +15,14 @@ public class SplitName {
             String flagName="";
             List<String> dataList=new ArrayList<String>();
             dataList=readData();
+            List<String> nameList=new ArrayList<>();
             Map<Integer,String> nameMap= new ConcurrentHashMap<Integer,String>();
-            List<String> nameList=new ArrayList<String>();
-            for(String data:dataList){
-                if(data.trim().length()<=copyname.trim().length()) {
-                   BoyerMoore boyerMoore=new BoyerMoore();
-                   int pos=boyerMoore.match(copyname.trim(),data.trim());
+            for(String data:dataList) {
+                if (data.trim().length() <= copyname.trim().length()) {
+                    BoyerMoore boyerMoore = new BoyerMoore();
+                    int pos = boyerMoore.match(copyname.trim(), data.trim());
                     if (pos != -1) {
-                        nameMap.put(pos,copyname.substring(pos,pos+data.length()));
-                        copyname=copyname.replaceAll(copyname.substring(pos,pos+data.length())," ");
-                        System.out.println(copyname);
+                        nameMap.put(pos, copyname.substring(pos, pos+data.length()));
                     }
                 }
             }
@@ -34,7 +32,7 @@ public class SplitName {
                     nameList.add(nameMap.get(key));
                 }
                 for (String content : nameList) {
-                    flagName = flagName + content;
+                    flagName = flagName + content.trim();
                 }
                 if (flagName.equals(copyname)) {
                     return nameList;
@@ -54,6 +52,18 @@ public class SplitName {
             reader.close();
             return nameList;
         }
+    /*public static List<String> readText() throws FileNotFoundException, IOException {
+        List<String> nameList=new ArrayList<String>();
+        FileReader reader = new FileReader("core/src/main/resources/static/test.txt");
+        BufferedReader br = new BufferedReader(reader);
+        String data=null;
+        while ((data = br.readLine()) != null) {
+            nameList.add(data);
+        }
+        br.close();
+        reader.close();
+        return nameList;
+    }*/
         public static Map<Integer,String> sortMapByKey(Map<Integer,String> map){
             if(map == null || map.isEmpty()){
                 return null;

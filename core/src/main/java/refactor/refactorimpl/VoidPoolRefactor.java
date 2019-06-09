@@ -75,10 +75,8 @@ public class VoidPoolRefactor extends AbstractRefactor {
         blockStmt.getStatements().addAll(updateStmts);
         BlockStmt parent = (BlockStmt) forStmt.getParentNode().get();
         int index = parent.getStatements().indexOf(forStmt);
-        System.out.println(whileStmt);
         //parent.replace(whileStmt,forStmt);
         parent.getStatements().addAll(index, inits);
-        System.out.println(parent.getStatements().replace(forStmt, whileStmt));
 
     }
 

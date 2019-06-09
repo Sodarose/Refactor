@@ -32,7 +32,6 @@ public class nametest {
 
                             name=name+data;
                         }
-                        System.out.println(name);
                         //n.setName(name);
                     } catch (IOException e) {
                         e.printStackTrace();

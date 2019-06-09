@@ -48,7 +48,6 @@ public class FormatterTest {
 
     /*改造retrun*/
     modifyReturn(method);
-    System.out.println(method);
   }
 
   private static void modifyReturn(MethodDeclaration method){
