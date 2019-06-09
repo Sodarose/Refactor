@@ -23,6 +23,7 @@ public class SplitName {
                     int pos = boyerMoore.match(copyname.trim(), data.trim());
                     if (pos != -1) {
                         nameMap.put(pos, copyname.substring(pos, pos+data.length()));
+                        System.out.println(copyname);
                     }
                 }
             }
