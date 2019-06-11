@@ -12,7 +12,6 @@ public class WebHookRest {
     @Autowired
     HttpServletRequest request;
 
-
     @PostMapping("/Payload")
     public String webHookSolve(){
         String payload = request.getParameter("Payload");

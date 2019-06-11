@@ -161,6 +161,7 @@
             dataType: 'json',
             data: {filePath: data},
             success: function (res) {
+
                 res.originalCode.replace('<', '&lt;')
                 res.originalCode.replace('>', '&gt;')
                 $("#code").html(res.originalCode)

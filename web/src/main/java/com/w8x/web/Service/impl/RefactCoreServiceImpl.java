@@ -30,9 +30,9 @@ public class RefactCoreServiceImpl implements RefactCoreService {
      * */
     @Override
     public Code runAnalysis(String filePath) {
-         if(analysisApi.analysis(filePath)){
+        if(analysisApi.analysis(filePath)){
             return Code.createCode(200,null,"扫描成功");
-         }
+        }
         return Code.createCode(404,null,"扫描失败");
     }
 
@@ -62,6 +62,7 @@ public class RefactCoreServiceImpl implements RefactCoreService {
                 issueShow.setEndLine(issue.getIssueNode().getRange().get().end.line);
                 issueShow.setIssueMessage(issue.getDescription());
                 issueShow.setRuleName(issue.getRuleName());
+                issueShows.add(issueShow);
             }
             codeShown.setIssueShows(issueShows);
         }

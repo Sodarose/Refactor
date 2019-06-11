@@ -28,7 +28,7 @@ public class CodeStyleRefactor extends AbstractRefactor {
                 blockStmt.getStatements().add(statement);
                 ifStmt.setThenStmt(blockStmt);
             }
-            if (ifStmt.hasElseBranch() && ifStmt.hasElseBlock()) {
+            if (ifStmt.hasElseBranch() && !ifStmt.hasElseBlock()) {
                 Statement statement = ifStmt.getElseStmt().get();
                 BlockStmt blockStmt = new BlockStmt();
                 blockStmt.getStatements().add(statement);
@@ -39,6 +39,14 @@ public class CodeStyleRefactor extends AbstractRefactor {
             ForStmt forStmt = stmt.asForStmt();
             BlockStmt blockStmt = new BlockStmt();
             blockStmt.getStatements().add(forStmt.getBody());
+            System.out.println(blockStmt);
+            forStmt.setBody(blockStmt);
+        }
+        if (stmt.isForStmt()) {
+            ForStmt forStmt = stmt.asForStmt();
+            BlockStmt blockStmt = new BlockStmt();
+            blockStmt.getStatements().add(forStmt.getBody());
+            System.out.println(blockStmt);
             forStmt.setBody(blockStmt);
         }
         if (stmt.isWhileStmt()) {

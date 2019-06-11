@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <rule>
     <!-- 需求一 -->
-
+    <!--over-->
     <rule-item>
         <rule-name>OverwriteMethodRule</rule-name>
         <description>对于覆写的方法必须加@Override注释</description>
-        <className>analysis.rule.VariableDeclarationSpecification</className>
+        <className>analysis.rule.OverwriteMethodRule</className>
         <solutionClassName>refactor.refactorimpl.OverwriteMethodRefactor</solutionClassName>
         <rule-status>false</rule-status>
         <rule-message>对于覆写的方法必须加@Override注释</rule-message>
@@ -43,11 +43,12 @@
         </example>
     </rule-item>
 
+    <!-- 扫描时处理 不会等待到重构阶段 -->
     <rule-item>
         <rule-name>VariableDeclarationSpecification</rule-name>
         <description>对于部分变量声明或赋值执行更正</description>
         <className>analysis.rule.VariableDeclarationSpecification</className>
-        <solutionClassName>refactor.refactorimpl.VariableDeclarationRefactor</solutionClassName>
+        <solutionClassName></solutionClassName>
         <rule-status>false</rule-status>
         <rule-message>${target} 应该这样写${refactor}</rule-message>
         <rule-level>0</rule-level>
@@ -227,61 +228,7 @@
     </rule-item>
 
     <!-- 需求三 -->
-    <rule-item>
-        <rule-name>DeeplyIfStmtsRule</rule-name>
-        <description>if深层嵌套</description>
-        <className>analysis.rule.DeeplyIfStmtsRule</className>
-        <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>if深层嵌套超过三层</rule-message>
-        <rule-level>10</rule-level>
-        <example>
-            if (i == 1) {
-            System.out.println("执行1");
-            if (i == 2) {
-            System.out.println("执行2");
-            if (i == 3) {
-            System.out.println("执行3");
-            if (i == 4) {
-            System.out.println("执行4");
-            if (i == 5) {
-            System.out.println("执行5");
-            if (i == 6) {
-            System.out.println("执行6");
-            if (i == 7) {
-            System.out.println("执行7");
-            }
-            }
-            }
-            }
-            }
-            }
-            }
-        </example>
-    </rule-item>
 
-    <rule-item>
-        <rule-name>ShallowSwitchRule</rule-name>
-        <description>Switch转换为if</description>
-        <className>analysis.rule.ShallowSwitchRule</className>
-        <solutionClassName>refactor.refactorimpl.ShallowSwitchRefactor</solutionClassName>
-        <rule-status>false</rule-status>
-        <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
-        <rule-level>9</rule-level>
-        <example>
-            switch (empType)
-            {
-            case ENGINEER:
-            return m_basicSalary;
-            case SALESMAN:
-            return m_basicSalary + m_commission;
-            case MANAGER:
-            return 2 * m_basicSalary;
-            default:
-            throw new Exception("no such employee type!");
-            }
-        </example>
-    </rule-item>
 
     <rule-item>
         <rule-name>VoidPoolRule</rule-name>
@@ -290,7 +237,7 @@
         <solutionClassName>refactor.refactorimpl.VoidPoolRefactor</solutionClassName>
         <rule-status>false</rule-status>
         <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
-        <rule-level>8</rule-level>
+        <rule-level>6</rule-level>
         <example>
             for(;;){
             ****
@@ -306,7 +253,7 @@
         <solutionClassName>refactor.refactorimpl.WhileChangeRefactor</solutionClassName>
         <rule-status>false</rule-status>
         <rule-message>有些时候while转化成for能够使人更好的理解</rule-message>
-        <rule-level>8</rule-level>
+        <rule-level>7</rule-level>
         <example>
             int i = 0;
             while(i &lt; 100){
@@ -340,6 +287,63 @@
             }else if(x==n){
             xxxx
             }else{
+            }
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>ShallowSwitchRule</rule-name>
+        <description>Switch转换为if</description>
+        <className>analysis.rule.ShallowSwitchRule</className>
+        <solutionClassName>refactor.refactorimpl.ShallowSwitchRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
+        <rule-level>9</rule-level>
+        <example>
+            switch (empType)
+            {
+            case ENGINEER:
+            return m_basicSalary;
+            case SALESMAN:
+            return m_basicSalary + m_commission;
+            case MANAGER:
+            return 2 * m_basicSalary;
+            default:
+            throw new Exception("no such employee type!");
+            }
+        </example>
+    </rule-item>
+
+
+    <rule-item>
+        <rule-name>DeeplyIfStmtsRule</rule-name>
+        <description>if深层嵌套</description>
+        <className>analysis.rule.DeeplyIfStmtsRule</className>
+        <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRefactor</solutionClassName>
+        <rule-status>false</rule-status>
+        <rule-message>if深层嵌套超过三层</rule-message>
+        <rule-level>10</rule-level>
+        <example>
+            if (i == 1) {
+            System.out.println("执行1");
+            if (i == 2) {
+            System.out.println("执行2");
+            if (i == 3) {
+            System.out.println("执行3");
+            if (i == 4) {
+            System.out.println("执行4");
+            if (i == 5) {
+            System.out.println("执行5");
+            if (i == 6) {
+            System.out.println("执行6");
+            if (i == 7) {
+            System.out.println("执行7");
+            }
+            }
+            }
+            }
+            }
+            }
             }
         </example>
     </rule-item>
@@ -389,6 +393,19 @@
 
             转换为
             "String".equals(xxx);
+        </example>
+    </rule-item>
+
+    <rule-item>
+        <rule-name>SwicthDefaultRule</rule-name>
+        <description>对于缺少default的switch进行补充 即使为空</description>
+        <className>analysis.rule.SwicthDefaultRule</className>
+        <solutionClassName></solutionClassName>
+        <rule-status>true</rule-status>
+        <rule-message>对于缺少default的switch进行补充 即使为空</rule-message>
+        <rule-level>11</rule-level>
+        <example>
+
         </example>
     </rule-item>
 </rule>

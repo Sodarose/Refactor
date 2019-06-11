@@ -35,6 +35,7 @@ public class WebRedux {
     @PostMapping("/javaFileDetail")
     @ResponseBody
     public CodeShown javaFileDetail(String filePath) {
+        System.out.println(filePath);
         return refactCoreService.getJavaFileDetail(filePath);
     }
 

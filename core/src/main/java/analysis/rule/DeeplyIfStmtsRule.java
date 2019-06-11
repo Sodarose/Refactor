@@ -62,7 +62,7 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
         Iterator<IfStmt> it = ifStmts.iterator();
         while (it.hasNext()) {
             IfStmt ifStmt = it.next();
-            //深度小于MAX 并且宽度也小于max的跳出
+            //深度小于MAX 并且宽度也小于max的剔除
             if (AnalysisUlits.getDeep(ifStmt) < MAX_DEEP) {
                 if (getBreadth(ifStmt) <= MAX_DEEP) {
                     it.remove();
@@ -101,7 +101,9 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
                     return "object";
                 }
             }
-            if (node.getClass().getName().equals("com.github.javaparser.ast.stmt.ForStmt") || node.getClass().getName().equals("com.github.javaparser.ast.stmt.WhileStmt")) {
+            if (node.getClass().getName().equals("com.github.javaparser.ast.stmt.ForStmt") ||
+                    node.getClass().getName().equals("com.github.javaparser.ast.stmt.WhileStmt")||
+                    "com.github.javaparser.ast.stmt.ForEachStmt".equals(node.getClass().getName())) {
                 return "continue";
             }
         }
@@ -128,7 +130,7 @@ public class DeeplyIfStmtsRule extends AbstractRuleVisitor {
     private IfStmt getParent(IfStmt ifStmt) {
         if (!ifStmt.getParentNode().isPresent()) {
             return ifStmt;
-        } else if (ifStmt.getParentNode().get().getClass().getName().equals("com.github.javaparser.ast.stmt.IfStmt")) {
+        } else if ("com.github.javaparser.ast.stmt.IfStmt".equals(ifStmt.getParentNode().get().getClass().getName())) {
             return getParent((IfStmt) ifStmt.getParentNode().get());
         } else {
             return ifStmt;

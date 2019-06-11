@@ -71,6 +71,7 @@ public class AnalysisUlits {
             return 1 + Math.max(left, right);
         }
     }
+
     private static IfStmt getIfStmt(Statement stmt) {
         if (stmt.isIfStmt()) {
             return stmt.asIfStmt();

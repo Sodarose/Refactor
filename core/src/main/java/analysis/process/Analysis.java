@@ -23,8 +23,10 @@ public class Analysis {
         ReFactorExec reFactorExec = ReFactorExec.getInstance();
         for (Rule rule : rules) {
             AbstractRuleVisitor ruleVisitor = (AbstractRuleVisitor) rule;
+            //System.out.println(ruleVisitor.getRuleName());
             if (ruleVisitor.isRuleStatus()) {
                 IssueContext issueContext = rule.apply(javaModels);
+                System.out.println(issueContext.getIssues().size());
                 reFactorExec.runFactor(issueContext.getIssues());
                 if (Store.issueContext == null) {
                     Store.issueContext = new IssueContext();

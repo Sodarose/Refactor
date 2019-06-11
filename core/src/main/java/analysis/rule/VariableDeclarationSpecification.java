@@ -19,11 +19,13 @@ import model.JavaModel;
 import java.util.List;
 
 public class VariableDeclarationSpecification extends AbstractRuleVisitor {
+
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel : javaModels) {
             checkVariableDeclaration(javaModel);
         }
+
         return getContext();
     }
 
@@ -48,15 +50,5 @@ public class VariableDeclarationSpecification extends AbstractRuleVisitor {
                 assignExpr.setValue(nameExpr);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\Colde.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        JavaModel javaModel = new JavaModel();
-        javaModel.setUnit(unit);
-        VariableDeclarationSpecification variableDeclarationSpecification = new VariableDeclarationSpecification();
-        variableDeclarationSpecification.checkVariableDeclaration(javaModel);
-        System.out.println(unit);
     }
 }

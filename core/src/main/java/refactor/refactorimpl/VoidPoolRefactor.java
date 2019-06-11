@@ -54,30 +54,53 @@ public class VoidPoolRefactor extends AbstractRefactor {
             BooleanLiteralExpr temp = new BooleanLiteralExpr();
             temp.setValue(true);
             condition = temp;
-
         }
+
+
         List<Expression> initializations = forStmt.getInitialization();
+        //初始化条件
         List<ExpressionStmt> inits = initializations.stream().map(expression -> {
                     ExpressionStmt initStmt = new ExpressionStmt();
                     initStmt.setExpression(expression);
                     return initStmt;
                 }
         ).collect(Collectors.toList());
+
         List<Expression> updates = forStmt.getUpdate();
+        //更新条件
         List<ExpressionStmt> updateStmts = updates.stream().map(expression -> {
             ExpressionStmt initStmt = new ExpressionStmt();
             initStmt.setExpression(expression);
             return initStmt;
         }).collect(Collectors.toList());
+
         WhileStmt whileStmt = new WhileStmt();
         whileStmt.setCondition(condition);
         whileStmt.setBody(blockStmt);
+        //将更新条件放进while方法体的末尾
         blockStmt.getStatements().addAll(updateStmts);
-        BlockStmt parent = (BlockStmt) forStmt.getParentNode().get();
-        int index = parent.getStatements().indexOf(forStmt);
-        //parent.replace(whileStmt,forStmt);
+        if(!forStmt.getParentNode().isPresent()){
+            return;
+        }
+        Node parentNode = forStmt.getParentNode().get();
+        Node indexNode = forStmt;
+        if("com.github.javaparser.ast.stmt.LabeledStmt".equals(parentNode.getClass().getName())){
+            if(!parentNode.getParentNode().isPresent()){
+                return;
+            }
+            indexNode = parentNode;
+            parentNode = parentNode.getParentNode().get();
+        }
+        if(!"com.github.javaparser.ast.stmt.BlockStmt".equals(parentNode.getClass().getName())){
+            return;
+        }
+
+        BlockStmt parent = (BlockStmt) parentNode;
+        int index = parent.getStatements().indexOf(indexNode);
+        //使用while替换for
+        forStmt.getParentNode().get().replace(forStmt,whileStmt);
+        //将初始化条件放在while的前面,如果有标签 就是在标签的前面
         parent.getStatements().addAll(index, inits);
-
     }
-
+    
 }

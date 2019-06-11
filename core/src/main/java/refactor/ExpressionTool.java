@@ -1,110 +1,105 @@
 package refactor;
 
 import com.github.javaparser.ast.expr.*;
+import org.omg.CORBA.UNKNOWN;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * @author kangkang
+ */
 public class ExpressionTool {
-    private static Map<String,BinaryExpr.Operator>
+    private static Map<String, BinaryExpr.Operator>
             logicMap = new HashMap<>();
-    private static Map<String,BinaryExpr.Operator>
-            JudgeMap = new HashMap<>();
+    private static Map<String, BinaryExpr.Operator>
+            judgeMap = new HashMap<>();
+
     static {
         /**
          * || and &&
          * | and &
          * */
-        logicMap.put(BinaryExpr.Operator.OR.asString(),BinaryExpr.Operator.AND);
-        logicMap.put(BinaryExpr.Operator.AND.asString(),BinaryExpr.Operator.OR);
-        logicMap.put(BinaryExpr.Operator.BINARY_OR.asString(),BinaryExpr.Operator.BINARY_AND);
-        logicMap.put(BinaryExpr.Operator.BINARY_AND.asString(),BinaryExpr.Operator.BINARY_OR);
+        logicMap.put(BinaryExpr.Operator.OR.asString(), BinaryExpr.Operator.AND);
+        logicMap.put(BinaryExpr.Operator.AND.asString(), BinaryExpr.Operator.OR);
+        logicMap.put(BinaryExpr.Operator.BINARY_OR.asString(), BinaryExpr.Operator.BINARY_AND);
+        logicMap.put(BinaryExpr.Operator.BINARY_AND.asString(), BinaryExpr.Operator.BINARY_OR);
 
         /**
          * == and !=
          * < and >=
          * > and <=
          * */
-        JudgeMap.put(BinaryExpr.Operator.EQUALS.asString(),BinaryExpr.Operator.NOT_EQUALS);
-        JudgeMap.put(BinaryExpr.Operator.NOT_EQUALS.asString(),BinaryExpr.Operator.EQUALS);
-        JudgeMap.put(BinaryExpr.Operator.LESS.asString(),BinaryExpr.Operator.GREATER_EQUALS);
-        JudgeMap.put(BinaryExpr.Operator.GREATER_EQUALS.asString(),BinaryExpr.Operator.LESS);
-        JudgeMap.put(BinaryExpr.Operator.GREATER.asString(),BinaryExpr.Operator.LESS_EQUALS);
-        JudgeMap.put(BinaryExpr.Operator.LESS_EQUALS.asString(),BinaryExpr.Operator.GREATER);
+        judgeMap.put(BinaryExpr.Operator.EQUALS.asString(), BinaryExpr.Operator.NOT_EQUALS);
+        judgeMap.put(BinaryExpr.Operator.NOT_EQUALS.asString(), BinaryExpr.Operator.EQUALS);
+        judgeMap.put(BinaryExpr.Operator.LESS.asString(), BinaryExpr.Operator.GREATER_EQUALS);
+        judgeMap.put(BinaryExpr.Operator.GREATER_EQUALS.asString(), BinaryExpr.Operator.LESS);
+        judgeMap.put(BinaryExpr.Operator.GREATER.asString(), BinaryExpr.Operator.LESS_EQUALS);
+        judgeMap.put(BinaryExpr.Operator.LESS_EQUALS.asString(), BinaryExpr.Operator.GREATER);
     }
 
     public static Expression reverse(Expression expression) {
         Expression expr = null;
+        //如果是布尔值的单变量
+        if (expression.isBooleanLiteralExpr()) {
+            return reverseBool(expression);
+        }
+
         if (expression.isBinaryExpr()) {
-            expr =  reverseExpression(expression.asBinaryExpr());
+            //System.out.println("进去");
+            BinaryExpr binaryExpr = expression.asBinaryExpr();
+            reverseBinaryExpr(binaryExpr);
+            return expression;
         }
-        if (expression.isMethodCallExpr()) {
-            expr = reverseExpression(expression.asMethodCallExpr());
-        }
-        if (expression.isUnaryExpr()) {
-            //System.out.println(expression.asUnaryExpr().getOperator());
-            expr = reverseExpression(expression.asUnaryExpr());
-        }
-        if (expression.isFieldAccessExpr()) {
-            expr = reverseExpression(expression.asFieldAccessExpr());
-        }
-        return expr;
+
+        return reverseMethodCall(expression);
     }
 
+    //如果是布尔值的单变量
+    private static BooleanLiteralExpr reverseBool(Expression expression) {
+        BooleanLiteralExpr booleanLiteralExpr = expression.asBooleanLiteralExpr();
+        return booleanLiteralExpr.setValue(!booleanLiteralExpr.getValue());
+    }
 
-    private static Expression reverseExpression(BinaryExpr binaryExpr) {
+    //如果是方法体
+    private static UnaryExpr reverseMethodCall(Expression expression) {
+        UnaryExpr unaryExpr = new UnaryExpr();
+        unaryExpr.setExpression(expression);
+        unaryExpr.setOperator(UnaryExpr.Operator.LOGICAL_COMPLEMENT);
+        return unaryExpr;
+    }
+
+    //如果是== || 这种
+    private static void reverseBinaryExpr(BinaryExpr binaryExpr) {
         Expression left = binaryExpr.getLeft();
         Expression right = binaryExpr.getRight();
-        BinaryExpr.Operator operator = binaryExpr.getOperator();
-        if(logicMap.containsKey(operator.asString())){
-            if(left.isUnaryExpr()){
-                left = left.asUnaryExpr().getExpression();
+        String operator = binaryExpr.getOperator().asString();
+        //先判断是logic还是judge 如果是logic则 两边都需要取反 如果是logic则符号取反即可
+        if (logicMap.containsKey(operator)) {
+            if (!left.isBinaryExpr()) {
+                binaryExpr.setLeft(reverseMethodCall(left));
+            } else {
+                reverseBinaryExpr(left.asBinaryExpr());
             }
-            else{
-                UnaryExpr unaryExpr = new UnaryExpr();
-                unaryExpr.setExpression(left);
-                unaryExpr.setOperator(UnaryExpr.Operator.LOGICAL_COMPLEMENT);
-                left = unaryExpr;
+            if (!right.isBinaryExpr()) {
+                binaryExpr.setRight(reverseMethodCall(right));
+            }else{
+                reverseBinaryExpr(right.asBinaryExpr());
             }
-            if(right.isUnaryExpr()){
-                right = right.asUnaryExpr();
-            }
-            else{
-                UnaryExpr unaryExpr = new UnaryExpr();
-                unaryExpr.setExpression(left);
-                unaryExpr.setOperator(UnaryExpr.Operator.LOGICAL_COMPLEMENT);
-                right = unaryExpr;
-            }
-            operator = logicMap.get(operator.asString());
+            binaryExpr.setOperator(logicMap.get(operator));
+            return;
         }
-        if(JudgeMap.containsKey(operator.asString())){
-            operator = JudgeMap.get(operator.asString());
+
+        if (judgeMap.containsKey(operator)) {
+            if (left.isBinaryExpr()) {
+                reverseBinaryExpr(left.asBinaryExpr());
+            }
+            if (right.isBinaryExpr()) {
+                reverseBinaryExpr(right.asBinaryExpr());
+            }
+            binaryExpr.setOperator(judgeMap.get(operator));
+            return;
         }
-        BinaryExpr binary = new BinaryExpr();
-        binary.setLeft(left);
-        binary.setRight(right);
-        binary.setOperator(operator);
-        return binary;
-    }
-
-
-    private static Expression reverseExpression(UnaryExpr unaryExpr) {
-        return unaryExpr.getExpression();
-    }
-
-    private static Expression reverseExpression(MethodCallExpr methodCallExpr) {
-        UnaryExpr unaryExpr = new UnaryExpr();
-        unaryExpr.setExpression(methodCallExpr);
-        unaryExpr.setOperator(UnaryExpr.Operator.LOGICAL_COMPLEMENT);
-        return unaryExpr;
-    }
-
-    private static Expression reverseExpression(FieldAccessExpr fieldAccessExpr) {
-        UnaryExpr unaryExpr = new UnaryExpr();
-        unaryExpr.setExpression(fieldAccessExpr);
-        unaryExpr.setOperator(UnaryExpr.Operator.LOGICAL_COMPLEMENT);
-        return unaryExpr;
     }
 
 

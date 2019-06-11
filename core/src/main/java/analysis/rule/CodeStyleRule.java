@@ -30,6 +30,7 @@ public class CodeStyleRule extends AbstractRuleVisitor {
         List<IfStmt> ifStmts = javaModel.getUnit().findAll(IfStmt.class);
         List<ForStmt> forStmts = javaModel.getUnit().findAll(ForStmt.class);
         List<WhileStmt> whileStmts = javaModel.getUnit().findAll(WhileStmt.class);
+        List<ForEachStmt> forEachStmts = javaModel.getUnit().findAll(ForEachStmt.class);
         for(DoStmt doStmt:doStmts){
             if(!doStmt.getBody().isBlockStmt()){
                 getContext().getIssues().add(createIssue(doStmt,javaModel));
@@ -48,6 +49,11 @@ public class CodeStyleRule extends AbstractRuleVisitor {
         for(WhileStmt whileStmt:whileStmts){
             if(!whileStmt.getBody().isBlockStmt()){
                 getContext().getIssues().add(createIssue(whileStmt,javaModel));
+            }
+        }
+        for(ForEachStmt forEachStmt:forEachStmts){
+            if(!forEachStmt.getBody().isBlockStmt()){
+                getContext().getIssues().add(createIssue(forEachStmt,javaModel));
             }
         }
     }

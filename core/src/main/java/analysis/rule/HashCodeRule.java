@@ -81,8 +81,8 @@ public class HashCodeRule extends AbstractRuleVisitor {
             if(!hashCodeMethod.isPresent()&&hashEqualsMethod.isPresent()){
                 BlockComment blockComment = new BlockComment();
                 blockComment.setContent(EQUALS_WARN);
-                hashCodeMethod.get().setComment(blockComment);
-                getContext().getIssues().add(createIssue(javaModel, hashCodeMethod.get()));
+                hashEqualsMethod.get().setComment(blockComment);
+                getContext().getIssues().add(createIssue(javaModel, hashEqualsMethod.get()));
             }
 
         }
