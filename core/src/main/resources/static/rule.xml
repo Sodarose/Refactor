@@ -7,7 +7,7 @@
         <description>对于覆写的方法必须加@Override注释</description>
         <className>analysis.rule.OverwriteMethodRule</className>
         <solutionClassName>refactor.refactorimpl.OverwriteMethodRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>对于覆写的方法必须加@Override注释</rule-message>
         <rule-level>1</rule-level>
         <example>
@@ -49,7 +49,7 @@
         <description>对于部分变量声明或赋值执行更正</description>
         <className>analysis.rule.VariableDeclarationSpecification</className>
         <solutionClassName></solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>${target} 应该这样写${refactor}</rule-message>
         <rule-level>0</rule-level>
         <example>
@@ -64,7 +64,7 @@
         <description>清除未使用的导入</description>
         <className>analysis.rule.UnusedImportsRule</className>
         <solutionClassName>refactor.refactorimpl.UnusedImportsRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>该导入未被使用 需要清除</rule-message>
         <rule-level>1</rule-level>
         <example>
@@ -85,7 +85,7 @@
         <description>大括号与if, else, for, do, while语句一起使用，即使只有一条语句(或是空)，也应该把大括号写上</description>
         <className>analysis.rule.CodeStyleRule</className>
         <solutionClassName>refactor.refactorimpl.CodeStyleRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>必须用大括号包裹 即使只有一条语句或空</rule-message>
         <rule-level>1</rule-level>
         <example>
@@ -235,7 +235,7 @@
         <description>空表达式for转换为while</description>
         <className>analysis.rule.VoidPoolRule</className>
         <solutionClassName>refactor.refactorimpl.VoidPoolRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>相较于for(;;), while(true)更加的容易使人理解</rule-message>
         <rule-level>6</rule-level>
         <example>
@@ -270,7 +270,7 @@
         <description>if转换成switch</description>
         <className>analysis.rule.IFTransformSwitchRule</className>
         <solutionClassName>refactor.refactorimpl.IfTransformSwitchRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>if转换成switch性能更高哦</rule-message>
         <rule-level>8</rule-level>
         <example>
@@ -296,7 +296,7 @@
         <description>Switch转换为if</description>
         <className>analysis.rule.ShallowSwitchRule</className>
         <solutionClassName>refactor.refactorimpl.ShallowSwitchRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>Switch低于或等于三层是低效的,故将其转换为if语句</rule-message>
         <rule-level>9</rule-level>
         <example>
@@ -320,7 +320,7 @@
         <description>if深层嵌套</description>
         <className>analysis.rule.DeeplyIfStmtsRule</className>
         <solutionClassName>refactor.refactorimpl.DeeplyIfStmtsRefactor</solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>if深层嵌套超过三层</rule-message>
         <rule-level>10</rule-level>
         <example>
@@ -354,7 +354,7 @@
         <description>不要在 foreach 循环里进行元素的 remove/add 操作。</description>
         <className>analysis.rule.ForEachRule</className>
         <solutionClassName></solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>不要在 foreach 循环里进行元素的 remove/add 操作。remove 元素请使用 Iterator</rule-message>
         <rule-level>5</rule-level>
         <example>
@@ -371,7 +371,7 @@
         <description>只要重写 equals，就必须重写 hashCode。</description>
         <className>analysis.rule.HashCodeRule</className>
         <solutionClassName></solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>字符串比较应该使用equals</rule-message>
         <rule-level>5</rule-level>
         <example>
@@ -384,7 +384,7 @@
         <description>字符串比较改用equals</description>
         <className>analysis.rule.StringComparisonRule</className>
         <solutionClassName></solutionClassName>
-        <rule-status>false</rule-status>
+        <rule-status>true</rule-status>
         <rule-message>字符串比较应该使用equals</rule-message>
         <rule-level>0</rule-level>
         <example>
