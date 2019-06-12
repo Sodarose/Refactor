@@ -29,8 +29,10 @@ import java.util.stream.Collectors;
  * @author kangkang
  */
 public class WhileChangeForRule extends AbstractRuleVisitor {
+
     private final String labeledStmt = "LabeledStmt";
     private JavaModel javaModel;
+
     @Override
     public IssueContext apply(List<JavaModel> javaModels) {
         for (JavaModel javaModel : javaModels) {
@@ -79,7 +81,10 @@ public class WhileChangeForRule extends AbstractRuleVisitor {
             } else {
                 parent = stmt.getParentNode().get();
             }
-            //
+            if (!stmt.getRange().isPresent()) {
+                System.out.println(stmt);
+                System.out.println(stmt.findRootNode());
+            }
             List<VariableDeclarator> inits = collectInit(stmt, parent, expres);
             if (inits == null || inits.size() == 0) {
                 continue;
@@ -143,6 +148,9 @@ public class WhileChangeForRule extends AbstractRuleVisitor {
             //如果在到达while之前variable被更改 则不能转换为for
             boolean notChange = false;
             for (SimpleName simpleName : simpleNames) {
+                if (!stmt.getRange().isPresent()) {
+                    continue;
+                }
                 if (!variable.getRange().get().contains(simpleName.getRange().get()) && !stmt.getRange().
                         get().contains(simpleName.getRange().get())) {
                     notChange = true;

@@ -39,14 +39,12 @@ public class CodeStyleRefactor extends AbstractRefactor {
             ForStmt forStmt = stmt.asForStmt();
             BlockStmt blockStmt = new BlockStmt();
             blockStmt.getStatements().add(forStmt.getBody());
-            System.out.println(blockStmt);
             forStmt.setBody(blockStmt);
         }
         if (stmt.isForStmt()) {
             ForStmt forStmt = stmt.asForStmt();
             BlockStmt blockStmt = new BlockStmt();
             blockStmt.getStatements().add(forStmt.getBody());
-            System.out.println(blockStmt);
             forStmt.setBody(blockStmt);
         }
         if (stmt.isWhileStmt()) {

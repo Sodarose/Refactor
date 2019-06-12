@@ -64,7 +64,6 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             if (statement == null) {
                 continue;
             }
-
             //
             if (statement.isIfStmt()) {
                 IfStmt ifStmt = statement.asIfStmt();
@@ -215,7 +214,7 @@ public class ShallowSwitchRefactor extends AbstractRefactor {
             isString = true;
             return;
         }
-        //System.out.println(Store.javaParserFacade);
+
         ResolvedType s = Store.javaParserFacade.getType(selector);
         //搜索根据类限定名称搜索
         SymbolReference v = Store.combinedTypeSolver.tryToSolveType(s.describe());

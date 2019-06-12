@@ -109,16 +109,4 @@ public class ForEachRule extends AbstractRuleVisitor {
         issue.setRefactorName(getSolutionClassName());
         return issue;
     }
-
-
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\ForeachTest.java");
-        AnalysisApi.getInstance().analysis("D:\\gitProject\\W8X\\core\\src\\test");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        JavaModel javaModel = new JavaModel();
-        javaModel.setUnit(unit);
-        ForEachRule forEachRule = new ForEachRule();
-        forEachRule.writeTip(javaModel);
-        System.out.println(unit);
-    }
 }

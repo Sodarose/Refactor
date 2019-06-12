@@ -26,7 +26,6 @@ public class VariableEmptyPointerRule extends AbstractRuleVisitor {
         //局部变量声明
         List<VariableDeclarationExpr> variables = javaModel.getUnit().findAll(VariableDeclarationExpr.class);
         for(VariableDeclarationExpr variable:variables){
-            System.out.println(variable.getParentNode().get().getClass().getName());
             NodeList<VariableDeclarator> varors = variable.getVariables();
         }
     }

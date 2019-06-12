@@ -5,9 +5,12 @@ import com.alibaba.fastjson.JSON;
 import com.github.javaparser.utils.ProjectRoot;
 import com.github.javaparser.utils.SourceRoot;
 import model.*;
+import ulits.ThreadPoolUtils;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class AnalysisApi {
 
@@ -33,13 +36,14 @@ public class AnalysisApi {
         //数据处理
         organizeData();
         Store.run = true;
+        saveProject();
         return Store.javaModelMap != null;
     }
 
     /**
      * 重新扫描
-     * */
-    public boolean analysisagin(){
+     */
+    public boolean analysisagin() {
         return analysis(Store.path);
     }
 
@@ -55,9 +59,9 @@ public class AnalysisApi {
         root.setFileName(rootName);
         root.setRealPath(projectRoot.getRoot().toFile().getPath());
         root.setChildren(new ArrayList<>());
-        for(SourceRoot sourceRoot:projectRoot.getSourceRoots()){
+        for (SourceRoot sourceRoot : projectRoot.getSourceRoots()) {
             String path = sourceRoot.getRoot().toFile().getPath();
-            String name =  path.substring(path.indexOf(rootName)+rootName.length()+1);
+            String name = path.substring(path.indexOf(rootName) + rootName.length() + 1);
             TreeNode sourceTree = new TreeNode();
             root.getChildren().add(sourceTree);
             sourceTree.setRealPath(path);
@@ -65,24 +69,24 @@ public class AnalysisApi {
             sourceTree.setFile(false);
             sourceTree.setHasIssue(false);
             sourceTree.setChildren(new ArrayList<>());
-            createFileTree(sourceRoot.getRoot().toFile(),sourceTree);
+            createFileTree(sourceRoot.getRoot().toFile(), sourceTree);
         }
         Store.rootNode = root;
     }
 
-    private void createFileTree(File file,TreeNode treeNode){
-        if(file.isFile()&&file.getName().endsWith(".java")){
+    private void createFileTree(File file, TreeNode treeNode) {
+        if (file.isFile() && file.getName().endsWith(".java")) {
             TreeNode fileNode = new TreeNode();
             fileNode.setRealPath(file.getPath());
             fileNode.setFileName(file.getName());
             fileNode.setFile(true);
             JavaModel javaModel = Store.javaModelMap.get(file.getPath());
-            if(javaModel !=null&& javaModel.getIssues()!=null&& javaModel.getIssues().size()!=0){
+            if (javaModel != null && javaModel.getIssues() != null && javaModel.getIssues().size() != 0) {
                 fileNode.setHasIssue(true);
             }
             treeNode.getChildren().add(fileNode);
         }
-        if(file.isDirectory()){
+        if (file.isDirectory()) {
             TreeNode dirNode = new TreeNode();
             dirNode.setHasIssue(false);
             dirNode.setFile(false);
@@ -90,8 +94,8 @@ public class AnalysisApi {
             dirNode.setRealPath(file.getPath());
             dirNode.setChildren(new ArrayList<>());
             treeNode.getChildren().add(dirNode);
-            for(File f:file.listFiles()){
-                createFileTree(f,dirNode);
+            for (File f : file.listFiles()) {
+                createFileTree(f, dirNode);
             }
         }
     }
@@ -104,11 +108,10 @@ public class AnalysisApi {
         return Store.javaModelMap.get(filePath);
     }
 
-
-    public static void main(String[] args) {
-        AnalysisApi analysisApi = AnalysisApi.getInstance();
-        analysisApi.analysis("D:\\gitProject\\W8X");
-        //System.out.println(JSON.toJSONString(Store.javaTree));
+    public void saveProject() {
+        for (Map.Entry<String, JavaModel> entry : Store.javaModelMap.entrySet()) {
+            TransmissionThread transmissionThread = new TransmissionThread(entry.getValue());
+            ThreadPoolUtils.execute(transmissionThread);
+        }
     }
-
 }

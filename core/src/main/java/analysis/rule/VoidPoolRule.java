@@ -72,8 +72,4 @@ public class VoidPoolRule extends AbstractRuleVisitor {
             getContext().getIssues().add(issue);
         }
     }
-
-    public static void main(String[] args) {
-
-    }
 }

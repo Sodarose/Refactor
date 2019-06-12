@@ -55,7 +55,6 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
             }
         }
 
-        //System.out.println(AnalysisUlits.getDeep(ifStmt));
         parent = ifStmt.getParentNode().get();
         //清理最外层的空返回语句
         if ("void".equals(interrupt)) {
@@ -66,7 +65,6 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
             cleanContinue(parent);
         }
         simplerReturn(issue);
-        //System.out.println(ifStmt.getParentNode().get().getParentNode().get());
     }
 
     /**
@@ -135,7 +133,6 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
             }
             BlockStmt parent = (BlockStmt) stmt.getParentNode().get();
             if (checkIFChange(parent, stmt) > 3) {
-                //System.out.println(stmt);
                 return;
             }
             IfStmt ifStmt = stmt.asIfStmt();
@@ -207,7 +204,7 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
             thenStmt.getStatements().add(ifStmt.getThenStmt());
             ifStmt.setThenStmt(thenStmt);
         }
-        //System.out.println(ExpressionTool.reverse(ifStmt.getCondition()));
+
         ifStmt.setCondition(ExpressionTool.reverse(ifStmt.getCondition()));
         BlockStmt newThen = new BlockStmt();
         newThen.getStatements().addAll(leftoverStmt);
@@ -321,7 +318,6 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
 
         if (!aStmt.asExpressionStmt().getExpression().isAssignExpr() &&
                 !aStmt.asExpressionStmt().getExpression().isVariableDeclarationExpr()) {
-            //System.out.println(aStmt.asExpressionStmt().getExpression().getClass().getName());
             return;
         }
 
@@ -359,24 +355,5 @@ public class DeeplyIfStmtsRefactor extends AbstractRefactor {
         stmts.remove(stmts.size() - 2);
         stmts.remove(stmts.size() - 1);
         stmts.add(rt);
-    }
-
-    public static void main(String[] args){
-        String source = FileUlits.readFile("D:\\gitProject\\测试用例\\src\\demanadthree\\IfRefactor\\GuardStmtRefactorTwo.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        JavaModel javaModel = new JavaModel();
-        javaModel.setUnit(unit);
-        DeeplyIfStmtsRule deeplyIfStmtsRule = new DeeplyIfStmtsRule();
-        List<JavaModel> javaModels = new ArrayList<>();
-        javaModels.add(javaModel);
-        deeplyIfStmtsRule.apply(javaModels);
-        DeeplyIfStmtsRefactor deeplyIfStmtsRefactor = new DeeplyIfStmtsRefactor();
-        Node node=null;
-        for(Issue issue:deeplyIfStmtsRule.getContext().getIssues()){
-            //System.out.println(issue.getIssueNode());
-            deeplyIfStmtsRefactor.refactor(issue);
-            node = issue.getIssueNode();
-        }
-        System.out.println(unit);
     }
 }

@@ -3,8 +3,6 @@ package refactor;
 import lombok.Data;
 import model.Issue;
 import model.JavaModel;
-import model.Store;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.*;
 
