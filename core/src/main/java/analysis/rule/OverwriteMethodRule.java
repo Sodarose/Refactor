@@ -13,6 +13,7 @@ import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.expr.AnnotationExpr;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import com.github.javaparser.resolution.UnsolvedSymbolException;
+import com.github.javaparser.resolution.declarations.ResolvedTypeDeclaration;
 import com.github.javaparser.symbolsolver.javaparsermodel.declarations.JavaParserClassDeclaration;
 import com.github.javaparser.symbolsolver.javaparsermodel.declarations.JavaParserInterfaceDeclaration;
 import io.FileUlits;
@@ -73,9 +74,12 @@ public class OverwriteMethodRule extends AbstractRuleVisitor {
         //得到父类的方法
         for (ClassOrInterfaceType classType : clazz.getExtendedTypes()) {
             try {
-                JavaParserClassDeclaration resolvedTypeDeclaration = (JavaParserClassDeclaration) Store.
-                        javaParserFacade.getSymbolSolver().solveType(classType);
-                ClassOrInterfaceDeclaration interfaceDeclaration = resolvedTypeDeclaration.getWrappedNode();
+
+                ResolvedTypeDeclaration resolvedTypeDeclaration = Store.javaParserFacade.getSymbolSolver()
+                        .solveType(classType);
+
+                JavaParserClassDeclaration javaParserClassDeclaration = (JavaParserClassDeclaration) (resolvedTypeDeclaration.asClass());
+                ClassOrInterfaceDeclaration interfaceDeclaration = javaParserClassDeclaration.getWrappedNode();
                 interfaceMethods.addAll(interfaceDeclaration.getMethods());
                 collectParentMethod(interfaceDeclaration, interfaceMethods);
             } catch (UnsolvedSymbolException e) {
