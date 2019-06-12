@@ -27,23 +27,15 @@
 }
     .ztree li span.button.pIcon01_ico_open {
         margin-right: 2px;
-        background: url(/images/warn.png) no-repeat scroll 0 0 transparent;
+        background: url(/images/warn.png);
         vertical-align: top;
         *vertical-align: middle
     }
-
-    .ztree li span.button.pIcon01_ico_close {
-        margin-right: 2px;
-        background: url(/images/warn.png) no-repeat scroll 0 0 transparent;
-        vertical-align: top;
-        *vertical-align: middle
-    }
-
     .ztree li span.button.icon01_ico_docu {
         margin-right: 2px;
-        background: url(/images/warn.png) no-repeat scroll 0 0 transparent;
+        background: url(/images/warn.png);
         vertical-align: top;
-        *vertical-align: middle
+        vertical-align: middle;
     }
 </style>
 <body class="layui-layout-body">
@@ -56,7 +48,7 @@
                 <div class="layui-col-md2">
                     <div class="layui-card">
                         <div class="layui-card-header">项目目录</div>
-                        <div class="layui-card-body" style="">
+                        <div class="layui-card-body" style="overflow-y:auto; overflow-x:auto;">
                             <ul id="treeDemo" class="ztree"></ul>
                         </div>
                     </div>
@@ -77,14 +69,14 @@
                     <div id="oldCode" class="layui-card layui-col-md10">
                         <div class="layui-card-header">源码预览</div>
                         <div class="layui-card-body">
-                            <div id="code">....</div>
+                            <div id="code" style="background-color:darkgray; overflow-x:auto;">....</div>
                         </div>
                     </div>
 
                     <div id="newCode" class="layui-card layui-col-md6" style="display: none;">
                         <div class="layui-card-header">重构后代码</div>
                         <div class="layui-card-body">
-                            <pre><code class="java" id="refactorcode">...</code></pre>
+                            <div id="refactorcode" style="background-color:darkgray; overflow-x:auto;">...</div>
                         </div>
                     </div>
                 </div>
@@ -170,7 +162,15 @@
                res.originalCode = res.originalCode.replace('>', '&gt;')
                res.originalCode = res.originalCode.replace(/\n/g,'<br>')
                res.originalCode = res.originalCode.replace(/\s/g,'&nbsp;')
+                 if (res.refactCode != null) {
+                   res.refactCode = res.refactCode.replace('<', '&lt;')
+                   res.refactCode = res.refactCode.replace('>', '&gt;')
+                   res.refactCode = res.refactCode.replace(/\n/g,'<br>')
+                   res.refactCode = res.refactCode.replace(/\s/g,'&nbsp;')
+                   }
+                   if(res.issueShows != null){
                 res.originalCode = contrast(res.originalCode,res.issueShows)
+                }
                 $("#code").html(res.originalCode)
                 if (res.refactCode != null) {
                     $("#oldCode").addClass("layui-col-md6");
@@ -195,6 +195,7 @@
     }
 function contrast(originalCode,issueShows){
         var arry=originalCode.split('<br>')
+        if(issueShows.length>0){
         for(var i=0;i<issueShows.length;i++){
                for(var j=issueShows[i].beginLine;j<=issueShows[i].endLine;j++){
                         arry[j]='<span class="source-line-code-issue">'+arry[j]+'</span>'
@@ -202,7 +203,10 @@ function contrast(originalCode,issueShows){
         }
         originalCode=""
         for(var k=0;k<arry.length;k++){
+                   if(typeof(arry[k]) != "undefined"){
                 originalCode=originalCode+arry[k]+"<br>"
+                }
+        }
         }
         return originalCode
 }
