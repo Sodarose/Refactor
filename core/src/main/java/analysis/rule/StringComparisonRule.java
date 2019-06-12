@@ -27,7 +27,6 @@ public class StringComparisonRule extends AbstractRuleVisitor {
         List<BinaryExpr> binaryExprs = javaModel.getUnit().findAll(BinaryExpr.class);
         List<MethodCallExpr> methodCallExprs = javaModel.getUnit().findAll(MethodCallExpr.class);
         //过滤
-        System.out.println(binaryExprs.size());
         binaryExprs = binaryExprs.stream().filter(binaryExpr -> {
             if (!binaryExpr.getOperator().equals(BinaryExpr.Operator.EQUALS)) {
                 return false;
@@ -86,13 +85,4 @@ public class StringComparisonRule extends AbstractRuleVisitor {
         }
     }
 
-    public static void main(String[] args) {
-        String source = FileUlits.readFile("D:\\gitProject\\W8X\\core\\src\\test\\java\\Stringtest.java");
-        CompilationUnit unit = StaticJavaParser.parse(source);
-        JavaModel javaModel = new JavaModel();
-        javaModel.setUnit(unit);
-        StringComparisonRule stringComparisonRule = new StringComparisonRule();
-        stringComparisonRule.fix(javaModel);
-        System.out.println(unit);
-    }
 }

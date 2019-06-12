@@ -19,21 +19,22 @@ import java.util.List;
 /**
  * 调用Core服务
  *
- * @author Administrator*/
+ * @author Administrator
+ */
 @Service
 public class RefactCoreServiceImpl implements RefactCoreService {
 
     private AnalysisApi analysisApi = AnalysisApi.getInstance();
-    private Formatter formatter = Formatter.getInstance();
+
     /**
      * 进行 分析
-     * */
+     */
     @Override
     public Code runAnalysis(String filePath) {
-        if(analysisApi.analysis(filePath)){
-            return Code.createCode(200,null,"扫描成功");
+        if (analysisApi.analysis(filePath)) {
+            return Code.createCode(200, null, "扫描成功");
         }
-        return Code.createCode(404,null,"扫描失败");
+        return Code.createCode(404, null, "扫描失败");
     }
 
     @Override
@@ -44,20 +45,23 @@ public class RefactCoreServiceImpl implements RefactCoreService {
     @Override
     public CodeShown getJavaFileDetail(String filePath) {
         JavaModel vo = analysisApi.getJavaModelVo(filePath);
-        if(vo==null){
+        if (vo == null) {
             return null;
         }
         CodeShown codeShown = new CodeShown();
-        codeShown.setOriginalCode(formatter.format(vo.getUnit().toString(), FormatOptions.getOptions()));
+        codeShown.setOriginalCode(vo.getUnit().toString());
         //判断是否重构了
-        if(vo.getCopyUnit()!=null){
-            codeShown.setRefactCode(formatter.format(vo.getUnit().toString(), FormatOptions.getOptions()));
-            codeShown.setOriginalCode(formatter.format(vo.getCopyUnit().toString(), FormatOptions.getOptions()));
+        if (vo.getCopyUnit() != null) {
+            codeShown.setRefactCode(vo.getUnit().toString());
+            codeShown.setOriginalCode(vo.getCopyUnit().toString());
         }
-        if(vo.getIssues()!=null&&vo.getIssues().size()!=0){
-            List<IssueShow> issueShows =new ArrayList<>();
-            for(Issue issue :vo.getIssues()){
+        if (vo.getIssues() != null && vo.getIssues().size() != 0) {
+            List<IssueShow> issueShows = new ArrayList<>();
+            for (Issue issue : vo.getIssues()) {
                 IssueShow issueShow = new IssueShow();
+                if (!issue.getIssueNode().getRange().isPresent()) {
+                    continue;
+                }
                 issueShow.setBeginLine(issue.getIssueNode().getRange().get().begin.line);
                 issueShow.setEndLine(issue.getIssueNode().getRange().get().end.line);
                 issueShow.setIssueMessage(issue.getDescription());
@@ -72,8 +76,8 @@ public class RefactCoreServiceImpl implements RefactCoreService {
     @Override
     public Code<Overview> getOverview() {
         Overview overview = new Overview();
-        if(!Store.run){
-            return Code.createCode(404,null,"获取信息失败");
+        if (!Store.run) {
+            return Code.createCode(404, null, "获取信息失败");
         }
         overview.setProjectName(Store.projectRoot.getRoot().toFile().getName());
         overview.setIssueCount(Store.issueContext.getIssues().size());
@@ -82,25 +86,25 @@ public class RefactCoreServiceImpl implements RefactCoreService {
         overview.setRealPath(Store.projectRoot.getRoot().toFile().getPath());
         int badCount = 0;
         badCount = (int) Store.javaModelMap.values().stream().filter(javaModelVo ->
-                javaModelVo.getIssues()!=null&&javaModelVo.getIssues().size()!=0).count();
+                javaModelVo.getIssues() != null && javaModelVo.getIssues().size() != 0).count();
         overview.setBadFileCount(badCount);
-        return Code.createCode(200,overview,"获取信息成功");
+        return Code.createCode(200, overview, "获取信息成功");
     }
 
     @Override
     public Code<String> refactorAll() {
-        if(!Store.run){
-            return Code.createCode(404,null,"操作失败");
+        if (!Store.run) {
+            return Code.createCode(404, null, "操作失败");
         }
-        return Code.createCode(200,null,"操作成功");
+        return Code.createCode(200, null, "操作成功");
     }
 
     @Override
     public Code<String> analysisAgin() {
-        if(analysisApi.analysisagin()){
-            return Code.createCode(200,null,"扫描成功");
+        if (analysisApi.analysisagin()) {
+            return Code.createCode(200, null, "扫描成功");
         }
-        return Code.createCode(404,null,"扫描失败");
+        return Code.createCode(404, null, "扫描失败");
     }
 
 

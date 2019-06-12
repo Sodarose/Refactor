@@ -13,20 +13,7 @@ import org.eclipse.text.edits.TextEdit;
 
 public class Formatter {
 
-    private static Formatter formatter;
-
-    public static Formatter getInstance() {
-        if (formatter == null) {
-            formatter = new Formatter();
-        }
-        return formatter;
-    }
-
-    private Formatter() {
-
-    }
-
-    public String format(String source, Map<String, Object> options) {
+    public static String format(String source, Map<String, Object> options) {
         CodeFormatter formatter = ToolFactory.createCodeFormatter(options, ToolFactory.M_FORMAT_EXISTING);
         TextEdit textEdit = formatter.format(CodeFormatter.K_COMPILATION_UNIT
                 | CodeFormatter.F_INCLUDE_COMMENTS, source, 0, source.length(), 0, System.lineSeparator());
@@ -39,7 +26,7 @@ public class Formatter {
         return document.get();
     }
 
-    public String format(CompilationUnit unit, Map<String, Object> options) {
+    public static String format(CompilationUnit unit, Map<String, Object> options) {
         IDocument document = new Document(unit.toString());
         TextEdit textEdit = unit.rewrite(document, options);
         try {

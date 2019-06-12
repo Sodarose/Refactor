@@ -25,7 +25,6 @@ public class InterfaceImplementRefactor {
                             if (classOrInterfaceType.getNameAsString().equals(oldInferfaceName)) {
                                 classOrInterfaceType.setName(newInferfaceName);
                                 classOrInterfaceDeclaration.setImplementedType(index, classOrInterfaceType);
-                                System.out.println(unit);
                             }
                             index++;
                         }

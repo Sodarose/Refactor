@@ -7,7 +7,6 @@ public class SundayUtil {
     private   int moveLength[]=null;
     public static void main(String[] agrs){
         SundayUtil sundayUtil=new SundayUtil();
-        System.out.println(sundayUtil.sunday("testname","set"));
     }
     public  int sunday(String haystack, String needle) {
         getMoveLength(needle);

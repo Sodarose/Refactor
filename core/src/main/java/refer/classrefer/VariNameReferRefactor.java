@@ -39,7 +39,6 @@ public class VariNameReferRefactor {
                                     }
                                 }
                                 variableDeclarator.setType(type);
-                                System.out.println(unit);
                             }
                         }
                     }

@@ -48,7 +48,6 @@ public class OverwriteMethodRule extends AbstractRuleVisitor {
             List<MethodDeclaration> interfaceMethods = new ArrayList<>();
             //拿到当前类的接口的所有方法声明 递归查找父类方法
             collectParentMethod(clazz, interfaceMethods);
-            System.out.println(interfaceMethods.size());
             //处理
             solveMethods(javaModel, methodDeclarations, interfaceMethods);
         }

@@ -53,7 +53,6 @@ public class IfTransformSwitchRefactor extends AbstractRefactor {
             return;
         }
         ifStmt.getParentNode().get().replace(ifStmt, switchStmt);
-        //System.out.println("AABBA"+switchStmt);
     }
 
     /**

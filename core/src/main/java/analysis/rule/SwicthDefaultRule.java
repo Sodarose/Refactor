@@ -27,7 +27,6 @@ public class SwicthDefaultRule extends AbstractRuleVisitor {
             if (!hasDefaultEntries(switchEntries)) {
                 continue;
             }
-            System.out.println(switchStmt);
             SwitchEntry switchEntry = new SwitchEntry();
             switchStmt.getEntries().add(switchEntry);
         }
