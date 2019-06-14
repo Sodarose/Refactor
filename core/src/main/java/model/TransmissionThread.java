@@ -6,6 +6,9 @@ import formatter.Formatter;
 
 import java.io.*;
 
+/**
+ *  写文件线程
+ * */
 public class TransmissionThread implements Runnable {
 
     private JavaModel javaModel;

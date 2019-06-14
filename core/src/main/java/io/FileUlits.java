@@ -7,6 +7,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  文件工具
+ * */
 public class FileUlits {
 
     public static String readFile(String filePath){

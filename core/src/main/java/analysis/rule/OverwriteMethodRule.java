@@ -59,9 +59,11 @@ public class OverwriteMethodRule extends AbstractRuleVisitor {
         //得到接口的方法
         for (ClassOrInterfaceType interfaceType : clazz.getImplementedTypes()) {
             try {
-                JavaParserInterfaceDeclaration resolvedTypeDeclaration = (JavaParserInterfaceDeclaration) Store.
-                        javaParserFacade.getSymbolSolver().solveType(interfaceType);
-                ClassOrInterfaceDeclaration interfaceDeclaration = resolvedTypeDeclaration.getWrappedNode();
+                ResolvedTypeDeclaration resolvedTypeDeclaration = Store.javaParserFacade.getSymbolSolver()
+                        .solveType(interfaceType);
+                JavaParserInterfaceDeclaration javaParserInterfaceDeclaration = (JavaParserInterfaceDeclaration)
+                        (resolvedTypeDeclaration.asInterface());
+                ClassOrInterfaceDeclaration interfaceDeclaration = javaParserInterfaceDeclaration.getWrappedNode();
                 interfaceMethods.addAll(interfaceDeclaration.getMethods());
                 collectParentMethod(interfaceDeclaration, interfaceMethods);
             } catch (UnsolvedSymbolException e) {
@@ -77,7 +79,6 @@ public class OverwriteMethodRule extends AbstractRuleVisitor {
 
                 ResolvedTypeDeclaration resolvedTypeDeclaration = Store.javaParserFacade.getSymbolSolver()
                         .solveType(classType);
-
                 JavaParserClassDeclaration javaParserClassDeclaration = (JavaParserClassDeclaration) (resolvedTypeDeclaration.asClass());
                 ClassOrInterfaceDeclaration interfaceDeclaration = javaParserClassDeclaration.getWrappedNode();
                 interfaceMethods.addAll(interfaceDeclaration.getMethods());

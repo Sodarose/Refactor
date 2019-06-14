@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 类模型
+ *  java类模型
  * */
 @Data
 public class JavaModel {
