@@ -73,6 +73,8 @@ public class OverwriteMethodRule extends AbstractRuleVisitor {
         //得到父类的方法
         for (ClassOrInterfaceType classType : clazz.getExtendedTypes()) {
             try {
+                System.out.println(Store.
+                        javaParserFacade.getSymbolSolver().solveType(classType).getClass().getName());
                 JavaParserClassDeclaration resolvedTypeDeclaration = (JavaParserClassDeclaration) Store.
                         javaParserFacade.getSymbolSolver().solveType(classType);
                 ClassOrInterfaceDeclaration interfaceDeclaration = resolvedTypeDeclaration.getWrappedNode();

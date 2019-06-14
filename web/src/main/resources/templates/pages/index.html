@@ -52,17 +52,6 @@
                             <ul id="treeDemo" class="ztree"></ul>
                         </div>
                     </div>
-                    <div class="layui-card">
-                        <div class="layui-card-header">扫描代码</div>
-                        <div class="layui-card-body" style="">
-                            <div class="">
-                                <input type="text" id="filePath" name="path" lay-verify="title" autocomplete="off"
-                                       placeholder="请输入本地路径" class="layui-input">
-                            </div>
-                            <br>
-                            <button class="layui-btn layui-btn-normal" id="scanner" onclick="scan()">扫描代码</button>
-                        </div>
-                    </div>
                 </div>
                 <div class="layui-col-md10 layui-row">
 
@@ -199,6 +188,7 @@ function contrast(originalCode,issueShows){
         for(var i=0;i<issueShows.length;i++){
                for(var j=issueShows[i].beginLine;j<=issueShows[i].endLine;j++){
                         arry[j]='<span class="source-line-code-issue">'+arry[j]+'</span>'
+
                }
         }
         originalCode=""
