@@ -43,7 +43,7 @@ public class SplitName {
 
     public static List<String> readData() throws FileNotFoundException, IOException {
         List<String> nameList = new ArrayList<String>();
-        FileReader reader = new FileReader(SplitName.class.getResource("/static/data.txt").toString());
+        FileReader reader = new FileReader(SplitName.class.getResource("/static/data.txt").getPath());
         BufferedReader br = new BufferedReader(reader);
         String data = null;
         while ((data = br.readLine()) != null) {

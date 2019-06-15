@@ -30,7 +30,7 @@ public class RuleLink {
         List<Rule> rules = new ArrayList<>();
         try {
             SAXReader reader = new SAXReader();
-            Document document = reader.read(RuleLink.class.getResource(RULE_XML_PATH).toString());
+            Document document = reader.read(RuleLink.class.getResource(RULE_XML_PATH).getPath());
             Element root = document.getRootElement();
             Iterator<Element> it = root.elementIterator();
             Store.rules = new ArrayList<>();

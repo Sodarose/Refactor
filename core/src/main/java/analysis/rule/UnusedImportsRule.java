@@ -50,6 +50,7 @@ public class UnusedImportsRule extends AbstractRuleVisitor {
             if(declaration.toString().contains("*")){
                 continue;
             }
+
             if (!simpleNames.contains(name) && !simpleNames.contains(fullName)) {
                 getContext().getIssues().add(createIssue(declaration, javaModel));
             }

@@ -19,7 +19,7 @@ import java.util.*;
  * @author kangkang
  */
 public class IFTransformSwitchRule extends AbstractRuleVisitor {
-    private final int min = 3;
+    private final int min = 4;
     private JavaModel javaModel;
 
     @Override
@@ -183,5 +183,4 @@ public class IFTransformSwitchRule extends AbstractRuleVisitor {
             return ifStmt;
         }
     }
-
 }

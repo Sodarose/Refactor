@@ -19,7 +19,7 @@ public class FormatOptions {
 
     public static Map<String, Object> getOptions() {
         if (options == null) {
-            options = options(FormatOptions.class.getResource(defaultOptions).toString());
+            options = options(FormatOptions.class.getResource(defaultOptions).getPath());
         }
         return options;
     }
