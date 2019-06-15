@@ -81,10 +81,6 @@ public class WhileChangeForRule extends AbstractRuleVisitor {
             } else {
                 parent = stmt.getParentNode().get();
             }
-            if (!stmt.getRange().isPresent()) {
-                System.out.println(stmt);
-                System.out.println(stmt.findRootNode());
-            }
             List<VariableDeclarator> inits = collectInit(stmt, parent, expres);
             if (inits == null || inits.size() == 0) {
                 continue;

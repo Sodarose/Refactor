@@ -13,6 +13,7 @@ import model.JavaModel;
 import model.Store;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class RefactCoreServiceImpl implements RefactCoreService {
     }
 
     @Override
-    public CodeShown getJavaFileDetail(String filePath) {
+    public CodeShown getJavaFileDetail(String filePath) throws UnsupportedEncodingException {
         JavaModel vo = analysisApi.getJavaModelVo(filePath);
         if (vo == null) {
             return null;

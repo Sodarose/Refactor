@@ -46,7 +46,6 @@ public class ExpressionTool {
         }
 
         if (expression.isBinaryExpr()) {
-            //System.out.println("进去");
             BinaryExpr binaryExpr = expression.asBinaryExpr();
             reverseBinaryExpr(binaryExpr);
             return expression;

@@ -403,7 +403,7 @@
         <solutionClassName></solutionClassName>
         <rule-status>true</rule-status>
         <rule-message>对于缺少default的switch进行补充 即使为空</rule-message>
-        <rule-level>11</rule-level>
+        <rule-level>14</rule-level>
         <example>
 
         </example>

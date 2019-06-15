@@ -15,7 +15,7 @@ import java.util.List;
  * 读取xml中的信息 然后根据反射生成对象 生成规则链
  */
 public class RuleLink {
-    private static final String RULE_XML_PATH = "core/src/main/resources/static/rule.xml";
+    private static final String RULE_XML_PATH = "/static/rule.xml";
 
     private static RuleLink ruleLink = null;
 
@@ -30,7 +30,7 @@ public class RuleLink {
         List<Rule> rules = new ArrayList<>();
         try {
             SAXReader reader = new SAXReader();
-            Document document = reader.read(RULE_XML_PATH);
+            Document document = reader.read(RuleLink.class.getResource(RULE_XML_PATH).toString());
             Element root = document.getRootElement();
             Iterator<Element> it = root.elementIterator();
             Store.rules = new ArrayList<>();
@@ -42,7 +42,7 @@ public class RuleLink {
             Store.rules.sort(new Comparator<AbstractRuleVisitor>() {
                 @Override
                 public int compare(AbstractRuleVisitor o1, AbstractRuleVisitor o2) {
-                    return o1.getLevel()-o2.getLevel();
+                    return o1.getLevel() - o2.getLevel();
                 }
             });
             rules.addAll(Store.rules);

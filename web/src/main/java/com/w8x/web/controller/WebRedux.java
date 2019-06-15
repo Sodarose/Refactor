@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+
 @Controller
 @RequestMapping("/core")
 public class WebRedux {
@@ -34,24 +36,25 @@ public class WebRedux {
 
     @PostMapping("/javaFileDetail")
     @ResponseBody
-    public CodeShown javaFileDetail(String filePath) {
-        System.out.println(filePath);
+    public CodeShown javaFileDetail(String filePath) throws UnsupportedEncodingException {
         return refactCoreService.getJavaFileDetail(filePath);
     }
 
     @GetMapping("/overview")
     @ResponseBody
-    public Code<Overview> getOverview(){
+    public Code<Overview> getOverview() {
         return refactCoreService.getOverview();
     }
 
     @GetMapping("/refactorAll")
-    @ResponseBody Code<String> refactorAll(){
+    @ResponseBody
+    Code<String> refactorAll() {
         return refactCoreService.refactorAll();
     }
 
     @GetMapping("/analysisagin")
-    @ResponseBody Code<String> analysisAgin(){
+    @ResponseBody
+    Code<String> analysisAgin() {
         return refactCoreService.analysisAgin();
     }
 }

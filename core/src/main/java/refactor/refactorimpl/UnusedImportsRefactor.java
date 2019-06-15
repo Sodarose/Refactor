@@ -21,6 +21,7 @@ public class UnusedImportsRefactor extends AbstractRefactor {
     }
     private void removeImport(ImportDeclaration declaration){
         if(declaration.getParentNode().isPresent()){
+            System.out.println(declaration);
             declaration.getParentNode().get().remove(declaration);
         }
     }

@@ -100,7 +100,6 @@ public class VoidPoolRefactor extends AbstractRefactor {
         //使用while替换for
         forStmt.getParentNode().get().replace(forStmt,whileStmt);
         //将初始化条件放在while的前面,如果有标签 就是在标签的前面
-        System.out.println(forStmt.getRange().isPresent());
         parent.getStatements().addAll(index, inits);
     }
     

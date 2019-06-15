@@ -49,12 +49,9 @@ public class ThreadPoolUtils {
     }
 
     static class ThreadUncaughtException implements Thread.UncaughtExceptionHandler {
-
         @Override
         public void uncaughtException(Thread t, Throwable e) {
             System.out.println(t.getId());
         }
     }
-
-
 }

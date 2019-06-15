@@ -24,7 +24,7 @@ public class SwicthDefaultRule extends AbstractRuleVisitor {
         List<SwitchStmt> switchStmts = javaModel.getUnit().findAll(SwitchStmt.class);
         for (SwitchStmt switchStmt : switchStmts) {
             List<SwitchEntry> switchEntries = switchStmt.getEntries();
-            if (!hasDefaultEntries(switchEntries)) {
+            if (hasDefaultEntries(switchEntries)) {
                 continue;
             }
             SwitchEntry switchEntry = new SwitchEntry();
