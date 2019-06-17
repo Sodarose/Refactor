@@ -1,9 +1,6 @@
 package ulits;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -43,8 +40,13 @@ public class SplitName {
 
     public static List<String> readData() throws FileNotFoundException, IOException {
         List<String> nameList = new ArrayList<String>();
-        FileReader reader = new FileReader(SplitName.class.getResource("/static/data.txt").getPath());
-        BufferedReader br = new BufferedReader(reader);
+        System.out.println();
+        File file = new File("");
+        System.out.println(file.getPath());
+        if (true) {
+            return null;
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(SplitName.class.getResource("/static/data.txt").openStream()));
         String data = null;
         while ((data = br.readLine()) != null) {
             nameList.add(data);
