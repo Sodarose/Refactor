@@ -52,7 +52,6 @@ public class SplitName {
             nameList.add(data);
         }
         br.close();
-        reader.close();
         return nameList;
     }
 
