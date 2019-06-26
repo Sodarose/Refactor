@@ -1,9 +1,6 @@
 package refactor.refactorimpl;
 
-import analysis.rule.ClassConstantNamingRule;
-import analysis.rule.LowerCamelCaseVariableNaming;
-import com.github.javaparser.StaticJavaParser;
-import com.github.javaparser.ast.CompilationUnit;
+
 import com.github.javaparser.ast.body.FieldDeclaration;
 import io.FileUlits;
 import model.Issue;
@@ -21,10 +18,12 @@ public class ContantNameRefactor extends AbstractRefactor {
         constantNameRefactor(fieldDeclaration);
     }
     public void constantNameRefactor(FieldDeclaration fieldDeclaration){
-        String constantName=fieldDeclaration.getVariable(0).getNameAsString();
-        String newName=constantName.toUpperCase();
-        fieldDeclaration.getVariable(0).setName(constantName.toUpperCase());
-        VariableReferUtil.referUtil(constantName,newName);
+        if (fieldDeclaration.isFinal()) {
+            String constantName = fieldDeclaration.getVariable(0).getNameAsString();
+            String newName = constantName.toUpperCase();
+            fieldDeclaration.getVariable(0).setName(newName);
+            VariableReferUtil.referUtil(constantName, newName);
+        }
     }
 
 }

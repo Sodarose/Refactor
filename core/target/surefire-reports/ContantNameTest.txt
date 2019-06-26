@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ContantNameTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in ContantNameTest
-=======
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in ContantNameTest
->>>>>>> 69a764c8505cd1c5ff7645c419b496bb2d3c5d33
