@@ -7,6 +7,8 @@ import com.github.javaparser.ast.body.FieldDeclaration;
 import io.FileUlits;
 import model.Issue;
 import refactor.AbstractRefactor;
+import refer.variablerefer.FieldNameReferRefactor;
+import refer.variablerefer.VariNameReferRefactor;
 import ulits.SplitName;
 import ulits.VariableReferUtil;
 
@@ -40,7 +42,7 @@ public class ClassVariNameRefactor  extends AbstractRefactor {
             newName=newName+data;
         }
         fieldDeclaration.getVariable(0).setName(newName);
-        VariableReferUtil.referUtil(oldName,newName);
+        FieldNameReferRefactor.nameReferRefactor(oldName,newName);
     }
 
 }

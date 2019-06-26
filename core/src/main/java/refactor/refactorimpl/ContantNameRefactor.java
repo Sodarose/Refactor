@@ -8,6 +8,7 @@ import com.github.javaparser.ast.body.FieldDeclaration;
 import io.FileUlits;
 import model.Issue;
 import refactor.AbstractRefactor;
+import refer.variablerefer.FieldNameReferRefactor;
 import ulits.VariableReferUtil;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class ContantNameRefactor extends AbstractRefactor {
         String constantName=fieldDeclaration.getVariable(0).getNameAsString();
         String newName=constantName.toUpperCase();
         fieldDeclaration.getVariable(0).setName(constantName.toUpperCase());
-        VariableReferUtil.referUtil(constantName,newName);
+        FieldNameReferRefactor.nameReferRefactor(constantName,newName);
     }
 
 }

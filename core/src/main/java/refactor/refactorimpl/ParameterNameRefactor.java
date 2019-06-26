@@ -7,6 +7,7 @@ import com.github.javaparser.ast.body.Parameter;
 import io.FileUlits;
 import model.Issue;
 import refactor.AbstractRefactor;
+import refer.variablerefer.VariNameReferRefactor;
 import ulits.SplitName;
 import ulits.VariableReferUtil;
 
@@ -41,7 +42,7 @@ public class ParameterNameRefactor extends AbstractRefactor {
 
         }
         parameter.setName(newName);
-        VariableReferUtil.VariNameUtil(oldName,newName);
+        VariNameReferRefactor.nameExprRefactor(oldName,newName);
     }
 
 }
